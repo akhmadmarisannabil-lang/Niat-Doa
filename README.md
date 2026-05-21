@@ -1,38 +1,68 @@
 ## Niat Sholat & Doa
 
-Aplikasi ini merupakan aplikasi mobile responsif yang dibangun menggunakan Flutter dan bahasa pemrograman Dart. Aplikasi ini dirancang sebagai media edukasi interaktif untuk membantu umat Muslim dalam membaca, menghafal, dan mempelajari niat shalat & doa.
+Aplikasi ini merupakan aplikasi mobile responsif yang dibangun menggunakan Flutter dan bahasa pemrograman Dart. Aplikasi ini dirancang sebagai media edukasi interaktif untuk membantu umat Muslim dalam membaca, menghafal, dan mempelajari niat shalat serta kumpulan doa secara praktis.
 
 ## Fokus pengembangan
 
-    - Analisis Kebutuhan dan Perancangan Antarmuka menjadi fondasi awal proyek yang diisi dengan kegiatan menentukan batasan sistem, menyusun struktur data bacaan, serta merancang blueprint tampilan aplikasi (user interface design) menggunakan tema gelap (dark mode) yang konsisten guna memastikan kenyamanan visual pengguna.
-
-    - Strukturasi Dasbor Beranda dan Layout Responsif menjadi kelanjutan fokus pengerjaan dengan membangun arsitektur halaman utama (Home Page) yang mengintegrasikan sistem perpindahan menu modular berbasis Bottom Navigation Bar untuk memisahkan kategori Niat Shalat dan Kumpulan Doa.
-
-    - Pengembangan Sub-Menu Niat Sholat & Doa Secara Mendalam dialihkan secara penuh untuk memproduksi halaman baru menggunakan komponen daftar terstruktur (List View) guna memuat navigasi panduan Macam-macam niat sholat & Doa.
-
-    - Pengujian Sistem dan Penyusunan Dokumentasi Akhir merupakan tahap penutup yang digunakan untuk melakukan uji coba fungsionalitas tombol kembali (back button navigation), memeriksa kestabilan performa aplikasi saat perpindahan halaman.
+    1.  Analisis Kebutuhan dan Perancangan Antarmuka: " Menentukan batasan sistem, menyusun struktur data bacaan yang efisien tanpa adanya duplikasi data, serta merancang cetak biru tampilan aplikasi (*user interface design*) menggunakan tema gelap (*dark mode*) yang konsisten guna memastikan kenyamanan visual pengguna."
+    2.  Strukturasi Dasbor Beranda dan Layout Responsif: " Membangun arsitektur halaman utama (`HomePage`) yang mengintegrasikan sistem perpindahan menu modular berbasis `BottomNavigationBar` untuk memisahkan kategori utama: 'Niat Shalat' dan 'Kumpulan Doa'. Layout dirancang adaktif agar rapi saat diakses di berbagai ukuran layar gawai."
+    3.  Pengembangan Sub-Menu Niat Sholat & Doa Secara Mendalam:" Memproduksi halaman baru secara modular menggunakan komponen daftar terstruktur (`ListView.builder`) guna memuat navigasi panduan macam-macam niat sholat dan doa secara spesifik, runtun, dan tepat sasaran."
+    4.  Pengujian Sistem dan Penyusunan Dokumentasi Akhir:" Melakukan uji coba fungsionalitas tombol kembali (*back button navigation*), memeriksa kestabilan performa aplikasi saat perpindahan halaman, serta memastikan tidak ada teks atau data yang tumpang tindih (*redundant*) antar sub-menu."
 
 ## Arsitektur File & Struktur Proyek (Directory Structure)
 
+```text
 flutter_sholat_doa/
-│
 ├── assets/
-│ └── images/
-│ └── bg_awal.png # Gambar latar belakang halaman WelcomePage
-│
+│   └── images/
+│       └── menu/
+│           ├── sholat.jpg
+│           └── berdoa.jpg
 ├── lib/
-│ ├── main.dart # Titik masuk utama (Entry Point) aplikasi
-│ ├── welcome_page.dart # Halaman pengantar awal (Splash/Welcome Screen)
-│ ├── home_page.dart # Dasbor utama dengan sistem Tab (Niat & Doa)
-│ └── shalat_fardhu_page.dart # Halaman menu navigasi sholat 5 waktu & Sholat Jum'at
-|
-└── pubspec.yaml # Manajemen dependensi dan registrasi aset gambar/font
+│   ├── doa/
+│   │   ├── doa_acara_page.dart
+│   │   ├── doa_harian_page.dart
+│   │   ├── doa_ibadah_page.dart
+│   │   ├── doa_lainnya_page.dart
+│   │   └── doa_perlindungan_page.dart
+│   ├── sholat/
+│   │   ├── shalat_fardhu_kifayah_page.dart
+│   │   ├── shalat_fardhu_page.dart
+│   │   ├── shalat_sunnah_lainnya_page.dart
+│   │   ├── sunnah_badiyah_page.dart
+│   │   └── sunnah_qobliyah_page.dart
+│   ├── home_page.dart
+│   └── main.dart
+└── pubspec.yaml
+```
 
-## Fitur Utama Aplikasi
+## Fitur & Menu
 
-Fitur utama yang diimplementasikan dalam aplikasi "" berfokus pada penyediaan panduan ibadah yang interaktif dan mudah diakses oleh pengguna. Fitur pertama adalah Sistem Navigasi Multi-Tab Dinamis di halaman beranda yang memisahkan konten secara modular menjadi dua kategori besar, yaitu Menu Niat Shalat dan Kumpulan Doa. Pemisahan ini memudahkan pengguna untuk beralih fokus ibadah hanya dengan menyentuh bilah navigasi di bagian bawah layar. Fitur kedua adalah Kategorisasi Menu Shalat Fardhu Terstruktur, di mana pengguna dapat mengakses sub-menu navigasi khusus untuk melihat daftar shalat lima waktu yang meliputi Shalat Subuh, Shalat Dzuhur, Shalat Ashar, Shalat Maghrib, dan Shalat Isya, serta perluasan fungsionalitas berupa menu Shalat Jum'at.
+1. Tab Niat Shalat (Menu Utama 1)
+   Memuat tuntunan niat shalat yang dikelompokkan secara terstruktur:
 
-Selain konten keagamaan, aplikasi ini dilengkapi dengan fitur Desain Antarmuka Responsif (Adaptive Grid Layout) yang secara otomatis mendeteksi ukuran lebar layar gawai pengguna. Tata letak kotak menu akan menyesuaikan jumlah kolom secara dinamis dari skala 2 kolom untuk perangkat telepon genggam (mobile) hingga 6 kolom apabila dijalankan pada layar monitor desktop maupun web. Terakhir, terdapat fitur Komponen Edukatif Tambahan (Quote of The Day) pada bagian bawah beranda yang berfungsi menampilkan kutipan atau motivasi guna memberikan semangat pada pengguna saat berinteraksi dengan aplikasi.
+Shalat Fardhu: Tuntunan niat shalat lima waktu (Subuh, Dzuhur, Ashar, Maghrib, Isya).
+
+Sunnah Qobliyah: Kumpulan niat shalat sunnah rawatib sebelum shalat fardhu.
+
+Sunnah Ba'diyah: Kumpulan niat shalat sunnah rawatib setelah shalat fardhu.
+
+Shalat Fardhu Kifayah: Panduan shalat Jenazah (Laki-laki & Perempuan) serta Shalat Ghaib.
+
+Shalat Sunnah Lainnya: Panduan shalat sunnah berkala seperti Dhuha, Tahajjud, Witir, Istikhara, dan Hajat.
+
+2. Tab Kifarat & Kumpulan Doa (Menu Utama 2)
+   Memuat kumpulan doa yang telah dieliminasi dari unsur duplikasi data, disusun berdasarkan konteks aktivitas pengguna:
+
+Doa Harian: Doa praktis seputar aktivitas rutin harian (Sebelum/Sesudah Makan, Sebelum/Bangun Tidur, Masuk/Keluar Rumah). Catatan: Doa terkait masjid dipindahkan agar tidak tumpang tindih dengan menu ibadah.
+
+Doa Ibadah: Fokus secara kronologis pada bacaan inti saat rangkaian ibadah shalat sedang berlangsung (Doa Iftitah, Ruku', I'tidal, Qunut, Sujud, Duduk di Antara Dua Sujud, Tashahhud).
+
+Doa Memohon Perlindungan: Doa khusus untuk meminta keselamatan diri (Perlindungan dari Syetan, Fitnah Dajjal, Penyakit Buruk, Sifat Buruk, serta Keselamatan Dunia Akhirat).
+
+Doa Acara: Kumpulan doa menghadiri perhelatan formal maupun informal (Pembukaan/Penutup Acara, Syukuran/Walimah, Pernikahan, Menempati Rumah Baru).
+
+Doa Lainnya: Wadah kompilasi doa-doa umum esensial yang tidak masuk ke dalam kategori khusus di atas (Doa untuk Kedua Orang Tua, Doa Sapu Jagat, Memohon Ilmu Bermanfaat, Kemudahan Urusan, Ketetapan Iman).
 
 ## Teknologi yang Digunakan
 
@@ -50,14 +80,14 @@ Teknologi yang digunakan dalam pembuatan aplikasi "Bacaan Shalat Lengkap" adalah
 
 ## Cara Menjalankan Aplikasi
 
-Langkah-langkah untuk mengonfigurasi dan menjalankan aplikasi "Bacaan Shalat Lengkap" pada lingkungan pengembangan lokal adalah sebagai berikut:
+Langkah-langkah untuk mengonfigurasi dan menjalankan aplikasi "Niat Sholat & Doa" pada lingkungan pengembangan lokal adalah sebagai berikut:
 
-    1. Instalasi Flutter SDK merupakan langkah awal yang wajib dilakukan dengan mengunduh berkas SDK resmi dari situs Flutter, mengekstraknya ke dalam penyimpanan lokal komputer, serta mendaftarkan jalur (path) binari ke dalam sistem variabel lingkungan (Environment Variables) agar perintah Flutter dapat dieksekusi melalui terminal.
+1. Pemasangan SDK Flutter: Mengunduh berkas Flutter SDK resmi, mengekstraknya ke dalam penyimpanan lokal komputer, serta mendaftarkan jalur (path) binari ke dalam sistem variabel lingkungan (Environment Variables) agar perintah Flutter dapat dieksekusi melalui terminal.
 
-    2. Konfigurasi Integrated Development Environment (IDE) dilakukan dengan memasang aplikasi editor teks seperti Visual Studio Code atau Android Studio, kemudian menginstal ekstensi resmi Flutter dan Dart dari marketplace untuk mengaktifkan fitur bantuan penulisan kode, penanganan galat otomatis, serta tombol eksekusi aplikasi.
+2. Konfigurasi Integrated Development Environment (IDE): Dilakukan dengan memasang aplikasi editor teks seperti Visual Studio Code atau Android Studio, kemudian menginstal ekstensi resmi Flutter dan Dart dari marketplace untuk mengaktifkan fitur bantuan penulisan kode, penanganan galat otomatis, serta tombol eksekusi aplikasi.
 
-    3. Pemasangan Emulator atau Perangkat Fisik disiapkan sebagai media pengujian dengan membuat perangkat virtual (Android Virtual Device/AVD) melalui Android Studio, atau dengan menghubungkan langsung ponsel pintar asli via kabel data USB disertai pengaktifan mode USB Debugging pada menu opsi pengembang gawai.
+3. Pemasangan Emulator atau Perangkat Fisik: Disiapkan sebagai media pengujian dengan membuat perangkat virtual (Android Virtual Device/AVD) melalui Android Studio, atau dengan menghubungkan langsung ponsel pintar asli via kabel data USB disertai pengaktifan mode USB Debugging pada menu opsi pengembang gawai.
 
-    4. Sinkronisasi Dependensi Proyek dijalankan dengan membuka folder kode sumber aplikasi menggunakan terminal IDE, kemudian mengetikkan dan mengeksekusi perintah flutter pub get untuk mengunduh seluruh pustaka Material Design serta mendaftarkan komponen visual pendukung yang tertera di file pubspec.yaml.
+4. Sinkronisasi Dependensi Proyek: Dijalankan dengan membuka folder kode sumber aplikasi menggunakan terminal IDE, kemudian mengetikkan dan mengeksekusi perintah flutter pub get untuk mengunduh seluruh pustaka Material Design serta mendaftarkan komponen visual pendukung yang tertera di file pubspec.yaml.
 
-    5. Eksekusi dan Kompilasi Aplikasi merupakan tahap akhir di mana pengembang menjalankan perintah flutter run di terminal atau menekan tombol F5 pada VS Code untuk memulai proses kompilasi kode sumber Dart ke dalam arsitektur perangkat target, sehingga aplikasi dapat terpasang dan langsung terbuka pada layar emulator.
+5. Eksekusi dan Kompilasi Aplikasi: Tahap akhir di mana pengembang menjalankan perintah flutter run di terminal atau menekan tombol F5 pada VS Code untuk memulai proses kompilasi kode sumber Dart ke dalam arsitektur perangkat target, sehingga aplikasi dapat terpasang dan langsung terbuka pada layar emulator.

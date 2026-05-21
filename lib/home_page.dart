@@ -1,5 +1,14 @@
 import 'package:flutter/material.dart';
-import 'shalat_fardhu_page.dart';
+import 'sholat/shalat_fardhu_page.dart';
+import 'sholat/sunnah_qobliyah_page.dart';
+import 'sholat/sunnah_badiyah_page.dart';
+import 'sholat/shalat_fardhu_kifayah_page.dart';
+import 'sholat/shalat_sunnah_lainnya_page.dart';
+import 'doa/doa_harian_page.dart';
+import 'doa/doa_ibadah_page.dart';
+import 'doa/doa_perlindungan_page.dart';
+import 'doa/doa_acara_page.dart';
+import 'doa/doa_lainnya_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -36,7 +45,6 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           padding: const EdgeInsets.all(16.0),
           children: [
-            // 1. Header Card Utama
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(20),
@@ -64,8 +72,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 20),
-
-            // 2. Grid Menu Dinamis & Responsif
             GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
@@ -79,17 +85,87 @@ class _HomePageState extends State<HomePage> {
               itemBuilder: (context, index) {
                 final item = menuItems[index];
 
-                // 2. BUNGKUS DENGAN GESTUREDETECTOR UNTUK MENDETEKSI SENTUHAN KLIK
                 return GestureDetector(
                   onTap: () {
-                    // Jika yang diklik adalah nomor 1 (Shalat Fardhu)
-                    if (item['number'] == '1' && _currentIndex == 0) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ShalatFardhuPage(),
-                        ),
-                      );
+                    if (_currentIndex == 0) {
+                      // Navigasi Tab Sholat
+                      if (item['number'] == '1') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ShalatFardhuPage(),
+                          ),
+                        );
+                      } else if (item['number'] == '2') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SunnahQobliyahPage(),
+                          ),
+                        );
+                      } else if (item['number'] == '3') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SunnahBadiyahPage(),
+                          ),
+                        );
+                      } else if (item['number'] == '4') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const ShalatFardhuKifayahPage(),
+                          ),
+                        );
+                      } else if (item['number'] == '5') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const ShalatSunnahLainnyaPage(),
+                          ),
+                        );
+                      }
+                    } else {
+                      // Navigasi Tab Doa
+                      if (item['number'] == '1') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const DoaHarianPage(),
+                          ),
+                        );
+                      } else if (item['number'] == '2') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const DoaIbadahPage(),
+                          ),
+                        );
+                      } else if (item['number'] == '3') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const DoaPerlindunganPage(),
+                          ),
+                        );
+                      } else if (item['number'] == '4') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const DoaAcaraPage(),
+                          ),
+                        );
+                      } else if (item['number'] == '5') {
+                        // LOGIKA NAVIGASI DOA LAINNYA
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const DoaLainnyaPage(),
+                          ),
+                        );
+                      }
                     }
                   },
                   child: Container(
@@ -105,9 +181,8 @@ class _HomePageState extends State<HomePage> {
                             child: Image.network(
                               item['image'],
                               fit: BoxFit.cover,
-                              errorBuilder: (context, error, stackTrace) {
-                                return Container(color: item['color']);
-                              },
+                              errorBuilder: (context, error, stackTrace) =>
+                                  Container(color: item['color']),
                             ),
                           ),
                           Positioned.fill(
@@ -159,8 +234,6 @@ class _HomePageState extends State<HomePage> {
               },
             ),
             const SizedBox(height: 20),
-
-            // 3. Quote of The Day Card
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(16),
@@ -172,14 +245,10 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    children: [
-                      const Icon(
-                        Icons.auto_awesome,
-                        color: Colors.amber,
-                        size: 16,
-                      ),
-                      const SizedBox(width: 6),
-                      const Text(
+                    children: const [
+                      Icon(Icons.auto_awesome, color: Colors.amber, size: 16),
+                      SizedBox(width: 6),
+                      Text(
                         "QUOTE OF THE DAY",
                         style: TextStyle(
                           fontSize: 11,
@@ -244,6 +313,12 @@ class _HomePageState extends State<HomePage> {
       },
       {
         'number': '4',
+        'title': 'Shalat Fardhu\nKifayah',
+        'color': const Color(0xffe2d1f9),
+        'image': 'assets/images/menu/sholat.jpg',
+      },
+      {
+        'number': '5',
         'title': 'Shalat Sunnah\nLainnya',
         'color': const Color(0xfffcdbdf),
         'image': 'assets/images/menu/sholat.jpg',
@@ -265,12 +340,18 @@ class _HomePageState extends State<HomePage> {
       },
       {
         'number': '3',
-        'title': 'Doa Permohonan',
+        'title': 'Doa Memohon\nPerlindungan',
         'color': const Color(0xffd1f2e5),
         'image': 'assets/images/menu/berdoa.jpg',
       },
       {
         'number': '4',
+        'title': 'Doa Acara',
+        'color': const Color(0xffe2d1f9),
+        'image': 'assets/images/menu/berdoa.jpg',
+      },
+      {
+        'number': '5',
         'title': 'Doa Lainnya',
         'color': const Color(0xfffcdbdf),
         'image': 'assets/images/menu/berdoa.jpg',
@@ -284,27 +365,15 @@ class _HomePageState extends State<HomePage> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white70),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+          onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
           "Bacaan Niat Sholat & Doa",
           style: TextStyle(fontSize: 16, color: Colors.white),
         ),
-        actions: [
-          Center(
-            child: Container(
-              constraints: const BoxConstraints(maxWidth: 1200),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: const [
-                  Icon(Icons.settings, color: Colors.white70),
-                  SizedBox(width: 16),
-                ],
-              ),
-            ),
-          ),
+        actions: const [
+          Icon(Icons.settings, color: Colors.white70),
+          SizedBox(width: 16),
         ],
       ),
       body: _currentIndex == 0
@@ -327,11 +396,7 @@ class _HomePageState extends State<HomePage> {
         selectedItemColor: Colors.amber,
         unselectedItemColor: Colors.white38,
         currentIndex: _currentIndex,
-        onTap: (int index) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
+        onTap: (int index) => setState(() => _currentIndex = index),
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.mosque), label: 'Niat'),
           BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'Doa'),
