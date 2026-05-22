@@ -1,34 +1,43 @@
 import 'package:flutter/material.dart';
-import '../kifayah/shalat_jenazah_lk_page.dart';
-import '../kifayah/shalat_jenazah_pr_page.dart';
-import '../kifayah/shalat_ghaib_page.dart';
+import '../tertentu/idul_fitri_page.dart';
+import '../tertentu/idul_adha_page.dart';
+import '../tertentu/tarawih_page.dart';
+import '../tertentu/gerhana_page.dart';
 
-class ShalatFardhuKifayahPage extends StatelessWidget {
-  const ShalatFardhuKifayahPage({super.key});
+class SunnahWaktuTertentuPage extends StatelessWidget {
+  const SunnahWaktuTertentuPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Daftar data untuk Solat fardhu kifayah sesuai gambar image_400970.png
-    final List<Map<String, dynamic>> kifayahList = [
+    final List<Map<String, dynamic>> sunnahTertentuList = [
       {
-        'name': 'Shalat Jenazah (Laki-laki)',
-        'desc':
-            'Shalat dengan 4 takbir tanpa ruku dan sujud untuk jenazah laki-laki.',
+        'name': 'Shalat Idul Fitri',
+        'desc': '2 Rakaat - Dilakukan pada tanggal 1 Syawal pagi hari.',
+        'targetPage': const IdulFitriPage(),
       },
       {
-        'name': 'Shalat Jenazah (Perempuan)',
-        'desc':
-            'Shalat dengan 4 takbir tanpa ruku dan sujud untuk jenazah perempuan.',
+        'name': 'Shalat Idul Adha',
+        'desc': '2 Rakaat - Dilakukan pada tanggal 10 Dzulhijjah pagi hari.',
+        'targetPage': const IdulAdhaPage(),
       },
       {
-        'name': 'Shalat Ghaib',
+        'name': 'Shalat Tarawih',
         'desc':
-            'Shalat jenazah yang dilakukan ketika jenazah berada di tempat yang jauh.',
+            '8 atau 20 Rakaat - Dilakukan hanya pada malam hari di bulan Ramadhan.',
+        'targetPage': const TarawihPage(),
+      },
+      {
+        'name': 'Shalat Gerhana (Khusuf/Kusuf)',
+        'desc':
+            '2 Rakaat - Dilakukan saat terjadi gerhana bulan atau matahari.',
+        'targetPage': const GerhanaPage(),
       },
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xff121212),
+      backgroundColor: const Color(
+        0xff121212,
+      ), // Disamakan dengan Sunnah Harian
       appBar: AppBar(
         backgroundColor: const Color(0xff121212),
         elevation: 0,
@@ -37,7 +46,7 @@ class ShalatFardhuKifayahPage extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
-          "Shalat Fardhu Kifayah",
+          "Sunnah (Waktu Tertentu)",
           style: TextStyle(
             fontSize: 18,
             color: Colors.white,
@@ -47,13 +56,15 @@ class ShalatFardhuKifayahPage extends StatelessWidget {
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(16.0),
-        itemCount: kifayahList.length,
+        itemCount: sunnahTertentuList.length,
         itemBuilder: (context, index) {
-          final shalat = kifayahList[index];
+          final shalat = sunnahTertentuList[index];
           return Container(
             margin: const EdgeInsets.only(bottom: 12),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e),
+              color: const Color(
+                0xff1e1e1e,
+              ), // Menggunakan Card abu-abu gelap (#1e1e1e)
               borderRadius: BorderRadius.circular(12),
             ),
             child: ListTile(
@@ -64,8 +75,7 @@ class ShalatFardhuKifayahPage extends StatelessWidget {
               leading: CircleAvatar(
                 backgroundColor: Colors.amber.withOpacity(0.15),
                 child: const Icon(
-                  Icons
-                      .access_time, // Menggunakan Icons.access_time sesuai pola rancangan
+                  Icons.access_time, // Menggunakan ikon outline jam seragam
                   color: Colors.amber,
                 ),
               ),
@@ -90,32 +100,10 @@ class ShalatFardhuKifayahPage extends StatelessWidget {
                 size: 16,
               ),
               onTap: () {
-                switch (index) {
-                  case 0:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ShalatJenazahLkPage(),
-                      ),
-                    );
-                    break;
-                  case 1:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ShalatJenazahPrPage(),
-                      ),
-                    );
-                    break;
-                  case 2:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const ShalatGhaibPage(),
-                      ),
-                    );
-                    break;
-                }
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => shalat['targetPage']),
+                );
               },
             ),
           );

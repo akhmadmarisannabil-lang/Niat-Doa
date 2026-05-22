@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import '../qobliyah/qobliyah_subuh_page.dart';
+import '../qobliyah/qobliyah_dzuhur_page.dart'; // Import Dzuhur
+import '../qobliyah/qobliyah_ashar_page.dart'; // Import Ashar
+import '../qobliyah/qobliyah_maghrib_page.dart'; // Import Maghrib
+import '../qobliyah/qobliyah_isya_page.dart'; // Import Isya
 
 class SunnahQobliyahPage extends StatelessWidget {
   const SunnahQobliyahPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Senarai data untuk Solat Sunat Qobliyah
+    // Daftar data untuk Solat Sunat Qobliyah
     final List<Map<String, dynamic>> qobliyahList = [
       {
         'name': 'Qobliyah Subuh',
@@ -91,12 +96,48 @@ class SunnahQobliyahPage extends StatelessWidget {
                 size: 16,
               ),
               onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('Membuka panduan ${shalat['name']}'),
-                    duration: const Duration(seconds: 1),
-                  ),
-                );
+                switch (index) {
+                  case 0:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const QobliyahSubuhPage(),
+                      ),
+                    );
+                    break;
+                  case 1:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const QobliyahDzuhurPage(),
+                      ),
+                    );
+                    break;
+                  case 2:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const QobliyahAsharPage(),
+                      ),
+                    );
+                    break;
+                  case 3:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const QobliyahMaghribPage(),
+                      ),
+                    );
+                    break;
+                  case 4:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const QobliyahIsyaPage(),
+                      ),
+                    );
+                    break;
+                }
               },
             ),
           );

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+//Niat Sholat
 import 'sholat/shalat_fardhu_page.dart';
 import 'sholat/sunnah_qobliyah_page.dart';
 import 'sholat/sunnah_badiyah_page.dart';
 import 'sholat/shalat_fardhu_kifayah_page.dart';
-import 'sholat/shalat_sunnah_lainnya_page.dart';
+import 'sholat/sunnah_harian_page.dart';
+import 'sholat/sunnah_waktu_tertentu_page.dart';
+import 'sholat/sunnah_situasional_page.dart';
+//Doa
 import 'doa/doa_harian_page.dart';
 import 'doa/doa_ibadah_page.dart';
 import 'doa/doa_perlindungan_page.dart';
@@ -88,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                 return GestureDetector(
                   onTap: () {
                     if (_currentIndex == 0) {
-                      // Navigasi Tab Sholat
+                      // LOGIKA NAVIGASI TAB SHOLAT
                       if (item['number'] == '1') {
                         Navigator.push(
                           context,
@@ -122,13 +126,27 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
+                            builder: (context) => const SunnahHarianPage(),
+                          ),
+                        );
+                      } else if (item['number'] == '6') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
                             builder: (context) =>
-                                const ShalatSunnahLainnyaPage(),
+                                const SunnahWaktuTertentuPage(),
+                          ),
+                        );
+                      } else if (item['number'] == '7') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SunnahSituasionalPage(),
                           ),
                         );
                       }
                     } else {
-                      // Navigasi Tab Doa
+                      // LOGIKA NAVIGASI TAB DOA
                       if (item['number'] == '1') {
                         Navigator.push(
                           context,
@@ -158,7 +176,6 @@ class _HomePageState extends State<HomePage> {
                           ),
                         );
                       } else if (item['number'] == '5') {
-                        // LOGIKA NAVIGASI DOA LAINNYA
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -292,6 +309,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // Menu Shalat Sunnah Lainnya telah dihapus dari daftar
     final List<Map<String, dynamic>> niatMenu = [
       {
         'number': '1',
@@ -319,8 +337,20 @@ class _HomePageState extends State<HomePage> {
       },
       {
         'number': '5',
-        'title': 'Shalat Sunnah\nLainnya',
-        'color': const Color(0xfffcdbdf),
+        'title': 'Sunnah Harian',
+        'color': const Color(0xffffe5d9),
+        'image': 'assets/images/menu/sholat.jpg',
+      },
+      {
+        'number': '6',
+        'title': 'Sunnah\n(Waktu Tertentu)',
+        'color': const Color(0xffd8f3dc),
+        'image': 'assets/images/menu/sholat.jpg',
+      },
+      {
+        'number': '7',
+        'title': 'Sunnah Kebutuhan\n& Situasional',
+        'color': const Color(0xffe8e8e4),
         'image': 'assets/images/menu/sholat.jpg',
       },
     ];
@@ -382,7 +412,7 @@ class _HomePageState extends State<HomePage> {
               headerDesc: "Ada bermacam-macam niat sholat",
               menuItems: niatMenu,
               quoteText:
-                  "– Tegakkan shalatmu, tenangkan jiwamu. Karena shalat adalah cara hamba berbicara dengan Sang Pencipta. –",
+                  "– Tegakkan shalatmu, tenangkan jiwamu. Karena shalat adalah cara hamba berbicara dengan Sang Pangcipta. –",
             )
           : _buildMenuGrid(
               headerTitle: "Kumpulan Doa",

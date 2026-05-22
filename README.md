@@ -30,26 +30,34 @@ flutter_sholat_doa/
 │   │   ├── shalat_fardhu_page.dart
 │   │   ├── shalat_sunnah_lainnya_page.dart
 │   │   ├── sunnah_badiyah_page.dart
-│   │   └── sunnah_qobliyah_page.dart
+│   │   ├── sunnah_qobliyah_page.dart
+│   │   ├── sunnah_tertentu_page.dart
+│   │   └── sunnah_situasional_page.dart
+│   ├── tertentu/
+│   │   ├── idul_fitri_page.dart
+│   │   ├── idul_adha_page.dart
+│   │   ├── tarawih_page.dart
+│   │   └── gerhana_page.dart
+│   ├── kebutuhan/
+│   │   ├── istikharah_page.dart
+│   │   ├── hajat_page.dart
+│   │   ├── taubat_page.dart
+│   │   ├── istisqa_page.dart
+│   │   └── safar_page.dart
 │   ├── home_page.dart
-│   └── main.dart
-└── pubspec.yaml
+│   ├── main.dart
+│   └── pubspec.yaml
 ```
 
 ## Fitur & Menu
 
 1. Tab Niat Shalat (Menu Utama 1)
    Memuat tuntunan niat shalat yang dikelompokkan secara terstruktur:
-
-Shalat Fardhu: Tuntunan niat shalat lima waktu (Subuh, Dzuhur, Ashar, Maghrib, Isya).
-
-Sunnah Qobliyah: Kumpulan niat shalat sunnah rawatib sebelum shalat fardhu.
-
-Sunnah Ba'diyah: Kumpulan niat shalat sunnah rawatib setelah shalat fardhu.
-
-Shalat Fardhu Kifayah: Panduan shalat Jenazah (Laki-laki & Perempuan) serta Shalat Ghaib.
-
-Shalat Sunnah Lainnya: Panduan shalat sunnah berkala seperti Dhuha, Tahajjud, Witir, Istikhara, dan Hajat.
+   - Shalat Fardhu: Tuntunan niat shalat lima waktu (Subuh, Dzuhur, Ashar, Maghrib, Isya).
+   - Sunnah Rawatib: Terbagi atas Sunnah Qobliyah (sebelum fardhu) dan Sunnah Ba'diyah (setelah fardhu).
+   - Shalat Fardhu Kifayah: Panduan shalat Jenazah (Laki-laki & Perempuan) serta Shalat Ghaib.
+   - Shalat Sunnah Waktu Tertentu: Panduan shalat sunnah tahunan/musiman yang terikat waktu khusus (Shalat Idul Fitri, Idul Adha, Tarawih, dan Gerhana).
+   - Sunnah Kebutuhan & Situasional: Panduan shalat sunnah yang didasarkan pada kondisi, hajat, atau kebutuhan spiritual hamba (Istikharah, Hajat, Taubat, Istisqa, dan Safar).
 
 2. Tab Kifarat & Kumpulan Doa (Menu Utama 2)
    Memuat kumpulan doa yang telah dieliminasi dari unsur duplikasi data, disusun berdasarkan konteks aktivitas pengguna:
@@ -68,26 +76,18 @@ Doa Lainnya: Wadah kompilasi doa-doa umum esensial yang tidak masuk ke dalam kat
 
 Teknologi yang digunakan dalam pembuatan aplikasi "Bacaan Shalat Lengkap" adalah sebagai berikut:
 
-1. Dart merupakan bahasa pemrograman utama bertipe object-oriented yang digunakan untuk membangun seluruh logika fungsionalitas, manipulasi data array pada menu, serta pengaturan alur kerja aplikasi secara efisien.
-
-2. Flutter SDK merupakan framework UI berskala lintas platform dari Google yang digunakan sebagai arsitektur utama untuk merancang, mengompilasi, dan membangun antarmuka aplikasi agar menghasilkan performa visual yang gegas (native-like).
-
-3. Material Design Widgets merupakan pustaka komponen bawaan Flutter yang dimanfaatkan untuk menyusun elemen visual antarmuka siap pakai seperti Scaffold, BottomNavigationBar, GridView, ListView, dan ListTile agar tampilan aplikasi terlihat konsisten dan modern.
-
-4. Navigator API merupakan komponen manajemen navigasi bawaan yang digunakan untuk mengatur perpindahan halaman (routing) di dalam aplikasi, seperti melakukan transisi dari Welcome Page menuju Home Page, hingga masuk ke dalam menu Shalat Fardhu Page.
-
-5. Remote Asset Fetching (Network Image) merupakan metode pemuatan aset visual berbasis internet yang digunakan untuk menampilkan gambar latar belakang pada setiap kartu menu secara dinamis langsung dari peladen (server) eksternal.
+- Dart: Bahasa pemrograman utama bertipe object-oriented untuk membangun seluruh logika fungsionalitas, model data menu, serta pengaturan alur kerja aplikasi.
+- Flutter SDK: Framework UI lintas platform dari Google untuk merancang dan membangun antarmuka berperforma gegas (native-like).
+- Google Fonts (google_fonts): Paket eksternal untuk memuat font khusus religi seperti GoogleFonts.amiri() guna menampilkan teks visual Arab secara indah, rapi, dan mudah dibaca
+- Material Design Widgets: Pustaka komponen bawaan Flutter untuk elemen visual seperti Scaffold, BottomNavigationBar, ListView, ListTile, Wrap, dan Container.
+- Navigator API: Manajemen navigasi bawaan untuk perpindahan halaman (routing) antar modul menu secara runtut.
 
 ## Cara Menjalankan Aplikasi
 
 Langkah-langkah untuk mengonfigurasi dan menjalankan aplikasi "Niat Sholat & Doa" pada lingkungan pengembangan lokal adalah sebagai berikut:
 
-1. Pemasangan SDK Flutter: Mengunduh berkas Flutter SDK resmi, mengekstraknya ke dalam penyimpanan lokal komputer, serta mendaftarkan jalur (path) binari ke dalam sistem variabel lingkungan (Environment Variables) agar perintah Flutter dapat dieksekusi melalui terminal.
-
-2. Konfigurasi Integrated Development Environment (IDE): Dilakukan dengan memasang aplikasi editor teks seperti Visual Studio Code atau Android Studio, kemudian menginstal ekstensi resmi Flutter dan Dart dari marketplace untuk mengaktifkan fitur bantuan penulisan kode, penanganan galat otomatis, serta tombol eksekusi aplikasi.
-
-3. Pemasangan Emulator atau Perangkat Fisik: Disiapkan sebagai media pengujian dengan membuat perangkat virtual (Android Virtual Device/AVD) melalui Android Studio, atau dengan menghubungkan langsung ponsel pintar asli via kabel data USB disertai pengaktifan mode USB Debugging pada menu opsi pengembang gawai.
-
-4. Sinkronisasi Dependensi Proyek: Dijalankan dengan membuka folder kode sumber aplikasi menggunakan terminal IDE, kemudian mengetikkan dan mengeksekusi perintah flutter pub get untuk mengunduh seluruh pustaka Material Design serta mendaftarkan komponen visual pendukung yang tertera di file pubspec.yaml.
-
-5. Eksekusi dan Kompilasi Aplikasi: Tahap akhir di mana pengembang menjalankan perintah flutter run di terminal atau menekan tombol F5 pada VS Code untuk memulai proses kompilasi kode sumber Dart ke dalam arsitektur perangkat target, sehingga aplikasi dapat terpasang dan langsung terbuka pada layar emulator.
+1. Pemasangan SDK Flutter: Mengunduh SDK resmi, mengekstraknya, dan mendaftarkan jalur (path) binari ke Environment Variables sistem.
+2. Konfigurasi IDE: Menggunakan VS Code atau Android Studio dengan ekstensi resmi Flutter & Dart terpasang.
+3. Pemasangan Emulator/Perangkat Fisik: Menyiapkan AVD (Android Virtual Device) atau menghubungkan perangkat Android asli via USB Debugging.
+4. Sinkronisasi Dependensi Proyek: Menjalankan perintah flutter pub get di terminal proyek untuk mengunduh package google_fonts serta aset Material.
+5. Eksekusi: Jalankan flutter run atau tekan F5 pada VS Code untuk melakukan kompilasi.

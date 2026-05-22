@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import '../badiyah/badiyah_dzuhur_page.dart';
+import '../badiyah/badiyah_maghrib_page.dart';
+import '../badiyah/badiyah_isya_page.dart';
 
 class SunnahBadiyahPage extends StatelessWidget {
   const SunnahBadiyahPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Daftar data untuk Solat Sunat Ba'diyah
+    // Daftar data untuk Solat Sunat Ba'diyah sesuai gambar image_40678d.png
     final List<Map<String, dynamic>> badiyahList = [
       {
         'name': 'Ba\'diyah Dzuhur',
@@ -83,12 +86,32 @@ class SunnahBadiyahPage extends StatelessWidget {
                 size: 16,
               ),
               onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('Membuka panduan ${shalat['name']}'),
-                    duration: const Duration(seconds: 1),
-                  ),
-                );
+                switch (index) {
+                  case 0:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BadiyahDzuhurPage(),
+                      ),
+                    );
+                    break;
+                  case 1:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BadiyahMaghribPage(),
+                      ),
+                    );
+                    break;
+                  case 2:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BadiyahIsyaPage(),
+                      ),
+                    );
+                    break;
+                }
               },
             ),
           );

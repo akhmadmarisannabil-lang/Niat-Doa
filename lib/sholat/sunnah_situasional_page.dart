@@ -1,50 +1,59 @@
 import 'package:flutter/material.dart';
+import '../kebutuhan/istikharah_page.dart';
+import '../kebutuhan/hajat_page.dart';
+import '../kebutuhan/taubat_page.dart';
+import '../kebutuhan/istisqa_page.dart';
+import '../kebutuhan/safar_page.dart';
 
-class ShalatSunnahLainnyaPage extends StatelessWidget {
-  const ShalatSunnahLainnyaPage({super.key});
+class SunnahSituasionalPage extends StatelessWidget {
+  const SunnahSituasionalPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Daftar Shalat Sunnah Lainnya
-    final List<Map<String, dynamic>> sunnahLainnyaList = [
+    final List<Map<String, dynamic>> sunnahSituasionalList = [
       {
-        'name': 'Shalat Dhuha',
+        'name': 'Shalat Istikharah',
         'desc':
-            '2 hingga 12 Rakaat - Dilakukan di pagi hari setelah matahari terbit.',
-      },
-      {
-        'name': 'Shalat Tahajjud',
-        'desc':
-            'Minimal 2 Rakaat - Dilakukan di malam hari setelah bangun tidur.',
-      },
-      {
-        'name': 'Shalat Witir',
-        'desc': '1 atau 3 Rakaat (Ganjil) - Penutup shalat malam.',
-      },
-      {
-        'name': 'Shalat Istikhara',
-        'desc': '2 Rakaat - Dilakukan saat memohon petunjuk pilihan terbaik.',
+            '2 Rakaat - Dilakukan untuk meminta petunjuk pilihan atau jodoh.',
+        'targetPage': const IstikharahPage(),
       },
       {
         'name': 'Shalat Hajat',
         'desc':
-            '2 Rakaat - Dilakukan saat memiliki permohonan atau hajat khusus.',
+            '2 hingga 12 Rakaat - Dilakukan ketika memiliki keinginan atau hajat tertentu.',
+        'targetPage': const HajatPage(),
+      },
+      {
+        'name': 'Shalat Taubat',
+        'desc':
+            '2 Rakaat - Dilakukan memohon ampunan atas dosa yang telah diperbuat.',
+        'targetPage': const TaubatPage(),
+      },
+      {
+        'name': 'Shalat Istisqa',
+        'desc':
+            '2 Rakaat - Dilakukan berjamaah untuk memohon diturunkannya hujan.',
+        'targetPage': const IstisqaPage(),
+      },
+      {
+        'name': 'Shalat Safar',
+        'desc':
+            '2 Rakaat - Dilakukan saat hendak bepergian atau baru pulang safar.',
+        'targetPage': const SafarPage(),
       },
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xff121212), // Tema gelap konsisten
+      backgroundColor: const Color(0xff121212),
       appBar: AppBar(
         backgroundColor: const Color(0xff121212),
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white70),
-          onPressed: () {
-            Navigator.pop(context); // Kembali ke HomePage
-          },
+          onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
-          "Shalat Sunnah Lainnya",
+          "Sunnah Kebutuhan & Situasional",
           style: TextStyle(
             fontSize: 18,
             color: Colors.white,
@@ -54,13 +63,13 @@ class ShalatSunnahLainnyaPage extends StatelessWidget {
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(16.0),
-        itemCount: sunnahLainnyaList.length,
+        itemCount: sunnahSituasionalList.length,
         itemBuilder: (context, index) {
-          final shalat = sunnahLainnyaList[index];
+          final shalat = sunnahSituasionalList[index];
           return Container(
             margin: const EdgeInsets.only(bottom: 12),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e), // Warna card abu-abu gelap
+              color: const Color(0xff1e1e1e),
               borderRadius: BorderRadius.circular(12),
             ),
             child: ListTile(
@@ -69,13 +78,8 @@ class ShalatSunnahLainnyaPage extends StatelessWidget {
                 vertical: 8,
               ),
               leading: CircleAvatar(
-                // Menyamakan opasitas background dengan halaman lainnya (0.15)
                 backgroundColor: Colors.amber.withOpacity(0.15),
-                child: const Icon(
-                  Icons
-                      .access_time, // DISAMAKAN: Memakai ikon jam outline tipis
-                  color: Colors.amber,
-                ),
+                child: const Icon(Icons.access_time, color: Colors.amber),
               ),
               title: Text(
                 shalat['name'],
@@ -98,11 +102,9 @@ class ShalatSunnahLainnyaPage extends StatelessWidget {
                 size: 16,
               ),
               onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('Membuka panduan ${shalat['name']}'),
-                    duration: const Duration(seconds: 1),
-                  ),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => shalat['targetPage']),
                 );
               },
             ),

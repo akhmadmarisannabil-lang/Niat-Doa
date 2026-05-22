@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import '../sholat_fardhu/subuh_page.dart';
+import '../sholat_fardhu/dzuhur_page.dart';
+import '../sholat_fardhu/ashar_page.dart';
+import '../sholat_fardhu/maghrib_page.dart';
+import '../sholat_fardhu/isya_page.dart'; // Import Isya
+import '../sholat_fardhu/jumat_page.dart'; // Import Jumat
 
 class ShalatFardhuPage extends StatelessWidget {
   const ShalatFardhuPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // List data untuk Shalat Fardhu + Shalat Jum'at
-    final List<Map<String, dynamic>> fardhuList = [
+    final List<Map<String, String>> shalatMenu = [
       {
         'name': 'Shalat Subuh',
         'desc': '2 Rakaat - Dilakukan sebelum terbit fajar.',
@@ -28,22 +33,20 @@ class ShalatFardhuPage extends StatelessWidget {
         'desc': '4 Rakaat - Dilakukan pada waktu malam hari.',
       },
       {
-        'name': "Shalat Jum'at",
+        'name': 'Shalat Jum\'at',
         'desc':
             '2 Rakaat - Dilakukan secara berjamaah di waktu Dzuhur pada hari Jum\'at.',
       },
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xff121212), // Background gelap
+      backgroundColor: const Color(0xff121212),
       appBar: AppBar(
         backgroundColor: const Color(0xff121212),
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white70),
-          onPressed: () {
-            Navigator.pop(context); // Kembali ke HomePage
-          },
+          onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
           "Shalat Fardhu",
@@ -56,13 +59,13 @@ class ShalatFardhuPage extends StatelessWidget {
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(16.0),
-        itemCount: fardhuList.length,
+        itemCount: shalatMenu.length,
         itemBuilder: (context, index) {
-          final shalat = fardhuList[index];
+          final item = shalatMenu[index];
           return Container(
             margin: const EdgeInsets.only(bottom: 12),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e), // Warna card abu-abu gelap
+              color: const Color(0xff1e1e1e),
               borderRadius: BorderRadius.circular(12),
             ),
             child: ListTile(
@@ -71,11 +74,11 @@ class ShalatFardhuPage extends StatelessWidget {
                 vertical: 8,
               ),
               leading: CircleAvatar(
-                backgroundColor: Colors.amber.withOpacity(0.2),
+                backgroundColor: Colors.amber.withOpacity(0.15),
                 child: const Icon(Icons.access_time, color: Colors.amber),
               ),
               title: Text(
-                shalat['name'],
+                item['name']!,
                 style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -85,7 +88,7 @@ class ShalatFardhuPage extends StatelessWidget {
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
-                  shalat['desc'],
+                  item['desc']!,
                   style: const TextStyle(color: Colors.white60, fontSize: 13),
                 ),
               ),
@@ -95,13 +98,54 @@ class ShalatFardhuPage extends StatelessWidget {
                 size: 16,
               ),
               onTap: () {
-                // SEMENTARA CEK KLIK: Nanti di sini untuk hubungkan ke isi bacaan masing-masing shalat
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('Membuka panduan ${shalat['name']}'),
-                    duration: const Duration(seconds: 1),
-                  ),
-                );
+                switch (index) {
+                  case 0:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SubuhPage(),
+                      ),
+                    );
+                    break;
+                  case 1:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DzuhurPage(),
+                      ),
+                    );
+                    break;
+                  case 2:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AsharPage(),
+                      ),
+                    );
+                    break;
+                  case 3:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MaghribPage(),
+                      ),
+                    );
+                    break;
+                  case 4: // Mengaktifkan Isya
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const IsyaPage()),
+                    );
+                    break;
+                  case 5: // Mengaktifkan Jumat
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const JumatPage(),
+                      ),
+                    );
+                    break;
+                }
               },
             ),
           );
