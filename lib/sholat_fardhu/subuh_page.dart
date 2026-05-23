@@ -195,7 +195,7 @@ class SubuhPage extends StatelessWidget {
               border: Border.all(color: Colors.teal.withOpacity(0.1)),
             ),
             child: const Text(
-              "HR. Muslim.\n\"Dua rakaat fajar (Subuh) itu lebih baik daripada dunia dan seisinya.\" Shalat Subuh wajib dikerjakan secara konsisten sejak terbit fajar shadiq hingga sebelum matahari terbit.",
+              "Dua rakaat fajar (Subuh) itu lebih baik daripada dunia dan seisinya.\" Shalat Subuh wajib dikerjakan secara konsisten sejak terbit fajar shadiq hingga sebelum matahari terbit.",
               style: TextStyle(
                 color: Colors.white60,
                 fontSize: 13,

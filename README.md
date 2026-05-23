@@ -19,34 +19,95 @@ flutter_sholat_doa/
 │           ├── sholat.jpg
 │           └── berdoa.jpg
 ├── lib/
+│   ├── badiyah/
+│   │   ├── badiyah_dzuhur_page.dart
+│   │   ├── badiyah_isya_page.dart
+│   │   └── badiyah_maghrib_page.dart
 │   ├── doa/
 │   │   ├── doa_acara_page.dart
+│   │   ├── doa_akhirat_page.dart
 │   │   ├── doa_harian_page.dart
 │   │   ├── doa_ibadah_page.dart
 │   │   ├── doa_lainnya_page.dart
-│   │   └── doa_perlindungan_page.dart
+│   │   └── doa_terhindar_musibah_page.dart
+│   ├── doa_acara/
+│   │   ├── doa_pembukaan_page.dart
+│   │   ├── doa_penutup_page.dart
+│   │   ├── doa_pernikahan_page.dart
+│   │   ├── doa_rumah_baru_page.dart
+│   │   └── doa_syukuran_page.dart
+│   ├── doa_akhirat/
+│   │   ├── doa_hisab_page.dart
+│   │   ├── doa_husnul_khotimah_page.dart
+│   │   ├── doa_sapu_jagad_page.dart
+│   │   ├── doa_siksa_kubur_page.dart
+│   │   └── doa_surga_firdaus_page.dart
+│   ├── doa_harian/
+│   │   ├── bangun_tidur_page.dart
+│   │   ├── keluar_rumah_page.dart
+│   │   ├── masuk_rumah_page.dart
+│   │   ├── sebelum_makan_page.dart
+│   │   ├── sebelum_tidur_page.dart
+│   │   └── sesudah_makan_page.dart
+│   ├── doa_musibah/
+│   │   ├── doa_bencana_page.dart
+│   │   ├── doa_kerugian_page.dart
+│   │   ├── doa_mendengar_musibah_page.dart
+│   │   ├── doa_penyakit_berat_page.dart
+│   │   └── doa_terhindar_bahaya_page.dart
+│   ├── doa_sholat/
+│   │   ├── duduk_antara_dua_sujud_page.dart
+│   │   ├── iftitah_page.dart
+│   │   ├── itidal_page.dart
+│   │   ├── qunut_page.dart
+│   │   ├── ruku_page.dart
+│   │   ├── sujud_page.dart
+│   │   ├── tasyahud_akhir_page.dart
+│   │   └── tasyahud_awal_page.dart
+│   ├── harian/
+│   │   ├── dhuha_page.dart
+│   │   ├── tahajjud_page.dart
+│   │   ├── tahiyyatul_masjid_page.dart
+│   │   └── witir_page.dart
+│   ├── kebutuhan/
+│   │   ├── hajat_page.dart
+│   │   ├── istikharah_page.dart
+│   │   ├── istisqa_page.dart
+│   │   ├── safar_page.dart
+│   │   └── taubat_page.dart
+│   ├── kifayah/
+│   │   ├── shalat_ghaib_page.dart
+│   │   ├── shalat_jenazah_lk_page.dart
+│   │   └── shalat_jenazah_pr_page.dart
+│   ├── qobliyah/
+│   │   ├── qobliyah_ashar_page.dart
+│   │   ├── qobliyah_dzuhur_page.dart
+│   │   ├── qobliyah_isya_page.dart
+│   │   ├── qobliyah_maghrib_page.dart
+│   │   └── qobliyah_subuh_page.dart
 │   ├── sholat/
 │   │   ├── shalat_fardhu_kifayah_page.dart
 │   │   ├── shalat_fardhu_page.dart
-│   │   ├── shalat_sunnah_lainnya_page.dart
 │   │   ├── sunnah_badiyah_page.dart
+│   │   ├── sunnah_harian_page.dart
 │   │   ├── sunnah_qobliyah_page.dart
-│   │   ├── sunnah_tertentu_page.dart
-│   │   └── sunnah_situasional_page.dart
+│   │   ├── sunnah_situasional_page.dart
+│   │   └── sunnah_waktu_tertentu_page.dart
+│   ├── sholat_fardhu/
+│   │   ├── ashar_page.dart
+│   │   ├── dzuhur_page.dart
+│   │   ├── isya_page.dart
+│   │   ├── jumat_page.dart
+│   │   ├── maghrib_page.dart
+│   │   └── subuh_page.dart
 │   ├── tertentu/
-│   │   ├── idul_fitri_page.dart
+│   │   ├── gerhana_page.dart
 │   │   ├── idul_adha_page.dart
-│   │   ├── tarawih_page.dart
-│   │   └── gerhana_page.dart
-│   ├── kebutuhan/
-│   │   ├── istikharah_page.dart
-│   │   ├── hajat_page.dart
-│   │   ├── taubat_page.dart
-│   │   ├── istisqa_page.dart
-│   │   └── safar_page.dart
+│   │   ├── idul_fitri_page.dart
+│   │   └── tarawih_page.dart
 │   ├── home_page.dart
 │   ├── main.dart
-│   └── pubspec.yaml
+│   └── welcome_page.dart
 ```
 
 ## Fitur & Menu
@@ -62,15 +123,12 @@ flutter_sholat_doa/
 2. Tab Kifarat & Kumpulan Doa (Menu Utama 2)
    Memuat kumpulan doa yang telah dieliminasi dari unsur duplikasi data, disusun berdasarkan konteks aktivitas pengguna:
 
-Doa Harian: Doa praktis seputar aktivitas rutin harian (Sebelum/Sesudah Makan, Sebelum/Bangun Tidur, Masuk/Keluar Rumah). Catatan: Doa terkait masjid dipindahkan agar tidak tumpang tindih dengan menu ibadah.
-
-Doa Ibadah: Fokus secara kronologis pada bacaan inti saat rangkaian ibadah shalat sedang berlangsung (Doa Iftitah, Ruku', I'tidal, Qunut, Sujud, Duduk di Antara Dua Sujud, Tashahhud).
-
-Doa Memohon Perlindungan: Doa khusus untuk meminta keselamatan diri (Perlindungan dari Syetan, Fitnah Dajjal, Penyakit Buruk, Sifat Buruk, serta Keselamatan Dunia Akhirat).
-
-Doa Acara: Kumpulan doa menghadiri perhelatan formal maupun informal (Pembukaan/Penutup Acara, Syukuran/Walimah, Pernikahan, Menempati Rumah Baru).
-
-Doa Lainnya: Wadah kompilasi doa-doa umum esensial yang tidak masuk ke dalam kategori khusus di atas (Doa untuk Kedua Orang Tua, Doa Sapu Jagat, Memohon Ilmu Bermanfaat, Kemudahan Urusan, Ketetapan Iman).
+- Doa Harian : Doa-doa praktis harian meliputi Bangun Tidur, Keluar Rumah, Masuk Rumah, Sebelum Makan, Sebelum Tidur, dan Sesudah Makan.
+- Doa Shalat / Ibadah : Berfokus pada bacaan inti selama rangkaian shalat berlangsung, meliputi Duduk di Antara Dua Sujud, Iftitah, I'tidal, Qunut, Ruku', Sujud, Tasyahud Awal, dan Tasyahud Akhir.
+- Doa untuk Akhirat : Doa keselamatan jangka panjang meliputi Doa Hisab, Doa Husnul Khotimah, Doa Sapu Jagad, Doa Siksa Kubur, dan Doa Surga Firdaus.
+- Doa Terhindar Musibah : Doa perlindungan dari marabahaya meliputi Doa Bencana, Doa Kerugian, Doa Mendengar Musibah, Doa Penyakit Berat, dan Doa Terhindar Bahaya.
+  Doa Acara : Kumpulan doa untuk kegiatan bersama meliputi Doa Pembukaan, Doa Penutup, Doa Pernikahan, Doa Rumah Baru, dan Doa Syukuran.
+- Doa Lainnya: Wadah kompilasi doa-doa umum esensial yang tidak masuk ke dalam kategori khusus di atas (Doa untuk Kedua Orang Tua, Doa Sapu Jagat, Memohon Ilmu Bermanfaat, Kemudahan Urusan, Ketetapan Iman).
 
 ## Teknologi yang Digunakan
 

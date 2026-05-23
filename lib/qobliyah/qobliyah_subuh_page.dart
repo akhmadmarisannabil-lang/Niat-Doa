@@ -164,7 +164,7 @@ class QobliyahSubuhPage extends StatelessWidget {
               Icon(Icons.info_outline, color: Colors.tealAccent, size: 18),
               SizedBox(width: 6),
               Text(
-                "Keutamaan",
+                "Keterangan",
                 style: TextStyle(
                   color: Colors.tealAccent,
                   fontWeight: FontWeight.bold,

@@ -10,8 +10,9 @@ import 'sholat/sunnah_situasional_page.dart';
 //Doa
 import 'doa/doa_harian_page.dart';
 import 'doa/doa_ibadah_page.dart';
-import 'doa/doa_perlindungan_page.dart';
+import 'doa/doa_terhindar_musibah_page.dart'; // DIUBAH
 import 'doa/doa_acara_page.dart';
+import 'doa/doa_akhirat_page.dart'; // TAMBAHAN BARU
 import 'doa/doa_lainnya_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -146,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                         );
                       }
                     } else {
-                      // LOGIKA NAVIGASI TAB DOA
+                      // LOGIKA NAVIGASI TAB DOA (DIPERBARUI)
                       if (item['number'] == '1') {
                         Navigator.push(
                           context,
@@ -165,7 +166,8 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const DoaPerlindunganPage(),
+                            builder: (context) =>
+                                const DoaTerhindarMusibahPage(), // DIUBAH
                           ),
                         );
                       } else if (item['number'] == '4') {
@@ -179,7 +181,16 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const DoaLainnyaPage(),
+                            builder: (context) =>
+                                const DoaAkhiratPage(), // TAMBAHAN BARU
+                          ),
+                        );
+                      } else if (item['number'] == '6') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                const DoaLainnyaPage(), // BERGESER KE INDEKS 6
                           ),
                         );
                       }
@@ -309,7 +320,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    // Menu Shalat Sunnah Lainnya telah dihapus dari daftar
     final List<Map<String, dynamic>> niatMenu = [
       {
         'number': '1',
@@ -364,13 +374,13 @@ class _HomePageState extends State<HomePage> {
       },
       {
         'number': '2',
-        'title': 'Doa Ibadah',
+        'title': 'Doa Saat Sholat',
         'color': const Color(0xfffff3cd),
         'image': 'assets/images/menu/berdoa.jpg',
       },
       {
         'number': '3',
-        'title': 'Doa Memohon\nPerlindungan',
+        'title': 'Doa Terhindar\ndari Musibah', // DIUBAH
         'color': const Color(0xffd1f2e5),
         'image': 'assets/images/menu/berdoa.jpg',
       },
@@ -382,7 +392,13 @@ class _HomePageState extends State<HomePage> {
       },
       {
         'number': '5',
-        'title': 'Doa Lainnya',
+        'title': 'Doa untuk Akhirat', // TAMBAHAN BARU
+        'color': const Color(0xffe8e8e4),
+        'image': 'assets/images/menu/berdoa.jpg',
+      },
+      {
+        'number': '6',
+        'title': 'Doa Lainnya', // BERGESER NOMOR
         'color': const Color(0xfffcdbdf),
         'image': 'assets/images/menu/berdoa.jpg',
       },

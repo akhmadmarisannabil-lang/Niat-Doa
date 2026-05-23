@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import '../doa_harian/sebelum_makan_page.dart';
+import '../doa_harian/sesudah_makan_page.dart';
+import '../doa_harian/sebelum_tidur_page.dart';
+import '../doa_harian/bangun_tidur_page.dart';
+import '../doa_harian/masuk_rumah_page.dart';
+import '../doa_harian/keluar_rumah_page.dart';
 
 class DoaHarianPage extends StatelessWidget {
   const DoaHarianPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Kumpulan data Doa Harian
-    final List<Map<String, dynamic>> doaHarianList = [
+    final List<Map<String, String>> doaHarianList = [
       {
         'name': 'Doa Sebelum Makan',
         'desc': 'Memohon berkah atas rezeki makanan yang diberikan.',
@@ -34,15 +39,13 @@ class DoaHarianPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xff121212), // Tema gelap konsisten
+      backgroundColor: const Color(0xff121212),
       appBar: AppBar(
         backgroundColor: const Color(0xff121212),
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white70),
-          onPressed: () {
-            Navigator.pop(context); // Kembali ke HomePage
-          },
+          onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
           "Doa Harian",
@@ -71,13 +74,10 @@ class DoaHarianPage extends StatelessWidget {
               ),
               leading: CircleAvatar(
                 backgroundColor: Colors.amber.withOpacity(0.15),
-                child: const Icon(
-                  Icons.menu_book, // Menggunakan ikon buku/bacaan doa
-                  color: Colors.amber,
-                ),
+                child: const Icon(Icons.menu_book, color: Colors.amber),
               ),
               title: Text(
-                doa['name'],
+                doa['name']!,
                 style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -87,7 +87,7 @@ class DoaHarianPage extends StatelessWidget {
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
-                  doa['desc'],
+                  doa['desc']!,
                   style: const TextStyle(color: Colors.white60, fontSize: 13),
                 ),
               ),
@@ -97,12 +97,56 @@ class DoaHarianPage extends StatelessWidget {
                 size: 16,
               ),
               onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('Membuka bacaan ${doa['name']}'),
-                    duration: const Duration(seconds: 1),
-                  ),
-                );
+                switch (index) {
+                  case 0:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SebelumMakanPage(),
+                      ),
+                    );
+                    break;
+                  case 1:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SesudahMakanPage(),
+                      ),
+                    );
+                    break;
+                  case 2:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SebelumTidurPage(),
+                      ),
+                    );
+                    break;
+                  case 3:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BangunTidurPage(),
+                      ),
+                    );
+                    break;
+                  case 4:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MasukRumahPage(),
+                      ),
+                    );
+                    break;
+                  case 5:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const KeluarRumahPage(),
+                      ),
+                    );
+                    break;
+                }
               },
             ),
           );

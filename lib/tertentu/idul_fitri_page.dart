@@ -124,7 +124,7 @@ class IdulFitriPage extends StatelessWidget {
               Icon(Icons.info_outline, color: Colors.tealAccent, size: 18),
               SizedBox(width: 8),
               Text(
-                "Keterangan Shalat",
+                "Keterangan",
                 style: TextStyle(
                   color: Colors.tealAccent,
                   fontWeight: FontWeight.bold,

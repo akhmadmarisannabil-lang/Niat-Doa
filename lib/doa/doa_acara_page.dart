@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import '../doa_acara/doa_pembukaan_page.dart';
+import '../doa_acara/doa_penutup_page.dart';
+import '../doa_acara/doa_syukuran_page.dart';
+import '../doa_acara/doa_pernikahan_page.dart';
+import '../doa_acara/doa_rumah_baru_page.dart';
 
 class DoaAcaraPage extends StatelessWidget {
   const DoaAcaraPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Kumpulan data Doa Acara
-    final List<Map<String, dynamic>> doaAcaraList = [
+    // Menggunakan tipe List<Map<String, String>> disamakan dengan menu doa musibah sebelumnya
+    final List<Map<String, String>> doaAcaraList = [
       {
         'name': 'Doa Pembukaan Acara',
         'desc':
@@ -72,7 +77,7 @@ class DoaAcaraPage extends StatelessWidget {
                 child: const Icon(Icons.menu_book, color: Colors.amber),
               ),
               title: Text(
-                doa['name'],
+                doa['name']!,
                 style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -82,7 +87,7 @@ class DoaAcaraPage extends StatelessWidget {
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
-                  doa['desc'],
+                  doa['desc']!,
                   style: const TextStyle(color: Colors.white60, fontSize: 13),
                 ),
               ),
@@ -92,12 +97,48 @@ class DoaAcaraPage extends StatelessWidget {
                 size: 16,
               ),
               onTap: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('Membuka bacaan ${doa['name']}'),
-                    duration: const Duration(seconds: 1),
-                  ),
-                );
+                switch (index) {
+                  case 0:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DoaPembukaanPage(),
+                      ),
+                    );
+                    break;
+                  case 1:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DoaPenutupPage(),
+                      ),
+                    );
+                    break;
+                  case 2:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DoaSyukuranPage(),
+                      ),
+                    );
+                    break;
+                  case 3:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DoaPernikahanPage(),
+                      ),
+                    );
+                    break;
+                  case 4:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DoaRumahBaruPage(),
+                      ),
+                    );
+                    break;
+                }
               },
             ),
           );

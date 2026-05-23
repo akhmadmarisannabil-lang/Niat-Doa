@@ -1,0 +1,174 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class TasyahudAwalPage extends StatelessWidget {
+  const TasyahudAwalPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xff090f16),
+      appBar: AppBar(
+        backgroundColor: const Color(0xff090f16),
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: const Text(
+          "Tasyahud Awal",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          Wrap(
+            spacing: 8,
+            children: [
+              _buildTag("Doa Ibadah"),
+              _buildTag("sholat"),
+              _buildTag("tahiyat awal"),
+            ],
+          ),
+          const SizedBox(height: 32),
+          const Center(
+            child: Text(
+              "Teks Arab",
+              style: TextStyle(
+                color: Colors.tealAccent,
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+              ),
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+            decoration: BoxDecoration(
+              color: const Color(0xff111a24),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Text(
+              "التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ السَّلاَمُ عَلَيْكَ أَيُّهَا النَّبِىُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ السَّلاَمُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ اَللَّهُمَّ صَلِّ عَلَى سَيِّدِنَا مُحَمَّدٍ",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.amiri(
+                color: Colors.white.withOpacity(0.9),
+                fontSize: 20,
+                height: 2.2,
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          const Text(
+            "Transliterasi",
+            style: TextStyle(
+              color: Colors.tealAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: const Color(0xff111a24),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: const Text(
+              "At-tahiyyaatul mubaarakatus-shalawaatuth-thayyibaatu lillaah. As-salaamu 'alaika ayyuhan-nabiyyu wa rahmatullaahi wa barakaatuh. As-salaamu 'alainaa wa 'alaa 'ibaadillaahish-shaalihiin. Asyhadu allaa ilaaha illallaah, wa asyhadu anna muhammadar-rasuulullaah. Allahumma shalli 'alaa sayyidinaa muhammad.",
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 14,
+                fontStyle: FontStyle.italic,
+                height: 1.4,
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          const Text(
+            "Terjemahan",
+            style: TextStyle(
+              color: Colors.tealAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: const Color(0xff111a24),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.teal.withOpacity(0.2)),
+            ),
+            child: const Text(
+              "Segala penghormatan yang penuh berkah, shalawat dan kebaikan adalah milik Allah. Semoga keselamatan, rahmat Allah dan berkah-Nya tercurah kepadamu, wahai Nabi. Semoga keselamatan tercurah kepada kami dan kepada hamba-hamba Allah yang shaleh. Aku bersaksi bahwa tidak ada Tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah. Ya Allah, limpahkanlah rahmat kepada junjungan kami Nabi Muhammad.",
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 14,
+                height: 1.4,
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+
+          // === UPDATE KETERANGAN DI BAWAH ===
+          Row(
+            children: const [
+              Icon(Icons.info_outline, color: Colors.tealAccent, size: 18),
+              SizedBox(width: 6),
+              Text(
+                "Keterangan",
+                style: TextStyle(
+                  color: Colors.tealAccent,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: const Color(0xff111a24),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.teal.withOpacity(0.1)),
+            ),
+            child: const Text(
+              "Bacaan tasyahud awal diucapkan dalam posisi duduk iftirasy pada rakaat kedua dalam rangkaian ibadah shalat wajib atau sunnah yang berjumlah rakaat lebih dari dua.",
+              style: TextStyle(
+                color: Colors.white60,
+                fontSize: 13,
+                height: 1.5,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTag(String label) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      decoration: BoxDecoration(
+        color: Colors.white10,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Text(
+        label,
+        style: const TextStyle(color: Colors.white70, fontSize: 11),
+      ),
+    );
+  }
+}

@@ -6,16 +6,16 @@ class DoaLainnyaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Kumpulan data Doa Lainnya
-    final List<Map<String, dynamic>> doaLainnyaList = [
+    final List<Map<String, String>> doaLainnyaList = [
       {
         'name': 'Doa untuk Kedua Orang Tua',
         'desc':
             'Memohon ampunan dan kelimpahan kasih sayang bagi ayah dan ibu.',
       },
       {
-        'name': 'Doa Sapu Jagat',
+        'name': 'Doa Memohon Rezeki yang Halal & Berkah',
         'desc':
-            'Memohon kebaikan di dunia, kebaikan di akhirat, serta perlindungan dari api neraka.',
+            'Memohon kecukupan rezeki yang baik, halal, serta dijauhkan dari yang haram.',
       },
       {
         'name': 'Doa Memohon Ilmu yang Bermanfaat',
@@ -34,15 +34,13 @@ class DoaLainnyaPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xff121212), // Tema gelap konsisten
+      backgroundColor: const Color(0xff121212),
       appBar: AppBar(
         backgroundColor: const Color(0xff121212),
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white70),
-          onPressed: () {
-            Navigator.pop(context); // Kembali ke HomePage
-          },
+          onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
           "Doa Lainnya",
@@ -71,13 +69,10 @@ class DoaLainnyaPage extends StatelessWidget {
               ),
               leading: CircleAvatar(
                 backgroundColor: Colors.amber.withOpacity(0.15),
-                child: const Icon(
-                  Icons.menu_book, // Ikon buku doa seragam
-                  color: Colors.amber,
-                ),
+                child: const Icon(Icons.menu_book, color: Colors.amber),
               ),
               title: Text(
-                doa['name'],
+                doa['name']!,
                 style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -87,7 +82,7 @@ class DoaLainnyaPage extends StatelessWidget {
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
-                  doa['desc'],
+                  doa['desc']!,
                   style: const TextStyle(color: Colors.white60, fontSize: 13),
                 ),
               ),
