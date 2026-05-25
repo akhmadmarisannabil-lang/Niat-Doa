@@ -1,0 +1,479 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class AbasaPage extends StatelessWidget {
+  final Map<String, dynamic> surahData;
+
+  const AbasaPage({super.key, required this.surahData});
+
+  @override
+  Widget build(BuildContext context) {
+    // Data resmi Surah 'Abasa Ayat 1 - 42 sesuai Quran NU Online / Kemenag RI
+    final List<Map<String, dynamic>> ayatList = [
+      {
+        'no': '1',
+        'arabic': "عَبَسَ وَتَوَلّٰىٓۙ",
+        'transliteration': "‘Abasa wa tawallā.",
+        'translation': "Dia (Nabi Muhammad) berwajah masam dan berpaling",
+      },
+      {
+        'no': '2',
+        'arabic': "اَنْ جَاۤءَهُ الْاَعْمٰىۗ",
+        'transliteration': "An jā'ahul-a‘mā.",
+        'translation':
+            "karena seorang tunanetra (Abdullah bin Ummi Maktum) telah datang kepadanya.",
+      },
+      {
+        'no': '3',
+        'arabic': "وَمَا يُدْرِيْكَ لَعَلَّهٗ يَزَّكّٰىٓۙ",
+        'transliteration': "Wa mā yudrīka la‘allahū yazzakkā.",
+        'translation':
+            "Tahukah engkau (Nabi Muhammad) boleh jadi dia ingin menyucikan dirinya (dari dosa)",
+      },
+      {
+        'no': '4',
+        'arabic': "اَوْ يَذَّكَّرُ فَتَنْفَعَهُ الذِّكْرٰىۗ",
+        'transliteration': "Au yażżakkaru fatanfa‘ahuż-żikrā.",
+        'translation':
+            "atau dia (ingin) mendapatkan pengajaran sehingga pengajaran itu bermanfaat baginya?",
+      },
+      {
+        'no': '5',
+        'arabic': "اَمَّا مَنِ اسْتَغْنٰىۙ",
+        'transliteration': "Ammā manistagnā.",
+        'translation':
+            "Adapun orang yang merasa dirinya serba cukup (para pembesar Quraisy),",
+      },
+      {
+        'no': '6',
+        'arabic': "فَاَنْتَ لَهٗ تَصَدّٰىۗ",
+        'transliteration': "Fa anta lahū taṣaddā.",
+        'translation': "engkau (Nabi Muhammad) memberi perhatian kepadanya.",
+      },
+      {
+        'no': '7',
+        'arabic': "وَمَا عَلَيْكَ اَلَّا يَزَّكّٰىۗ",
+        'transliteration': "Wa mā ‘alaika allā yazzakkā.",
+        'translation':
+            "Padahal, tidak ada (cela) atasmu kalau dia tidak menyucikan diri (beriman).",
+      },
+      {
+        'no': '8',
+        'arabic': "وَاَمَّا مَنْ جَاۤءَكَ يَسْعٰىۙ",
+        'transliteration': "Wa ammā man jā'aka yas‘ā.",
+        'translation':
+            "Adapun orang yang datang kepadamu dengan bersegera (untuk mendapatkan pengajaran),",
+      },
+      {
+        'no': '9',
+        'arabic': "وَهُوَ يَخْشٰىۙ",
+        'transliteration': "Wa huwa yakhsyā.",
+        'translation': "sedangkan dia takut (kepada Allah),",
+      },
+      {
+        'no': '10',
+        'arabic': "فَاَنْتَ عَنْهُ تَلَهّٰىۚ",
+        'transliteration': "Fa anta ‘anhu talahhā.",
+        'translation': "malah engkau (Nabi Muhammad) abaikan.",
+      },
+      {
+        'no': '11',
+        'arabic': "كَلَّآ اِنَّهَا تَذْكِرَةٌ ۚ",
+        'transliteration': "Kallā innahā tażkirah(tun).",
+        'translation':
+            "Sekali-kali jangan (begitu)! Sesungguhnya (ajaran Allah) itu merupakan peringatan.",
+      },
+      {
+        'no': '12',
+        'arabic': "فَمَنْ شَاۤءَ ذَكَرَهٗ ۘ",
+        'transliteration': "Faman syā'a żakarah(ū).",
+        'translation': "Siapa yang menghendaki tentulah akan memperhatikannya",
+      },
+      {
+        'no': '13',
+        'arabic': "فِيْ صُحُفٍ مُّكَرَّمَةٍۙ",
+        'transliteration': "Fī ṣuḥufim-mukarramah(tin).",
+        'translation': "di dalam suhuf yang dimuliakan (di sisi Allah),",
+      },
+      {
+        'no': '14',
+        'arabic': "مَّرْفُوْعَةٍ مُّطَهَّرَةٍ ۢ ۙ",
+        'transliteration': "Marfū‘atim muṭahharah(tin).",
+        'translation': "yang ditinggikan (kedudukannya) lagi disucikan",
+      },
+      {
+        'no': '15',
+        'arabic': "بِاَيْدِيْ سَفَرَةٍۙ",
+        'transliteration': "Bi'aidī safarah(tin).",
+        'translation': "di tangan para utusan (malaikat),",
+      },
+      {
+        'no': '16',
+        'arabic': "كِرَامٍۢ بَرَرَةٍۗ",
+        'transliteration': "Kirāmim bararah(tin).",
+        'translation': "yang mulia lagi berbudi.",
+      },
+      {
+        'no': '17',
+        'arabic': "قُتِلَ الْاِنْسَانُ مَآ اَكْفَرَهٗۗ",
+        'transliteration': "Qutilal-insānu mā akfarah(ū).",
+        'translation': "Celakalah manusia! Alangkah kufur dia!",
+      },
+      {
+        'no': '18',
+        'arabic': "مِنْ اَيِّ شَيْءٍ خَلَقَهٗۗ",
+        'transliteration': "Min ayyi syai'in khalaqah(ū).",
+        'translation': "Dari apakah Dia menciptakannya?",
+      },
+      {
+        'no': '19',
+        'arabic': "مِنْ نُّطْفَةٍۗ خَلَقَهٗ فَقَدَّرَهٗۗ",
+        'transliteration': "Min nuṭfah(tin), khalaqahū fa qaddarah(ū).",
+        'translation':
+            "Dia menciptakannya dari setetes mani, lalu menentukan (takdir)-nya.",
+      },
+      {
+        'no': '20',
+        'arabic': "ثُمَّ السَّبِيْلَ يَسَّرَهٗۙ",
+        'transliteration': "Ṡummas-sabīla yassarah(ū).",
+        'translation': "Kemudian, jalannya Dia mudahkan.",
+      },
+      {
+        'no': '21',
+        'arabic': "ثُمَّ اَمَاتَهٗ فَاَقْبَرَهٗۙ",
+        'transliteration': "Ṡumma amātahū fa aqbarah(ū).",
+        'translation': "Kemudian, Dia mematikannya lalu menguburkannya.",
+      },
+      {
+        'no': '22',
+        'arabic': "ثُمَّ اِذَا شَاۤءَ اَنْشَرَهٗۗ",
+        'transliteration': "Ṡumma iżā syā'a ansyarahū.",
+        'translation':
+            "Kemudian, jika menghendaki, Dia membangkitkannya kembali.",
+      },
+      {
+        'no': '23',
+        'arabic': "كَلَّا لَمَّا يَقْضِ مَآ اَمَرَهٗۗ",
+        'transliteration': "Kallā lammā yaqḍi mā amarah(ū).",
+        'translation':
+            "Sekali-kali jangan (begitu)! Dia (manusia) itu belum melaksanakan apa yang Dia (Allah) perintahkan kepadanya.",
+      },
+      {
+        'no': '24',
+        'arabic': "فَلْيَنْظُرِ الْاِنْسَانُ اِلٰى طَعَامِهٖٓۙ",
+        'transliteration': "Falyanẓuril-insānu ilā ṭa‘āmihī.",
+        'translation': "Maka, hendaklah manusia memperhatikan makanannya.",
+      },
+      {
+        'no': '25',
+        'arabic': "اَنَّا صَبَبْنَا الْمَاۤءَ صَبًّاۙ",
+        'transliteration': "Annā ṣababnal-mā'a ṣabbā(n).",
+        'translation':
+            "Sesungguhnya Kami telah mencurahkan air (dari langit) dengan berlimpah.",
+      },
+      {
+        'no': '26',
+        'arabic': "ثُمَّ شَقَقْنَا الْاَرْضَ شَقًّاۙ",
+        'transliteration': "Ṡumma syaqaqnal-arḍa syaqqā(n).",
+        'translation': "Kemudian, Kami belah bumi dengan sebaik-baiknya.",
+      },
+      {
+        'no': '27',
+        'arabic': "فَاَنْبَتْنَا فِيْهَا حَبًّاۙ",
+        'transliteration': "Fa'ambatnā fīhā ḥabbā(n).",
+        'translation': "lalu, Kami tumbuhkan padanya biji-bijian,",
+      },
+      {
+        'no': '28',
+        'arabic': "وَعِنَبًا وَّقَضْبًاۙ",
+        'transliteration': "Wa ‘inabaw-wa qaḍbā(n).",
+        'translation': "anggur, sayur-sayuran,",
+      },
+      {
+        'no': '29',
+        'arabic': "وَزَيْتُوْنًا وَّنَخْلًاۙ",
+        'transliteration': "Wa zaitūnaw-wanakhlā(n).",
+        'translation': "zaitun, pohon kurma,",
+      },
+      {
+        'no': '30',
+        'arabic': "وَحَدَاۤئِقَ غُلْبًاۙ",
+        'transliteration': "Wa ḥadā'iqa gulbā(n).",
+        'translation': "kebun-kebun (yang) rindang,",
+      },
+      {
+        'no': '31',
+        'arabic': "وَفَاكِهَةً وَّاَبًّا",
+        'transliteration': "Wa fākihataw wa abbā(n).",
+        'translation': "buah-buahan, dan rerumputan.",
+      },
+      {
+        'no': '32',
+        'arabic': "مَتَاعًا لَّكُمْ وَلِاَنْعَامِكُمْۗ",
+        'transliteration': "Matā‘al lakum wa li'an‘āmikum.",
+        'translation':
+            "(Semua itu disediakan) untuk kesenanganmu dan hewan-hewan ternakmu.",
+      },
+      {
+        'no': '33',
+        'arabic': "فَاِذَا جَاۤءَتِ الصَّاۤخَّةُ ۖ",
+        'transliteration': "Fa iżā jā'atiṣ-ṣākhkhah(tu).",
+        'translation':
+            "Maka, apabila datang suara yang memekakkan (dari tiupan sangkakala),",
+      },
+      {
+        'no': '34',
+        'arabic': "يَوْمَ يَفِرُّ الْمَرْءُ مِنْ اَخِيْهِۙ",
+        'transliteration': "Yauma yafirrul-mar'u min akhīh(i).",
+        'translation': "pada hari itu manusia lari dari saudaranya,",
+      },
+      {
+        'no': '35',
+        'arabic': "وَاُمِّهٖ وَاَبِيْهِۙ",
+        'transliteration': "Wa ummihī wa abīh(i).",
+        'translation': "(dari) ibu dan bapaknya,",
+      },
+      {
+        'no': '36',
+        'arabic': "وَصَاحِبَتِهٖ وَبَنِيْهِۗ",
+        'transliteration': "Wa ṣāḥibatihī wa banīh(i).",
+        'translation': "serta (dari) istri dan anak-anaknya.",
+      },
+      {
+        'no': '37',
+        'arabic': "لِكُلِّ امْرِئٍ مِّنْهُمْ يَوْمَئِذٍ شَأْنٌ يُّغْنِيْهِۗ",
+        'transliteration': "Likullimri'im-minhum yauma'iżin sya'nuy-yugnīh(i).",
+        'translation':
+            "Setiap orang dari mereka pada hari itu mempunyai urusan yang menyibukkannya.",
+      },
+      {
+        'no': '38',
+        'arabic': "وُجُوْهٌ يَّوْمَىِٕذٍ مُّسْفِرَةٌۙ",
+        'transliteration': "Wujūhuy yauma'iżim musfirah(tun).",
+        'translation': "Pada hari itu ada wajah-wajah yang berseri-seri,",
+      },
+      {
+        'no': '39',
+        'arabic': "ضَاحِكَةٌ مُّسْتَبْشِرَةٌ ۚ",
+        'transliteration': "Ḍāḥikatum mustabsyirah(tun).",
+        'translation': "tertawa lagi gembira ria.",
+      },
+      {
+        'no': '40',
+        'arabic': "وَوُجُوْهٌ يَّوْمَىِٕذٍ عَلَيْهَا غَبَرَةٌۙ",
+        'transliteration': "Wa wujūhuy yauma'iżin ‘alaihā gabarah(tun).",
+        'translation':
+            "Pada hari itu ada (pula) wajah-wajah yang tertutup debu (suram)",
+      },
+      {
+        'no': '41',
+        'arabic': "تَرْهَقُهَا قَتَرَةٌ ۗ",
+        'transliteration': "Tarhaquhā qatarah(tun).",
+        'translation':
+            "dan tertutup oleh kegelapan (ditimpa kehinaan dan kesusahan).",
+      },
+      {
+        'no': '42',
+        'arabic': "اُولٰۤىِٕكَ هُمُ الْكَفَرَةُ الْفَجَرَةُ ࣖ",
+        'transliteration': "Ulā'ika humul-kafaratul-fajarah(tu).",
+        'translation': "Mereka itulah orang-orang kafir lagi para pendurhaka.",
+      },
+    ];
+
+    return Scaffold(
+      backgroundColor: const Color(0xff090f16),
+      appBar: AppBar(
+        backgroundColor: const Color(0xff090f16),
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: Text(
+          surahData['name'] ?? "'Abasa",
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          // 1. CHIP HEADER
+          Wrap(
+            spacing: 8,
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white10,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text(
+                  surahData['type'] ?? "MAKKIYAH",
+                  style: const TextStyle(color: Colors.white70, fontSize: 11),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white10,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text(
+                  "${surahData['verses'] ?? 42} Ayat",
+                  style: const TextStyle(color: Colors.white70, fontSize: 11),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white10,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: const Text(
+                  "Juz 30",
+                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 24),
+
+          // 2. DAFTAR AYAT
+          ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: ayatList.length,
+            itemBuilder: (context, index) {
+              final ayat = ayatList[index];
+
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 32.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Nomor Ayat Beserta Ikon Buku
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.menu_book,
+                          color: Colors.tealAccent,
+                          size: 18,
+                        ),
+                        const SizedBox(width: 6),
+                        Text(
+                          "Ayat ${ayat['no']}",
+                          style: const TextStyle(
+                            color: Colors.tealAccent,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 12),
+
+                    // Box Teks Arab Tengah
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 24,
+                        vertical: 28,
+                      ),
+                      decoration: BoxDecoration(
+                        color: const Color(0xff111a24),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Text(
+                        ayat['arabic'],
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.amiri(
+                          color: Colors.white.withOpacity(0.9),
+                          fontSize: 24,
+                          fontWeight: FontWeight.normal,
+                          height: 2.2,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+
+                    // Komponen Transliterasi
+                    const Text(
+                      "Transliterasi",
+                      style: TextStyle(
+                        color: Colors.tealAccent,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 13,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: const Color(0xff111a24),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Text(
+                        ayat['transliteration'],
+                        style: const TextStyle(
+                          color: Colors.white70,
+                          fontSize: 14,
+                          fontStyle: FontStyle.italic,
+                          height: 1.4,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+
+                    // Komponen Terjemahan
+                    const Text(
+                      "Terjemahan",
+                      style: TextStyle(
+                        color: Colors.tealAccent,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 13,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: const Color(0xff111a24),
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          color: Colors.teal.withOpacity(0.15),
+                        ),
+                      ),
+                      child: Text(
+                        ayat['translation'],
+                        style: const TextStyle(
+                          color: Colors.white70,
+                          fontSize: 14,
+                          height: 1.4,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}

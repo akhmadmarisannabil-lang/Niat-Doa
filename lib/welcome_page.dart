@@ -34,7 +34,7 @@ class WelcomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Text(
-                    "Bacaan Niat Sholat & Doa",
+                    "Panduan-Panduan Bacaan",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize:
@@ -45,7 +45,7 @@ class WelcomePage extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   const Text(
-                    "Panduan berbagai Niat sholat dan Doa untuk anda.",
+                    "Panduan berbagai Niat sholat, Juz Amma &  Doa untuk anda.",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 15, color: Colors.white70),
                   ),

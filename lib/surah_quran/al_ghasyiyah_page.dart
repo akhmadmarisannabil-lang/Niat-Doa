@@ -1,0 +1,363 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class AlGhasyiyahPage extends StatelessWidget {
+  final Map<String, dynamic> surahData;
+
+  const AlGhasyiyahPage({super.key, required this.surahData});
+
+  @override
+  Widget build(BuildContext context) {
+    final List<Map<String, dynamic>> ayatList = [
+      {
+        'no': '1',
+        'arabic': "هَلْ اَتٰىكَ حَدِيْثُ الْغَاشِيَةِۗ",
+        'transliteration': "Hal atāka ḥadīṡul-gāsyiyah(ti).",
+        'translation':
+            "Sudahkah sampai kepadamu berita tentang al-Gāsyiyah (hari Kiamat yang menutupi kesadaran manusia dengan kedahsyatannya)?",
+      },
+      {
+        'no': '2',
+        'arabic': "وُجُوْهٌ يَّوْمَىِٕذٍ خَاشِعَةٌۙ",
+        'transliteration': "Wujūhuy yauma'iżin khāsyiyah(tun).",
+        'translation': "Pada hari itu banyak wajah yang tertunduk hina",
+      },
+      {
+        'no': '3',
+        'arabic': "عَامِلَةٌ نَّاصِبَةٌۙ",
+        'transliteration': "‘Āmilatun nāṣibah(tun).",
+        'translation':
+            "(karena) berusaha keras (menghindari azab neraka) lagi kepayahan (karena dibelenggu).",
+      },
+      {
+        'no': '4',
+        'arabic': "تَصْلٰى نَارًا حَامِيَةًۙ",
+        'transliteration': "Taṣlā nāran ḥāmiyah(tan).",
+        'translation': "Mereka memasuki api (neraka) yang sangat panas.",
+      },
+      {
+        'no': '5',
+        'arabic': "تُسْقٰى مِنْ عَيْنٍ اٰنِيَةٍۗ",
+        'transliteration': "Tusqā min ‘ainin āniyah(tin).",
+        'translation':
+            "(Mereka) diberi minum dari sumber mata air yang sangat panas.",
+      },
+      {
+        'no': '6',
+        'arabic': "لَيْسَ لَهُمْ طَعَامٌ اِلَّا مِنْ ضَرِيْعٍۙ",
+        'transliteration': "Laisa lahum ṭa‘āmun illā min ḍarī‘(in).",
+        'translation':
+            "Tidak ada makanan bagi mereka selain dari pohon yang berduri,",
+      },
+      {
+        'no': '7',
+        'arabic': "لَّايُسْمِنُ وَلَا يُغْنِيْ مِنْ جُوْعٍۗ",
+        'transliteration': "Lā yusminu wa lā yugnī min jū‘(in).",
+        'translation':
+            "yang tidak menggemukkan dan tidak pula menghilangkan lapar.",
+      },
+      {
+        'no': '8',
+        'arabic': "وُجُوْهٌ يَّوْمَىِٕذٍ نَّاعِمَةٌۙ",
+        'transliteration': "Wujūhuy yauma'iżin nā‘imah(tun).",
+        'translation': "Pada hari itu banyak (pula) wajah yang berseri-seri,",
+      },
+      {
+        'no': '9',
+        'arabic': "لِّسَعْيِهَا رَاضِيَةٌۙ",
+        'transliteration': "Lisa‘yihā rāḍiyah(tun).",
+        'translation': "merasa puas karena usahanya.",
+      },
+      {
+        'no': '10',
+        'arabic': "فِيْ جَنَّةٍ عَالِيَةٍۙ",
+        'transliteration': "Fī jannatin ‘āliyah(tin).",
+        'translation': "(Mereka) dalam surga yang tinggi.",
+      },
+      {
+        'no': '11',
+        'arabic': "لَّا تَسْمَعُ فِيْهَا لَاغِيَةًۗ",
+        'transliteration': "Lā tasma‘u fīhā lāgiyah(tan).",
+        'translation':
+            "Di sana kamu tidak mendengar (perkataan) yang tidak berguna.",
+      },
+      {
+        'no': '12',
+        'arabic': "فِيْهَا عَيْنٌ جَارِيَةٌۗ",
+        'transliteration': "Fīhā ‘ainun jāriyah(tun).",
+        'translation': "Di sana ada mata air yang mengalir.",
+      },
+      {
+        'no': '13',
+        'arabic': "فِيْهَا سُرُرٌ مَّرْفُوْعَةٌۙ",
+        'transliteration': "Fīhā sururum marfū‘ah(tun).",
+        'translation': "Di sana ada (pula) dipan-dipan yang ditinggikan,",
+      },
+      {
+        'no': '14',
+        'arabic': "وَاكْوَابٌ مَّوْضُوْعَةٌۙ",
+        'transliteration': "Wa akwābum mauḍū‘ah(tun).",
+        'translation': "gelas-gelas yang tersedia (di dekatnya),",
+      },
+      {
+        'no': '15',
+        'arabic': "وَنَمَارِقُ مَصْفُوْفَةٌۙ",
+        'transliteration': "Wa namāriqu maṣfūfah(tun).",
+        'translation': "bantal-bantal sandaran yang tersusun,",
+      },
+      {
+        'no': '16',
+        'arabic': "وَزَرَابِيُّ مَبْثُوْثَةٌۗ",
+        'transliteration': "Wa zarābiyyu mabṡūṡah(tun).",
+        'translation': "dan permadani-permadani yang terhampar.",
+      },
+      {
+        'no': '17',
+        'arabic': "اَفَلَا يَنْظُرُوْنَ اِلَى الْاِبِلِ كَيْفَ خُلِقَتْۗ",
+        'transliteration': "Afalā yanẓurūna ilal-ibili kaifa khuliqat.",
+        'translation':
+            "Tidakkah mereka memperhatikan unta, bagaimana ia diciptakan?",
+      },
+      {
+        'no': '18',
+        'arabic': "وَاِلَى السَّمَاۤءِ كَيْفَ رُفِعَتْۗ",
+        'transliteration': "Wa ilas-samā'i kaifa rufi‘at.",
+        'translation': "Bagaimana langit ditinggikan?",
+      },
+      {
+        'no': '19',
+        'arabic': "وَاِلَى الْجِبَالِ كَيْفَ نُصِبَتْۗ",
+        'transliteration': "Wa ilal-jibāli kaifa nuṣibat.",
+        'translation': "Bagaimana gunung-gunung ditegakkan?",
+      },
+      {
+        'no': '20',
+        'arabic': "وَاِلَى الْاَرْضِ كَيْفَ سُطِحَتْۗ",
+        'transliteration': "Wa ilal-arḍi kaifa suṭiḥat.",
+        'translation': "Bagaimana pula bumi dihamparkan?",
+      },
+      {
+        'no': '21',
+        'arabic': "فَذَكِّرْۗ اِنَّمَآ اَنْتَ مُذَكِّرٌۗ",
+        'transliteration': "Fażakkir, innamā anta mużakkir(un).",
+        'translation':
+            "Maka, berilah peringatan karena sesungguhnya engkau (Nabi Muhammad) hanyalah pemberi peringatan.",
+      },
+      {
+        'no': '22',
+        'arabic': "لَّسْتَ عَلَيْهِمْ بِمُصَيْطِرٍۙ",
+        'transliteration': "Lasta ‘alaihim bimuṣaiṭir(in).",
+        'translation': "Engkau bukanlah orang yang berkuasa atas mereka.",
+      },
+      {
+        'no': '23',
+        'arabic': "اِلَّا مَنْ تَوَلّٰى وَكَفَرَۙ",
+        'transliteration': "Illā man tawallā wa kafar(a).",
+        'translation': "Akan tetapi, orang yang berpaling dan kufur,",
+      },
+      {
+        'no': '24',
+        'arabic': "فَيُعَذِّبُهُ اللّٰهُ الْعَذَابَ الْاَكْبَرَۗ",
+        'transliteration': "Fayu‘ażżibuhullāhul-‘ażābal-akbar(a).",
+        'translation': "Allah akan mengazabnya dengan azab yang paling besar.",
+      },
+      {
+        'no': '25',
+        'arabic': "اِنَّ اِلَيْنَآ اِيَابَهُمْ",
+        'transliteration': "Inna ilainā iyābahum.",
+        'translation': "Sesungguhnya kepada Kamilah mereka kembali.",
+      },
+      {
+        'no': '26',
+        'arabic': "ثُمَّ اِنَّ عَلَيْنَا حِسَابَهُمْࣖ",
+        'transliteration': "Ṡumma inna ‘alainā ḥisābahum.",
+        'translation':
+            "Kemudian, sesungguhnya Kamilah yang berhak melakukan hisab (perhitungan) atas mereka.",
+      },
+    ];
+
+    return Scaffold(
+      backgroundColor: const Color(0xff090f16),
+      appBar: AppBar(
+        backgroundColor: const Color(0xff090f16),
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: Text(
+          surahData['name'] ?? 'Al-Ghasyiyah',
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          Wrap(
+            spacing: 8,
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white10,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text(
+                  surahData['type'] ?? "MAKKIYAH",
+                  style: const TextStyle(color: Colors.white70, fontSize: 11),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white10,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: Text(
+                  "${surahData['verses'] ?? 26} Ayat",
+                  style: const TextStyle(color: Colors.white70, fontSize: 11),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 4,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white10,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: const Text(
+                  "Juz 30",
+                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 24),
+          ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: ayatList.length,
+            itemBuilder: (context, index) {
+              final ayat = ayatList[index];
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 32.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.menu_book,
+                          color: Colors.tealAccent,
+                          size: 18,
+                        ),
+                        const SizedBox(width: 6),
+                        Text(
+                          "Ayat ${ayat['no']}",
+                          style: const TextStyle(
+                            color: Colors.tealAccent,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 12),
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 24,
+                        vertical: 28,
+                      ),
+                      decoration: BoxDecoration(
+                        color: const Color(0xff111a24),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Text(
+                        ayat['arabic'],
+                        textAlign: TextAlign.center,
+                        style: GoogleFonts.amiri(
+                          color: Colors.white.withOpacity(0.9),
+                          fontSize: 24,
+                          height: 2.2,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    const Text(
+                      "Transliterasi",
+                      style: TextStyle(
+                        color: Colors.tealAccent,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 13,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: const Color(0xff111a24),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Text(
+                        ayat['transliteration'],
+                        style: const TextStyle(
+                          color: Colors.white70,
+                          fontSize: 14,
+                          fontStyle: FontStyle.italic,
+                          height: 1.4,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+                    const Text(
+                      "Terjemahan",
+                      style: TextStyle(
+                        color: Colors.tealAccent,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 13,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: const Color(0xff111a24),
+                        borderRadius: BorderRadius.circular(12),
+                        border: Border.all(
+                          color: Colors.teal.withOpacity(0.15),
+                        ),
+                      ),
+                      child: Text(
+                        ayat['translation'],
+                        style: const TextStyle(
+                          color: Colors.white70,
+                          fontSize: 14,
+                          height: 1.4,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}

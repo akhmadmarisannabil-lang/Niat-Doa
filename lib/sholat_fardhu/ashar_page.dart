@@ -16,7 +16,7 @@ class AsharPage extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
-          "Doa Niat Shalat Ashar",
+          "Niat Shalat Ashar",
           style: TextStyle(
             color: Colors.white,
             fontSize: 16,

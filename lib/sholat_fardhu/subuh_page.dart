@@ -16,7 +16,7 @@ class SubuhPage extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
-          "Doa Niat Shalat Subuh",
+          "Niat Shalat Subuh",
           style: TextStyle(
             color: Colors.white,
             fontSize: 16,

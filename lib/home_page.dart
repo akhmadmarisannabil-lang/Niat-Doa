@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//Niat Sholat
+// Niat Sholat
 import 'sholat/shalat_fardhu_page.dart';
 import 'sholat/sunnah_qobliyah_page.dart';
 import 'sholat/sunnah_badiyah_page.dart';
@@ -7,13 +7,15 @@ import 'sholat/shalat_fardhu_kifayah_page.dart';
 import 'sholat/sunnah_harian_page.dart';
 import 'sholat/sunnah_waktu_tertentu_page.dart';
 import 'sholat/sunnah_situasional_page.dart';
-//Doa
+// Doa
 import 'doa/doa_harian_page.dart';
 import 'doa/doa_ibadah_page.dart';
-import 'doa/doa_terhindar_musibah_page.dart'; // DIUBAH
+import 'doa/doa_terhindar_musibah_page.dart';
 import 'doa/doa_acara_page.dart';
-import 'doa/doa_akhirat_page.dart'; // TAMBAHAN BARU
+import 'doa/doa_akhirat_page.dart';
 import 'doa/doa_lainnya_page.dart';
+// Al-Qur'an
+import 'quran/quran_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -92,8 +94,8 @@ class _HomePageState extends State<HomePage> {
 
                 return GestureDetector(
                   onTap: () {
+                    // KONDISI TAB 1: NIAT SHOLAT
                     if (_currentIndex == 0) {
-                      // LOGIKA NAVIGASI TAB SHOLAT
                       if (item['number'] == '1') {
                         Navigator.push(
                           context,
@@ -146,8 +148,9 @@ class _HomePageState extends State<HomePage> {
                           ),
                         );
                       }
-                    } else {
-                      // LOGIKA NAVIGASI TAB DOA (DIPERBARUI)
+                    }
+                    // KONDISI TAB 3: KUMPULAN DOA
+                    else if (_currentIndex == 2) {
                       if (item['number'] == '1') {
                         Navigator.push(
                           context,
@@ -167,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                           context,
                           MaterialPageRoute(
                             builder: (context) =>
-                                const DoaTerhindarMusibahPage(), // DIUBAH
+                                const DoaTerhindarMusibahPage(),
                           ),
                         );
                       } else if (item['number'] == '4') {
@@ -181,16 +184,14 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) =>
-                                const DoaAkhiratPage(), // TAMBAHAN BARU
+                            builder: (context) => const DoaAkhiratPage(),
                           ),
                         );
                       } else if (item['number'] == '6') {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) =>
-                                const DoaLainnyaPage(), // BERGESER KE INDEKS 6
+                            builder: (context) => const DoaLainnyaPage(),
                           ),
                         );
                       }
@@ -380,7 +381,7 @@ class _HomePageState extends State<HomePage> {
       },
       {
         'number': '3',
-        'title': 'Doa Terhindar\ndari Musibah', // DIUBAH
+        'title': 'Doa Terhindar\ndari Musibah',
         'color': const Color(0xffd1f2e5),
         'image': 'assets/images/menu/berdoa.jpg',
       },
@@ -392,13 +393,13 @@ class _HomePageState extends State<HomePage> {
       },
       {
         'number': '5',
-        'title': 'Doa untuk Akhirat', // TAMBAHAN BARU
+        'title': 'Doa untuk Akhirat',
         'color': const Color(0xffe8e8e4),
         'image': 'assets/images/menu/berdoa.jpg',
       },
       {
         'number': '6',
-        'title': 'Doa Lainnya', // BERGESER NOMOR
+        'title': 'Doa Lainnya',
         'color': const Color(0xfffcdbdf),
         'image': 'assets/images/menu/berdoa.jpg',
       },
@@ -413,9 +414,13 @@ class _HomePageState extends State<HomePage> {
           icon: const Icon(Icons.arrow_back, color: Colors.white70),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
-          "Bacaan Niat Sholat & Doa",
-          style: TextStyle(fontSize: 16, color: Colors.white),
+        title: Text(
+          _currentIndex == 0
+              ? "Daftar Niat Sholat"
+              : _currentIndex == 1
+              ? "Daftar Surah Pembuka & Juz Amma"
+              : "Daftar Doa",
+          style: const TextStyle(fontSize: 16, color: Colors.white),
         ),
         actions: const [
           Icon(Icons.settings, color: Colors.white70),
@@ -428,8 +433,10 @@ class _HomePageState extends State<HomePage> {
               headerDesc: "Ada bermacam-macam niat sholat",
               menuItems: niatMenu,
               quoteText:
-                  "– Tegakkan shalatmu, tenangkan jiwamu. Karena shalat adalah cara hamba berbicara dengan Sang Pangcipta. –",
+                  "– Tegakkan shalatmu, tenangkan jiwamu. Karena shalat adalah cara hamba berbicara dengan Sang Penciptpa. –",
             )
+          : _currentIndex == 1
+          ? const QuranPage()
           : _buildMenuGrid(
               headerTitle: "Kumpulan Doa",
               headerDesc: "Ada bermacam-macam Doa",
@@ -443,9 +450,17 @@ class _HomePageState extends State<HomePage> {
         unselectedItemColor: Colors.white38,
         currentIndex: _currentIndex,
         onTap: (int index) => setState(() => _currentIndex = index),
+        type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.mosque), label: 'Niat'),
-          BottomNavigationBarItem(icon: Icon(Icons.menu_book), label: 'Doa'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu_book),
+            label: 'Al-Qur\'an',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.import_contacts),
+            label: 'Doa',
+          ),
         ],
       ),
     );

@@ -1,17 +1,20 @@
-## Niat Sholat & Doa
+## Panduan-Panduan
 
-Aplikasi ini merupakan aplikasi mobile responsif yang dibangun menggunakan Flutter dan bahasa pemrograman Dart. Aplikasi ini dirancang sebagai media edukasi interaktif untuk membantu umat Muslim dalam membaca, menghafal, dan mempelajari niat shalat serta kumpulan doa secara praktis.
+Aplikasi ini merupakan aplikasi mobile responsif yang dibangun menggunakan Flutter dan bahasa pemrograman Dart. Aplikasi ini dirancang sebagai media edukasi interaktif untuk membantu umat Muslim dalam membaca, menghafal, dan mempelajari niat shalat, juz amma serta kumpulan doa secara praktis.
 
 ## Fokus pengembangan
 
-    1.  Analisis Kebutuhan dan Perancangan Antarmuka: " Menentukan batasan sistem, menyusun struktur data bacaan yang efisien tanpa adanya duplikasi data, serta merancang cetak biru tampilan aplikasi (*user interface design*) menggunakan tema gelap (*dark mode*) yang konsisten guna memastikan kenyamanan visual pengguna."
-    2.  Strukturasi Dasbor Beranda dan Layout Responsif: " Membangun arsitektur halaman utama (`HomePage`) yang mengintegrasikan sistem perpindahan menu modular berbasis `BottomNavigationBar` untuk memisahkan kategori utama: 'Niat Shalat' dan 'Kumpulan Doa'. Layout dirancang adaktif agar rapi saat diakses di berbagai ukuran layar gawai."
-    3.  Pengembangan Sub-Menu Niat Sholat & Doa Secara Mendalam:" Memproduksi halaman baru secara modular menggunakan komponen daftar terstruktur (`ListView.builder`) guna memuat navigasi panduan macam-macam niat sholat dan doa secara spesifik, runtun, dan tepat sasaran."
-    4.  Pengujian Sistem dan Penyusunan Dokumentasi Akhir:" Melakukan uji coba fungsionalitas tombol kembali (*back button navigation*), memeriksa kestabilan performa aplikasi saat perpindahan halaman, serta memastikan tidak ada teks atau data yang tumpang tindih (*redundant*) antar sub-menu."
+1. Analisis Kebutuhan dan Perancangan Antarmuka: Menentukan batasan sistem, menyusun struktur data bacaan yang efisien tanpa adanya duplikasi data, serta merancang cetak biru tampilan aplikasi (user interface design) menggunakan tema gelap (dark mode) yang konsisten guna memastikan kenyamanan visual pengguna saat membaca teks Arab.
+
+2. Strukturasi Dasbor Beranda dan Layout Responsif: Membangun arsitektur halaman utama (HomePage) yang mengintegrasikan sistem perpindahan menu modular berbasis BottomNavigationBar untuk memisahkan kategori utama: 'Niat Shalat', 'Kumpulan Doa', dan 'Al-Qur'an (Juz 30)'. Layout dirancang adaptif agar rapi saat diakses di berbagai ukuran layar gawai.
+
+3. Pengembangan Sub-Menu Secara Mendalam: Memproduksi halaman baru secara modular menggunakan komponen daftar terstruktur (ListView.builder) guna memuat navigasi panduan macam-macam niat shalat, doa, serta deretan surah pendek secara spesifik, runtun, dan tepat sasaran.
+
+4. Pengujian Sistem dan Penyusunan Dokumentasi Akhir: Melakukan uji coba fungsionalitas tombol kembali (back button navigation), memeriksa kestabilan performa aplikasi saat perpindahan halaman, serta memastikan tidak ada teks atau data yang tumpang tindih (redundant) antar sub-menu surah maupun doa.
 
 ## Arsitektur File & Struktur Proyek (Directory Structure)
 
-```text
+```
 flutter_sholat_doa/
 ├── assets/
 │   └── images/
@@ -85,6 +88,8 @@ flutter_sholat_doa/
 │   │   ├── qobliyah_isya_page.dart
 │   │   ├── qobliyah_maghrib_page.dart
 │   │   └── qobliyah_subuh_page.dart
+│   ├── quran/
+│   │   └── quran_page.dart
 │   ├── sholat/
 │   │   ├── shalat_fardhu_kifayah_page.dart
 │   │   ├── shalat_fardhu_page.dart
@@ -100,6 +105,45 @@ flutter_sholat_doa/
 │   │   ├── jumat_page.dart
 │   │   ├── maghrib_page.dart
 │   │   └── subuh_page.dart
+│   ├── surah_quran/
+│   │   ├── abasa_page.dart
+│   │   ├── ad_duha_page.dart
+│   │   ├── al_adiyat_page.dart
+│   │   ├── al_ala_page.dart
+│   │   ├── al_alaq_page.dart
+│   │   ├── al_asr_page.dart
+│   │   ├── al_balad_page.dart
+│   │   ├── al_bayyinah_page.dart
+│   │   ├── al_fajr_page.dart
+│   │   ├── al_falaq_page.dart
+│   │   ├── al_fil_page.dart
+│   │   ├── al_ghasyiyah_page.dart
+│   │   ├── al_humazah_page.dart
+│   │   ├── al_ikhlas_page.dart
+│   │   ├── al_kafirun_page.dart
+│   │   ├── al_kausar_page.dart
+│   │   ├── al_lahab_page.dart
+│   │   ├── al_lail_page.dart
+│   │   ├── al_maun_page.dart
+│   │   ├── al_qadr_page.dart
+│   │   ├── al_qariah_page.dart
+│   │   ├── alburuj_page.dart
+│   │   ├── alfatihah_page.dart
+│   │   ├── alinfitar_page.dart
+│   │   ├── alinsyiqaq_page.dart
+│   │   ├── almutaffifin_page.dart
+│   │   ├── an_nas_page.dart
+│   │   ├── an_nasr_page.dart
+│   │   ├── annaba_page.dart
+│   │   ├── annaziat_page.dart
+│   │   ├── asy_syams_page.dart
+│   │   ├── asy_syarh_page.dart
+│   │   ├── at_takasur_page.dart
+│   │   ├── at_tin_page.dart
+│   │   ├── attakwir_page.dart
+│   │   ├── attariq_page.dart
+│   │   ├── az_zalzalah_page.dart
+│   │   └── quraisyi_page.dart
 │   ├── tertentu/
 │   │   ├── gerhana_page.dart
 │   │   ├── idul_adha_page.dart
@@ -120,7 +164,12 @@ flutter_sholat_doa/
    - Shalat Sunnah Waktu Tertentu: Panduan shalat sunnah tahunan/musiman yang terikat waktu khusus (Shalat Idul Fitri, Idul Adha, Tarawih, dan Gerhana).
    - Sunnah Kebutuhan & Situasional: Panduan shalat sunnah yang didasarkan pada kondisi, hajat, atau kebutuhan spiritual hamba (Istikharah, Hajat, Taubat, Istisqa, dan Safar).
 
-2. Tab Kifarat & Kumpulan Doa (Menu Utama 2)
+2. pembuka Surah(Al-fatihah) & Juz Amma (Menu Utama 2)
+   Menyediakan fitur daftar surah interaktif lengkap dengan bilah pencarian (Cari Surah...) khusus Juz 30. Menu ini menampilkan detail identitas surah (Nomor Urut, Nama Surah, Tempat Turun/Makkiyah-Madaniyah, Jumlah Ayat, serta Teks Kaligrafi Arab). Modul navigasi di dalamnya telah dipetakan hingga surah penutup Al-Qur'an:
+   - Daftar Utama: Menampilkan indeks komprehensif mulai dari Al-Fatihah, urutan Juz 30, hingga surah terakhir.
+   - Halaman Khusus Surah Penutup: Halaman per ayat modular yang interaktif untuk Surah Al-Ikhlas (112), Al-Falaq (113), dan An-Nas (114) yang memuat struktur tiga elemen: teks asli Al-Qur'an (Arabic text), pedoman bacaan latin (transliteration), serta arti bahasa Indonesia (translation).
+
+3. Tab Kifarat & Kumpulan Doa (Menu Utama 3)
    Memuat kumpulan doa yang telah dieliminasi dari unsur duplikasi data, disusun berdasarkan konteks aktivitas pengguna:
 
 - Doa Harian : Doa-doa praktis harian meliputi Bangun Tidur, Keluar Rumah, Masuk Rumah, Sebelum Makan, Sebelum Tidur, dan Sesudah Makan.
