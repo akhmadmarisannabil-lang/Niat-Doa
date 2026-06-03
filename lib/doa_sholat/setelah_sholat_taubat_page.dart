@@ -1,0 +1,172 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class SetelahSholatTaubatPage extends StatelessWidget {
+  const SetelahSholatTaubatPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xff090f16),
+      appBar: AppBar(
+        backgroundColor: const Color(0xff090f16),
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: const Text(
+          "Doa Setelah Sholat Taubat",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          Wrap(
+            spacing: 8,
+            children: [
+              _buildTag("Doa Setelah Sholat"),
+              _buildTag("taubat"),
+              _buildTag("istighfar"),
+            ],
+          ),
+          const SizedBox(height: 32),
+          const Center(
+            child: Text(
+              "Teks Arab",
+              style: TextStyle(
+                color: Colors.tealAccent,
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+              ),
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+            decoration: BoxDecoration(
+              color: const Color(0xff111a24),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Text(
+              "أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ الَّذِي لَا إِلَهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ وَأَتُوبُ إِلَيْهِ \n اَللّٰهُمَّ اغْفِرْ لِيْ خَطِيْئَتِيْ وَجَهْلِيْ، وَإِسْرَافِيْ فِيْ أَمْرِيْ، وَمَا أَنْتَ أَعْلَمُ بِهِ مِنِّيْ، اَللّٰهُمَّ اغْفِرْ لِيْ جِدِّيْ وَهَزْلِيْ؛ وَخَطَئِيْ وَعَمْدِيْ؛ وَكُلُّ ذٰلِكَ عِنْدِيْ، اَللّٰهُمَّ اغْفِرْ لِيْ مَا قَدَّمْتُ وَمَا أَخَّرْتُ، وَمَا أَسْرَرْتُ وَمَا أَعْلَنْتُ، وَمَا أَنْتَ أَعْلَمُ بِهِ مِنِّيْ، أَنْتَ الْمُقَدِّمُ، وَأَنْتَ الْمُؤَخِّرُ، وَأَنْتَ عَلَى كُلِّ شَيْءٍ قَدِيْرٌ",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.amiri(
+                color: Colors.white.withOpacity(0.9),
+                fontSize: 22,
+                height: 2.2,
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          const Text(
+            "Transliterasi",
+            style: TextStyle(
+              color: Colors.tealAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: const Color(0xff111a24),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: const Text(
+              "Astaghfirullaahal 'azhiim alladzii laa ilaaha illa huwal hayyul qayyuumu wa atuubu ilaih. Allâhummaghfir lî khathî’atî wa jahlî, wa isrâfî fî amrî, wa mâ anta a‘lamu bihî minnî. Allâhummaghfir lî jiddî wa hazlî, wa khatha’î wa ‘amdî. Wa kullu dzâlika ‘indî. Allâhummaghfir lî mâ qaddamtu wa mâ akhkhartu, wa mâ asrartu, wa mâ a‘lantu, wa mâ anta a‘lamu bihî minnî. Antal muqaddimu wa antal mu’akhkhiru, wa anta ‘alâ kulli syai’in qadîr.",
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 14,
+                fontStyle: FontStyle.italic,
+                height: 1.4,
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          const Text(
+            "Terjemahan",
+            style: TextStyle(
+              color: Colors.tealAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: const Color(0xff111a24),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.teal.withOpacity(0.2)),
+            ),
+            child: const Text(
+              "Aku memohon ampunan kepada Allah Yang Maha Agung, yang tiada Tuhan selain Dia, Yang Maha Hidup lagi senantiasa mengatur makhluk-Nya, dan aku bertaubat kepada-Nya.Tuhanku, ampunilah kekeliruan dan kebodohanku, kelewatanbatasku dalam sebuah hal, dan dosaku yang mana Engkau lebih tahu dariku. Tuhanku, ampunilah dosaku dalam serius dan gurauanku, kekeliruan dan kesengajaanku. Apa pun itu semua berasal dariku. Tuhanku, ampunilah dosaku yang terdahulu dan terkemudian, dosa yang kusembunyikan dan kunyatakan, dan dosa yang mana Kau lebih tahu dariku. Kau maha terdahulu. Kau maha terkemudian. Kau maha kuasa ata segala sesuatu.",
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 14,
+                height: 1.4,
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          Row(
+            children: const [
+              Icon(Icons.info_outline, color: Colors.tealAccent, size: 18),
+              SizedBox(width: 6),
+              Text(
+                "Keterangan",
+                style: TextStyle(
+                  color: Colors.tealAccent,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: const Color(0xff111a24),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.teal.withOpacity(0.1)),
+            ),
+            child: const Text(
+              "Dibaca dengan penuh penyesalan setelah sholat Taubat untuk memohon ampunan Allah atas segala kekeliruan, kebodohan, tindakan melampaui batas, serta dosa yang dilakukan baik secara sengaja, tidak disengaja, dalam keadaan serius, maupun bergurau.",
+              style: TextStyle(
+                color: Colors.white60,
+                fontSize: 13,
+                height: 1.5,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTag(String label) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      decoration: BoxDecoration(
+        color: Colors.white10,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Text(
+        label,
+        style: const TextStyle(color: Colors.white70, fontSize: 11),
+      ),
+    );
+  }
+}

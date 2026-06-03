@@ -1,0 +1,172 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class QunutNazilahPage extends StatelessWidget {
+  const QunutNazilahPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xff090f16),
+      appBar: AppBar(
+        backgroundColor: const Color(0xff090f16),
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: const Text(
+          "Qunut Nazilah Palestina",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          Wrap(
+            spacing: 8,
+            children: [
+              _buildTag("Doa Khusus"),
+              _buildTag("qunut"),
+              _buildTag("palestina"),
+            ],
+          ),
+          const SizedBox(height: 32),
+          const Center(
+            child: Text(
+              "Teks Arab",
+              style: TextStyle(
+                color: Colors.tealAccent,
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+              ),
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+            decoration: BoxDecoration(
+              color: const Color(0xff111a24),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Text(
+              "اَللّٰهُمَّ إِنَّا نَسْتَعِيْنُكَ وَنَسْتَغْفِرُكَ وَنَسْتَهْدِيْكَ، وَنُؤْمِنُ بِكَ وَنَتَوَكَّلُ عَلَيْكَ، وَنُثْنِيْ عَلَيْكَ الْخَيْرَ كُلَّهُ، نَشْكُرُكَ وَلَا نَكْفُرُكَ، وَنَخْلَعُ وَنَتْرُكُ مَنْ يَفْجُرُكَ. اَللّٰهُمَّ إيَّاكَ نَعْبُدُ وَلَكَ نُصَلِّيْ وَنَسْجُدُ وَإِلَيْكَ نَسْعَى وَنَحْفِدُ نَرْجُوْ رَحْمَتَكَ وَنَخْشَى عَذَابَكَ، إنَّ عَذَابَكَ الْجِدَّ بِالْكُفَّارِ مُلْحِقٌ. اَللّٰهُمَّ ثَبِّتْ إِخْوَانَنَا اْلمُجَاهِدِيْنَ فِي فِلِسْطِيْنَ، خُصُوْصًا فِيْ غَزَّةَ، وَاحْقِنْ دِمَائَهُمْ. اَللّٰهُمَّ عَلَيْكَ بِالْيَهُوْدِ، الصُهْيُوْنِيِّيْنَ الْمَلْعُوْنِيْنَ، وأَنْزِلْ غَضَبَكَ عَلَيْهِمْ. اَللّٰهُمَّ انْصُرْ دِيْنَكَ وكِتَابَكَ وَسُنَّةَ نَبِيِّكَ مُحَمَّدٍ صَلَّى اللّٰهُ عَلَيْهِ وَسَلَّمَ",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.amiri(
+                color: Colors.white.withOpacity(0.9),
+                fontSize: 20,
+                height: 2.2,
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          const Text(
+            "Transliterasi",
+            style: TextStyle(
+              color: Colors.tealAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: const Color(0xff111a24),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: const Text(
+              "Allaahumma inna nasta'iinuka wa nastaghfiruka wa nastahdiika wa nu'minu bika wa natawakkalu 'alaika wa nutsnii 'alaikal khaira kullahu, nasykuruka wa laa nakfuruka wa nakhla'u wa natruku may yafjuruka. Allaahumma iyyaaka na'budu wa laka nushalli wa nasjudu wa ilaika nas'a wa nahfidu, narjuu rahmataka wa nakhsya 'adzaabaka, inna 'adzaabakal jidda bil kuffaari mulhiqun. Allaahumma tsabbit ikhwaananal mujaahidiina fii Filistiin, khusuushan fii Ghazzah, wahqin dima'ahum. Allahumma 'alaika bil Yahudi, ash shuhyuuniyyiinal mal'uuniina, wa anzil ghadhabaka 'alaihim. Allaahummanshur diinaka wa kitaabaka wa sunnata nabiyyika Muhammadin shallalluhu 'alaihi wa sallam.",
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 14,
+                fontStyle: FontStyle.italic,
+                height: 1.4,
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          const Text(
+            "Terjemahan",
+            style: TextStyle(
+              color: Colors.tealAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: const Color(0xff111a24),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.teal.withOpacity(0.2)),
+            ),
+            child: const Text(
+              "Ya Allah, kami memohon pertolongan-Mu, pengampunan-Mu, dan petunjuk-Mu. Kami beriman kepada-Mu, bertawakal kepada-Mu, dan bersyukur atas segala kebaikan-Mu. Kami bersyukur kepada-Mu dan tidak kufur kepada-Mu. Kami menjauhi orang-orang yang mendurhakai-Mu. Ya Allah, kami hanya beribadah kepada-Mu, bersujud dan berdoa kepada-Mu. Kami berusaha dan bergerak dengan harapan rahmat-Mu dan rasa takut akan siksaan-Mu. Kami menyadari bahwa azab-Mu yang berat menimpa orang-orang kafir. Ya Allah, kuatkan saudara-saudara mujahidin kami di Palestina, terutama di Gaza, dan lindungi mereka. Ya Tuhan, hukumlah orang-orang Yahudi Zionis yang berdosa, dan tunjukkan murka-Mu kepada mereka. Ya Tuhan, bantu agama-Mu, kitab-Mu, dan sunnah Nabi-Mu, Muhammad. Semoga Allah melimpahkan rahmat dan kedamaian atas beliau.",
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 14,
+                height: 1.4,
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          Row(
+            children: const [
+              Icon(Icons.info_outline, color: Colors.tealAccent, size: 18),
+              SizedBox(width: 6),
+              Text(
+                "Keterangan",
+                style: TextStyle(
+                  color: Colors.tealAccent,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: const Color(0xff111a24),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.teal.withOpacity(0.1)),
+            ),
+            child: const Text(
+              "Dibaca pada rakaat terakhir sholat fardhu saat posisi I'tidal (bangkit ruku') ketika umat Muslim sedang tertimpa malapetaka besar, perang, atau musibah kemanusiaan. Disunnahkan mengeraskan suara (jahr) bagi imam dan pelan bagi makmum/salat sendiri.",
+              style: TextStyle(
+                color: Colors.white60,
+                fontSize: 13,
+                height: 1.5,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTag(String label) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      decoration: BoxDecoration(
+        color: Colors.white10,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Text(
+        label,
+        style: const TextStyle(color: Colors.white70, fontSize: 11),
+      ),
+    );
+  }
+}

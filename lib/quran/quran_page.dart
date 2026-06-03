@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../surah_quran/alfatihah_page.dart';
 import '../surah_quran/annaba_page.dart';
 import '../surah_quran/annaziat_page.dart';
@@ -75,7 +76,7 @@ class _QuranPageState extends State<QuranPage> {
       'name': "'Abasa",
       'type': 'MAKKIYAH',
       'verses': 42,
-      'arabic': 'عبs',
+      'arabic': 'عبس', // Memperbaiki penulisan teks Arab polos agar rapi
     },
     {
       'no': '81',
@@ -152,7 +153,7 @@ class _QuranPageState extends State<QuranPage> {
       'name': 'Asy-Syams',
       'type': 'MAKKIYAH',
       'verses': 15,
-      'arabic': 'الشمس',
+      'arabic': 'الشems',
     },
     {
       'no': '92',
@@ -278,7 +279,7 @@ class _QuranPageState extends State<QuranPage> {
       'name': 'Al-Kafirun',
       'type': 'MAKKIYAH',
       'verses': 6,
-      'arabic': 'الكافرون',
+      'arabic': 'الكافرon',
     },
     {
       'no': '110',
@@ -406,7 +407,7 @@ class _QuranPageState extends State<QuranPage> {
                         ),
                         SizedBox(height: 8),
                         Text(
-                          "Surah Pembuka & Juz Amma",
+                          "Surah Pembuka & Juz 30(Surah pendek)",
                           style: TextStyle(fontSize: 13, color: Colors.white70),
                         ),
                       ],
@@ -631,9 +632,7 @@ class _QuranPageState extends State<QuranPage> {
                             builder: (context) => AlAsrPage(surahData: surah),
                           ),
                         );
-                      }
-                      // KONDISI NAVIGASI BARU:
-                      else if (surah['name'] == 'Al-Humazah') {
+                      } else if (surah['name'] == 'Al-Humazah') {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -793,12 +792,14 @@ class _QuranPageState extends State<QuranPage> {
                               ],
                             ),
                           ),
+                          // BAGIAN YANG DIUBAH: Menggunakan khat Amiri polos tanpa harakat
                           Text(
                             surah['arabic']!,
-                            style: const TextStyle(
+                            style: GoogleFonts.amiri(
                               color: Colors.amber,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold,
+                              fontSize:
+                                  22, // Ukuran disesuaikan agar tulisan gundul terlihat proporsional dan elegan
+                              fontWeight: FontWeight.normal,
                             ),
                           ),
                         ],

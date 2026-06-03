@@ -13,7 +13,8 @@ import 'doa/doa_ibadah_page.dart';
 import 'doa/doa_terhindar_musibah_page.dart';
 import 'doa/doa_acara_page.dart';
 import 'doa/doa_akhirat_page.dart';
-import 'doa/doa_lainnya_page.dart';
+import 'doa/doa_waktu_tertentu_page.dart';
+
 // Al-Qur'an
 import 'quran/quran_page.dart';
 
@@ -94,7 +95,6 @@ class _HomePageState extends State<HomePage> {
 
                 return GestureDetector(
                   onTap: () {
-                    // KONDISI TAB 1: NIAT SHOLAT
                     if (_currentIndex == 0) {
                       if (item['number'] == '1') {
                         Navigator.push(
@@ -148,9 +148,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                         );
                       }
-                    }
-                    // KONDISI TAB 3: KUMPULAN DOA
-                    else if (_currentIndex == 2) {
+                    } else if (_currentIndex == 2) {
                       if (item['number'] == '1') {
                         Navigator.push(
                           context,
@@ -191,7 +189,7 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const DoaLainnyaPage(),
+                            builder: (context) => const DoaWaktuTertentuPage(),
                           ),
                         );
                       }
@@ -326,43 +324,43 @@ class _HomePageState extends State<HomePage> {
         'number': '1',
         'title': 'Shalat Fardhu',
         'color': const Color(0xffd1e4ff),
-        'image': 'assets/images/menu/sholat.jpg',
+        'image': 'assets/images/menu/sholat2.jpg',
       },
       {
         'number': '2',
         'title': 'Sunnah Qobliyah',
         'color': const Color(0xfffff3cd),
-        'image': 'assets/images/menu/sholat.jpg',
+        'image': 'assets/images/menu/sholat1.jpg',
       },
       {
         'number': '3',
         'title': 'Sunnah Ba\'diyah',
         'color': const Color(0xffd1f2e5),
-        'image': 'assets/images/menu/sholat.jpg',
+        'image': 'assets/images/menu/sholat4.jpg',
       },
       {
         'number': '4',
         'title': 'Shalat Fardhu\nKifayah',
         'color': const Color(0xffe2d1f9),
-        'image': 'assets/images/menu/sholat.jpg',
+        'image': 'assets/images/menu/sholat3.jpg',
       },
       {
         'number': '5',
         'title': 'Sunnah Harian',
         'color': const Color(0xffffe5d9),
-        'image': 'assets/images/menu/sholat.jpg',
+        'image': 'assets/images/menu/sholat5.jpg',
       },
       {
         'number': '6',
         'title': 'Sunnah\n(Waktu Tertentu)',
         'color': const Color(0xffd8f3dc),
-        'image': 'assets/images/menu/sholat.jpg',
+        'image': 'assets/images/menu/sholat6.jpg',
       },
       {
         'number': '7',
         'title': 'Sunnah Kebutuhan\n& Situasional',
         'color': const Color(0xffe8e8e4),
-        'image': 'assets/images/menu/sholat.jpg',
+        'image': 'assets/images/menu/sholat7.jpg',
       },
     ];
 
@@ -375,7 +373,7 @@ class _HomePageState extends State<HomePage> {
       },
       {
         'number': '2',
-        'title': 'Doa Saat Sholat',
+        'title': 'Doa Sholat',
         'color': const Color(0xfffff3cd),
         'image': 'assets/images/menu/berdoa.jpg',
       },
@@ -399,7 +397,7 @@ class _HomePageState extends State<HomePage> {
       },
       {
         'number': '6',
-        'title': 'Doa Lainnya',
+        'title': 'Doa Waktu\nTertentu',
         'color': const Color(0xfffcdbdf),
         'image': 'assets/images/menu/berdoa.jpg',
       },
@@ -422,10 +420,6 @@ class _HomePageState extends State<HomePage> {
               : "Daftar Doa",
           style: const TextStyle(fontSize: 16, color: Colors.white),
         ),
-        actions: const [
-          Icon(Icons.settings, color: Colors.white70),
-          SizedBox(width: 16),
-        ],
       ),
       body: _currentIndex == 0
           ? _buildMenuGrid(
@@ -452,10 +446,13 @@ class _HomePageState extends State<HomePage> {
         onTap: (int index) => setState(() => _currentIndex = index),
         type: BottomNavigationBarType.fixed,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.mosque), label: 'Niat'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.mosque),
+            label: 'Niat Sholat',
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.menu_book),
-            label: 'Al-Qur\'an',
+            label: 'Juz Amma',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.import_contacts),

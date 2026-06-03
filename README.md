@@ -15,7 +15,7 @@ Aplikasi ini merupakan aplikasi mobile responsif yang dibangun menggunakan Flutt
 ## Arsitektur File & Struktur Proyek (Directory Structure)
 
 ```
-flutter_sholat_doa/
+fflutter_sholat_doa/
 ├── assets/
 │   └── images/
 │       └── menu/
@@ -26,51 +26,116 @@ flutter_sholat_doa/
 │   │   ├── badiyah_dzuhur_page.dart
 │   │   ├── badiyah_isya_page.dart
 │   │   └── badiyah_maghrib_page.dart
+│   │
 │   ├── doa/
 │   │   ├── doa_acara_page.dart
 │   │   ├── doa_akhirat_page.dart
 │   │   ├── doa_harian_page.dart
 │   │   ├── doa_ibadah_page.dart
-│   │   ├── doa_lainnya_page.dart
-│   │   └── doa_terhindar_musibah_page.dart
+│   │   ├── doa_terhindar_musibah_page.dart
+│   │   └── doa_waktu_tententu_page.dart
 │   ├── doa_acara/
+│   │   ├── aqiqah_page.dart
 │   │   ├── doa_pembukaan_page.dart
 │   │   ├── doa_penutup_page.dart
 │   │   ├── doa_pernikahan_page.dart
 │   │   ├── doa_rumah_baru_page.dart
-│   │   └── doa_syukuran_page.dart
+│   │   ├── doa_syukuran_page.dart
+│   │   ├── empat_bulan_kandungan_page.dart
+│   │   ├── halal_bihalal_page.dart
+│   │   ├── khitanan_page.dart
+│   │   ├── menyambut_ramadhan_page.dart
+│   │   ├── pelepasan_musafir_page.dart
+│   │   ├── peresmian_usaha_page.dart
+│   │   ├── peringatan_hari_besar_page.dart
+│   │   ├── perpisahan_sekolah_page.dart
+│   │   ├── rapat_kerja_page.dart
+│   │   └── ulang_tahun_page.dart
 │   ├── doa_akhirat/
+│   │   ├── doa_ampunan_dosa_page.dart
 │   │   ├── doa_hisab_page.dart
 │   │   ├── doa_husnul_khotimah_page.dart
+│   │   ├── doa_kemudahan_shirat_page.dart
+│   │   ├── doa_menerima_kitab_page.dart
+│   │   ├── doa_minum_telaga_page.dart
+│   │   ├── doa_naungan_mahsyar_page.dart
+│   │   ├── doa_perlindungan_neraka_page.dart
 │   │   ├── doa_sapu_jagad_page.dart
+│   │   ├── doa_selamat_dajjal_page.dart
 │   │   ├── doa_siksa_kubur_page.dart
-│   │   └── doa_surga_firdaus_page.dart
+│   │   ├── doa_surga_firdaus_page.dart
+│   │   └── doa_terima_amal_page.dart
 │   ├── doa_harian/
 │   │   ├── bangun_tidur_page.dart
+│   │   ├── bercermin_page.dart
+│   │   ├── hujan_reda_page.dart
+│   │   ├── keluar_kamar_mandi_page.dart
+│   │   ├── keluar_masjid_page.dart
 │   │   ├── keluar_rumah_page.dart
+│   │   ├── masuk_kamar_mandi_page.dart
+│   │   ├── masuk_masjid_page.dart
+│   │   ├── masuk_pasar_page.dart
 │   │   ├── masuk_rumah_page.dart
+│   │   ├── melepas_pakaian_page.dart
+│   │   ├── memakai_pakaian_page.dart
 │   │   ├── sebelum_makan_page.dart
 │   │   ├── sebelum_tidur_page.dart
-│   │   └── sesudah_makan_page.dart
+│   │   ├── sesudah_makan_page.dart
+│   │   ├── setelah_azan_page.dart
+│   │   └── turun_hujan_page.dart
 │   ├── doa_musibah/
 │   │   ├── doa_bencana_page.dart
+│   │   ├── doa_hujan_khawatir_banjir_page.dart
+│   │   ├── doa_kehilangan_barang_page.dart
 │   │   ├── doa_kerugian_page.dart
+│   │   ├── doa_keselamatan_keturunan_page.dart
+│   │   ├── doa_melihat_pertanda_buruk_page.dart
 │   │   ├── doa_mendengar_musibah_page.dart
+│   │   ├── doa_mendengar_petir_page.dart
 │   │   ├── doa_penyakit_berat_page.dart
-│   │   └── doa_terhindar_bahaya_page.dart
+│   │   ├── doa_saat_gempa_bumi_page.dart
+│   │   ├── doa_saat_susah_page.dart
+│   │   ├── doa_terhindar_bahaya_page.dart
+│   │   ├── doa_terhindar_kezaliman_page.dart
+│   │   └── doa_tolak_bala_page.dart
 │   ├── doa_sholat/
 │   │   ├── duduk_antara_dua_sujud_page.dart
 │   │   ├── iftitah_page.dart
 │   │   ├── itidal_page.dart
+│   │   ├── qunut_nazilah_page.dart
 │   │   ├── qunut_page.dart
 │   │   ├── ruku_page.dart
+│   │   ├── setelah_sholat_dhuha_page.dart
+│   │   ├── setelah_sholat_fardhu_page.dart
+│   │   ├── setelah_sholat_hajat_page.dart
+│   │   ├── setelah_sholat_istikharah_page.dart
+│   │   ├── setelah_sholat_tahajjud_page.dart
+│   │   ├── setelah_sholat_tarawih_page.dart
+│   │   ├── setelah_sholat_taubat_page.dart
+│   │   ├── setelah_sholat_witir_page.dart
+│   │   ├── sholat_tasbih_page.dart
 │   │   ├── sujud_page.dart
+│   │   ├── sujud_sahwi_page.dart
+│   │   ├── sujud_tilawah_page.dart
 │   │   ├── tasyahud_akhir_page.dart
 │   │   └── tasyahud_awal_page.dart
+│   ├── doa_tertentu/
+│   │   ├── akhir_tahun_page.dart
+│   │   ├── awal_ramadan_page.dart
+│   │   ├── awal_tahun_page.dart
+│   │   ├── berbuka_puasa_page.dart
+│   │   ├── bulan_rajab_page.dart
+│   │   ├── bulan_safar_page.dart
+│   │   ├── malam_idul_adha_page.dart
+│   │   ├── malam_idul_fitri_page.dart
+│   │   ├── nisfu_syaban_page.dart
+│   │   ├── sepuluh_muharram_page.dart
+│   │   └── waktu_sahur_page.dart
 │   ├── harian/
 │   │   ├── dhuha_page.dart
 │   │   ├── tahajjud_page.dart
 │   │   ├── tahiyyatul_masjid_page.dart
+│   │   ├── tahiyyatul_wudu_page.dart
 │   │   └── witir_page.dart
 │   ├── kebutuhan/
 │   │   ├── hajat_page.dart
@@ -177,7 +242,7 @@ flutter_sholat_doa/
 - Doa untuk Akhirat : Doa keselamatan jangka panjang meliputi Doa Hisab, Doa Husnul Khotimah, Doa Sapu Jagad, Doa Siksa Kubur, dan Doa Surga Firdaus.
 - Doa Terhindar Musibah : Doa perlindungan dari marabahaya meliputi Doa Bencana, Doa Kerugian, Doa Mendengar Musibah, Doa Penyakit Berat, dan Doa Terhindar Bahaya.
   Doa Acara : Kumpulan doa untuk kegiatan bersama meliputi Doa Pembukaan, Doa Penutup, Doa Pernikahan, Doa Rumah Baru, dan Doa Syukuran.
-- Doa Lainnya: Wadah kompilasi doa-doa umum esensial yang tidak masuk ke dalam kategori khusus di atas (Doa untuk Kedua Orang Tua, Doa Sapu Jagat, Memohon Ilmu Bermanfaat, Kemudahan Urusan, Ketetapan Iman).
+- Doa Waktu Tertentu: Menu transisi dinamis (pengganti Doa Lainnya) yang mendata doa khusus momentum waktu sakral keagamaan, meliputi doa akhir tahun, awal ramadan, awal tahun, berbuka puasa, doa di bulan rajab, bulan safar, malam idul adha, malam idul fitri, nisfu sya'ban, sepuluh muharram, dan doa waktu sahur.
 
 ## Teknologi yang Digunakan
 

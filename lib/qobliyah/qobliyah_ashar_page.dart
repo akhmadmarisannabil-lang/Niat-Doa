@@ -183,7 +183,7 @@ class QobliyahAsharPage extends StatelessWidget {
               border: Border.all(color: Colors.teal.withOpacity(0.1)),
             ),
             child: const Text(
-              "Shalat Qobliyah Ashar berstatus ghoiru muakkad (tidak begitu ditekankan), namun memiliki keutamaan doa khusus dari Rasulullah SAW: 'Allah merahmati seseorang yang shalat empat rakaat sebelum Ashar.' Boleh dikerjakan 2 rakaat maupun 4 rakaat.",
+              "Shalat Qobliyah Ashar berstatus ghoiru muakkad (tidak begitu ditekankan), namun memiliki keutamaan doa khusus dari Rasulullah SAW: 'Allah merahmati seseorang yang shalat empat rakaat sebelum Ashar.' Sangat dianjurkan untuk dikerjakan 4 rakaat dengan 2 kali salam (artinya 2 rakaat salam, lalu 2 rakaat salam lagi) atau Jika melakukan 4 rakaat lansung, lafadz niatnya tinggal disesuaikan menjadi 'arba'a raka'aatin' (أَرْبَعَ رَكَعَاتٍ). bisa juga mengerjakan 2 rakaat saja.",
               style: TextStyle(
                 color: Colors.white60,
                 fontSize: 13,

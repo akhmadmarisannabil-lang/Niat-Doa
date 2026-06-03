@@ -183,7 +183,7 @@ class QobliyahDzuhurPage extends StatelessWidget {
               border: Border.all(color: Colors.teal.withOpacity(0.1)),
             ),
             child: const Text(
-              "Shalat Qobliyah Dzuhur bisa dilaksanakan sebanyak 2 rakaat (Muakkad/sangat dianjurkan) atau 4 rakaat (2 rakaat salam + 2 rakaat salam) berdasarkan perluasan dalil kesunnahannya. Jika melakukan 4 rakaat, lafadz niatnya tinggal disesuaikan menjadi 'arba'a raka'aatin' (أَرْبَعَ رَكَعَاتٍ).",
+              "Shalat Qobliyah Dzuhur bisa dilaksanakan sebanyak 2 rakaat (Muakkad/sangat dianjurkan) atau 4 rakaat (2 rakaat salam + 2 rakaat salam) berdasarkan perluasan dalil kesunnahannya. Jika melakukan 4 rakaat lansung, lafadz niatnya tinggal disesuaikan menjadi 'arba'a raka'aatin' (أَرْبَعَ رَكَعَاتٍ).",
               style: TextStyle(
                 color: Colors.white60,
                 fontSize: 13,

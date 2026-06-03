@@ -142,7 +142,7 @@ class TahajjudPage extends StatelessWidget {
               border: Border.all(color: Colors.teal.withOpacity(0.1)),
             ),
             child: const Text(
-              "Shalat Tahajjud adalah shalat sunnah yang dikerjakan pada malam hari setelah bangun tidur. Minimal dikerjakan 2 rakaat dengan kelipatan tak terbatas, dan waktu paling utama adalah sepertiga malam terakhir.",
+              "Shalat Tahajjud adalah shalat sunnah yang dikerjakan pada malam hari setelah bangun tidur. Dikerjakan dua rakaat, lalu salam. Anda dapat mengulanginya sebanyak rakaat yang diinginkan, Jumlah yang paling sering dicontohkan oleh Rasulullah SAW adalah 11 atau 13 rakaat (termasuk sholat witir/sholat Penutup), dan waktu paling utama adalah sepertiga malam terakhir.",
               style: TextStyle(
                 color: Colors.white60,
                 fontSize: 13,

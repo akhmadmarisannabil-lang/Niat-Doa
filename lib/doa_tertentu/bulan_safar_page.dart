@@ -1,0 +1,172 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class BulanSafarPage extends StatelessWidget {
+  const BulanSafarPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xff090f16),
+      appBar: AppBar(
+        backgroundColor: const Color(0xff090f16),
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: const Text(
+          "Doa Bulan Safar",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          Wrap(
+            spacing: 8,
+            children: [
+              _buildTag("Safar"),
+              _buildTag("Perlindungan"),
+              _buildTag("Doa"),
+            ],
+          ),
+          const SizedBox(height: 32),
+          const Center(
+            child: Text(
+              "Teks Arab",
+              style: TextStyle(
+                color: Colors.tealAccent,
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+              ),
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+            decoration: BoxDecoration(
+              color: const Color(0xff111a24),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Text(
+              "بِسْمِ اللهِ الرَّحْمنِ الرَّحِيْمِ، وَصَلَّى اللهُ تَعَالَى عَلَى سَيِّدِنَا مُحَمَّدٍ وَعَلَى اٰلِهِ وَصَحْبِهِ أَجْمَعِيْنَ، أَعُوْذُ بِاللهِ مِنْ شَرِّ هٰذَا الزَّمَانِ وَأَهْلِهِ، وَأَسْأَلُكَ بِجَلَالِكَ وَجَلَالِ وَجْهِكَ وَكَمَالِ جَلَالِ قُدْسِكَ أَنْ تُجِيْرَنِيْ وَوَالِدَيَّ وَأَوْلَادِيْ وَأَهْلِيْ وَأَحْبَابِيْ وَمَا تُحِيْطُهُ شَفَقَةُ قَلْبِيْ مِنْ شَرِّ هٰذِهِ السَّنَةِ، وَقِنِيْ شَرَّ مَا قَضَيْتَ فِيْهَا، وَاصْرِفْ عَنِّيْ شَرَّ شَهْرِ صَفَرَ، يَا كَرِيْمَ النَّظَرِ، وَاخْتِمْ لِيْ فِيْ هٰذَا الشَّهْرِ وَالدَّهْرِ بِالسَّلَامَةِ وَالْعَافِيَةِ لِي وَلِوَالِدَيَّ وَأَوْلَادِيْ وَلِأَهْلِيْ وَمَا تَحُوْطُهُ شَفَقَةُ قَلْبِيْ وَجَمِيْعِ الْمُسْلِمِيْنَ. وَصَلَّى اللهُ تَعَالَى عَلَى سَيِّدِنَا مُحَمَّدٍ وَعَلَى اٰلِهِ وَصَحْبِهِ وَسَلَّمَ",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.amiri(
+                color: Colors.white.withOpacity(0.9),
+                fontSize: 24,
+                height: 2.2,
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          const Text(
+            "Transliterasi",
+            style: TextStyle(
+              color: Colors.tealAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: const Color(0xff111a24),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: const Text(
+              "Bismilâhirraḫmanirraḫim, wa shallallâhu ta’âla ‘alâ sayyidinâ Muḫammadin wa ‘alalâ âlihi wa shaḫbihi ajma‘în. A‘ûdzu billâhi min syarri hâdzaz zamân wa ahlihi, wa as'aluka bi jalâlika wa jalâli wajhika wa kamâli jalâli qudsika an tujîrani wa wâlidayya wa ahlî wa aḫbâbi wa mâ tuḫîthuhu syafaqatu qalbî min syarri hâdzihis sanati, wa qinî syarra mâ qadlaita fîha, washrif ‘annî syarra syahri shafar(a), yâ Karîman nadhar, wakhtim lî fî hâdzas syahri wad dahri bis salâmati wal ‘âfiyati lî wa li wâlidayya wa aulâdî wa li ahlî wa mâ taḫûthuhu syafaqatu qalbi wa jamî‘il muslimîn(a), wa shallallâhu ta‘âla ‘alâ sayyidinâ Muḫammadin wa ‘alâ âlihi wa shaḫbihi wa sallam(a).",
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 14,
+                fontStyle: FontStyle.italic,
+                height: 1.4,
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          const Text(
+            "Terjemahan",
+            style: TextStyle(
+              color: Colors.tealAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: const Color(0xff111a24),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.teal.withOpacity(0.2)),
+            ),
+            child: const Text(
+              "Dengan nama Allah yang Maha Pengasih lagi Maha Penyayang. Semoga Allah selalu memberi rahmat kepada Tuan kami, Muhammad SAW dan keluarganya serta sahabatnya semuanya. Aku berlindung dari keburukan zaman ini dan orang-orang yang memiliki keburukan itu, dan aku memohon dengan wasilah keagungan-Mu dan keagungan keridhaan-Mu serta keagungan kesucian-Mu, supaya Engkau melindungiku, kedua orang tuaku, keluargaku, orang-orang yang aku cintai dan sesuatu yang diliputi kasih sayangku, dari keburukan tahun ini, dan cegahlah aku dari keburukan yang telah Engkau tetapkan di dalamnya. Palingkanlah dariku keburukan di bulan Safar, wahai Dzat Yang Memiliki Pandangan Yang Mulia. Akhirilah aku di bulan ini, di waktu ini dengan keselamatan dan sejahtera bagi kedua orang tuaku, anak-anakku, keluargaku, dan sesuatu yang diliputi kasih sayangku seluruhnya. Semoga Allah selalu memberi rahmat dan keselamatan kepada tuan kami Muhammad ﷺ, dan keluarganya serta sahabatnya.",
+              style: TextStyle(
+                color: Colors.white70,
+                fontSize: 14,
+                height: 1.4,
+              ),
+            ),
+          ),
+          const SizedBox(height: 24),
+          Row(
+            children: const [
+              Icon(Icons.info_outline, color: Colors.tealAccent, size: 18),
+              SizedBox(width: 6),
+              Text(
+                "Keterangan",
+                style: TextStyle(
+                  color: Colors.tealAccent,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: const Color(0xff111a24),
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.teal.withOpacity(0.1)),
+            ),
+            child: const Text(
+              "Amalan memohon perlindungan mutlak kepada Allah SWT dari berbagai cobaan, fitnah, mara bahaya, dan hal buruk lainnya di bulan Safar.",
+              style: TextStyle(
+                color: Colors.white60,
+                fontSize: 13,
+                height: 1.5,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTag(String label) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+      decoration: BoxDecoration(
+        color: Colors.white10,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Text(
+        label,
+        style: const TextStyle(color: Colors.white70, fontSize: 11),
+      ),
+    );
+  }
+}

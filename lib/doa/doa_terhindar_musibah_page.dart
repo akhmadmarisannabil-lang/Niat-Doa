@@ -4,13 +4,22 @@ import '../doa_musibah/doa_mendengar_musibah_page.dart';
 import '../doa_musibah/doa_terhindar_bahaya_page.dart';
 import '../doa_musibah/doa_penyakit_berat_page.dart';
 import '../doa_musibah/doa_kerugian_page.dart';
+import '../doa_musibah/doa_keselamatan_keturunan_page.dart';
+import '../doa_musibah/doa_saat_susah_page.dart';
+import '../doa_musibah/doa_tolak_bala_page.dart';
+import '../doa_musibah/doa_terhindar_kezaliman_page.dart';
+import '../doa_musibah/doa_saat_gempa_bumi_page.dart';
+import '../doa_musibah/doa_mendengar_petir_page.dart';
+import '../doa_musibah/doa_hujan_khawatir_banjir_page.dart';
+import '../doa_musibah/doa_melihat_pertanda_buruk_page.dart';
+import '../doa_musibah/doa_kehilangan_barang_page.dart';
 
 class DoaTerhindarMusibahPage extends StatelessWidget {
   const DoaTerhindarMusibahPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Kumpulan data Doa Terhindar dari Musibah menggunakan tipe Map<String, String> agar sama dengan menu doa sebelumnya
+    // Kumpulan data Doa Terhindar dari Musibah[cite: 30]
     final List<Map<String, String>> doaTerhindarMusibahList = [
       {
         'name': 'Doa Terhindar dari Musibah & Bencana',
@@ -36,9 +45,54 @@ class DoaTerhindarMusibahPage extends StatelessWidget {
         'desc':
             'Memohon perlindungan dari hilangnya nikmat dan datangnya azab seketika.',
       },
+      {
+        'name': 'Doa Keselamatan Anak Keturunan',
+        'desc':
+            'Memohon perlindungan bagi anak cucu dari keburukan dan godaan setan.',
+      },
+      {
+        'name': 'Doa Saat Susah',
+        'desc':
+            'Doa kedamaian hati dan kemudahan saat menghadapi urusan yang sulit.',
+      },
+      {
+        'name': 'Doa Tolak Bala',
+        'desc':
+            'Memohon perlindungan dari segala macam bencana dan takdir buruk.',
+      },
+      {
+        'name': 'Doa Terhindar dari Kezaliman',
+        'desc': 'Memohon agar diselamatkan dari tipu daya orang-orang zalim.',
+      },
+      {
+        'name': 'Doa Saat Gempa Bumi',
+        'desc':
+            'Memohon keteguhan, keselamatan, dan perlindungan dari guncangan bumi.',
+      },
+      {
+        'name': 'Doa Saat Mendengar Petir',
+        'desc':
+            'Pujian mengagungkan Allah saat mendengar petir agar terhindar dari murka-Nya.',
+      },
+      {
+        'name': 'Doa Saat Hujan Khawatir Banjir',
+        'desc':
+            'Memohon agar hujan dialihkan menjadi berkah di perbukitan dan bukan musibah.',
+      },
+      {
+        'name': 'Doa Melihat Pertanda Buruk',
+        'desc':
+            'Menepis rasa sial atau thiyarah dan mengembalikan takdir hanya kepada Allah.',
+      },
+      {
+        'name': 'Doa Saat Kehilangan Barang',
+        'desc':
+            'Memohon petunjuk agar barang yang hilang dapat segera dikembalikan.',
+      },
     ];
 
     return Scaffold(
+      // Disamakan dengan Doa Sholat (Pure Dark)[cite: 29]
       backgroundColor: const Color(0xff121212),
       appBar: AppBar(
         backgroundColor: const Color(0xff121212),
@@ -50,7 +104,7 @@ class DoaTerhindarMusibahPage extends StatelessWidget {
         title: const Text(
           "Doa Terhindar dari Musibah",
           style: TextStyle(
-            fontSize: 18,
+            fontSize: 18, // Ukuran font disamakan kembali menjadi 18[cite: 29]
             color: Colors.white,
             fontWeight: FontWeight.bold,
           ),
@@ -64,6 +118,7 @@ class DoaTerhindarMusibahPage extends StatelessWidget {
           return Container(
             margin: const EdgeInsets.only(bottom: 12),
             decoration: BoxDecoration(
+              // Menggunakan warna container item milik Doa Sholat[cite: 29]
               color: const Color(0xff1e1e1e),
               borderRadius: BorderRadius.circular(12),
             ),
@@ -74,14 +129,19 @@ class DoaTerhindarMusibahPage extends StatelessWidget {
               ),
               leading: CircleAvatar(
                 backgroundColor: Colors.amber.withOpacity(0.15),
-                child: const Icon(Icons.menu_book, color: Colors.amber),
+                child: const Icon(
+                  Icons.menu_book,
+                  color: Colors.amber,
+                  size:
+                      24, // Dikembalikan ke ukuran default yang proporsional[cite: 29]
+                ),
               ),
               title: Text(
                 doa['name']!,
                 style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
-                  fontSize: 16,
+                  fontSize: 16, // Ukuran font title disamakan kembali[cite: 29]
                 ),
               ),
               subtitle: Padding(
@@ -94,51 +154,60 @@ class DoaTerhindarMusibahPage extends StatelessWidget {
               trailing: const Icon(
                 Icons.arrow_forward_ios,
                 color: Colors.white30,
-                size: 16,
+                size: 16, // Ukuran trailing icon disamakan kembali[cite: 29]
               ),
               onTap: () {
+                Widget page;
                 switch (index) {
                   case 0:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const DoaBencanaPage(),
-                      ),
-                    );
+                    page = const DoaBencanaPage();
                     break;
                   case 1:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const DoaMendengarMusibahPage(),
-                      ),
-                    );
+                    page = const DoaMendengarMusibahPage();
                     break;
                   case 2:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const DoaTerhindarBahayaPage(),
-                      ),
-                    );
+                    page = const DoaTerhindarBahayaPage();
                     break;
                   case 3:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const DoaPenyakitBeratPage(),
-                      ),
-                    );
+                    page = const DoaPenyakitBeratPage();
                     break;
                   case 4:
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const DoaKerugianPage(),
-                      ),
-                    );
+                    page = const DoaKerugianPage();
                     break;
+                  case 5:
+                    page = const DoaKeselamatanKeturunanPage();
+                    break;
+                  case 6:
+                    page = const DoaSaatSusahPage();
+                    break;
+                  case 7:
+                    page = const DoaTolakBalaPage();
+                    break;
+                  case 8:
+                    page = const DoaTerhindarKezalimanPage();
+                    break;
+                  case 9:
+                    page = const DoaSaatGempaBumiPage();
+                    break;
+                  case 10:
+                    page = const DoaMendengarPetirPage();
+                    break;
+                  case 11:
+                    page = const DoaHujanKhawatirBanjirPage();
+                    break;
+                  case 12:
+                    page = const DoaMelihatPertandaBurukPage();
+                    break;
+                  case 13:
+                    page = const DoaKehilanganBarangPage();
+                    break;
+                  default:
+                    return;
                 }
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => page),
+                );
               },
             ),
           );

@@ -138,7 +138,7 @@ class WitirPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             child: const Text(
-              "Aku berniat shalat sunnah Witir dua rakaat / satu rakaat karena Allah Ta'ala.",
+              "Aku berniat shalat sunnah Witir dua rakaat (rak'atan : 1 Rakaat) karena Allah Ta'ala.",
               style: TextStyle(
                 color: Colors.white70,
                 fontSize: 14,
@@ -171,7 +171,7 @@ class WitirPage extends StatelessWidget {
               border: Border.all(color: Colors.teal.withOpacity(0.1)),
             ),
             child: const Text(
-              "Shalat Witir adalah shalat sunnah penutup rangkaian shalat malam dengan jumlah rakaat ganjil (1, 3, 5, dst). Jika mengambil 3 rakaat, biasanya dikerjakan 2 rakaat salam lalu ditambah 1 rakaat salam.",
+              "Shalat Witir adalah shalat sunnah penutup rangkaian shalat malam dengan jumlah rakaat ganjil (1, 3, 5, dst). Paling sedikit 1 rakaat, dan paling sempurna 11 rakaat. Umumnya dikerjakan 3 rakaat, dikerjakan 2 rakaat salam lalu ditambah 1 rakaat salam sebagai penutup.",
               style: TextStyle(
                 color: Colors.white60,
                 fontSize: 13,

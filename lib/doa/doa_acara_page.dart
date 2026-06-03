@@ -1,9 +1,23 @@
 import 'package:flutter/material.dart';
+// IMPORT 5 DOA AWAL (Tetap dipertahankan)
 import '../doa_acara/doa_pembukaan_page.dart';
 import '../doa_acara/doa_penutup_page.dart';
 import '../doa_acara/doa_syukuran_page.dart';
 import '../doa_acara/doa_pernikahan_page.dart';
 import '../doa_acara/doa_rumah_baru_page.dart';
+
+// IMPORT 10 DOA ACARA BARU
+import '../doa_acara/aqiqah_page.dart';
+import '../doa_acara/khitanan_page.dart';
+import '../doa_acara/ulang_tahun_page.dart';
+import '../doa_acara/pelepasan_musafir_page.dart';
+import '../doa_acara/rapat_kerja_page.dart';
+import '../doa_acara/perpisahan_sekolah_page.dart';
+import '../doa_acara/peresmian_usaha_page.dart';
+import '../doa_acara/menyambut_ramadhan_page.dart';
+import '../doa_acara/halal_bihalal_page.dart';
+import '../doa_acara/peringatan_hari_besar_page.dart';
+import '../doa_acara/empat_bulan_kandungan_page.dart';
 
 class DoaAcaraPage extends StatelessWidget {
   const DoaAcaraPage({super.key});
@@ -35,6 +49,62 @@ class DoaAcaraPage extends StatelessWidget {
         'name': 'Doa Menempati Rumah Baru',
         'desc':
             'Memohon perlindungan dan kenyamanan di tempat tinggal yang baru.',
+      },
+      // 10 DOA TAMBAHAN BARU
+      {
+        'name': 'Doa Acara Aqiqah',
+        'desc':
+            'Memohon agar anak yang diaqiqahi tumbuh menjadi generasi shalih/shalihah.',
+      },
+      {
+        'name': 'Doa Acara Khitanan',
+        'desc':
+            'Memohon keselamatan, kesucian fisik, dan keberkahan bagi anak yang dikhitan.',
+      },
+      {
+        'name': 'Doa Acara Ulang Tahun',
+        'desc':
+            'Doa memohon keberkahan umur, kesehatan, dan ketetapan iman di hari kelahiran.',
+      },
+      {
+        'name': 'Doa Pelepasan Musafir / Safar',
+        'desc':
+            'Mendoakan keselamatan dan perlindungan bagi kerabat yang hendak bepergian jauh.',
+      },
+      {
+        'name': 'Doa Pertemuan / Rapat Kerja',
+        'desc':
+            'Memohon petunjuk, kesepahaman, dan hasil keputusan rapat yang membawa maslahat.',
+      },
+      {
+        'name': 'Doa Acara Perpisahan / Kelulusan',
+        'desc':
+            'Doa pelepasan siswa atau rekan kerja agar sukses di jenjang pengabdian berikutnya.',
+      },
+      {
+        'name': 'Doa Peresmian Tempat Usaha',
+        'desc':
+            'Memohon kelancaran rezeki yang halal, berkah, dan dijauhkan dari kerugian.',
+      },
+      {
+        'name': 'Doa Menyambut Bulan Ramadhan',
+        'desc':
+            'Doa agar disampaikan umur dan diberikan kekuatan ibadah di bulan suci.',
+      },
+      {
+        'name': 'Doa Acara Halal bi Halal',
+        'desc':
+            'Memohon perajutan tali silaturahmi dan peleburan dosa antar sesama.',
+      },
+      {
+        'name': 'Doa Peringatan Hari Besar Islam',
+        'desc':
+            'Doa refleksi momentum besar (Isra Miraj, Maulid, Muharram) demi persatuan umat.',
+      },
+      {
+        'name': 'Doa 4 Bulan Kandungan',
+        'desc':
+            'Memohon kesempurnaan fisik, peniupan ruh yang baik, serta keselamatan janin.',
       },
     ];
 
@@ -135,6 +205,95 @@ class DoaAcaraPage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => const DoaRumahBaruPage(),
+                      ),
+                    );
+                    break;
+                  // BERIKUT ADALAH TAMBAHAN KE BAWAHNYA SINKRON DENGAN LIST DI ATAS
+                  case 5:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const AqiqahPage(),
+                      ),
+                    );
+                    break;
+                  case 6:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const KhitananPage(),
+                      ),
+                    );
+                    break;
+                  case 7:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const UlangTahunPage(),
+                      ),
+                    );
+                    break;
+                  case 8:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PelepasanMusafirPage(),
+                      ),
+                    );
+                    break;
+                  case 9:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const RapatKerjaPage(),
+                      ),
+                    );
+                    break;
+                  case 10:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PerpisahanSekolahPage(),
+                      ),
+                    );
+                    break;
+                  case 11:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PeresmianUsahaPage(),
+                      ),
+                    );
+                    break;
+                  case 12:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MenyambutRamadhanPage(),
+                      ),
+                    );
+                    break;
+                  case 13:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HalalBiHalalPage(),
+                      ),
+                    );
+                    break;
+                  case 14:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const PeringatanHariBesarPage(),
+                      ),
+                    );
+                    break;
+                  case 15:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const EmpatBulanKandunganPage(),
                       ),
                     );
                     break;

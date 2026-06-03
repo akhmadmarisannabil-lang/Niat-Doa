@@ -183,7 +183,7 @@ class QobliyahMaghribPage extends StatelessWidget {
               border: Border.all(color: Colors.teal.withOpacity(0.1)),
             ),
             child: const Text(
-              "Shalat Qobliyah Maghrib hukumnya ghoiru muakkad. Pelaksanaannya dianjurkan dilakukan secara ringan dan cepat agar tidak tertinggal waktu pelaksanaan Shalat Maghrib fardhu yang durasinya relatif singkat.",
+              "Shalat Qobliyah Maghrib hukumnya ghoiru muakkad. Pelaksanaannya dianjurkan dilakukan secara ringan dan cepat agar tidak tertinggal waktu pelaksanaan Shalat fardhu Maghrib yang durasinya relatif singkat.",
               style: TextStyle(
                 color: Colors.white60,
                 fontSize: 13,

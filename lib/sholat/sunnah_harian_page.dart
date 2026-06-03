@@ -3,13 +3,14 @@ import '../harian/tahajjud_page.dart';
 import '../harian/dhuha_page.dart';
 import '../harian/witir_page.dart';
 import '../harian/tahiyyatul_masjid_page.dart';
+import '../harian/tahiyyatul_wudu_page.dart';
 
 class SunnahHarianPage extends StatelessWidget {
   const SunnahHarianPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Data list sesuai visual image_416aa9.png
+    // Data list yang diperbarui sesuai instruksi & referensi image_5ef091.png
     final List<Map<String, dynamic>> sunnahHarianList = [
       {
         'name': 'Shalat Tahajjud',
@@ -33,10 +34,15 @@ class SunnahHarianPage extends StatelessWidget {
         'desc': '2 Rakaat - Dilakukan saat pertama kali memasuki masjid.',
         'targetPage': const TahiyyatulMasjidPage(),
       },
+      {
+        'name': 'Shalat Setelah Wudu\'',
+        'desc': '2 Rakaat - Dilakukan setiap kali selesai berwudu.',
+        'targetPage': const TahiyyatulWuduPage(),
+      },
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xff121212), // Tema gelap seragam
+      backgroundColor: const Color(0xff121212),
       appBar: AppBar(
         backgroundColor: const Color(0xff121212),
         elevation: 0,
@@ -63,7 +69,7 @@ class SunnahHarianPage extends StatelessWidget {
           return Container(
             margin: const EdgeInsets.only(bottom: 12),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e), // Card abu-abu gelap
+              color: const Color(0xff1e1e1e),
               borderRadius: BorderRadius.circular(12),
             ),
             child: ListTile(
@@ -73,10 +79,7 @@ class SunnahHarianPage extends StatelessWidget {
               ),
               leading: CircleAvatar(
                 backgroundColor: Colors.amber.withOpacity(0.15),
-                child: const Icon(
-                  Icons.access_time, // Ikon jam outline tipis sesuai gambar
-                  color: Colors.amber,
-                ),
+                child: const Icon(Icons.access_time, color: Colors.amber),
               ),
               title: Text(
                 shalat['name'],

@@ -1,16 +1,28 @@
 import 'package:flutter/material.dart';
+// IMPORT 5 DOA AWAL
 import '../doa_akhirat/doa_sapu_jagad_page.dart';
 import '../doa_akhirat/doa_husnul_khotimah_page.dart';
 import '../doa_akhirat/doa_siksa_kubur_page.dart';
 import '../doa_akhirat/doa_surga_firdaus_page.dart';
 import '../doa_akhirat/doa_hisab_page.dart';
 
+// IMPORT 7 DOA TAMBAHAN BARU
+import '../doa_akhirat/doa_terima_amal_page.dart';
+import '../doa_akhirat/doa_ampunan_dosa_page.dart';
+import '../doa_akhirat/doa_perlindungan_neraka_page.dart';
+import '../doa_akhirat/doa_naungan_mahsyar_page.dart';
+import '../doa_akhirat/doa_menerima_kitab_page.dart';
+import '../doa_akhirat/doa_kemudahan_shirat_page.dart';
+import '../doa_akhirat/doa_minum_telaga_page.dart';
+
+// IMPORT DOA TERBARU
+import '../doa_akhirat/doa_selamat_dajjal_page.dart';
+
 class DoaAkhiratPage extends StatelessWidget {
   const DoaAkhiratPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Data diambil langsung berdasarkan asset gambar image_9412c2.png
     final List<Map<String, String>> doaAkhiratList = [
       {
         'name': 'Doa Keselamatan Dunia & Akhirat (Sapu Jagad)',
@@ -37,12 +49,54 @@ class DoaAkhiratPage extends StatelessWidget {
         'desc':
             'Memohon agar dimudahkan dan diringankan saat penimbangan amal kelak.',
       },
+      // 7 DOA TAMBAHAN
+      {
+        'name': 'Doa Penerimaan Amal Ibadah',
+        'desc':
+            'Memohon agar seluruh ibadah dan amal shalih di dunia diterima di sisi Allah.',
+      },
+      {
+        'name': 'Doa Ampunan Dosa Akhirat',
+        'desc':
+            'Memohon pengguguran kesalahan agar dikumpulkan bersama orang saleh.',
+      },
+      {
+        'name': 'Doa Perlindungan Api Neraka',
+        'desc':
+            'Memohon perlindungan dari siksaan neraka Jahannam yang membinasakan.',
+      },
+      {
+        'name': 'Doa Perlindungan di Mahsyar',
+        'desc':
+            'Memohon naungan Arsy Allah di padang Mahsyar yang sangat terik.',
+      },
+      {
+        'name': 'Doa Menerima Catatan Amal',
+        'desc':
+            'Memohon agar menerima kitab catatan amal dengan tangan kanan (Yamin).',
+      },
+      {
+        'name': 'Doa Melewati Jembatan Shirat',
+        'desc':
+            'Memohon keteguhan dan kecepatan laksana kilat saat melintasi Shirat.',
+      },
+      {
+        'name': 'Doa Minum Air Telaga Kautsar',
+        'desc':
+            'Memohon kesempatan meminum air telaga Nabi Muhammad ﷺ tanpa dahaga selamanya.',
+      },
+      // MENU BARU
+      {
+        'name': 'Doa Selamat dari Fitnah Dajjal',
+        'desc':
+            'Memohon perlindungan dari fitnah Al-Masih Ad-Dajjal yang merusak keimanan menjelang akhir zaman.',
+      },
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xff121212),
+      backgroundColor: const Color(0xff121212), // Disamakan dengan Doa Sholat
       appBar: AppBar(
-        backgroundColor: const Color(0xff121212),
+        backgroundColor: const Color(0xff121212), // Disamakan dengan Doa Sholat
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white70),
@@ -65,7 +119,7 @@ class DoaAkhiratPage extends StatelessWidget {
           return Container(
             margin: const EdgeInsets.only(bottom: 12),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e),
+              color: const Color(0xff1e1e1e), // Disamakan dengan Doa Sholat
               borderRadius: BorderRadius.circular(12),
             ),
             child: ListTile(
@@ -74,7 +128,9 @@ class DoaAkhiratPage extends StatelessWidget {
                 vertical: 8,
               ),
               leading: CircleAvatar(
-                backgroundColor: Colors.amber.withOpacity(0.15),
+                backgroundColor: Colors.amber.withOpacity(
+                  0.15,
+                ), // Tema Amber Doa Sholat
                 child: const Icon(Icons.menu_book, color: Colors.amber),
               ),
               title: Text(
@@ -136,6 +192,70 @@ class DoaAkhiratPage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => const DoaHisabPage(),
+                      ),
+                    );
+                    break;
+                  case 5:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DoaTerimaAmalPage(),
+                      ),
+                    );
+                    break;
+                  case 6:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DoaAmpunanDosaPage(),
+                      ),
+                    );
+                    break;
+                  case 7:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DoaPerlindunganNerakaPage(),
+                      ),
+                    );
+                    break;
+                  case 8:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DoaNaunganMahsyarPage(),
+                      ),
+                    );
+                    break;
+                  case 9:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DoaMenerimaKitabPage(),
+                      ),
+                    );
+                    break;
+                  case 10:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DoaKemudahanShiratPage(),
+                      ),
+                    );
+                    break;
+                  case 11:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DoaMinumTelagaPage(),
+                      ),
+                    );
+                    break;
+                  case 12:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DoaSelamatDajjalPage(),
                       ),
                     );
                     break;

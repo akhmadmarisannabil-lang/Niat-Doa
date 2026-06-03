@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// Import Halaman Doa Eksisting
 import '../doa_harian/sebelum_makan_page.dart';
 import '../doa_harian/sesudah_makan_page.dart';
 import '../doa_harian/sebelum_tidur_page.dart';
@@ -6,11 +7,25 @@ import '../doa_harian/bangun_tidur_page.dart';
 import '../doa_harian/masuk_rumah_page.dart';
 import '../doa_harian/keluar_rumah_page.dart';
 
+// Import Halaman Doa Baru Tambahan
+import '../doa_harian/masuk_kamar_mandi_page.dart';
+import '../doa_harian/keluar_kamar_mandi_page.dart';
+import '../doa_harian/masuk_masjid_page.dart';
+import '../doa_harian/keluar_masjid_page.dart';
+import '../doa_harian/bercermin_page.dart';
+import '../doa_harian/memakai_pakaian_page.dart';
+import '../doa_harian/melepas_pakaian_page.dart';
+import '../doa_harian/turun_hujan_page.dart';
+import '../doa_harian/hujan_reda_page.dart';
+import '../doa_harian/masuk_pasar_page.dart';
+import '../doa_harian/setelah_azan_page.dart';
+
 class DoaHarianPage extends StatelessWidget {
   const DoaHarianPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    // List Data Doa yang disesuaikan dengan tampilan image_b72eeb.png
     final List<Map<String, String>> doaHarianList = [
       {
         'name': 'Doa Sebelum Makan',
@@ -35,6 +50,53 @@ class DoaHarianPage extends StatelessWidget {
       {
         'name': 'Doa Keluar Rumah',
         'desc': 'Memohon perlindungan dan tawakal selama di perjalanan.',
+      },
+      {
+        'name': 'Doa Masuk Kamar Mandi',
+        'desc':
+            'Memohon perlindungan dari godaan setan laki-laki dan perempuan.',
+      },
+      {
+        'name': 'Doa Keluar Kamar Mandi',
+        'desc':
+            'Ungkapan rasa syukur atas hilangnya kotoran dan penyakit dari tubuh.',
+      },
+      {
+        'name': 'Doa Masuk Masjid',
+        'desc': 'Memohon dibukakan pintu-pintu rahmat Allah SWT.',
+      },
+      {
+        'name': 'Doa Keluar Masjid',
+        'desc': 'Memohon karunia dan keutamaan rezeki dari Allah SWT.',
+      },
+      {
+        'name': 'Doa Bercermin',
+        'desc': 'Memohon agar akhlak disempurnakan seindah rupa fisik.',
+      },
+      {
+        'name': 'Doa Memakai Pakaian',
+        'desc':
+            'Ungkapan syukur atas pakaian penutup aurat dan perhiasan tubuh.',
+      },
+      {
+        'name': 'Doa Melepas Pakaian',
+        'desc': 'Memohon perlindungan agar aurat tidak terlihat oleh jin.',
+      },
+      {
+        'name': 'Doa Saat Turun Hujan',
+        'desc': 'Memohon agar hujan membawa keberkahan dan manfaat.',
+      },
+      {
+        'name': 'Doa Saat Hujan Reda',
+        'desc': 'Bersyukur atas curahan karunia dan rahmat air hujan.',
+      },
+      {
+        'name': 'Doa Masuk Pasar',
+        'desc': 'Memohon perlindungan dari godaan transaksi yang merugikan.',
+      },
+      {
+        'name': 'Doa Setelah Azan',
+        'desc': 'Memohon wasilah dan keutamaan bagi Baginda Rasulullah SAW.',
       },
     ];
 
@@ -143,6 +205,94 @@ class DoaHarianPage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => const KeluarRumahPage(),
+                      ),
+                    );
+                    break;
+                  case 6:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MasukKamarMandiPage(),
+                      ),
+                    );
+                    break;
+                  case 7:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const KeluarKamarMandiPage(),
+                      ),
+                    );
+                    break;
+                  case 8:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MasukMasjidPage(),
+                      ),
+                    );
+                    break;
+                  case 9:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const KeluarMasjidPage(),
+                      ),
+                    );
+                    break;
+                  case 10:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BercerminPage(),
+                      ),
+                    );
+                    break;
+                  case 11:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MemakaiPakaianPage(),
+                      ),
+                    );
+                    break;
+                  case 12:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MelepasPakaianPage(),
+                      ),
+                    );
+                    break;
+                  case 13:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const TurunHujanPage(),
+                      ),
+                    );
+                    break;
+                  case 14:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HujanRedaPage(),
+                      ),
+                    );
+                    break;
+                  case 15:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MasukPasarPage(),
+                      ),
+                    );
+                    break;
+                  case 16:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SetelahAzanPage(),
                       ),
                     );
                     break;

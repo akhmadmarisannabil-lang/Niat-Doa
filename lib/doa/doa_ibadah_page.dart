@@ -8,12 +8,26 @@ import '../doa_sholat/duduk_antara_dua_sujud_page.dart';
 import '../doa_sholat/tasyahud_awal_page.dart';
 import '../doa_sholat/tasyahud_akhir_page.dart';
 
+// IMPORT DOA BARU
+import '../doa_sholat/sujud_sahwi_page.dart';
+import '../doa_sholat/sujud_tilawah_page.dart';
+import '../doa_sholat/setelah_sholat_fardhu_page.dart';
+import '../doa_sholat/setelah_sholat_dhuha_page.dart';
+import '../doa_sholat/setelah_sholat_tahajjud_page.dart';
+import '../doa_sholat/setelah_sholat_hajat_page.dart';
+import '../doa_sholat/setelah_sholat_istikharah_page.dart';
+import '../doa_sholat/setelah_sholat_taubat_page.dart';
+import '../doa_sholat/setelah_sholat_tarawih_page.dart';
+import '../doa_sholat/setelah_sholat_witir_page.dart';
+import '../doa_sholat/qunut_nazilah_page.dart';
+import '../doa_sholat/sholat_tasbih_page.dart';
+
 class DoaIbadahPage extends StatelessWidget {
   const DoaIbadahPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    // Kumpulan data Doa Ibadah sesuai blueprint Anda
+    // Kumpulan data Doa Ibadah (Diperbarui dengan total 20 doa)
     final List<Map<String, String>> doaIbadahList = [
       {
         'name': 'Doa Qunut',
@@ -53,6 +67,66 @@ class DoaIbadahPage extends StatelessWidget {
         'desc':
             'Bacaan tasyahud akhir sebelum salam termasuk shalawat dan doa perlindungan.',
       },
+      // KATEGORI DOA TAMBAHAN & SETELAH SHOLAT
+      {
+        'name': 'Doa Sujud Sahwi',
+        'desc':
+            'Dibaca dua kali guna menutup kekurangan atau kelupaan di dalam sholat.',
+      },
+      {
+        'name': 'Doa Sujud Tilawah',
+        'desc':
+            'Dibaca ketika mendengar atau membaca potongan ayat-ayat sajdah.',
+      },
+      {
+        'name': 'Doa Setelah Sholat Fardhu',
+        'desc':
+            'Amalan doa perlindungan dan rasa syukur setelah sholat lima waktu.',
+      },
+      {
+        'name': 'Doa Setelah Sholat Dhuha',
+        'desc':
+            'Doa permohonan kelancaran rezeki, keberkahan, dan perlindungan pagi hari.',
+      },
+      {
+        'name': 'Doa Setelah Sholat Tahajjud',
+        'desc':
+            'Pujian pengakuan keagungan Allah di sepertiga malam yang mustajab.',
+      },
+      {
+        'name': 'Doa Setelah Sholat Hajat',
+        'desc':
+            'Doa kepasrahan tatkala memohon pemenuhan hajat atau cita-cita khusus.',
+      },
+      {
+        'name': 'Doa Setelah Sholat Istikharah',
+        'desc':
+            'Doa memohon petunjuk pilihan terbaik di antara kebimbangan urusan.',
+      },
+      {
+        'name': 'Doa Setelah Sholat Taubat',
+        'desc': 'Istighfar pengakuan dosa untuk memohon ampunan Allah SWT.',
+      },
+      {
+        'name': 'Doa Setelah Sholat Tarawih',
+        'desc':
+            'Doa Kamilin memohon kesempurnaan iman di malam bulan Ramadhan.',
+      },
+      {
+        'name': 'Doa Setelah Sholat Witir',
+        'desc':
+            'Pujian pensucian kepada Dzat Raja yang Maha Suci sebagai penutup sholat malam.',
+      },
+      {
+        'name': 'Qunut Nazilah Palestina',
+        'desc':
+            'Doa perlindungan untuk keselamatan dan kemenangan muslimin Palestina.',
+      },
+      {
+        'name': 'Doa Sholat Tasbih',
+        'desc':
+            'Lafadz tasbih pengetuk pintu langit yang dibaca berulang dalam sholat.',
+      },
     ];
 
     return Scaffold(
@@ -65,7 +139,7 @@ class DoaIbadahPage extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
-          "Doa Saat Sholat",
+          "Doa Sholat",
           style: TextStyle(
             fontSize: 18,
             color: Colors.white,
@@ -157,7 +231,6 @@ class DoaIbadahPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        // DIPERBAIKI: Menggunakan nama class DudukEntreDuaSujudPage
                         builder: (context) => const DudukEntreDuaSujudPage(),
                       ),
                     );
@@ -175,6 +248,103 @@ class DoaIbadahPage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => const TasyahudAkhirPage(),
+                      ),
+                    );
+                    break;
+                  case 8:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SujudSahwiPage(),
+                      ),
+                    );
+                    break;
+                  case 9:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SujudTilawahPage(),
+                      ),
+                    );
+                    break;
+                  case 10:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SetelahSholatFardhuPage(),
+                      ),
+                    );
+                    break;
+                  case 11:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SetelahSholatDhuhaPage(),
+                      ),
+                    );
+                    break;
+                  case 12:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SetelahSholatTahajjudPage(),
+                      ),
+                    );
+                    break;
+                  case 13:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SetelahSholatHajatPage(),
+                      ),
+                    );
+                    break;
+                  case 14:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            const SetelahSholatIstikharahPage(),
+                      ),
+                    );
+                    break;
+                  case 15:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SetelahSholatTaubatPage(),
+                      ),
+                    );
+                    break;
+                  case 16:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SetelahSholatTarawihPage(),
+                      ),
+                    );
+                    break;
+                  case 17:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SetelahSholatWitirPage(),
+                      ),
+                    );
+                    break;
+                  case 18:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const QunutNazilahPage(),
+                      ),
+                    );
+                    break;
+                  case 19:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SholatTasbihPage(),
                       ),
                     );
                     break;
