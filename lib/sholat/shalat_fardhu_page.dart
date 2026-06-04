@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../theme_provider.dart'; // Pastikan path ini benar
+
 import '../sholat_fardhu/subuh_page.dart';
 import '../sholat_fardhu/dzuhur_page.dart';
 import '../sholat_fardhu/ashar_page.dart';
 import '../sholat_fardhu/maghrib_page.dart';
-import '../sholat_fardhu/isya_page.dart'; // Import Isya
-import '../sholat_fardhu/jumat_page.dart'; // Import Jumat
+import '../sholat_fardhu/isya_page.dart';
+import '../sholat_fardhu/jumat_page.dart';
 
 class ShalatFardhuPage extends StatelessWidget {
   const ShalatFardhuPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final isLightTheme = Provider.of<ThemeProvider>(context).isLightTheme;
+
     final List<Map<String, String>> shalatMenu = [
       {
         'name': 'Shalat Subuh',
@@ -40,19 +45,22 @@ class ShalatFardhuPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xff121212),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xff121212),
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          icon: Icon(
+            Icons.arrow_back,
+            color: isLightTheme ? Colors.black87 : Colors.white70,
+          ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           "Shalat Fardhu",
           style: TextStyle(
             fontSize: 18,
-            color: Colors.white,
+            color: isLightTheme ? Colors.black87 : Colors.white,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -65,8 +73,17 @@ class ShalatFardhuPage extends StatelessWidget {
           return Container(
             margin: const EdgeInsets.only(bottom: 12),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e),
+              color: isLightTheme ? Colors.white : const Color(0xff1e1e1e),
               borderRadius: BorderRadius.circular(12),
+              boxShadow: isLightTheme
+                  ? [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.05),
+                        blurRadius: 4,
+                        offset: const Offset(0, 2),
+                      ),
+                    ]
+                  : null,
             ),
             child: ListTile(
               contentPadding: const EdgeInsets.symmetric(
@@ -74,13 +91,18 @@ class ShalatFardhuPage extends StatelessWidget {
                 vertical: 8,
               ),
               leading: CircleAvatar(
-                backgroundColor: Colors.amber.withOpacity(0.15),
-                child: const Icon(Icons.access_time, color: Colors.amber),
+                backgroundColor: isLightTheme
+                    ? Colors.blue.withOpacity(0.1)
+                    : Colors.amber.withOpacity(0.15),
+                child: Icon(
+                  Icons.access_time,
+                  color: isLightTheme ? Colors.blue[800] : Colors.amber,
+                ),
               ),
               title: Text(
                 item['name']!,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: isLightTheme ? Colors.black87 : Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
@@ -89,12 +111,15 @@ class ShalatFardhuPage extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
                   item['desc']!,
-                  style: const TextStyle(color: Colors.white60, fontSize: 13),
+                  style: TextStyle(
+                    color: isLightTheme ? Colors.black54 : Colors.white60,
+                    fontSize: 13,
+                  ),
                 ),
               ),
-              trailing: const Icon(
+              trailing: Icon(
                 Icons.arrow_forward_ios,
-                color: Colors.white30,
+                color: isLightTheme ? Colors.black26 : Colors.white30,
                 size: 16,
               ),
               onTap: () {
@@ -131,13 +156,13 @@ class ShalatFardhuPage extends StatelessWidget {
                       ),
                     );
                     break;
-                  case 4: // Mengaktifkan Isya
+                  case 4:
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const IsyaPage()),
                     );
                     break;
-                  case 5: // Mengaktifkan Jumat
+                  case 5:
                     Navigator.push(
                       context,
                       MaterialPageRoute(

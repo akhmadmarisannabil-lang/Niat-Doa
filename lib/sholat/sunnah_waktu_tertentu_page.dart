@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../theme_provider.dart';
+
 import '../tertentu/idul_fitri_page.dart';
 import '../tertentu/idul_adha_page.dart';
 import '../tertentu/tarawih_page.dart';
@@ -9,6 +12,8 @@ class SunnahWaktuTertentuPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isLightTheme = Provider.of<ThemeProvider>(context).isLightTheme;
+
     final List<Map<String, dynamic>> sunnahTertentuList = [
       {
         'name': 'Shalat Idul Fitri',
@@ -35,21 +40,22 @@ class SunnahWaktuTertentuPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: const Color(
-        0xff121212,
-      ), // Disamakan dengan Sunnah Harian
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xff121212),
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          icon: Icon(
+            Icons.arrow_back,
+            color: isLightTheme ? Colors.black87 : Colors.white70,
+          ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           "Sunnah (Waktu Tertentu)",
           style: TextStyle(
             fontSize: 18,
-            color: Colors.white,
+            color: isLightTheme ? Colors.black87 : Colors.white,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -62,10 +68,17 @@ class SunnahWaktuTertentuPage extends StatelessWidget {
           return Container(
             margin: const EdgeInsets.only(bottom: 12),
             decoration: BoxDecoration(
-              color: const Color(
-                0xff1e1e1e,
-              ), // Menggunakan Card abu-abu gelap (#1e1e1e)
+              color: isLightTheme ? Colors.white : const Color(0xff1e1e1e),
               borderRadius: BorderRadius.circular(12),
+              boxShadow: isLightTheme
+                  ? [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.05),
+                        blurRadius: 4,
+                        offset: const Offset(0, 2),
+                      ),
+                    ]
+                  : null,
             ),
             child: ListTile(
               contentPadding: const EdgeInsets.symmetric(
@@ -73,16 +86,18 @@ class SunnahWaktuTertentuPage extends StatelessWidget {
                 vertical: 8,
               ),
               leading: CircleAvatar(
-                backgroundColor: Colors.amber.withOpacity(0.15),
-                child: const Icon(
-                  Icons.access_time, // Menggunakan ikon outline jam seragam
-                  color: Colors.amber,
+                backgroundColor: isLightTheme
+                    ? Colors.blue.withOpacity(0.1)
+                    : Colors.amber.withOpacity(0.15),
+                child: Icon(
+                  Icons.access_time,
+                  color: isLightTheme ? Colors.blue[800] : Colors.amber,
                 ),
               ),
               title: Text(
                 shalat['name'],
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: isLightTheme ? Colors.black87 : Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
@@ -91,12 +106,15 @@ class SunnahWaktuTertentuPage extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
                   shalat['desc'],
-                  style: const TextStyle(color: Colors.white60, fontSize: 13),
+                  style: TextStyle(
+                    color: isLightTheme ? Colors.black54 : Colors.white60,
+                    fontSize: 13,
+                  ),
                 ),
               ),
-              trailing: const Icon(
+              trailing: Icon(
                 Icons.arrow_forward_ios,
-                color: Colors.white30,
+                color: isLightTheme ? Colors.black26 : Colors.white30,
                 size: 16,
               ),
               onTap: () {

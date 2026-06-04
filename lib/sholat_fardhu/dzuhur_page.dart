@@ -9,10 +9,8 @@ class DzuhurPage extends StatefulWidget {
 }
 
 class _DzuhurPageState extends State<DzuhurPage> {
-  // Opsi default yang terpilih
   String _selectedOption = 'Shalat Dzuhur Sendirian';
 
-  // 1. Data Niat Shalat Dzuhur
   final Map<String, Map<String, String>> _niatData = {
     'Shalat Dzuhur Sendirian': {
       'title': 'Niat (Sendirian)',
@@ -43,7 +41,6 @@ class _DzuhurPageState extends State<DzuhurPage> {
     },
   };
 
-  // 2. Data Tata Cara Shalat Dzuhur Berurutan (4 Rakaat) Beserta Bacaannya
   final List<Map<String, dynamic>> _tataCaraUrutanData = [
     {
       'header': 'Rakaat 1 - Langkah 1',
@@ -92,14 +89,8 @@ class _DzuhurPageState extends State<DzuhurPage> {
       'header': 'Rakaat 1 - Langkah 5',
       'title': 'Membaca Surat Pendek',
       'desc':
-          'Disunnahkan membaca salah satu surat pendek pilihan dari Al-Qur\'an secara lirih, contohnya Surat Al-Ikhlas:',
-      'hasRead': true,
-      'arabic':
-          "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ. قُلْ هُوَ اللَّهُ أَحَدٌ ﴿١﴾ اللَّهُ الصَّمَدُ ﴿٢﴾ لَمْ يَلِدْ وَلَمْ يُولَدْ ﴿٣﴾ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ ﴿٤﴾",
-      'latin':
-          "Bismillaahir-rachmaanir-rachiim. Qul huwallaahu achad. Allaahush-shamad. Lam yalid walam yuulad. Walam yakul-lahu kufuwan achad.",
-      'arti':
-          "Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang. Katakanlah (Muhammad), 'Dialah Allah, Yang Maha Esa. Allah tempat meminta segala sesuatu. (Allah) tidak beranak dan tidak pula diperanakkan. Dan tidak ada sesuatu yang setara dengan Dia.'",
+          'Disunnahkan membaca surat atau ayat Al-Qur\'an secara lirih pada rakaat pertama dan kedua.',
+      'hasRead': false,
     },
     {
       'header': 'Rakaat 1 - Langkah 6',
@@ -182,7 +173,7 @@ class _DzuhurPageState extends State<DzuhurPage> {
           'Setelah sujud kedua rakaat kedua, ambil posisi duduk Tasyahud Awal (Iftirasy). Letakkan tangan di paha, acungkan jari telunjuk tangan kanan saat membaca kalimat "Illallaah", lalu membaca doa tasyahud awal:',
       'hasRead': true,
       'arabic':
-          "التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَىٰ عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ. اللَّهُمَّ صَلِّ عَلَىٰ سَيِّدِنَا مُحَمَّدٍ وَعَلَىٰ آلِ سَيِّدِنَا مُحَمَّدٍ",
+          "التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُ` وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَىٰ عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ. اللَّهُمَّ صَلِّ عَلَىٰ سَيِّدِنَا مُحَمَّدٍ وَعَلَىٰ آلِ سَيِّدِنَا مُحَمَّدٍ",
       'latin':
           "At-tahiyyaatul mubaarakatus-shalawaatuth-thayyibaatu lillaah. As-salaamu 'alaika ayyuhan-nabiyyu wa rachmatullaahi wa barakaatuh. As-salaamu 'alainaa wa 'alaa 'ibaadillaahis-shaalichiin. Asyhadu allaa ilaacha illallaach, wa asyhadu anna Muhammadar-rasuulullaach. Allaahumma shalli 'alaa sayyidinaa Muhammad wa 'alaa aali sayyidinaa Muhammad.",
       'arti':
@@ -250,19 +241,51 @@ class _DzuhurPageState extends State<DzuhurPage> {
 
   @override
   Widget build(BuildContext context) {
+    final bool isLightMode = Theme.of(context).brightness == Brightness.light;
+
+    final Color bgColor = isLightMode
+        ? const Color(0xfff5f7fa)
+        : const Color(0xff090f16);
+    final Color cardColor = isLightMode
+        ? Colors.white
+        : const Color(0xff111a24);
+    final Color innerCardColor = isLightMode
+        ? const Color(0xffeef2f7)
+        : const Color(0xff090f16);
+    final Color mainTextColor = isLightMode
+        ? const Color(0xff1e293b)
+        : Colors.white;
+    final Color subTextColor = isLightMode
+        ? const Color(0xff64748b)
+        : Colors.white70;
+    final Color accentColor = isLightMode
+        ? const Color(0xff0f766e)
+        : Colors.tealAccent;
+    final Color borderTileColor = isLightMode
+        ? const Color(0xffe2e8f0)
+        : Colors.white12;
+
+    // =========================================================================
+    // UPDATE UTAMA: Inisialisasi warna teks arab adaptif tema mengikuti AsharPage
+    // =========================================================================
+    final Color arabicTextColor = isLightMode ? Colors.black87 : Colors.white;
+
     return Scaffold(
-      backgroundColor: const Color(0xff090f16),
+      backgroundColor: bgColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xff090f16),
+        backgroundColor: bgColor,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          icon: Icon(
+            Icons.arrow_back,
+            color: isLightMode ? Colors.black87 : Colors.white70,
+          ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           "Niat & Tata Cara Shalat Dzuhur",
           style: TextStyle(
-            color: Colors.white,
+            color: mainTextColor,
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
@@ -271,7 +294,6 @@ class _DzuhurPageState extends State<DzuhurPage> {
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [
-          // Kategori Tag / Label Atas
           Wrap(
             spacing: 8,
             children: [
@@ -281,12 +303,12 @@ class _DzuhurPageState extends State<DzuhurPage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: isLightMode ? const Color(0xffe2e8f0) : Colors.white10,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Text(
+                child: Text(
                   "Shalat Fardhu",
-                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                  style: TextStyle(color: subTextColor, fontSize: 11),
                 ),
               ),
               Container(
@@ -295,12 +317,12 @@ class _DzuhurPageState extends State<DzuhurPage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: isLightMode ? const Color(0xffe2e8f0) : Colors.white10,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Text(
+                child: Text(
                   "dzuhur",
-                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                  style: TextStyle(color: subTextColor, fontSize: 11),
                 ),
               ),
               Container(
@@ -309,36 +331,37 @@ class _DzuhurPageState extends State<DzuhurPage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: isLightMode ? const Color(0xffe2e8f0) : Colors.white10,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Text(
+                child: Text(
                   "wajib",
-                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                  style: TextStyle(color: subTextColor, fontSize: 11),
                 ),
               ),
             ],
           ),
           const SizedBox(height: 24),
 
-          // FITUR DROPDOWN (4 Pilihan Menu)
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
             decoration: BoxDecoration(
-              color: const Color(0xff111a24),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.teal.withOpacity(0.3), width: 1),
+              border: Border.all(
+                color: isLightMode
+                    ? const Color(0xffcbd5e1)
+                    : Colors.teal.withOpacity(0.3),
+                width: 1,
+              ),
             ),
             child: DropdownButtonHideUnderline(
               child: DropdownButton<String>(
                 value: _selectedOption,
-                dropdownColor: const Color(0xff111a24),
-                icon: const Icon(
-                  Icons.arrow_drop_down,
-                  color: Colors.tealAccent,
-                ),
-                style: const TextStyle(
-                  color: Colors.white,
+                dropdownColor: cardColor,
+                icon: Icon(Icons.arrow_drop_down, color: accentColor),
+                style: TextStyle(
+                  color: mainTextColor,
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
                 ),
@@ -360,14 +383,12 @@ class _DzuhurPageState extends State<DzuhurPage> {
           ),
           const SizedBox(height: 32),
 
-          // Tampilan Berdasarkan Opsi Terpilih
           if (_selectedOption != 'Tata Cara Shalat Dzuhur') ...[
-            // === TAMPILAN NIAT ===
             Center(
               child: Text(
                 _niatData[_selectedOption]!['title']!,
-                style: const TextStyle(
-                  color: Colors.tealAccent,
+                style: TextStyle(
+                  color: accentColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
@@ -378,24 +399,28 @@ class _DzuhurPageState extends State<DzuhurPage> {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
               decoration: BoxDecoration(
-                color: const Color(0xff111a24),
+                color: cardColor,
                 borderRadius: BorderRadius.circular(12),
+                border: isLightMode
+                    ? Border.all(color: const Color(0xffe2e8f0))
+                    : null,
               ),
               child: Text(
                 _niatData[_selectedOption]!['arabic']!,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.amiri(
-                  color: Colors.white.withOpacity(0.9),
+                  color:
+                      arabicTextColor, // Diubah menggunakan variabel terpusat
                   fontSize: 24,
                   height: 2.2,
                 ),
               ),
             ),
             const SizedBox(height: 24),
-            const Text(
+            Text(
               "Transliterasi",
               style: TextStyle(
-                color: Colors.tealAccent,
+                color: accentColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
               ),
@@ -405,13 +430,16 @@ class _DzuhurPageState extends State<DzuhurPage> {
               width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xff111a24),
+                color: cardColor,
                 borderRadius: BorderRadius.circular(12),
+                border: isLightMode
+                    ? Border.all(color: const Color(0xffe2e8f0))
+                    : null,
               ),
               child: Text(
                 _niatData[_selectedOption]!['transliteration']!,
-                style: const TextStyle(
-                  color: Colors.white70,
+                style: TextStyle(
+                  color: subTextColor,
                   fontSize: 14,
                   fontStyle: FontStyle.italic,
                   height: 1.4,
@@ -419,10 +447,10 @@ class _DzuhurPageState extends State<DzuhurPage> {
               ),
             ),
             const SizedBox(height: 24),
-            const Text(
+            Text(
               "Terjemahan",
               style: TextStyle(
-                color: Colors.tealAccent,
+                color: accentColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
               ),
@@ -432,33 +460,32 @@ class _DzuhurPageState extends State<DzuhurPage> {
               width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xff111a24),
+                color: cardColor,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.teal.withOpacity(0.2)),
+                border: Border.all(
+                  color: isLightMode
+                      ? const Color(0xffe2e8f0)
+                      : Colors.teal.withOpacity(0.2),
+                ),
               ),
               child: Text(
                 _niatData[_selectedOption]!['translation']!,
-                style: const TextStyle(
-                  color: Colors.white70,
+                style: TextStyle(
+                  color: subTextColor,
                   fontSize: 14,
                   height: 1.4,
                 ),
               ),
             ),
           ] else ...[
-            // === TAMPILAN TATA CARA TERURUT DENGAN BACAAN ARAB & LATIN ===
             Row(
-              children: const [
-                Icon(
-                  Icons.format_list_numbered,
-                  color: Colors.tealAccent,
-                  size: 18,
-                ),
-                SizedBox(width: 8),
+              children: [
+                Icon(Icons.format_list_numbered, color: accentColor, size: 18),
+                const SizedBox(width: 8),
                 Text(
                   "Urutan Panduan Shalat Dzuhur Lengkap",
                   style: TextStyle(
-                    color: Colors.tealAccent,
+                    color: accentColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
                   ),
@@ -471,52 +498,47 @@ class _DzuhurPageState extends State<DzuhurPage> {
                 margin: const EdgeInsets.only(bottom: 16),
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: const Color(0xff111a24),
+                  color: cardColor,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.white12),
+                  border: Border.all(color: borderTileColor),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Penanda Langkah / Rakaat ke-
                     Text(
                       tataCara['header']!,
-                      style: const TextStyle(
-                        color: Colors.tealAccent,
+                      style: TextStyle(
+                        color: accentColor,
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     const SizedBox(height: 4),
-                    // Nama Gerakan
                     Text(
                       tataCara['title']!,
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: mainTextColor,
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     const SizedBox(height: 8),
-                    // Deskripsi Panduan Gerakan
                     Text(
                       tataCara['desc']!,
-                      style: const TextStyle(
-                        color: Colors.white70,
+                      style: TextStyle(
+                        color: subTextColor,
                         fontSize: 13,
                         height: 1.4,
                       ),
                     ),
 
-                    // Jika langkah ini memiliki teks bacaan doa shalat
                     if (tataCara['hasRead'] == true) ...[
                       const SizedBox(height: 16),
-                      // Box Bacaan Arab
                       Container(
                         width: double.infinity,
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: const Color(0xff090f16),
+                          color: innerCardColor,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Column(
@@ -527,29 +549,35 @@ class _DzuhurPageState extends State<DzuhurPage> {
                                 tataCara['arabic']!,
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.amiri(
-                                  color: Colors.tealAccent,
+                                  color:
+                                      arabicTextColor, // Diubah menggunakan variabel terpusat
                                   fontSize: 20,
                                   height: 2.0,
                                 ),
                               ),
                             ),
                             const SizedBox(height: 12),
-                            // Latin / Transliterasi
                             Text(
                               tataCara['latin']!,
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.9),
+                                color: mainTextColor.withOpacity(0.9),
                                 fontSize: 13,
                                 fontStyle: FontStyle.italic,
                                 height: 1.4,
                               ),
                             ),
-                            const Divider(color: Colors.white10, height: 16),
-                            // Arti / Terjemahan
+                            Divider(
+                              color: isLightMode
+                                  ? const Color(0xffcbd5e1)
+                                  : Colors.white10,
+                              height: 16,
+                            ),
                             Text(
                               tataCara['arti']!,
-                              style: const TextStyle(
-                                color: Colors.white60,
+                              style: TextStyle(
+                                color: isLightMode
+                                    ? const Color(0xff475569)
+                                    : Colors.white60,
                                 fontSize: 12,
                                 height: 1.4,
                               ),
@@ -559,13 +587,12 @@ class _DzuhurPageState extends State<DzuhurPage> {
                       ),
                     ],
 
-                    // Tambahan penanganan khusus untuk gerakan I'tidal (Dua seksi bacaan terpisah)
                     if (tataCara['title'] == 'I\'tidal') ...[
                       const SizedBox(height: 12),
                       Text(
                         tataCara['extraDesc']!,
-                        style: const TextStyle(
-                          color: Colors.white70,
+                        style: TextStyle(
+                          color: subTextColor,
                           fontSize: 13,
                           height: 1.4,
                         ),
@@ -575,7 +602,7 @@ class _DzuhurPageState extends State<DzuhurPage> {
                         width: double.infinity,
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: const Color(0xff090f16),
+                          color: innerCardColor,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Column(
@@ -586,7 +613,8 @@ class _DzuhurPageState extends State<DzuhurPage> {
                                 tataCara['extraArabic']!,
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.amiri(
-                                  color: Colors.tealAccent,
+                                  color:
+                                      arabicTextColor, // Diubah menggunakan variabel terpusat
                                   fontSize: 20,
                                   height: 2.0,
                                 ),
@@ -596,17 +624,24 @@ class _DzuhurPageState extends State<DzuhurPage> {
                             Text(
                               tataCara['extraLatin']!,
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.9),
+                                color: mainTextColor.withOpacity(0.9),
                                 fontSize: 13,
                                 fontStyle: FontStyle.italic,
                                 height: 1.4,
                               ),
                             ),
-                            const Divider(color: Colors.white10, height: 16),
+                            Divider(
+                              color: isLightMode
+                                  ? const Color(0xffcbd5e1)
+                                  : Colors.white10,
+                              height: 16,
+                            ),
                             Text(
                               tataCara['extraArti']!,
-                              style: const TextStyle(
-                                color: Colors.white60,
+                              style: TextStyle(
+                                color: isLightMode
+                                    ? const Color(0xff475569)
+                                    : Colors.white60,
                                 fontSize: 12,
                                 height: 1.4,
                               ),
@@ -622,15 +657,14 @@ class _DzuhurPageState extends State<DzuhurPage> {
           ],
 
           const SizedBox(height: 24),
-          // Seksi Keterangan & Dalil (Statis paling bawah)
           Row(
-            children: const [
-              Icon(Icons.info_outline, color: Colors.tealAccent, size: 18),
-              SizedBox(width: 6),
+            children: [
+              Icon(Icons.info_outline, color: accentColor, size: 18),
+              const SizedBox(width: 6),
               Text(
                 "Keterangan",
                 style: TextStyle(
-                  color: Colors.tealAccent,
+                  color: accentColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
@@ -642,14 +676,18 @@ class _DzuhurPageState extends State<DzuhurPage> {
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xff111a24),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.teal.withOpacity(0.1)),
+              border: Border.all(
+                color: isLightMode
+                    ? const Color(0xffe2e8f0)
+                    : Colors.teal.withOpacity(0.1),
+              ),
             ),
-            child: const Text(
+            child: Text(
               "Shalat Dzuhur dilakukan sebanyak 4 rakaat dengan merendahkan suara bacaannya (sirr). Waktunya dimulai sejak matahari tergelincir ke barat hingga bayangan suatu benda sama panjang dengan benda aslinya.",
               style: TextStyle(
-                color: Colors.white60,
+                color: isLightMode ? const Color(0xff475569) : Colors.white60,
                 fontSize: 13,
                 height: 1.5,
               ),

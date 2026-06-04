@@ -24,7 +24,6 @@ class DoaAcaraPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Menggunakan tipe List<Map<String, String>> disamakan dengan menu doa musibah sebelumnya
     final List<Map<String, String>> doaAcaraList = [
       {
         'name': 'Doa Pembukaan Acara',
@@ -50,7 +49,6 @@ class DoaAcaraPage extends StatelessWidget {
         'desc':
             'Memohon perlindungan dan kenyamanan di tempat tinggal yang baru.',
       },
-      // 10 DOA TAMBAHAN BARU
       {
         'name': 'Doa Acara Aqiqah',
         'desc':
@@ -109,19 +107,20 @@ class DoaAcaraPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xff121212),
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: const Color(0xff121212),
-        elevation: 0,
+        backgroundColor: Colors.white,
+        elevation: 0.5,
+        iconTheme: const IconThemeData(color: Colors.black87),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
           "Doa Acara",
           style: TextStyle(
             fontSize: 18,
-            color: Colors.white,
+            color: Colors.black87,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -134,8 +133,9 @@ class DoaAcaraPage extends StatelessWidget {
           return Container(
             margin: const EdgeInsets.only(bottom: 12),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e),
+              color: Colors.grey[50],
               borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.grey[200]!),
             ),
             child: ListTile(
               contentPadding: const EdgeInsets.symmetric(
@@ -143,13 +143,13 @@ class DoaAcaraPage extends StatelessWidget {
                 vertical: 8,
               ),
               leading: CircleAvatar(
-                backgroundColor: Colors.amber.withOpacity(0.15),
-                child: const Icon(Icons.menu_book, color: Colors.amber),
+                backgroundColor: Colors.blue.withOpacity(0.15),
+                child: const Icon(Icons.menu_book, color: Colors.blue),
               ),
               title: Text(
                 doa['name']!,
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: Colors.black87,
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
@@ -158,12 +158,12 @@ class DoaAcaraPage extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
                   doa['desc']!,
-                  style: const TextStyle(color: Colors.white60, fontSize: 13),
+                  style: const TextStyle(color: Colors.black54, fontSize: 13),
                 ),
               ),
               trailing: const Icon(
                 Icons.arrow_forward_ios,
-                color: Colors.white30,
+                color: Colors.black26,
                 size: 16,
               ),
               onTap: () {
@@ -208,7 +208,6 @@ class DoaAcaraPage extends StatelessWidget {
                       ),
                     );
                     break;
-                  // BERIKUT ADALAH TAMBAHAN KE BAWAHNYA SINKRON DENGAN LIST DI ATAS
                   case 5:
                     Navigator.push(
                       context,

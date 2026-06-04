@@ -9,7 +9,6 @@ class AsharPage extends StatefulWidget {
 }
 
 class _AsharPageState extends State<AsharPage> {
-  // Opsi default yang terpilih
   String _selectedOption = 'Shalat Ashar Sendirian';
 
   // 1. Data Niat Shalat Ashar
@@ -43,7 +42,7 @@ class _AsharPageState extends State<AsharPage> {
     },
   };
 
-  // 2. Data Tata Cara Shalat Ashar Berurutan (4 Rakaat) Beserta Bacaannya
+  // 2. Data Tata Cara Shalat Ashar Berurutan
   final List<Map<String, dynamic>> _tataCaraUrutanData = [
     {
       'header': 'Rakaat 1 - Langkah 1',
@@ -73,7 +72,7 @@ class _AsharPageState extends State<AsharPage> {
       'latin':
           "Allaahu akbaru kabiiraw-walhamdu lillaahi katsiiraw-wasubhaanallaahi bukrataw-wa-ashiila. Inni wajjahtu wajhiya lilladzii fatharas-samaawaati wal-ardha haniifam-muslimaw-wamaa ana minal-musyrikiin. Inna shalaatii wanusukii wamahyaaya wamamaatii lillaahi rabbil-'aalamiin. Laa syariikalahu wabidzaalika umirtu wa ana minal-muslimiin.",
       'arti':
-          "Allah Maha Besar lagi Sempurna Kebesaran-Nya, segala puji bagi Allah sebanyak-banyaknya. Dan Maha Suci Allah sepanjang pagi dan sore. Kubalikkan wajahku kepada Dzat yang menciptakan langit dan bumi dengan keadaan lurus dan berserah diri, dan aku bukanlah dari golongan orang-orang musyrik. Sesungguhnya shalatku, ibadahku, hidupku dan matiku hanya untuk Allah, Tuhan semesta alam. Tidak ada sekutu bagi-Nya, dan dengan yang demikian itulah aku diperintahkan, dan aku adalah termasuk orang-orang Muslim.",
+          "Allah Maha Besar lagi Sempurna Kebesaran-Nya, segala puji bagi Allah sebanyak-banyaknya. Dan Maha Suci Allah sepanjang pagi dan sore. Kubalikkan wajahku kepada Dzat yang menciptakan langit dan bumi dengan keadaan lurus and berserah diri, dan aku bukanlah dari golongan orang-orang musyrik. Sesungguhnya shalatku, ibadahku, hidupku dan matiku hanya untuk Allah, Tuhan semesta alam. Tidak ada sekutu bagi-Nya, dan dengan yang demikian itulah aku diperintahkan, dan aku adalah termasuk orang-orang Muslim.",
     },
     {
       'header': 'Rakaat 1 - Langkah 4',
@@ -92,14 +91,8 @@ class _AsharPageState extends State<AsharPage> {
       'header': 'Rakaat 1 - Langkah 5',
       'title': 'Membaca Surat Pendek',
       'desc':
-          'Disunnahkan membaca salah satu surat pendek dari Al-Qur\'an secara lirih, misalnya Surat Al-Ikhlas:',
-      'hasRead': true,
-      'arabic':
-          "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ. قُلْ هُوَ اللَّهُ أَحَدٌ ﴿١﴾ اللَّهُ الصَّمَدُ ﴿٢﴾ لَمْ يَلِدْ وَلَمْ يُولَدْ ﴿٣﴾ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ ﴿٤﴾",
-      'latin':
-          "Bismillaahir-rachmaanir-rachiim. Qul huwallaahu achad. Allaahush-shamad. Lam yalid walam yuulad. Walam yakul-lahu kufuwan achad.",
-      'arti':
-          "Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang. Katakanlah (Muhammad), 'Dialah Allah, Yang Maha Esa. Allah tempat meminta segala sesuatu. (Allah) tidak beranak dan tidak pula diperanakkan. Dan tidak ada sesuatu yang setara dengan Dia.'",
+          'Disunnahkan membaca surat atau ayat Al-Qur\'an secara lirih pada rakaat pertama dan kedua.',
+      'hasRead': false,
     },
     {
       'header': 'Rakaat 1 - Langkah 6',
@@ -223,7 +216,7 @@ class _AsharPageState extends State<AsharPage> {
           'Setelah menyelesaikan sujud terakhir, duduklah dengan posisi Tasyahud Akhir (Tawarruk). Jari telunjuk tangan kanan diacungkan saat lafal "Illallaah", kemudian membaca bacaan Tasyahud Akhir lengkap dengan shalawat Ibrahimiyah:',
       'hasRead': true,
       'arabic':
-          "التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَىٰ عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّا رَسُولُ اللَّهِ. اللَّهُمَّ صَلِّ عَلَىٰ سَيِّدِنَا مُحَمَّدٍ وَعَلَىٰ آلِ سَيِّدِنَا مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَىٰ سَيِّدِنَا إِبْرَاهِيمَ وَعَلَىٰ آلِ سَيِّدِنَا إِبْرَاهِيمَ وَبَارِكْ عَلَىٰ سَيِّدِنَا مُحَمَّدٍ وَعَلَىٰ آلِ سَيِّدِنَا مُحَمَّدٍ كَمَا بَارَكْتَ عَلَىٰ سَيِّدِنَا إِبْرَاهِيمَ وَعَلَىٰ آلِ سَيِّدِنَا إِبْرَاهِيمَ فِي الْعَالَمِينَ إِنَّكَ حَمِيدٌ مَجِيدٌ",
+          "التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَىٰ عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ. اللَّهُمَّ صَلِّ عَلَىٰ سَيِّدِنَا مُحَمَّدٍ وَعَلَىٰ آلِ سَيِّدِنَا مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَىٰ سَيِّدِنَا إِبْرَاهِيمَ وَعَلَىٰ آلِ سَيِّدِنَا إِبْرَاهِيمَ وَبَارِكْ عَلَىٰ سَيِّدِنَا مُحَمَّدٍ وَعَلَىٰ آلِ سَيِّدِنَا مُحَمَّدٍ كَمَا بَارَكْتَ عَلَىٰ سَيِّدِنَا إِبْرَاهِيمَ وَعَلَىٰ آلِ سَيِّدِنَا إِبْرَاهِيمَ فِي الْعَالَمِينَ إِنَّكَ حَمِيدٌ مَجِيدٌ",
       'latin':
           "At-tahiyyaatul mubaarakatus-shalawaatuth-thayyibaatu lillaah. As-salaamu 'alaika ayyuhan-nabiyyu wa rachmatullaahi wa barakaatuh. As-salaamu 'alainaa wa 'alaa 'ibaadillaahis-shaalichiin. Asyhadu allaa ilaacha illallaach, wa asyhadu anna Muhammadar-rasuulullaach. Allaahumma shalli 'alaa sayyidinaa Muhammad wa 'alaa aali sayyidinaa Muhammad, kamaa shallaita 'alaa sayyidinaa Ibraahiim wa 'alaa aali sayyidinaa Ibraahiim. Wa baarik 'alaa sayyidinaa Muhammad wa 'alaa aali sayyidinaa Muhammad, kamaa baarakta 'alaa sayyidinaa Ibraahiim wa 'alaa aali sayyidinaa Ibraahiim, fil-'aalamiina innaka chamiidum-majiid.",
       'arti':
@@ -250,19 +243,39 @@ class _AsharPageState extends State<AsharPage> {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
+
+    final scaffoldBgColor = isDarkMode
+        ? const Color(0xff090f16)
+        : Colors.grey[50];
+    final cardBgColor = isDarkMode ? const Color(0xff111a24) : Colors.white;
+    final borderColor = isDarkMode ? Colors.white12 : Colors.grey[300]!;
+
+    final primaryTextColor = isDarkMode ? Colors.white : Colors.black87;
+    final secondaryTextColor = isDarkMode ? Colors.white70 : Colors.black87;
+    final tertiaryTextColor = isDarkMode ? Colors.white60 : Colors.black87;
+
+    // =========================================================================
+    // UPDATE UTAMA: Warna Teks Arab Mengikuti Tema Kontras Hitam Berdasarkan Request
+    // =========================================================================
+    final arabicTextColor = isDarkMode ? Colors.white : Colors.black87;
+
     return Scaffold(
-      backgroundColor: const Color(0xff090f16),
+      backgroundColor: scaffoldBgColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xff090f16),
+        backgroundColor: scaffoldBgColor,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          icon: Icon(
+            Icons.arrow_back,
+            color: isDarkMode ? Colors.white70 : Colors.black87,
+          ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           "Niat & Tata Cara Shalat Ashar",
           style: TextStyle(
-            color: Colors.white,
+            color: primaryTextColor,
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
@@ -281,12 +294,12 @@ class _AsharPageState extends State<AsharPage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: isDarkMode ? Colors.white10 : Colors.grey[200],
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Text(
+                child: Text(
                   "Shalat Fardhu",
-                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                  style: TextStyle(color: secondaryTextColor, fontSize: 11),
                 ),
               ),
               Container(
@@ -295,12 +308,12 @@ class _AsharPageState extends State<AsharPage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: isDarkMode ? Colors.white10 : Colors.grey[200],
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Text(
+                child: Text(
                   "ashar",
-                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                  style: TextStyle(color: secondaryTextColor, fontSize: 11),
                 ),
               ),
               Container(
@@ -309,36 +322,38 @@ class _AsharPageState extends State<AsharPage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: isDarkMode ? Colors.white10 : Colors.grey[200],
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Text(
+                child: Text(
                   "wajib",
-                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                  style: TextStyle(color: secondaryTextColor, fontSize: 11),
                 ),
               ),
             ],
           ),
           const SizedBox(height: 24),
 
-          // FITUR DROPDOWN (4 Pilihan Menu)
+          // FITUR DROPDOWN
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
             decoration: BoxDecoration(
-              color: const Color(0xff111a24),
+              color: cardBgColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.teal.withOpacity(0.3), width: 1),
+              border: Border.all(
+                color: isDarkMode
+                    ? Colors.teal.withOpacity(0.3)
+                    : Colors.teal.withOpacity(0.5),
+                width: 1,
+              ),
             ),
             child: DropdownButtonHideUnderline(
               child: DropdownButton<String>(
                 value: _selectedOption,
-                dropdownColor: const Color(0xff111a24),
-                icon: const Icon(
-                  Icons.arrow_drop_down,
-                  color: Colors.tealAccent,
-                ),
-                style: const TextStyle(
-                  color: Colors.white,
+                dropdownColor: cardBgColor,
+                icon: const Icon(Icons.arrow_drop_down, color: Colors.teal),
+                style: TextStyle(
+                  color: primaryTextColor,
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
                 ),
@@ -363,11 +378,11 @@ class _AsharPageState extends State<AsharPage> {
           // Tampilan Berdasarkan Opsi Terpilih
           if (_selectedOption != 'Tata Cara Shalat Ashar') ...[
             // === TAMPILAN NIAT ===
-            Center(
+            const Center(
               child: Text(
-                _niatData[_selectedOption]!['title']!,
-                style: const TextStyle(
-                  color: Colors.tealAccent,
+                'Niat Shalat',
+                style: TextStyle(
+                  color: Colors.teal,
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
@@ -378,14 +393,16 @@ class _AsharPageState extends State<AsharPage> {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
               decoration: BoxDecoration(
-                color: const Color(0xff111a24),
+                color: cardBgColor,
                 borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: borderColor),
               ),
               child: Text(
                 _niatData[_selectedOption]!['arabic']!,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.amiri(
-                  color: Colors.white.withOpacity(0.9),
+                  color:
+                      arabicTextColor, // Perubahan warna teks arab menjadi hitam tipis di light mode
                   fontSize: 24,
                   height: 2.2,
                 ),
@@ -395,7 +412,7 @@ class _AsharPageState extends State<AsharPage> {
             const Text(
               "Transliterasi",
               style: TextStyle(
-                color: Colors.tealAccent,
+                color: Colors.teal,
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
               ),
@@ -405,16 +422,18 @@ class _AsharPageState extends State<AsharPage> {
               width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xff111a24),
+                color: cardBgColor,
                 borderRadius: BorderRadius.circular(12),
+                border: Border.all(color: borderColor),
               ),
               child: Text(
                 _niatData[_selectedOption]!['transliteration']!,
-                style: const TextStyle(
-                  color: Colors.white70,
+                style: TextStyle(
+                  color: secondaryTextColor,
                   fontSize: 14,
                   fontStyle: FontStyle.italic,
                   height: 1.4,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ),
@@ -422,7 +441,7 @@ class _AsharPageState extends State<AsharPage> {
             const Text(
               "Terjemahan",
               style: TextStyle(
-                color: Colors.tealAccent,
+                color: Colors.teal,
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
               ),
@@ -432,33 +451,30 @@ class _AsharPageState extends State<AsharPage> {
               width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xff111a24),
+                color: cardBgColor,
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(color: Colors.teal.withOpacity(0.2)),
               ),
               child: Text(
                 _niatData[_selectedOption]!['translation']!,
-                style: const TextStyle(
-                  color: Colors.white70,
+                style: TextStyle(
+                  color: secondaryTextColor,
                   fontSize: 14,
                   height: 1.4,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ),
           ] else ...[
-            // === TAMPILAN TATA CARA TERURUT DENGAN BACAAN ARAB & LATIN ===
+            // === TAMPILAN TATA CARA TERURUT ===
             Row(
               children: const [
-                Icon(
-                  Icons.format_list_numbered,
-                  color: Colors.tealAccent,
-                  size: 18,
-                ),
+                Icon(Icons.format_list_numbered, color: Colors.teal, size: 18),
                 SizedBox(width: 8),
                 Text(
                   "Urutan Panduan Shalat Ashar Lengkap",
                   style: TextStyle(
-                    color: Colors.tealAccent,
+                    color: Colors.teal,
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
                   ),
@@ -471,53 +487,50 @@ class _AsharPageState extends State<AsharPage> {
                 margin: const EdgeInsets.only(bottom: 16),
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: const Color(0xff111a24),
+                  color: cardBgColor,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.white12),
+                  border: Border.all(color: borderColor),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Penanda Langkah / Rakaat ke-
                     Text(
                       tataCara['header']!,
                       style: const TextStyle(
-                        color: Colors.tealAccent,
+                        color: Colors.teal,
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     const SizedBox(height: 4),
-                    // Nama Gerakan
                     Text(
                       tataCara['title']!,
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: primaryTextColor,
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     const SizedBox(height: 8),
-                    // Deskripsi Panduan Gerakan
                     Text(
                       tataCara['desc']!,
-                      style: const TextStyle(
-                        color: Colors.white70,
+                      style: TextStyle(
+                        color: secondaryTextColor,
                         fontSize: 13,
                         height: 1.4,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
 
-                    // Jika langkah ini memiliki teks bacaan doa shalat
                     if (tataCara['hasRead'] == true) ...[
                       const SizedBox(height: 16),
-                      // Box Bacaan Arab
                       Container(
                         width: double.infinity,
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: const Color(0xff090f16),
+                          color: scaffoldBgColor,
                           borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: borderColor),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -527,31 +540,32 @@ class _AsharPageState extends State<AsharPage> {
                                 tataCara['arabic']!,
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.amiri(
-                                  color: Colors.tealAccent,
+                                  color:
+                                      arabicTextColor, // Mengubah warna lafadz arab panduan shalat menjadi hitam
                                   fontSize: 20,
                                   height: 2.0,
                                 ),
                               ),
                             ),
                             const SizedBox(height: 12),
-                            // Latin / Transliterasi
                             Text(
                               tataCara['latin']!,
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.9),
+                                color: primaryTextColor,
                                 fontSize: 13,
                                 fontStyle: FontStyle.italic,
                                 height: 1.4,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
-                            const Divider(color: Colors.white10, height: 16),
-                            // Arti / Terjemahan
+                            Divider(color: borderColor, height: 16),
                             Text(
                               tataCara['arti']!,
-                              style: const TextStyle(
-                                color: Colors.white60,
+                              style: TextStyle(
+                                color: tertiaryTextColor,
                                 fontSize: 12,
                                 height: 1.4,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
                           ],
@@ -559,13 +573,12 @@ class _AsharPageState extends State<AsharPage> {
                       ),
                     ],
 
-                    // Tambahan khusus untuk gerakan I'tidal (Dua seksi bacaan terpisah)
                     if (tataCara['title'] == 'I\'tidal') ...[
                       const SizedBox(height: 12),
                       Text(
                         tataCara['extraDesc']!,
-                        style: const TextStyle(
-                          color: Colors.white70,
+                        style: TextStyle(
+                          color: secondaryTextColor,
                           fontSize: 13,
                           height: 1.4,
                         ),
@@ -575,8 +588,9 @@ class _AsharPageState extends State<AsharPage> {
                         width: double.infinity,
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: const Color(0xff090f16),
+                          color: scaffoldBgColor,
                           borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: borderColor),
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -586,7 +600,8 @@ class _AsharPageState extends State<AsharPage> {
                                 tataCara['extraArabic']!,
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.amiri(
-                                  color: Colors.tealAccent,
+                                  color:
+                                      arabicTextColor, // Mengubah warna extra lafadz arab menjadi hitam
                                   fontSize: 20,
                                   height: 2.0,
                                 ),
@@ -596,19 +611,21 @@ class _AsharPageState extends State<AsharPage> {
                             Text(
                               tataCara['extraLatin']!,
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.9),
+                                color: primaryTextColor,
                                 fontSize: 13,
                                 fontStyle: FontStyle.italic,
                                 height: 1.4,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
-                            const Divider(color: Colors.white10, height: 16),
+                            Divider(color: borderColor, height: 16),
                             Text(
                               tataCara['extraArti']!,
-                              style: const TextStyle(
-                                color: Colors.white60,
+                              style: TextStyle(
+                                color: tertiaryTextColor,
                                 fontSize: 12,
                                 height: 1.4,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
                           ],
@@ -622,15 +639,14 @@ class _AsharPageState extends State<AsharPage> {
           ],
 
           const SizedBox(height: 24),
-          // Seksi Keterangan & Dalil (Statis paling bawah)
           Row(
             children: const [
-              Icon(Icons.info_outline, color: Colors.tealAccent, size: 18),
+              Icon(Icons.info_outline, color: Colors.teal, size: 18),
               SizedBox(width: 6),
               Text(
                 "Keterangan",
                 style: TextStyle(
-                  color: Colors.tealAccent,
+                  color: Colors.teal,
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
@@ -642,16 +658,17 @@ class _AsharPageState extends State<AsharPage> {
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xff111a24),
+              color: cardBgColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.teal.withOpacity(0.1)),
+              border: Border.all(color: Colors.teal.withOpacity(0.2)),
             ),
-            child: const Text(
+            child: Text(
               "Shalat Ashar dilakukan sebanyak 4 rakaat dengan merendahkan suara bacaan (sirr). Waktunya dimulai sejak bayangan suatu benda sama panjang dengan benda aslinya hingga matahari mulai menguning (sebelum terbenam). Shalat ini disebut juga sebagai Sholat Al-Wustha (shalat yang di tengah-tengah).",
               style: TextStyle(
-                color: Colors.white60,
+                color: tertiaryTextColor,
                 fontSize: 13,
                 height: 1.5,
+                fontWeight: FontWeight.w400,
               ),
             ),
           ),

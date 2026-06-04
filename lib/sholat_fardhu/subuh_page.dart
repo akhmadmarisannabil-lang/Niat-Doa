@@ -9,15 +9,14 @@ class SubuhPage extends StatefulWidget {
 }
 
 class _SubuhPageState extends State<SubuhPage> {
-  // Opsi default yang terpilih
   String _selectedOption = 'Shalat Subuh Sendirian';
 
-  // 1. Data Niat Shalat
+  // 1. Data Niat Shalat Subuh (Tetap dipertahankan penuh)
   final Map<String, Map<String, String>> _niatData = {
     'Shalat Subuh Sendirian': {
       'title': 'Niat (Sendirian)',
       'arabic':
-          "أُصَلِّىْ فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلّٰهِ تَعَالَىٰ",
+          "أُصَلِّى فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلَّهِ تَعَالَى",
       'transliteration':
           "Ushallii fardhas-subhi rak'ataini mustqpbilal qiblati adaa'an lillaahi ta'aalaa.",
       'translation':
@@ -26,7 +25,7 @@ class _SubuhPageState extends State<SubuhPage> {
     'Shalat Subuh Sebagai Imam': {
       'title': 'Niat (Imam)',
       'arabic':
-          "أُصَلِّىْ فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ اِمَامًا لِلّٰهِ تَعَالَىٰ",
+          "أُصَلِّى فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ مَأْمُوْمًا لِلَّهِ تَعَالَى",
       'transliteration':
           "Ushallii fardhas-subhi rak'ataini mustqbilal qiblati imaaman lillaahi ta'aalaa.",
       'translation':
@@ -35,7 +34,7 @@ class _SubuhPageState extends State<SubuhPage> {
     'Shalat Subuh Sebagai Makmum': {
       'title': 'Niat (Makmum)',
       'arabic':
-          "أُصَلِّىْ فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ مَأْمُوْمًا لِلّٰهِ تَعَالَىٰ",
+          "أُصَلِّى فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً إِمَامًا لِلهِ تَعَالَى",
       'transliteration':
           "Ushallii fardhas-subhi rak'ataini mustqbilal qiblati ma'mūman lillaahi ta'aalaa.",
       'translation':
@@ -92,14 +91,8 @@ class _SubuhPageState extends State<SubuhPage> {
       'header': 'Rakaat 1 - Langkah 5',
       'title': 'Membaca Surat Pendek',
       'desc':
-          'Disunnahkan membaca surat atau ayat Al-Qur\'an, contohnya Surat Al-Ikhlas:',
-      'hasRead': true,
-      'arabic':
-          "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ. قُلْ هُوَ اللَّهُ أَحَدٌ ﴿١﴾ اللَّهُ الصَّمَدُ ﴿٢﴾ لَمْ يَلِدْ وَلَمْ يُولَدْ ﴿٣﴾ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ ﴿٤﴾",
-      'latin':
-          "Bismillaahir-rachmaanir-rachiim. Qul huwallaahu achad. Allaahush-shamad. Lam yalid walam yuulad. Walam yakul-lahu kufuwan achad.",
-      'arti':
-          "Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang. Katakanlah (Muhammad), 'Dialah Allah, Yang Maha Esa. Allah tempat meminta segala sesuatu. (Allah) tidak beranak dan tidak pula diperanakkan. Dan tidak ada sesuatu yang setara dengan Dia.'",
+          'Disunnahkan membaca surat atau ayat Al-Qur\'an secara keras (jahr) pada rakaat pertama dan kedua.',
+      'hasRead': false,
     },
     {
       'header': 'Rakaat 1 - Langkah 6',
@@ -146,7 +139,7 @@ class _SubuhPageState extends State<SubuhPage> {
           'Bangun dari sujud pertama lalu duduk dengan tenang seraya mengucap "Allahu Akbar" dan membaca doa:',
       'hasRead': true,
       'arabic':
-          "رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَارْفَعْنِي وَارْزُقْنِي وَاهْدِنِي وَعَافِنِي وَاعْفُ عَنِّي",
+          "رَبِّ اغْفِرْ لِيْ وَارْحَمْنِيْ وَاجْبُرْنِيْ وَارْفَعْنِيْ وَارْزُقْنِيْ وَاهْدِنِيْ وَعَافِنِيْ وَاعْفُ عَنِّيْ",
       'latin':
           "Rabbighfirlii warchamnii wajburnii warfa'nii warzuqnii wahdinii wa 'aafinii wa'fu 'annii.",
       'arti':
@@ -185,7 +178,7 @@ class _SubuhPageState extends State<SubuhPage> {
       'arabic':
           "اللَّهُمَّ اهْدِنِي فِيْمَنْ هَدَيْتَ، وَعَافِنِي فِيْمَنْ عَافَيْتَ، وَتَوَلَّنِيْ فِيْمَنْ تَوَلَّيْتَ، وَبَارِكْ لِي فِيْمَا أَعْطَيْتَ، وَقِنِي شَرَّمَا قَضَيْتَ، فَإِنَّكَ تَقْضِيَ وَلَا يُقْضَى عَلَيْكَ، وَإِنَّهُ لَا يَذِلُّ مَنْ وَالَيْتَ، تَبَارَكْتَ رَبَّنَا وَتَعَالَيْتَ.",
       'latin':
-          "Allaahummahndinii fii man hadait, wa 'aafinii fii man 'aafait, wa tawallanii fii man tawallait, wa baarik lii fii maa a'thait, wa qinii syarra maa qadhait, fa innaka taqdhii wa laa yuqdhaa 'alaik, wa innahu laa yadzillu man waalait, wa laa ya'izzu man 'aadait, tabaarakta rabbanaa wa ta'aalait.",
+          "Allaahuummahndinii fii man hadait, wa 'aafinii fii man 'aafait, wa tawallanii fii man tawallait, wa baarik lii fii maa a'thait, wa qinii syarra maa qadhait, fa innaka taqdhii wa laa yuqdhaa 'alaik, wa innahu laa yadzillu man waalait, wa laa ya'izzu man 'aadait, tabaarakta rabbanaa wa ta'aalait.",
       'arti':
           "Ya Allah, berilah aku petunjuk di antara orang-orang yang Engkau beri petunjuk, berilah kesejahteraan kepadaku di antara orang-orang yang Engkau beri kesejahteraan, pimpinlah aku di antara orang-orang yang Engkau pimpin, berilah berkah kepadaku pada apa yang telah Engkau berikan, dan peliharalah aku dari keburukan yang Engkau putuskan. Karena sesungguhnya Engkaulah yang memutuskan dan tidak diputuskan atas-Mu. Dan sesungguhnya tidak akan hina orang yang Engkau pimpin, dan tidak akan mulia orang yang Engkau musuhi. Maha Suci Engkau, wahai Tuhan kami, dan Maha Tinggi Engkau.",
     },
@@ -230,19 +223,48 @@ class _SubuhPageState extends State<SubuhPage> {
 
   @override
   Widget build(BuildContext context) {
+    // Penyelarasan Tema Adaptif Mengikuti dzuhur_page.dart
+    final bool isLightMode = Theme.of(context).brightness == Brightness.light;
+
+    final Color bgColor = isLightMode
+        ? const Color(0xfff5f7fa)
+        : const Color(0xff090f16);
+    final Color cardColor = isLightMode
+        ? Colors.white
+        : const Color(0xff111a24);
+    final Color innerCardColor = isLightMode
+        ? const Color(0xffeef2f7)
+        : const Color(0xff090f16);
+    final Color mainTextColor = isLightMode
+        ? const Color(0xff1e293b)
+        : Colors.white;
+    final Color subTextColor = isLightMode
+        ? const Color(0xff64748b)
+        : Colors.white70;
+    final Color accentColor = isLightMode
+        ? const Color(0xff0f766e)
+        : Colors.tealAccent;
+    final Color borderTileColor = isLightMode
+        ? const Color(0xffe2e8f0)
+        : Colors.white12;
+    final Color arabicTextColor = isLightMode ? Colors.black87 : Colors.white;
+
     return Scaffold(
-      backgroundColor: const Color(0xff090f16),
+      backgroundColor: bgColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xff090f16),
+        backgroundColor: bgColor,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          icon: Icon(
+            Icons.arrow_back,
+            color: isLightMode ? Colors.black87 : Colors.white70,
+          ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           "Niat & Tata Cara Shalat Subuh",
           style: TextStyle(
-            color: Colors.white,
+            color: mainTextColor,
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
@@ -261,12 +283,12 @@ class _SubuhPageState extends State<SubuhPage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: isLightMode ? const Color(0xffe2e8f0) : Colors.white10,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Text(
+                child: Text(
                   "Shalat Fardhu",
-                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                  style: TextStyle(color: subTextColor, fontSize: 11),
                 ),
               ),
               Container(
@@ -275,12 +297,12 @@ class _SubuhPageState extends State<SubuhPage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: isLightMode ? const Color(0xffe2e8f0) : Colors.white10,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Text(
+                child: Text(
                   "subuh",
-                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                  style: TextStyle(color: subTextColor, fontSize: 11),
                 ),
               ),
               Container(
@@ -289,12 +311,12 @@ class _SubuhPageState extends State<SubuhPage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: isLightMode ? const Color(0xffe2e8f0) : Colors.white10,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Text(
+                child: Text(
                   "wajib",
-                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                  style: TextStyle(color: subTextColor, fontSize: 11),
                 ),
               ),
             ],
@@ -305,20 +327,22 @@ class _SubuhPageState extends State<SubuhPage> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
             decoration: BoxDecoration(
-              color: const Color(0xff111a24),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.teal.withOpacity(0.3), width: 1),
+              border: Border.all(
+                color: isLightMode
+                    ? const Color(0xffcbd5e1)
+                    : Colors.teal.withOpacity(0.3),
+                width: 1,
+              ),
             ),
             child: DropdownButtonHideUnderline(
               child: DropdownButton<String>(
                 value: _selectedOption,
-                dropdownColor: const Color(0xff111a24),
-                icon: const Icon(
-                  Icons.arrow_drop_down,
-                  color: Colors.tealAccent,
-                ),
-                style: const TextStyle(
-                  color: Colors.white,
+                dropdownColor: cardColor,
+                icon: Icon(Icons.arrow_drop_down, color: accentColor),
+                style: TextStyle(
+                  color: mainTextColor,
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
                 ),
@@ -346,8 +370,8 @@ class _SubuhPageState extends State<SubuhPage> {
             Center(
               child: Text(
                 _niatData[_selectedOption]!['title']!,
-                style: const TextStyle(
-                  color: Colors.tealAccent,
+                style: TextStyle(
+                  color: accentColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
@@ -358,24 +382,27 @@ class _SubuhPageState extends State<SubuhPage> {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
               decoration: BoxDecoration(
-                color: const Color(0xff111a24),
+                color: cardColor,
                 borderRadius: BorderRadius.circular(12),
+                border: isLightMode
+                    ? Border.all(color: const Color(0xffe2e8f0))
+                    : null,
               ),
               child: Text(
                 _niatData[_selectedOption]!['arabic']!,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.amiri(
-                  color: Colors.white.withOpacity(0.9),
+                  color: arabicTextColor,
                   fontSize: 24,
                   height: 2.2,
                 ),
               ),
             ),
             const SizedBox(height: 24),
-            const Text(
+            Text(
               "Transliterasi",
               style: TextStyle(
-                color: Colors.tealAccent,
+                color: accentColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
               ),
@@ -385,13 +412,16 @@ class _SubuhPageState extends State<SubuhPage> {
               width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xff111a24),
+                color: cardColor,
                 borderRadius: BorderRadius.circular(12),
+                border: isLightMode
+                    ? Border.all(color: const Color(0xffe2e8f0))
+                    : null,
               ),
               child: Text(
                 _niatData[_selectedOption]!['transliteration']!,
-                style: const TextStyle(
-                  color: Colors.white70,
+                style: TextStyle(
+                  color: subTextColor,
                   fontSize: 14,
                   fontStyle: FontStyle.italic,
                   height: 1.4,
@@ -399,10 +429,10 @@ class _SubuhPageState extends State<SubuhPage> {
               ),
             ),
             const SizedBox(height: 24),
-            const Text(
+            Text(
               "Terjemahan",
               style: TextStyle(
-                color: Colors.tealAccent,
+                color: accentColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
               ),
@@ -412,14 +442,18 @@ class _SubuhPageState extends State<SubuhPage> {
               width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xff111a24),
+                color: cardColor,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.teal.withOpacity(0.2)),
+                border: Border.all(
+                  color: isLightMode
+                      ? const Color(0xffe2e8f0)
+                      : Colors.teal.withOpacity(0.2),
+                ),
               ),
               child: Text(
                 _niatData[_selectedOption]!['translation']!,
-                style: const TextStyle(
-                  color: Colors.white70,
+                style: TextStyle(
+                  color: subTextColor,
                   fontSize: 14,
                   height: 1.4,
                 ),
@@ -428,17 +462,13 @@ class _SubuhPageState extends State<SubuhPage> {
           ] else ...[
             // === TAMPILAN TATA CARA TERURUT DENGAN BACAAN ARAB & LATIN ===
             Row(
-              children: const [
-                Icon(
-                  Icons.format_list_numbered,
-                  color: Colors.tealAccent,
-                  size: 18,
-                ),
-                SizedBox(width: 8),
+              children: [
+                Icon(Icons.format_list_numbered, color: accentColor, size: 18),
+                const SizedBox(width: 8),
                 Text(
                   "Urutan Panduan Shalat Subuh Lengkap",
                   style: TextStyle(
-                    color: Colors.tealAccent,
+                    color: accentColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
                   ),
@@ -451,9 +481,9 @@ class _SubuhPageState extends State<SubuhPage> {
                 margin: const EdgeInsets.only(bottom: 16),
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: const Color(0xff111a24),
+                  color: cardColor,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.white12),
+                  border: Border.all(color: borderTileColor),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -461,8 +491,8 @@ class _SubuhPageState extends State<SubuhPage> {
                     // Penanda Langkah / Rakaat ke-
                     Text(
                       tataCara['header']!,
-                      style: const TextStyle(
-                        color: Colors.tealAccent,
+                      style: TextStyle(
+                        color: accentColor,
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
                       ),
@@ -471,8 +501,8 @@ class _SubuhPageState extends State<SubuhPage> {
                     // Nama Gerakan
                     Text(
                       tataCara['title']!,
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: mainTextColor,
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
@@ -481,8 +511,8 @@ class _SubuhPageState extends State<SubuhPage> {
                     // Deskripsi Panduan Gerakan
                     Text(
                       tataCara['desc']!,
-                      style: const TextStyle(
-                        color: Colors.white70,
+                      style: TextStyle(
+                        color: subTextColor,
                         fontSize: 13,
                         height: 1.4,
                       ),
@@ -496,7 +526,7 @@ class _SubuhPageState extends State<SubuhPage> {
                         width: double.infinity,
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: const Color(0xff090f16),
+                          color: innerCardColor,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Column(
@@ -507,29 +537,37 @@ class _SubuhPageState extends State<SubuhPage> {
                                 tataCara['arabic']!,
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.amiri(
-                                  color: Colors.tealAccent,
+                                  color: isLightMode
+                                      ? Colors.black87
+                                      : Colors.tealAccent,
                                   fontSize: 20,
                                   height: 2.0,
                                 ),
                               ),
                             ),
                             const SizedBox(height: 12),
-                            // Latin / Transliterasi (MENGGUNAKAN OPACITY KARENA WHITE90 TIDAK ADA)
                             Text(
                               tataCara['latin']!,
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.9),
+                                color: mainTextColor.withOpacity(0.9),
                                 fontSize: 13,
                                 fontStyle: FontStyle.italic,
                                 height: 1.4,
                               ),
                             ),
-                            const Divider(color: Colors.white10, height: 16),
+                            Divider(
+                              color: isLightMode
+                                  ? const Color(0xffcbd5e1)
+                                  : Colors.white10,
+                              height: 16,
+                            ),
                             // Arti / Terjemahan
                             Text(
                               tataCara['arti']!,
-                              style: const TextStyle(
-                                color: Colors.white60,
+                              style: TextStyle(
+                                color: isLightMode
+                                    ? const Color(0xff475569)
+                                    : Colors.white60,
                                 fontSize: 12,
                                 height: 1.4,
                               ),
@@ -539,13 +577,13 @@ class _SubuhPageState extends State<SubuhPage> {
                       ),
                     ],
 
-                    // Tambahan penanganan khusus untuk gerakan I'tidal (Dua seksi bacaan terpisah)
+                    // Tambahan penanganan khusus untuk gerakan I'tidal
                     if (tataCara['title'] == 'I\'tidal') ...[
                       const SizedBox(height: 12),
                       Text(
                         tataCara['extraDesc']!,
-                        style: const TextStyle(
-                          color: Colors.white70,
+                        style: TextStyle(
+                          color: subTextColor,
                           fontSize: 13,
                           height: 1.4,
                         ),
@@ -555,7 +593,7 @@ class _SubuhPageState extends State<SubuhPage> {
                         width: double.infinity,
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: const Color(0xff090f16),
+                          color: innerCardColor,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Column(
@@ -566,7 +604,9 @@ class _SubuhPageState extends State<SubuhPage> {
                                 tataCara['extraArabic']!,
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.amiri(
-                                  color: Colors.tealAccent,
+                                  color: isLightMode
+                                      ? Colors.black87
+                                      : Colors.tealAccent,
                                   fontSize: 20,
                                   height: 2.0,
                                 ),
@@ -576,17 +616,24 @@ class _SubuhPageState extends State<SubuhPage> {
                             Text(
                               tataCara['extraLatin']!,
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.9),
+                                color: mainTextColor.withOpacity(0.9),
                                 fontSize: 13,
                                 fontStyle: FontStyle.italic,
                                 height: 1.4,
                               ),
                             ),
-                            const Divider(color: Colors.white10, height: 16),
+                            Divider(
+                              color: isLightMode
+                                  ? const Color(0xffcbd5e1)
+                                  : Colors.white10,
+                              height: 16,
+                            ),
                             Text(
                               tataCara['extraArti']!,
-                              style: const TextStyle(
-                                color: Colors.white60,
+                              style: TextStyle(
+                                color: isLightMode
+                                    ? const Color(0xff475569)
+                                    : Colors.white60,
                                 fontSize: 12,
                                 height: 1.4,
                               ),
@@ -604,13 +651,13 @@ class _SubuhPageState extends State<SubuhPage> {
           const SizedBox(height: 24),
           // Seksi Keterangan & Dalil (Statis paling bawah)
           Row(
-            children: const [
-              Icon(Icons.info_outline, color: Colors.tealAccent, size: 18),
-              SizedBox(width: 6),
+            children: [
+              Icon(Icons.info_outline, color: accentColor, size: 18),
+              const SizedBox(width: 6),
               Text(
                 "Keterangan",
                 style: TextStyle(
-                  color: Colors.tealAccent,
+                  color: accentColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
@@ -622,14 +669,18 @@ class _SubuhPageState extends State<SubuhPage> {
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xff111a24),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.teal.withOpacity(0.1)),
+              border: Border.all(
+                color: isLightMode
+                    ? const Color(0xffe2e8f0)
+                    : Colors.teal.withOpacity(0.1),
+              ),
             ),
-            child: const Text(
+            child: Text(
               "\"Dua rakaat fajar (Subuh) itu lebih baik daripada dunia dan seisinya.\" Shalat Subuh wajib dikerjakan secara konsisten sejak terbit fajar shadiq hingga sebelum matahari terbit.",
               style: TextStyle(
-                color: Colors.white60,
+                color: isLightMode ? const Color(0xff475569) : Colors.white60,
                 fontSize: 13,
                 height: 1.5,
               ),

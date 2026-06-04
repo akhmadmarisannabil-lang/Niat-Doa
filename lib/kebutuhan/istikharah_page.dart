@@ -1,25 +1,64 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class IstikharahPage extends StatelessWidget {
+class IstikharahPage extends StatefulWidget {
   const IstikharahPage({super.key});
 
   @override
+  State<IstikharahPage> createState() => _IstikharahPageState();
+}
+
+class _IstikharahPageState extends State<IstikharahPage> {
+  @override
   Widget build(BuildContext context) {
+    final bool isLightMode = Theme.of(context).brightness == Brightness.light;
+
+    final Color bgColor = isLightMode
+        ? const Color(0xfff5f7fa)
+        : const Color(0xff090f16);
+    final Color cardColor = isLightMode
+        ? Colors.white
+        : const Color(0xff111a24);
+    final Color mainTextColor = isLightMode
+        ? const Color(0xff1e293b)
+        : Colors.white;
+    final Color subTextColor = isLightMode
+        ? const Color(0xff475569)
+        : Colors.white70;
+    final Color chipBgColor = isLightMode
+        ? const Color(0xffe2e8f0)
+        : Colors.white10;
+    final Color chipTextColor = isLightMode
+        ? const Color(0xff64748b)
+        : Colors.white70;
+    final Color accentColor = isLightMode
+        ? const Color(0xff0f766e)
+        : Colors.tealAccent;
+    final Color borderColor = isLightMode
+        ? const Color(0xffe2e8f0)
+        : Colors.teal.withOpacity(0.2);
+
+    final Color arabicTextColor = isLightMode
+        ? Colors.black
+        : Colors.white.withOpacity(0.9);
+
     return Scaffold(
-      backgroundColor: const Color(0xff121212),
+      backgroundColor: bgColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xff121212),
+        backgroundColor: bgColor,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          icon: Icon(
+            Icons.arrow_back,
+            color: isLightMode ? Colors.black87 : Colors.white70,
+          ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           "Niat Shalat Istikharah",
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 18,
+            color: mainTextColor,
+            fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -30,17 +69,17 @@ class IstikharahPage extends StatelessWidget {
           Wrap(
             spacing: 8,
             children: [
-              _buildChip("Shalat Sunnah"),
-              _buildChip("istikharah"),
-              _buildChip("petunjuk"),
+              _buildChip("Shalat Sunnah", chipBgColor, chipTextColor),
+              _buildChip("istikharah", chipBgColor, chipTextColor),
+              _buildChip("petunjuk", chipBgColor, chipTextColor),
             ],
           ),
           const SizedBox(height: 32),
-          const Center(
+          Center(
             child: Text(
               "Teks Arab",
               style: TextStyle(
-                color: Colors.tealAccent,
+                color: accentColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
               ),
@@ -51,24 +90,25 @@ class IstikharahPage extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
+              border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "أُصَلِّيْ سُنَّةَ الِاسْتِخَارَةِ رَكْعَتَيْنِ لِلهِ تَعَالَى",
+              "أُصَلِّيْ سُنَّةَ الْاِسْتِخَارَةِ رَكْعَتَيْنِ لِلّٰهِ تَعَالَى",
               textAlign: TextAlign.center,
               style: GoogleFonts.amiri(
-                color: Colors.white.withOpacity(0.9),
+                color: arabicTextColor,
                 fontSize: 24,
                 height: 2.2,
               ),
             ),
           ),
           const SizedBox(height: 24),
-          const Text(
+          Text(
             "Transliterasi",
             style: TextStyle(
-              color: Colors.tealAccent,
+              color: accentColor,
               fontWeight: FontWeight.bold,
               fontSize: 14,
             ),
@@ -78,13 +118,14 @@ class IstikharahPage extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
+              border: isLightMode ? Border.all(color: borderColor) : null,
             ),
-            child: const Text(
+            child: Text(
               "Ushallii sunnatal-istikhaarati rak'ataini lillaahi ta'aalaa.",
               style: TextStyle(
-                color: Colors.white70,
+                color: subTextColor,
                 fontSize: 14,
                 fontStyle: FontStyle.italic,
                 height: 1.4,
@@ -92,10 +133,10 @@ class IstikharahPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 24),
-          const Text(
+          Text(
             "Terjemahan",
             style: TextStyle(
-              color: Colors.tealAccent,
+              color: accentColor,
               fontWeight: FontWeight.bold,
               fontSize: 14,
             ),
@@ -105,27 +146,24 @@ class IstikharahPage extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
+              border: isLightMode ? Border.all(color: borderColor) : null,
             ),
-            child: const Text(
+            child: Text(
               "Aku berniat shalat sunnah Istikharah dua rakaat karena Allah Ta'ala.",
-              style: TextStyle(
-                color: Colors.white70,
-                fontSize: 14,
-                height: 1.4,
-              ),
+              style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
             ),
           ),
           const SizedBox(height: 24),
           Row(
-            children: const [
-              Icon(Icons.info_outline, color: Colors.tealAccent, size: 18),
-              SizedBox(width: 8),
+            children: [
+              Icon(Icons.info_outline, color: accentColor, size: 18),
+              const SizedBox(width: 8),
               Text(
                 "Keterangan",
                 style: TextStyle(
-                  color: Colors.tealAccent,
+                  color: accentColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
@@ -137,16 +175,15 @@ class IstikharahPage extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
-            ),
-            child: const Text(
-              "Shalat Istikharah adalah shalat sunnah dua rakaat untuk memohon petunjuk kepada Allah SWT ketika seseorang berada dalam keraguan atau di antara beberapa pilihan hidup, seperti urusan pekerjaan, jodoh, maupun keputusan penting lainnya.",
-              style: TextStyle(
-                color: Colors.white70,
-                fontSize: 13,
-                height: 1.5,
+              border: Border.all(
+                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
               ),
+            ),
+            child: Text(
+              "Shalat Istikharah adalah shalat sunnah dua rakaat untuk memohon petunjuk kepada Allah SWT ketika seseorang berada dalam keraguan atau di antara beberapa pilihan hidup, seperti urusan pekerjaan, jodoh, maupun keputusan penting lainnya.",
+              style: TextStyle(color: subTextColor, fontSize: 13, height: 1.5),
             ),
           ),
         ],
@@ -154,17 +191,14 @@ class IstikharahPage extends StatelessWidget {
     );
   }
 
-  Widget _buildChip(String label) {
+  Widget _buildChip(String label, Color bg, Color textCol) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        color: Colors.white10,
+        color: bg,
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Text(
-        label,
-        style: const TextStyle(color: Colors.white70, fontSize: 11),
-      ),
+      child: Text(label, style: TextStyle(color: textCol, fontSize: 11)),
     );
   }
 }

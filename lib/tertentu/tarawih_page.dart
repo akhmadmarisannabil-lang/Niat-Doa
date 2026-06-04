@@ -9,10 +9,8 @@ class TarawihPage extends StatefulWidget {
 }
 
 class _TarawihPageState extends State<TarawihPage> {
-  // Kondisi awal / default role terpilih (Meniru pola subuh_page_5.dart)
   String _selectedRole = 'Shalat Tarawih Sendirian';
 
-  // Kumpulan data niat dinamis berdasarkan pilihan peran (Referensi teks dari image_5f7812.png)
   final Map<String, Map<String, String>> _niatData = {
     'Shalat Tarawih Sendirian': {
       'title': 'Niat (Sendirian)',
@@ -45,25 +43,55 @@ class _TarawihPageState extends State<TarawihPage> {
 
   @override
   Widget build(BuildContext context) {
-    // Mengambil data aktif sesuai dengan state yang dipilih (Meniru pola subuh_page_5.dart)
+    final bool isLightMode = Theme.of(context).brightness == Brightness.light;
     final currentNiat = _niatData[_selectedRole]!;
 
+    final Color bgColor = isLightMode
+        ? const Color(0xfff5f7fa)
+        : const Color(0xff090f16);
+    final Color cardColor = isLightMode
+        ? Colors.white
+        : const Color(0xff111a24);
+    final Color mainTextColor = isLightMode
+        ? const Color(0xff1e293b)
+        : Colors.white;
+    final Color subTextColor = isLightMode
+        ? const Color(0xff475569)
+        : Colors.white70;
+    final Color chipBgColor = isLightMode
+        ? const Color(0xffe2e8f0)
+        : Colors.white10;
+    final Color chipTextColor = isLightMode
+        ? const Color(0xff64748b)
+        : Colors.white70;
+    final Color accentColor = isLightMode
+        ? const Color(0xff0f766e)
+        : Colors.tealAccent;
+    final Color borderColor = isLightMode
+        ? const Color(0xffe2e8f0)
+        : Colors.teal.withOpacity(0.2);
+
+    final Color arabicTextColor = isLightMode
+        ? Colors.black
+        : Colors.white.withOpacity(0.9);
+
     return Scaffold(
-      backgroundColor: const Color(
-        0xff121212,
-      ), // Sesuai dengan halaman Tarawih asli
+      backgroundColor: bgColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xff121212),
+        backgroundColor: bgColor,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          icon: Icon(
+            Icons.arrow_back,
+            color: isLightMode ? Colors.black87 : Colors.white70,
+          ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           "Niat Shalat Tarawih",
           style: TextStyle(
-            color: Colors.white,
-            fontSize: 18,
+            color: mainTextColor,
+            fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -71,35 +99,32 @@ class _TarawihPageState extends State<TarawihPage> {
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [
-          // Bagian Tag / Kategori atas (Sesuai chip pada image_5f7812.png)
           Wrap(
             spacing: 8,
             children: [
-              _buildChip("Shalat Sunnah"),
-              _buildChip("tarawih"),
-              _buildChip("ramadhan"),
+              _buildChip("Shalat Sunnah", chipBgColor, chipTextColor),
+              _buildChip("tarawih", chipBgColor, chipTextColor),
+              _buildChip("ramadhan", chipBgColor, chipTextColor),
             ],
           ),
           const SizedBox(height: 24),
-
-          // FITUR DROPDOWN SELECTION (Meniru persis kontrol interaktif dari subuh_page_5.dart)
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.teal.withOpacity(0.3), width: 1),
+              border: Border.all(
+                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.3),
+                width: 1,
+              ),
             ),
             child: DropdownButtonHideUnderline(
               child: DropdownButton<String>(
                 value: _selectedRole,
-                dropdownColor: const Color(0xff1e1e1e),
-                icon: const Icon(
-                  Icons.arrow_drop_down,
-                  color: Colors.tealAccent,
-                ),
-                style: const TextStyle(
-                  color: Colors.white,
+                dropdownColor: cardColor,
+                icon: Icon(Icons.arrow_drop_down, color: accentColor),
+                style: TextStyle(
+                  color: mainTextColor,
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
                 ),
@@ -112,8 +137,7 @@ class _TarawihPageState extends State<TarawihPage> {
                 onChanged: (String? newValue) {
                   if (newValue != null) {
                     setState(() {
-                      _selectedRole =
-                          newValue; // Memperbarui data secara interaktif
+                      _selectedRole = newValue;
                     });
                   }
                 },
@@ -121,13 +145,11 @@ class _TarawihPageState extends State<TarawihPage> {
             ),
           ),
           const SizedBox(height: 32),
-
-          // 1. Seksi Teks Arab Dinamis
           Center(
             child: Text(
               currentNiat['title']!,
-              style: const TextStyle(
-                color: Colors.tealAccent,
+              style: TextStyle(
+                color: accentColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
               ),
@@ -138,26 +160,25 @@ class _TarawihPageState extends State<TarawihPage> {
             width: double.infinity,
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
+              border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
               currentNiat['arabic']!,
               textAlign: TextAlign.center,
               style: GoogleFonts.amiri(
-                color: Colors.white.withOpacity(0.9),
+                color: arabicTextColor,
                 fontSize: 24,
                 height: 2.2,
               ),
             ),
           ),
           const SizedBox(height: 24),
-
-          // 2. Seksi Transliterasi Dinamis
-          const Text(
+          Text(
             "Transliterasi",
             style: TextStyle(
-              color: Colors.tealAccent,
+              color: accentColor,
               fontWeight: FontWeight.bold,
               fontSize: 14,
             ),
@@ -167,13 +188,14 @@ class _TarawihPageState extends State<TarawihPage> {
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
+              border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
               currentNiat['transliteration']!,
-              style: const TextStyle(
-                color: Colors.white70,
+              style: TextStyle(
+                color: subTextColor,
                 fontSize: 14,
                 fontStyle: FontStyle.italic,
                 height: 1.4,
@@ -181,12 +203,10 @@ class _TarawihPageState extends State<TarawihPage> {
             ),
           ),
           const SizedBox(height: 24),
-
-          // 3. Seksi Terjemahan Dinamis
-          const Text(
+          Text(
             "Terjemahan",
             style: TextStyle(
-              color: Colors.tealAccent,
+              color: accentColor,
               fontWeight: FontWeight.bold,
               fontSize: 14,
             ),
@@ -196,29 +216,24 @@ class _TarawihPageState extends State<TarawihPage> {
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
+              border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
               currentNiat['translation']!,
-              style: const TextStyle(
-                color: Colors.white70,
-                fontSize: 14,
-                height: 1.4,
-              ),
+              style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
             ),
           ),
           const SizedBox(height: 24),
-
-          // 4. Seksi Keterangan & Aturan (Sesuai teks statis pada image_5f7812.png)
           Row(
-            children: const [
-              Icon(Icons.info_outline, color: Colors.tealAccent, size: 18),
-              SizedBox(width: 8),
+            children: [
+              Icon(Icons.info_outline, color: accentColor, size: 18),
+              const SizedBox(width: 8),
               Text(
                 "Keterangan",
                 style: TextStyle(
-                  color: Colors.tealAccent,
+                  color: accentColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
@@ -230,16 +245,15 @@ class _TarawihPageState extends State<TarawihPage> {
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
-            ),
-            child: const Text(
-              "Shalat Tarawih adalah shalat sunnah malam yang khusus dilakukan hanya pada malam-malam bulan Ramadhan. Jumlah rakaatnya bisa dikerjakan sebanyak 8 rakaat maupun 20 rakaat, yang diselesaikan dengan salam setiap dua rakaat sekali dan kemudian ditutup dengan 3 rakaat salat Witir",
-              style: TextStyle(
-                color: Colors.white70,
-                fontSize: 13,
-                height: 1.5,
+              border: Border.all(
+                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
               ),
+            ),
+            child: Text(
+              "Shalat Tarawih adalah shalat sunnah malam yang khusus dilakukan hanya pada malam-malam bulan Ramadhan. Jumlah rakaatnya bisa dikerjakan sebanyak 8 rakaat maupun 20 rakaat, yang diselesaikan dengan salam setiap dua rakaat sekali dan kemudian ditutup dengan 3 rakaat salat Witir",
+              style: TextStyle(color: subTextColor, fontSize: 13, height: 1.5),
             ),
           ),
         ],
@@ -247,18 +261,14 @@ class _TarawihPageState extends State<TarawihPage> {
     );
   }
 
-  // Helper Widget untuk membangun Tag/Chip atas
-  Widget _buildChip(String label) {
+  Widget _buildChip(String label, Color bg, Color textCol) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        color: Colors.white10,
+        color: bg,
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Text(
-        label,
-        style: const TextStyle(color: Colors.white70, fontSize: 11),
-      ),
+      child: Text(label, style: TextStyle(color: textCol, fontSize: 11)),
     );
   }
 }

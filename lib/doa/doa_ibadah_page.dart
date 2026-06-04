@@ -27,7 +27,6 @@ class DoaIbadahPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Kumpulan data Doa Ibadah (Diperbarui dengan total 20 doa)
     final List<Map<String, String>> doaIbadahList = [
       {
         'name': 'Doa Qunut',
@@ -67,7 +66,6 @@ class DoaIbadahPage extends StatelessWidget {
         'desc':
             'Bacaan tasyahud akhir sebelum salam termasuk shalawat dan doa perlindungan.',
       },
-      // KATEGORI DOA TAMBAHAN & SETELAH SHOLAT
       {
         'name': 'Doa Sujud Sahwi',
         'desc':
@@ -130,19 +128,20 @@ class DoaIbadahPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xff121212),
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: const Color(0xff121212),
-        elevation: 0,
+        backgroundColor: Colors.white,
+        elevation: 0.5,
+        iconTheme: const IconThemeData(color: Colors.black87),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
           "Doa Sholat",
           style: TextStyle(
             fontSize: 18,
-            color: Colors.white,
+            color: Colors.black87,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -155,8 +154,9 @@ class DoaIbadahPage extends StatelessWidget {
           return Container(
             margin: const EdgeInsets.only(bottom: 12),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e),
+              color: Colors.grey[50],
               borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.grey[200]!),
             ),
             child: ListTile(
               contentPadding: const EdgeInsets.symmetric(
@@ -164,13 +164,13 @@ class DoaIbadahPage extends StatelessWidget {
                 vertical: 8,
               ),
               leading: CircleAvatar(
-                backgroundColor: Colors.amber.withOpacity(0.15),
-                child: const Icon(Icons.menu_book, color: Colors.amber),
+                backgroundColor: Colors.blue.withOpacity(0.15),
+                child: const Icon(Icons.menu_book, color: Colors.blue),
               ),
               title: Text(
                 doa['name']!,
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: Colors.black87,
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
@@ -179,12 +179,12 @@ class DoaIbadahPage extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
                   doa['desc']!,
-                  style: const TextStyle(color: Colors.white60, fontSize: 13),
+                  style: const TextStyle(color: Colors.black54, fontSize: 13),
                 ),
               ),
               trailing: const Icon(
                 Icons.arrow_forward_ios,
-                color: Colors.white30,
+                color: Colors.black26,
                 size: 16,
               ),
               onTap: () {

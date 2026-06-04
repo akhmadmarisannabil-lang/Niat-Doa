@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart'; // Tambahkan ini untuk membaca state tema
+import 'theme_provider.dart'; // Import file provider Anda
+import 'settings_page.dart'; // Import file halaman pengaturan Anda
+
 // Niat Sholat
 import 'sholat/shalat_fardhu_page.dart';
 import 'sholat/sunnah_qobliyah_page.dart';
@@ -35,6 +39,9 @@ class _HomePageState extends State<HomePage> {
     required String quoteText,
     String? quoteSub,
   }) {
+    // Mengecek apakah aplikasi sedang dalam mode terang atau gelap
+    final isLightTheme = Provider.of<ThemeProvider>(context).isLightTheme;
+
     double screenWidth = MediaQuery.of(context).size.width;
     int crossAxisCount = 2;
     double aspectRatio = 1.4;
@@ -57,7 +64,10 @@ class _HomePageState extends State<HomePage> {
               width: double.infinity,
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
-                color: const Color(0xff1a2e40),
+                // Warna header box menyesuaikan mode terang/gelap
+                color: isLightTheme
+                    ? Colors.blue.withOpacity(0.15)
+                    : const Color(0xff1a2e40),
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Column(
@@ -65,16 +75,19 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   Text(
                     headerTitle,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: isLightTheme ? Colors.blue[900] : Colors.white,
                     ),
                   ),
                   const SizedBox(height: 8),
                   Text(
                     headerDesc,
-                    style: const TextStyle(fontSize: 13, color: Colors.white70),
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: isLightTheme ? Colors.black87 : Colors.white70,
+                    ),
                   ),
                 ],
               ),
@@ -265,22 +278,29 @@ class _HomePageState extends State<HomePage> {
               width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xff222222),
+                // Kotak Quote berubah warna menyesuaikan mode terang
+                color: isLightTheme
+                    ? Colors.grey[200]
+                    : const Color(0xff222222),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    children: const [
-                      Icon(Icons.auto_awesome, color: Colors.amber, size: 16),
-                      SizedBox(width: 6),
+                    children: [
+                      Icon(
+                        Icons.auto_awesome,
+                        color: isLightTheme ? Colors.blue[700] : Colors.amber,
+                        size: 16,
+                      ),
+                      const SizedBox(width: 6),
                       Text(
                         "QUOTE OF THE DAY",
                         style: TextStyle(
                           fontSize: 11,
                           fontWeight: FontWeight.bold,
-                          color: Colors.amber,
+                          color: isLightTheme ? Colors.blue[700] : Colors.amber,
                         ),
                       ),
                     ],
@@ -288,10 +308,10 @@ class _HomePageState extends State<HomePage> {
                   const SizedBox(height: 10),
                   Text(
                     quoteText,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 13,
                       fontStyle: FontStyle.italic,
-                      color: Colors.white70,
+                      color: isLightTheme ? Colors.black87 : Colors.white70,
                     ),
                   ),
                   if (quoteSub != null) ...[
@@ -300,10 +320,10 @@ class _HomePageState extends State<HomePage> {
                       alignment: Alignment.bottomRight,
                       child: Text(
                         quoteSub,
-                        style: const TextStyle(
+                        style: TextStyle(
                           fontSize: 10,
                           fontWeight: FontWeight.bold,
-                          color: Colors.amber,
+                          color: isLightTheme ? Colors.blue[700] : Colors.amber,
                         ),
                       ),
                     ),
@@ -319,6 +339,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    // Membaca jenis tema dari provider
+    final themeProvider = Provider.of<ThemeProvider>(context);
+
     final List<Map<String, dynamic>> niatMenu = [
       {
         'number': '1',
@@ -404,12 +427,17 @@ class _HomePageState extends State<HomePage> {
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xff121212),
+      // Background halaman otomatis berganti mengikuti tema aktif
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xff121212),
+        // Background AppBar otomatis berganti mengikuti tema aktif
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          icon: Icon(
+            Icons.arrow_back,
+            color: themeProvider.isLightTheme ? Colors.white : Colors.white70,
+          ),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
@@ -418,8 +446,26 @@ class _HomePageState extends State<HomePage> {
               : _currentIndex == 1
               ? "Daftar Surah Pembuka & Juz Amma"
               : "Daftar Doa",
-          style: const TextStyle(fontSize: 16, color: Colors.white),
+          style: TextStyle(
+            fontSize: 16,
+            color: Theme.of(context).appBarTheme.foregroundColor,
+          ),
         ),
+        actions: [
+          // TOMBOL MENU SETTING DI SINI
+          IconButton(
+            icon: Icon(
+              Icons.settings,
+              color: Theme.of(context).appBarTheme.foregroundColor,
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsPage()),
+              );
+            },
+          ),
+        ],
       ),
       body: _currentIndex == 0
           ? _buildMenuGrid(
@@ -439,9 +485,16 @@ class _HomePageState extends State<HomePage> {
                   "\"Berdoalah kepada-Ku, niscaya akan Kuperkenankan bagimu. Doa adalah senjatanya orang mukmin dan tiang agama.\"",
             ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: const Color(0xff1e1e1e),
-        selectedItemColor: Colors.amber,
-        unselectedItemColor: Colors.white38,
+        // Setelan Bottom Navigation Bar dinamis
+        backgroundColor: themeProvider.isLightTheme
+            ? Colors.white
+            : const Color(0xff1e1e1e),
+        selectedItemColor: themeProvider.isLightTheme
+            ? Colors.blue[800]
+            : Colors.amber,
+        unselectedItemColor: themeProvider.isLightTheme
+            ? Colors.black38
+            : Colors.white38,
         currentIndex: _currentIndex,
         onTap: (int index) => setState(() => _currentIndex = index),
         type: BottomNavigationBarType.fixed,

@@ -32,7 +32,7 @@ class DoaAkhiratPage extends StatelessWidget {
       {
         'name': 'Doa Memohon Husnul Khotimah',
         'desc':
-            'Memohon agar wafat dalam keadaan iman, Islam, dan membawa amal kebaikan.',
+            'Memohon agar wafat dalam keadaan iman, Islam, and membawa amal kebaikan.',
       },
       {
         'name': 'Doa Perlindungan dari Siksa Kubur',
@@ -49,7 +49,6 @@ class DoaAkhiratPage extends StatelessWidget {
         'desc':
             'Memohon agar dimudahkan dan diringankan saat penimbangan amal kelak.',
       },
-      // 7 DOA TAMBAHAN
       {
         'name': 'Doa Penerimaan Amal Ibadah',
         'desc':
@@ -85,7 +84,6 @@ class DoaAkhiratPage extends StatelessWidget {
         'desc':
             'Memohon kesempatan meminum air telaga Nabi Muhammad ﷺ tanpa dahaga selamanya.',
       },
-      // MENU BARU
       {
         'name': 'Doa Selamat dari Fitnah Dajjal',
         'desc':
@@ -94,19 +92,20 @@ class DoaAkhiratPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xff121212), // Disamakan dengan Doa Sholat
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: const Color(0xff121212), // Disamakan dengan Doa Sholat
-        elevation: 0,
+        backgroundColor: Colors.white,
+        elevation: 0.5,
+        iconTheme: const IconThemeData(color: Colors.black87),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
           "Doa untuk Akhirat",
           style: TextStyle(
             fontSize: 18,
-            color: Colors.white,
+            color: Colors.black87,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -119,8 +118,9 @@ class DoaAkhiratPage extends StatelessWidget {
           return Container(
             margin: const EdgeInsets.only(bottom: 12),
             decoration: BoxDecoration(
-              color: const Color(0xff1e1e1e), // Disamakan dengan Doa Sholat
+              color: Colors.grey[50],
               borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.grey[200]!),
             ),
             child: ListTile(
               contentPadding: const EdgeInsets.symmetric(
@@ -128,15 +128,13 @@ class DoaAkhiratPage extends StatelessWidget {
                 vertical: 8,
               ),
               leading: CircleAvatar(
-                backgroundColor: Colors.amber.withOpacity(
-                  0.15,
-                ), // Tema Amber Doa Sholat
-                child: const Icon(Icons.menu_book, color: Colors.amber),
+                backgroundColor: Colors.blue.withOpacity(0.15),
+                child: const Icon(Icons.menu_book, color: Colors.blue),
               ),
               title: Text(
                 doa['name']!,
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: Colors.black87,
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
@@ -145,12 +143,12 @@ class DoaAkhiratPage extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
                   doa['desc']!,
-                  style: const TextStyle(color: Colors.white60, fontSize: 13),
+                  style: const TextStyle(color: Colors.black54, fontSize: 13),
                 ),
               ),
               trailing: const Icon(
                 Icons.arrow_forward_ios,
-                color: Colors.white30,
+                color: Colors.black26,
                 size: 16,
               ),
               onTap: () {

@@ -9,10 +9,8 @@ class MaghribPage extends StatefulWidget {
 }
 
 class _MaghribPageState extends State<MaghribPage> {
-  // Opsi default yang terpilih
   String _selectedOption = 'Shalat Maghrib Sendirian';
 
-  // 1. Data Niat Shalat Maghrib
   final Map<String, Map<String, String>> _niatData = {
     'Shalat Maghrib Sendirian': {
       'title': 'Niat (Sendirian)',
@@ -26,7 +24,7 @@ class _MaghribPageState extends State<MaghribPage> {
     'Shalat Maghrib Sebagai Imam': {
       'title': 'Niat (Imam)',
       'arabic':
-          "أُصَلِّىْ فَرْضَ أَلْمَغْرِبِ ثَلٰثَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ اِمَامًا لِلّٰهِ تَعَالَىٰ",
+          "أُصَلِّىْ فَرْضَ أَلْمَغْرِبِ ثَلٰثَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ إِمَامًا لِلّٰهِ تَعَالَىٰ",
       'transliteration':
           "Ushallii fardhal-maghribi tsalaatsa raka'aatin mustaqbilal qiblati imaaman lillaahi ta'aalaa.",
       'translation':
@@ -35,28 +33,27 @@ class _MaghribPageState extends State<MaghribPage> {
     'Shalat Maghrib Sebagai Makmum': {
       'title': 'Niat (Makmum)',
       'arabic':
-          "أُصَلِّىْ فَرْضَ أَلْمَغْرِبِ ثَلٰثَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ مَأْمُوْمًا لِلّٰهِ تَعَالَىٰ",
+          "أُصَلِّىْ فَرْضَ الْمَغْرِبِ ثَلٰثَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ مَأْمُوْمًا لِلّٰهِ تَعَالَىٰ",
       'transliteration':
-          "Ushallii fardhal-maghribi tsalaatsa raka'aatin mustaqbilal qiblati ma'mūman lillaahi ta'aalaa.",
+          "Ushallii fardhal-maghribi tsalaatsa raka'aatin mustaqbilal qiblati ma'muuman lillaahi ta'aalaa.",
       'translation':
           "Aku berniat shalat fardhu Maghrib tiga rakaat menghadap kiblat sebagai makmum karena Allah Ta'ala.",
     },
   };
 
-  // 2. Data Tata Cara Shalat Maghrib Berurutan (3 Rakaat)
   final List<Map<String, dynamic>> _tataCaraUrutanData = [
     {
       'header': 'Rakaat 1 - Langkah 1',
       'title': 'Niat Shalat Maghrib',
       'desc':
-          'Berdiri tegak menghadap kiblat dan memantapkan niat di dalam hati sesuai pilihan peran (sendiri/imam/makmum).',
+          'Berdiri tegak menghadap kiblat dan memantapkan niat di dalam hati.',
       'hasRead': false,
     },
     {
       'header': 'Rakaat 1 - Langkah 2',
       'title': 'Takbiratul Ihram',
       'desc':
-          'Mengangkat kedua belah tangan sejajar daun telinga seraya membaca:',
+          'Lalu mengangkat kedua belah tangan sejajar daun telinga serta membaca:',
       'hasRead': true,
       'arabic': "اللهُ أَكْبَرُ",
       'latin': "Allahu Akbar.",
@@ -66,7 +63,7 @@ class _MaghribPageState extends State<MaghribPage> {
       'header': 'Rakaat 1 - Langkah 3',
       'title': 'Doa Iftitah',
       'desc':
-          'Sedekapkan kedua tangan di dada, kemudian membaca Doa Iftitah secara lirih:',
+          'Sedekapkan kedua tangan di antara dada dan pusar (tangan kanan menggenggam pergelangan tangan kiri), kemudian membaca Doa Iftitah:',
       'hasRead': true,
       'arabic':
           "اللهُ أَكْبَرُ كَبِيرًا وَالْحَمْدُ لِلَّهِ كَثِيرًا وَسُبْحَانَ اللهِ بُكْرَةً وَأَصِيلاً. إِنِّي وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالأَرْضَ حَنِيفًا مُسْلِمًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ. إِنَّ صَلاَتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ. لاَ شَرِيكَ لَهُ وَبِذَلِكَ أُمِرْتُ وَأَنَا مِنَ الْمُسْلِمِينَ",
@@ -79,7 +76,7 @@ class _MaghribPageState extends State<MaghribPage> {
       'header': 'Rakaat 1 - Langkah 4',
       'title': 'Membaca Surat Al-Fatihah',
       'desc':
-          'Membaca Surat Al-Fatihah. Apabila shalat sendiri atau menjadi imam, bacaan ini disunnahkan untuk bersuara keras (jahr):',
+          'Selesai membaca doa Iftitah, dilanjutkan membaca Surat Al-Fatihah:',
       'hasRead': true,
       'arabic':
           "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ﴿١﴾ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ﴿٢﴾ الرَّحْمَٰنِ الرَّحِيمِ ﴿٣﴾ مَالِكِ يَوْمِ الدِّينِ ﴿٤﴾ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ﴿٥﴾ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ﴿٦﴾ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ ﴿٧﴾ آمينَ",
@@ -92,20 +89,14 @@ class _MaghribPageState extends State<MaghribPage> {
       'header': 'Rakaat 1 - Langkah 5',
       'title': 'Membaca Surat Pendek',
       'desc':
-          'Disunnahkan membaca satu surat pendek Al-Qur\'an dengan suara keras (jahr) bagi sendiri/imam, contohnya Al-Ikhlas:',
-      'hasRead': true,
-      'arabic':
-          "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ. قُلْ هُوَ اللَّهُ أَحَدٌ ﴿١﴾ اللَّهُ الصَّمَدُ ﴿٢﴾ لَمْ يَلِدْ وَلَمْ يُولَدْ ﴿٣﴾ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ ﴿٤﴾",
-      'latin':
-          "Bismillaahir-rachmaanir-rachiim. Qul huwallaahu achad. Allaahush-shamad. Lam yalid walam yuulad. Walam yakul-lahu kufuwan achad.",
-      'arti':
-          "Dengan nama Allah Yang Maha Pengasih lagi Maha Penyayang. Katakanlah (Muhammad), 'Dialah Allah, Yang Maha Esa. Allah tempat meminta segala sesuatu. (Allah) tidak beranak dan tidak pula diperanakkan. Dan tidak ada sesuatu yang setara dengan Dia.'",
+          'Disunnahkan membaca surat atau ayat Al-Qur\'an secara keras (jahr) pada rakaat pertama dan kedua.',
+      'hasRead': false,
     },
     {
       'header': 'Rakaat 1 - Langkah 6',
       'title': 'Rukuk',
       'desc':
-          'Mengucapkan takbir lalu membungkukkan badan untuk Rukuk secara thumakninah. Letakkan telapak tangan di lutut, ratakan tulang punggung, lalu membaca tasbih (3x):',
+          'Selesai membaca surat pendek, mengucapkan takbir lalu membungkukkan badan. Pegang lutut dengan kedua telapak tangan, ratakan punggung, lalu membaca tasbih (3x):',
       'hasRead': true,
       'arabic': "سُبْحَانَ رَبِّيَ الْعَظِيمِ وَبِحَمْدِهِ",
       'latin': "Subhaana rabbiyal 'adziimi wa bihamdih. (3x)",
@@ -114,13 +105,14 @@ class _MaghribPageState extends State<MaghribPage> {
     {
       'header': 'Rakaat 1 - Langkah 7',
       'title': 'I\'tidal',
-      'desc': 'Bangkit tegak dari rukuk seraya mengangkat tangan dan membaca:',
+      'desc':
+          'Bangkit tegak dari rukuk dengan mengangkat kedua belah tangan sejajar daun telinga seraya membaca:',
       'hasRead': true,
-      'arabic': "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ",
+      'arabic': "سَمِعَ اللهُ لِمَنْ حَمِدَهُ",
       'latin': "Sami'allaahu liman chamidah.",
       'arti': "Allah mendengar orang yang memuji-Nya.",
       'extraDesc':
-          'Saat posisi tubuh sudah tegak sempurna, lanjutkan dengan membaca:',
+          'Pada waktu posisi tubuh sudah berdiri tegak (I\'tidal), lanjutkan membaca:',
       'extraArabic':
           "رَبَّنَا لَكَ الْحَمْدُ مِلْءُ السَّمَاوَاتِ وَمِلْءُ الْأَرْضِ وَمِلْءُ مَا شِئْتَ مِنْ شَيْءٍ بَعْدُ",
       'extraLatin':
@@ -132,7 +124,7 @@ class _MaghribPageState extends State<MaghribPage> {
       'header': 'Rakaat 1 - Langkah 8',
       'title': 'Sujud Pertama',
       'desc':
-          'Turun sujud secara thumakninah seraya bertakbir, lalu membaca tasbih sujud (3x):',
+          'Turun menuju sujud dengan mendahulukan lutut baru telapak tangan dan dahi/hidung menempel ke bumi seraya mengucap "Allahu Akbar". Bacalah tasbih sujud (3x):',
       'hasRead': true,
       'arabic': "سُبْحَانَ رَبِّيَ الْأَعْلَىٰ وَبِحَمْدِهِ",
       'latin': "Subhaana rabbiyal a'laa wa bihamdih. (3x)",
@@ -142,7 +134,7 @@ class _MaghribPageState extends State<MaghribPage> {
       'header': 'Rakaat 1 - Langkah 9',
       'title': 'Duduk di Antara Dua Sujud',
       'desc':
-          'Bangkit dari sujud pertama lalu duduk tenang (posisi Iftirasy) seraya mengucap takbir dan membaca doa:',
+          'Bangun dari sujud pertama lalu duduk dengan tenang seraya mengucap "Allahu Akbar" dan membaca doa:',
       'hasRead': true,
       'arabic':
           "رَبِّ اغْفِرْ لِي وَارْحَمْنِي وَاجْبُرْنِي وَارْفَعْنِي وَارْزُقْنِي وَاهْدِنِي وَعَافِنِي وَاعْفُ عَنِّي",
@@ -155,7 +147,7 @@ class _MaghribPageState extends State<MaghribPage> {
       'header': 'Rakaat 1 - Langkah 10',
       'title': 'Sujud Kedua',
       'desc':
-          'Sujud kembali seperti gerakan sujud pertama seraya mengucapkan takbir, lalu membaca tasbih sujud (3x):',
+          'Melakukan gerakan sujud kembali seperti sujud pertama seraya mengucap "Allahu Akbar", lalu membaca tasbih sujud (3x):',
       'hasRead': true,
       'arabic': "سُبْحَانَ رَبِّيَ الْأَعْلَىٰ وَبِحَمْدِهِ",
       'latin': "Subhaana rabbiyal a'laa wa bihamdih. (3x)",
@@ -165,51 +157,51 @@ class _MaghribPageState extends State<MaghribPage> {
       'header': 'Rakaat 2 - Langkah 11',
       'title': 'Bangkit Menuju Rakaat Kedua',
       'desc':
-          'Bangkit berdiri kembali untuk rakaat kedua. Bacaan Surat Al-Fatihah dan Surat Pendek kembali disunnahkan dibaca dengan suara keras (jahr) bagi sendiri/imam.',
+          'Bangun dari sujud kedua, berdiri kembali untuk rakaat kedua. Lakukan gerakan bersedekap, membaca Surat Al-Fatihah, dan Surat Pendek secara keras (jahr) seperti rakaat pertama.',
       'hasRead': false,
     },
     {
       'header': 'Rakaat 2 - Langkah 12',
-      'title': 'Rukuk, I\'tidal, Sujud 1 & 2 Rakaat Kedua',
+      'title': 'Gerakan Rakaat Kedua',
       'desc':
-          'Melakukan gerakan Rukuk, I\'tidal, Sujud pertama, duduk di antara dua sujud, dan sujud kedua pada rakaat kedua secara tertib beserta bacaan masing-masing seperti rakaat pertama.',
+          'Lakukan gerakan Rukuk, I\'tidal, Sujud pertama, Duduk di antara dua sujud, dan Sujud kedua persis seperti rakaat pertama.',
       'hasRead': false,
     },
     {
       'header': 'Rakaat 2 - Langkah 13',
       'title': 'Duduk Tasyahud Awal',
       'desc':
-          'Setelah sujud kedua rakaat kedua, ambil posisi duduk Tasyahud Awal (Iftirasy). Acungkan jari telunjuk tangan kanan saat masuk lafal "Illallaah", lalu membaca doa tasyahud awal:',
+          'Setelah sujud kedua pada rakaat kedua, jangan langsung berdiri, melainkan duduk tasyahud awal (ifrityas) lalu membaca:',
       'hasRead': true,
       'arabic':
-          "التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُw وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَىٰ عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ. اللَّهُمَّ صَلِّ عَلَىٰ سَيِّدِنَا مُحَمَّدٍ وَعَلَىٰ آلِ سَيِّدِنَا مُحَمَّدٍ",
+          "التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُw وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَىٰ عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ، اللَّهُمَّ صَلِّ عَلَىٰ سَيِّدِنَا مُحَمَّدٍ",
       'latin':
-          "At-tahiyyaatul mubaarakatus-shalawaatuth-thayyibaatu lillaah. As-salaamu 'alaika ayyuhan-nabiyyu wa rachmatullaahi wa barakaatuh. As-salaamu 'alainaa wa 'alaa 'ibaadillaahis-shaalichiin. Asyhadu allaa ilaacha illallaach, wa asyhadu anna Muhammadar-rasuulullaach. Allaahumma shalli 'alaa sayyidinaa Muhammad wa 'alaa aali sayyidinaa Muhammad.",
+          "At-tahiyyaatul mubaarakatus-shalawaatuth-thayyibaatu lillaah. As-salaamu 'alaika ayyuhan-nabiyyu wa rachmatullaahi wa barakaatuh. As-salaamu 'alainaa wa 'alaa 'ibaadillaahis-shaalichiin. Asyhadu allaa ilaacha illallaach, wa asyhadu anna Muhammadar-rasuulullaach. Allaahumma shalli 'alaa sayyidinaa Muhammad.",
       'arti':
-          "Segala penghormatan, keberkahan, shalawat dan kebaikan adalah milik Allah. Semoga keselamatan, rahmat Allah dan berkah-Nya tetap tercurah kepadamu, wahai Nabi. Semoga keselamatan tetap tercurah kepada kami dan kepada hamba-hamba Allah yang saleh. Aku bersaksi bahwa tidak ada Tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah. Ya Allah, limpahkanlah rahmat kepada junjungan kami Nabi Muhammad dan kepada keluarganya.",
+          "Segala penghormatan, keberkahan, shalawat dan kebaikan adalah milik Allah. Semoga keselamatan, rahmat Allah dan berkah-Nya tetap tercurah kepadamu, wahai Nabi. Semoga keselamatan tetap tercurah kepada kami dan kepada hamba-hamba Allah yang saleh. Aku bersaksi bahwa tidak ada Tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah. Ya Allah, limpahkanlah rahmat kepada junjungan kami Nabi Muhammad.",
     },
     {
       'header': 'Rakaat 3 - Langkah 14',
-      'title': 'Bangkit Menuju Rakaat Ketiga (Terakhir)',
+      'title': 'Bangkit Menuju Rakaat Ketiga',
       'desc':
-          'Bangkit berdiri kembali untuk rakaat terakhir (rakaat ketiga). Pada rakaat ini, Surat Al-Fatihah wajib dibaca secara lirih (sirr), serta tidak perlu membaca surat pendek lagi.',
+          'Bangkit berdiri tegak untuk rakaat ketiga seraya membaca takbir. Pada rakaat terakhir ini, hanya membaca Surat Al-Fatihah dengan suara lirih (sirr) tanpa membaca surat pendek.',
       'hasRead': false,
     },
     {
       'header': 'Rakaat 3 - Langkah 15',
-      'title': 'Rukuk, I\'tidal, Sujud 1 & 2 Rakaat Ketiga',
+      'title': 'Rukuk hingga Sujud Kedua Rakaat Ketiga',
       'desc':
-          'Lakukan seluruh rangkaian gerakan Rukuk, I\'tidal, Sujud pertama, duduk di antara dua sujud, serta sujud kedua untuk rakaat ketiga ini dengan tertib.',
+          'Lakukan Rukuk, I\'tidal, Sujud pertama, Duduk di antara dua sujud, dan Sujud kedua dengan tertib seperti sebelumnya.',
       'hasRead': false,
     },
     {
       'header': 'Rakaat 3 - Langkah 16',
       'title': 'Duduk Tasyahud Akhir',
       'desc':
-          'Setelah menyelesaikan sujud terakhir di rakaat ketiga, ambil posisi duduk Tasyahud Akhir (Tawarruk). Acungkan jari telunjuk tangan kanan saat masuk lafal "Illallaah", kemudian membaca bacaan Tasyahud Akhir lengkap beserta Shalawat Ibrahimiyah:',
+          'Setelah sujud kedua rakaat ketiga, ambil posisi duduk Tasyahud Akhir (Tawurruk). Jari telunjuk tangan kanan diacungkan saat membaca lafal \"Illallaah\", lalu melafalkan bacaan tasyahud akhir lengkap:',
       'hasRead': true,
       'arabic':
-          "التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَىٰ عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ. اللَّهُمَّ صَلِّ عَلَىٰ سَيِّدِنَا مُحَمَّدٍ وَعَلَىٰ آلِ سَيِّدِنَا مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَىٰ سَيِّدِنَا إِبْرَاهِيمَ وَعَلَىٰ آلِ سَيِّدِنَا إِبْرَاهِيمَ وَبَارِك_ عَلَىٰ سَيِّدِنَا مُحَمَّدٍ وَعَلَىٰ آلِ سَيِّدِنَا مُحَمَّدٍ كَمَا بَارَكْتَ عَلَىٰ سَيِّدِنَا إِبْرَاهِيمَ وَعَلَىٰ آلِ سَيِّدِنَا إِبْرَاهِيمَ فِي الْعَالَمِينَ إِنَّكَ حَمِيدٌ مَجِيدٌ",
+          "التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَىٰ عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ. اللَّهُمَّ صَلِّ عَلَىٰ سَيِّدِنَا مُحَمَّدٍ وَعَلَىٰ آلِ سَيِّدِنَا مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَىٰ سَيِّدِنَا إِبْرَاهِيمَ وَعَلَىٰ آلِ سَيِّدِنَا إِبْرَاهِيمَ وَبَارِكْ عَلَىٰ سَيِّدِنَا مُحَمَّدٍ وَعَلَىٰ آلِ سَيِّدِنَا مُحَمَّدٍ كَمَا بَارَكْتَ عَلَىٰ سَيِّدِنَا إِبْرَاهِيمَ وَعَلَىٰ آلِ سَيِّدِنَا إِبْرَاهِيمَ فِي الْعَالَمِينَ إِنَّكَ حَمِيدٌ مَجِيدٌ",
       'latin':
           "At-tahiyyaatul mubaarakatus-shalawaatuth-thayyibaatu lillaah. As-salaamu 'alaika ayyuhan-nabiyyu wa rachmatullaahi wa barakaatuh. As-salaamu 'alainaa wa 'alaa 'ibaadillaahis-shaalichiin. Asyhadu allaa ilaacha illallaach, wa asyhadu anna Muhammadar-rasuulullaach. Allaahumma shalli 'alaa sayyidinaa Muhammad wa 'alaa aali sayyidinaa Muhammad, kamaa shallaita 'alaa sayyidinaa Ibraahiim wa 'alaa aali sayyidinaa Ibraahiim. Wa baarik 'alaa sayyidinaa Muhammad wa 'alaa aali sayyidinaa Muhammad, kamaa baarakta 'alaa sayyidinaa Ibraahiim wa 'alaa aali sayyidinaa Ibraahiim, fil-'aalamiina innaka chamiidum-majiid.",
       'arti':
@@ -219,7 +211,7 @@ class _MaghribPageState extends State<MaghribPage> {
       'header': 'Rakaat 3 - Langkah 17',
       'title': 'Salam',
       'desc':
-          'Mengakhiri shalat dengan menengokkan wajah ke arah kanan terlebih dahulu hingga pipi terlihat dari belakang, kemudian menengok ke kiri seraya mengucap:',
+          'Mengakhiri shalat dengan memalingkan wajah ke kanan sampai pipi terlihat dari belakang, kemudian memalingkan wajah ke kiri seraya mengucapkan:',
       'hasRead': true,
       'arabic': "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ",
       'latin': "As-salaamu 'alaikum wa rachmatullaah.",
@@ -236,19 +228,49 @@ class _MaghribPageState extends State<MaghribPage> {
 
   @override
   Widget build(BuildContext context) {
+    final bool isLightMode = Theme.of(context).brightness == Brightness.light;
+
+    final Color bgColor = isLightMode
+        ? const Color(0xfff5f7fa)
+        : const Color(0xff090f16);
+    final Color cardColor = isLightMode
+        ? Colors.white
+        : const Color(0xff111a24);
+    final Color innerCardColor = isLightMode
+        ? const Color(0xffeef2f7)
+        : const Color(0xff090f16);
+    final Color mainTextColor = isLightMode
+        ? const Color(0xff1e293b)
+        : Colors.white;
+    final Color subTextColor = isLightMode
+        ? const Color(0xff64748b)
+        : Colors.white70;
+    final Color accentColor = isLightMode
+        ? const Color(0xff0f766e)
+        : Colors.tealAccent;
+    final Color borderTileColor = isLightMode
+        ? const Color(0xffe2e8f0)
+        : Colors.white12;
+
+    // PERUBAHAN UTAMA: Menjamin teks arab berwarna hitam penuh di Mode Terang dan putih di Mode Gelap
+    final Color arabicTextColor = isLightMode ? Colors.black : Colors.white;
+
     return Scaffold(
-      backgroundColor: const Color(0xff090f16),
+      backgroundColor: bgColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xff090f16),
+        backgroundColor: bgColor,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          icon: Icon(
+            Icons.arrow_back,
+            color: isLightMode ? Colors.black87 : Colors.white70,
+          ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           "Niat & Tata Cara Shalat Maghrib",
           style: TextStyle(
-            color: Colors.white,
+            color: mainTextColor,
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
@@ -257,7 +279,6 @@ class _MaghribPageState extends State<MaghribPage> {
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [
-          // Kategori Tag
           Wrap(
             spacing: 8,
             children: [
@@ -267,12 +288,12 @@ class _MaghribPageState extends State<MaghribPage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: isLightMode ? const Color(0xffe2e8f0) : Colors.white10,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Text(
+                child: Text(
                   "Shalat Fardhu",
-                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                  style: TextStyle(color: subTextColor, fontSize: 11),
                 ),
               ),
               Container(
@@ -281,12 +302,12 @@ class _MaghribPageState extends State<MaghribPage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: isLightMode ? const Color(0xffe2e8f0) : Colors.white10,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Text(
+                child: Text(
                   "maghrib",
-                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                  style: TextStyle(color: subTextColor, fontSize: 11),
                 ),
               ),
               Container(
@@ -295,36 +316,36 @@ class _MaghribPageState extends State<MaghribPage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: isLightMode ? const Color(0xffe2e8f0) : Colors.white10,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Text(
+                child: Text(
                   "wajib",
-                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                  style: TextStyle(color: subTextColor, fontSize: 11),
                 ),
               ),
             ],
           ),
           const SizedBox(height: 24),
-
-          // Dropdown Pilihan Menu
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
             decoration: BoxDecoration(
-              color: const Color(0xff111a24),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.teal.withOpacity(0.3), width: 1),
+              border: Border.all(
+                color: isLightMode
+                    ? const Color(0xffcbd5e1)
+                    : Colors.teal.withOpacity(0.3),
+                width: 1,
+              ),
             ),
             child: DropdownButtonHideUnderline(
               child: DropdownButton<String>(
                 value: _selectedOption,
-                dropdownColor: const Color(0xff111a24),
-                icon: const Icon(
-                  Icons.arrow_drop_down,
-                  color: Colors.tealAccent,
-                ),
-                style: const TextStyle(
-                  color: Colors.white,
+                dropdownColor: cardColor,
+                icon: Icon(Icons.arrow_drop_down, color: accentColor),
+                style: TextStyle(
+                  color: mainTextColor,
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
                 ),
@@ -345,14 +366,12 @@ class _MaghribPageState extends State<MaghribPage> {
             ),
           ),
           const SizedBox(height: 32),
-
-          // Render Konten Berdasarkan Dropdown
           if (_selectedOption != 'Tata Cara Shalat Maghrib') ...[
             Center(
               child: Text(
                 _niatData[_selectedOption]!['title']!,
-                style: const TextStyle(
-                  color: Colors.tealAccent,
+                style: TextStyle(
+                  color: accentColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
@@ -363,24 +382,27 @@ class _MaghribPageState extends State<MaghribPage> {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
               decoration: BoxDecoration(
-                color: const Color(0xff111a24),
+                color: cardColor,
                 borderRadius: BorderRadius.circular(12),
+                border: isLightMode
+                    ? Border.all(color: const Color(0xffe2e8f0))
+                    : null,
               ),
               child: Text(
                 _niatData[_selectedOption]!['arabic']!,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.amiri(
-                  color: Colors.white.withOpacity(0.9),
+                  color: arabicTextColor, // Niat atas disesuaikan hitam/putih
                   fontSize: 24,
                   height: 2.2,
                 ),
               ),
             ),
             const SizedBox(height: 24),
-            const Text(
+            Text(
               "Transliterasi",
               style: TextStyle(
-                color: Colors.tealAccent,
+                color: accentColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
               ),
@@ -390,13 +412,16 @@ class _MaghribPageState extends State<MaghribPage> {
               width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xff111a24),
+                color: cardColor,
                 borderRadius: BorderRadius.circular(12),
+                border: isLightMode
+                    ? Border.all(color: const Color(0xffe2e8f0))
+                    : null,
               ),
               child: Text(
                 _niatData[_selectedOption]!['transliteration']!,
-                style: const TextStyle(
-                  color: Colors.white70,
+                style: TextStyle(
+                  color: subTextColor,
                   fontSize: 14,
                   fontStyle: FontStyle.italic,
                   height: 1.4,
@@ -404,10 +429,10 @@ class _MaghribPageState extends State<MaghribPage> {
               ),
             ),
             const SizedBox(height: 24),
-            const Text(
+            Text(
               "Terjemahan",
               style: TextStyle(
-                color: Colors.tealAccent,
+                color: accentColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
               ),
@@ -417,14 +442,18 @@ class _MaghribPageState extends State<MaghribPage> {
               width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xff111a24),
+                color: cardColor,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.teal.withOpacity(0.2)),
+                border: Border.all(
+                  color: isLightMode
+                      ? const Color(0xffe2e8f0)
+                      : Colors.teal.withOpacity(0.2),
+                ),
               ),
               child: Text(
                 _niatData[_selectedOption]!['translation']!,
-                style: const TextStyle(
-                  color: Colors.white70,
+                style: TextStyle(
+                  color: subTextColor,
                   fontSize: 14,
                   height: 1.4,
                 ),
@@ -432,17 +461,13 @@ class _MaghribPageState extends State<MaghribPage> {
             ),
           ] else ...[
             Row(
-              children: const [
-                Icon(
-                  Icons.format_list_numbered,
-                  color: Colors.tealAccent,
-                  size: 18,
-                ),
-                SizedBox(width: 8),
+              children: [
+                Icon(Icons.format_list_numbered, color: accentColor, size: 18),
+                const SizedBox(width: 8),
                 Text(
                   "Urutan Panduan Shalat Maghrib Lengkap",
                   style: TextStyle(
-                    color: Colors.tealAccent,
+                    color: accentColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
                   ),
@@ -455,17 +480,17 @@ class _MaghribPageState extends State<MaghribPage> {
                 margin: const EdgeInsets.only(bottom: 16),
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: const Color(0xff111a24),
+                  color: cardColor,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.white12),
+                  border: Border.all(color: borderTileColor),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       tataCara['header']!,
-                      style: const TextStyle(
-                        color: Colors.tealAccent,
+                      style: TextStyle(
+                        color: accentColor,
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
                       ),
@@ -473,8 +498,8 @@ class _MaghribPageState extends State<MaghribPage> {
                     const SizedBox(height: 4),
                     Text(
                       tataCara['title']!,
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: mainTextColor,
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
@@ -482,8 +507,8 @@ class _MaghribPageState extends State<MaghribPage> {
                     const SizedBox(height: 8),
                     Text(
                       tataCara['desc']!,
-                      style: const TextStyle(
-                        color: Colors.white70,
+                      style: TextStyle(
+                        color: subTextColor,
                         fontSize: 13,
                         height: 1.4,
                       ),
@@ -494,7 +519,7 @@ class _MaghribPageState extends State<MaghribPage> {
                         width: double.infinity,
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: const Color(0xff090f16),
+                          color: innerCardColor,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Column(
@@ -505,7 +530,8 @@ class _MaghribPageState extends State<MaghribPage> {
                                 tataCara['arabic']!,
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.amiri(
-                                  color: Colors.tealAccent,
+                                  color:
+                                      arabicTextColor, // PERUBAHAN: Menjadi hitam penuh di Mode Terang
                                   fontSize: 20,
                                   height: 2.0,
                                 ),
@@ -515,17 +541,24 @@ class _MaghribPageState extends State<MaghribPage> {
                             Text(
                               tataCara['latin']!,
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.9),
+                                color: mainTextColor.withOpacity(0.9),
                                 fontSize: 13,
                                 fontStyle: FontStyle.italic,
                                 height: 1.4,
                               ),
                             ),
-                            const Divider(color: Colors.white10, height: 16),
+                            Divider(
+                              color: isLightMode
+                                  ? const Color(0xffcbd5e1)
+                                  : Colors.white10,
+                              height: 16,
+                            ),
                             Text(
                               tataCara['arti']!,
-                              style: const TextStyle(
-                                color: Colors.white60,
+                              style: TextStyle(
+                                color: isLightMode
+                                    ? const Color(0xff475569)
+                                    : Colors.white60,
                                 fontSize: 12,
                                 height: 1.4,
                               ),
@@ -538,8 +571,8 @@ class _MaghribPageState extends State<MaghribPage> {
                       const SizedBox(height: 12),
                       Text(
                         tataCara['extraDesc']!,
-                        style: const TextStyle(
-                          color: Colors.white70,
+                        style: TextStyle(
+                          color: subTextColor,
                           fontSize: 13,
                           height: 1.4,
                         ),
@@ -549,7 +582,7 @@ class _MaghribPageState extends State<MaghribPage> {
                         width: double.infinity,
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: const Color(0xff090f16),
+                          color: innerCardColor,
                           borderRadius: BorderRadius.circular(8),
                         ),
                         child: Column(
@@ -560,7 +593,8 @@ class _MaghribPageState extends State<MaghribPage> {
                                 tataCara['extraArabic']!,
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.amiri(
-                                  color: Colors.tealAccent,
+                                  color:
+                                      arabicTextColor, // PERUBAHAN: Menjadi hitam penuh di Mode Terang
                                   fontSize: 20,
                                   height: 2.0,
                                 ),
@@ -570,17 +604,24 @@ class _MaghribPageState extends State<MaghribPage> {
                             Text(
                               tataCara['extraLatin']!,
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.9),
+                                color: mainTextColor.withOpacity(0.9),
                                 fontSize: 13,
                                 fontStyle: FontStyle.italic,
                                 height: 1.4,
                               ),
                             ),
-                            const Divider(color: Colors.white10, height: 16),
+                            Divider(
+                              color: isLightMode
+                                  ? const Color(0xffcbd5e1)
+                                  : Colors.white10,
+                              height: 16,
+                            ),
                             Text(
                               tataCara['extraArti']!,
-                              style: const TextStyle(
-                                color: Colors.white60,
+                              style: TextStyle(
+                                color: isLightMode
+                                    ? const Color(0xff475569)
+                                    : Colors.white60,
                                 fontSize: 12,
                                 height: 1.4,
                               ),
@@ -594,17 +635,15 @@ class _MaghribPageState extends State<MaghribPage> {
               );
             }).toList(),
           ],
-
           const SizedBox(height: 24),
-          // Keterangan & Keterangan Tambahan
           Row(
-            children: const [
-              Icon(Icons.info_outline, color: Colors.tealAccent, size: 18),
-              SizedBox(width: 6),
+            children: [
+              Icon(Icons.info_outline, color: accentColor, size: 18),
+              const SizedBox(width: 6),
               Text(
                 "Keterangan",
                 style: TextStyle(
-                  color: Colors.tealAccent,
+                  color: accentColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
@@ -616,14 +655,18 @@ class _MaghribPageState extends State<MaghribPage> {
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xff111a24),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.teal.withOpacity(0.1)),
+              border: Border.all(
+                color: isLightMode
+                    ? const Color(0xffe2e8f0)
+                    : Colors.teal.withOpacity(0.1),
+              ),
             ),
-            child: const Text(
-              "Shalat Maghrib dilakukan sebanyak 3 rakaat. Dua rakaat pertama dibaca dengan suara keras (jahr) dan rakaat terakhir dibaca lirih (sirr). Waktunya terhitung sangat pendek, dimulai sejak matahari terbenam (hilangnya bulatan matahari) hingga hilangnya syafaq merah (awan kemerahan di ufuk barat).",
+            child: Text(
+              "Shalat Maghrib dikerjakan sebanyak 3 rakaat. Bacaan surat pada dua rakaat pertama dikerjakan secara keras (jahr). Waktunya dimulai sejak terbenamnya matahari hingga hilangnya awan merah (syafaq) di ufuk barat.",
               style: TextStyle(
-                color: Colors.white60,
+                color: isLightMode ? const Color(0xff475569) : Colors.white60,
                 fontSize: 13,
                 height: 1.5,
               ),

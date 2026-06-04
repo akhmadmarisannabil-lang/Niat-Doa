@@ -19,7 +19,6 @@ class DoaTerhindarMusibahPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Kumpulan data Doa Terhindar dari Musibah[cite: 30]
     final List<Map<String, String>> doaTerhindarMusibahList = [
       {
         'name': 'Doa Terhindar dari Musibah & Bencana',
@@ -92,20 +91,20 @@ class DoaTerhindarMusibahPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      // Disamakan dengan Doa Sholat (Pure Dark)[cite: 29]
-      backgroundColor: const Color(0xff121212),
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: const Color(0xff121212),
-        elevation: 0,
+        backgroundColor: Colors.white,
+        elevation: 0.5,
+        iconTheme: const IconThemeData(color: Colors.black87),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
         ),
         title: const Text(
           "Doa Terhindar dari Musibah",
           style: TextStyle(
-            fontSize: 18, // Ukuran font disamakan kembali menjadi 18[cite: 29]
-            color: Colors.white,
+            fontSize: 18,
+            color: Colors.black87,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -118,9 +117,9 @@ class DoaTerhindarMusibahPage extends StatelessWidget {
           return Container(
             margin: const EdgeInsets.only(bottom: 12),
             decoration: BoxDecoration(
-              // Menggunakan warna container item milik Doa Sholat[cite: 29]
-              color: const Color(0xff1e1e1e),
+              color: Colors.grey[50],
               borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: Colors.grey[200]!),
             ),
             child: ListTile(
               contentPadding: const EdgeInsets.symmetric(
@@ -128,33 +127,32 @@ class DoaTerhindarMusibahPage extends StatelessWidget {
                 vertical: 8,
               ),
               leading: CircleAvatar(
-                backgroundColor: Colors.amber.withOpacity(0.15),
+                backgroundColor: Colors.blue.withOpacity(0.15),
                 child: const Icon(
                   Icons.menu_book,
-                  color: Colors.amber,
-                  size:
-                      24, // Dikembalikan ke ukuran default yang proporsional[cite: 29]
+                  color: Colors.blue,
+                  size: 24,
                 ),
               ),
               title: Text(
                 doa['name']!,
                 style: const TextStyle(
-                  color: Colors.white,
+                  color: Colors.black87,
                   fontWeight: FontWeight.bold,
-                  fontSize: 16, // Ukuran font title disamakan kembali[cite: 29]
+                  fontSize: 16,
                 ),
               ),
               subtitle: Padding(
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
                   doa['desc']!,
-                  style: const TextStyle(color: Colors.white60, fontSize: 13),
+                  style: const TextStyle(color: Colors.black54, fontSize: 13),
                 ),
               ),
               trailing: const Icon(
                 Icons.arrow_forward_ios,
-                color: Colors.white30,
-                size: 16, // Ukuran trailing icon disamakan kembali[cite: 29]
+                color: Colors.black26,
+                size: 16,
               ),
               onTap: () {
                 Widget page;

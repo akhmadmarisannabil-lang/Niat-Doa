@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart'; // Tambahkan untuk memantau state tema
+import '../theme_provider.dart'; // Sesuaikan path ini dengan lokasi file theme_provider.dart Anda
+
 import '../surah_quran/alfatihah_page.dart';
 import '../surah_quran/annaba_page.dart';
 import '../surah_quran/annaziat_page.dart';
@@ -76,7 +79,7 @@ class _QuranPageState extends State<QuranPage> {
       'name': "'Abasa",
       'type': 'MAKKIYAH',
       'verses': 42,
-      'arabic': 'عبس', // Memperbaiki penulisan teks Arab polos agar rapi
+      'arabic': 'عبس',
     },
     {
       'no': '81',
@@ -153,7 +156,7 @@ class _QuranPageState extends State<QuranPage> {
       'name': 'Asy-Syams',
       'type': 'MAKKIYAH',
       'verses': 15,
-      'arabic': 'الشems',
+      'arabic': 'الشمس',
     },
     {
       'no': '92',
@@ -279,7 +282,7 @@ class _QuranPageState extends State<QuranPage> {
       'name': 'Al-Kafirun',
       'type': 'MAKKIYAH',
       'verses': 6,
-      'arabic': 'الكافرon',
+      'arabic': 'الكٰفرون',
     },
     {
       'no': '110',
@@ -350,8 +353,12 @@ class _QuranPageState extends State<QuranPage> {
 
   @override
   Widget build(BuildContext context) {
+    // Membaca state tema aktif
+    final isLightTheme = Provider.of<ThemeProvider>(context).isLightTheme;
+
     return Scaffold(
-      backgroundColor: const Color(0xff121212),
+      // 1. Mengubah background utama mengikuti tema aplikasi
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Container(
         constraints: const BoxConstraints(maxWidth: 1200),
         child: Column(
@@ -360,55 +367,77 @@ class _QuranPageState extends State<QuranPage> {
               padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 8.0),
               child: Column(
                 children: [
+                  // Kotak Pencarian (Search Bar)
                   Container(
                     height: 52,
                     decoration: BoxDecoration(
-                      color: const Color(0xff222222),
+                      // Menyesuaikan warna kotak pencarian berdasarkan mode aktif
+                      color: isLightTheme
+                          ? Colors.grey[200]
+                          : const Color(0xff222222),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: TextField(
                       controller: _searchController,
-                      style: const TextStyle(color: Colors.white, fontSize: 14),
-                      decoration: const InputDecoration(
+                      // Warna teks ketikan menyesuaikan tema aktif
+                      style: TextStyle(
+                        color: isLightTheme ? Colors.black87 : Colors.white,
+                        fontSize: 14,
+                      ),
+                      decoration: InputDecoration(
                         hintText: "Cari Surah...",
                         hintStyle: TextStyle(
-                          color: Colors.white38,
+                          color: isLightTheme ? Colors.black38 : Colors.white38,
                           fontSize: 14,
                         ),
                         prefixIcon: Icon(
                           Icons.search,
-                          color: Colors.white38,
+                          color: isLightTheme ? Colors.black38 : Colors.white38,
                           size: 20,
                         ),
                         border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(vertical: 15),
+                        contentPadding: const EdgeInsets.symmetric(
+                          vertical: 15,
+                        ),
                       ),
                     ),
                   ),
                   const SizedBox(height: 16),
+                  // Kotak Banner Header (Al-Fatihah & Juz 30)
                   Container(
                     width: double.infinity,
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      color: const Color(0xff1a2e40),
+                      // Menyesuaikan warna banner box
+                      color: isLightTheme
+                          ? Colors.blue.withOpacity(0.15)
+                          : const Color(0xff1a2e40),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
+                      children: [
                         Text(
-                          " Al-fatihah & Juz 30",
+                          "Al-fatihah & Juz 30",
                           style: TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            // Warna teks banner menyesuaikan tema aktif
+                            color: isLightTheme
+                                ? Colors.blue[900]
+                                : Colors.white,
                             height: 1.2,
                           ),
                         ),
-                        SizedBox(height: 8),
+                        const SizedBox(height: 8),
                         Text(
                           "Surah Pembuka & Juz 30(Surah pendek)",
-                          style: TextStyle(fontSize: 13, color: Colors.white70),
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: isLightTheme
+                                ? Colors.black54
+                                : Colors.white70,
+                          ),
                         ),
                       ],
                     ),
@@ -417,6 +446,7 @@ class _QuranPageState extends State<QuranPage> {
                 ],
               ),
             ),
+            // Daftar List Surah
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.symmetric(
@@ -429,6 +459,7 @@ class _QuranPageState extends State<QuranPage> {
 
                   return GestureDetector(
                     onTap: () {
+                      // Blok navigasi tetap dipertahankan seperti semula
                       if (surah['name'] == 'Al-Fatihah') {
                         Navigator.push(
                           context,
@@ -723,8 +754,21 @@ class _QuranPageState extends State<QuranPage> {
                         vertical: 18,
                       ),
                       decoration: BoxDecoration(
-                        color: const Color(0xff222222),
+                        // Warna container list item dinamis mengikuti tema aktif
+                        color: isLightTheme
+                            ? Colors.white
+                            : const Color(0xff222222),
                         borderRadius: BorderRadius.circular(12),
+                        // Menambahkan shadow tipis jika dalam mode terang agar terlihat rapi
+                        boxShadow: isLightTheme
+                            ? [
+                                BoxShadow(
+                                  color: Colors.black.withOpacity(0.05),
+                                  blurRadius: 4,
+                                  offset: const Offset(0, 2),
+                                ),
+                              ]
+                            : null,
                       ),
                       child: Row(
                         children: [
@@ -738,7 +782,9 @@ class _QuranPageState extends State<QuranPage> {
                                   height: 28,
                                   decoration: BoxDecoration(
                                     border: Border.all(
-                                      color: Colors.white24,
+                                      color: isLightTheme
+                                          ? Colors.blue.withOpacity(0.3)
+                                          : Colors.white24,
                                       width: 1.5,
                                     ),
                                     borderRadius: BorderRadius.circular(3),
@@ -750,17 +796,23 @@ class _QuranPageState extends State<QuranPage> {
                                 height: 28,
                                 decoration: BoxDecoration(
                                   border: Border.all(
-                                    color: Colors.white24,
+                                    color: isLightTheme
+                                        ? Colors.blue.withOpacity(0.3)
+                                        : Colors.white24,
                                     width: 1.5,
                                   ),
                                   borderRadius: BorderRadius.circular(3),
-                                  color: const Color(0xff222222),
+                                  color: isLightTheme
+                                      ? Colors.white
+                                      : const Color(0xff222222),
                                 ),
                               ),
                               Text(
                                 surah['no']!,
-                                style: const TextStyle(
-                                  color: Colors.amber,
+                                style: TextStyle(
+                                  color: isLightTheme
+                                      ? Colors.blue[800]
+                                      : Colors.amber,
                                   fontSize: 10,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -774,8 +826,10 @@ class _QuranPageState extends State<QuranPage> {
                               children: [
                                 Text(
                                   surah['name']!,
-                                  style: const TextStyle(
-                                    color: Colors.white,
+                                  style: TextStyle(
+                                    color: isLightTheme
+                                        ? Colors.black87
+                                        : Colors.white,
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                   ),
@@ -783,8 +837,10 @@ class _QuranPageState extends State<QuranPage> {
                                 const SizedBox(height: 4),
                                 Text(
                                   "${surah['type']} • ${surah['verses']} AYAT",
-                                  style: const TextStyle(
-                                    color: Colors.white38,
+                                  style: TextStyle(
+                                    color: isLightTheme
+                                        ? Colors.black45
+                                        : Colors.white38,
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500,
                                   ),
@@ -792,13 +848,13 @@ class _QuranPageState extends State<QuranPage> {
                               ],
                             ),
                           ),
-                          // BAGIAN YANG DIUBAH: Menggunakan khat Amiri polos tanpa harakat
                           Text(
                             surah['arabic']!,
                             style: GoogleFonts.amiri(
-                              color: Colors.amber,
-                              fontSize:
-                                  22, // Ukuran disesuaikan agar tulisan gundul terlihat proporsional dan elegan
+                              color: isLightTheme
+                                  ? Colors.blue[900]
+                                  : Colors.amber,
+                              fontSize: 22,
                               fontWeight: FontWeight.normal,
                             ),
                           ),

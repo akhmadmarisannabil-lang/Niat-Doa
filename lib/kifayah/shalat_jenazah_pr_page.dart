@@ -12,7 +12,7 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
   // Opsi default yang terpilih
   String _selectedOption = 'Shalat Jenazah Sebagai Makmum';
 
-  // 1. Data Niat Shalat Jenazah Perempuan
+  // 1. Data Niat Shalat Jenazah Perempuan (Lafadz Asli)
   final Map<String, Map<String, String>> _niatData = {
     'Shalat Jenazah Sendirian': {
       'title': 'Niat (Sendirian)',
@@ -43,7 +43,7 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
     },
   };
 
-  // 2. Data Tata Cara Shalat Jenazah Perempuan Berurutan Beserta Bacaannya
+  // 2. Data Tata Cara Shalat Jenazah Perempuan Berurutan Beserta Bacaannya (Lafadz Asli)
   final List<Map<String, dynamic>> _tataCaraUrutanData = [
     {
       'header': 'Langkah 1',
@@ -121,7 +121,7 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
           'Selesai takbir keempat, disunnahkan membaca doa keselamatan bagi orang yang ditinggalkan berikut (menggunakan dhomir "-haa"):',
       'hasRead': true,
       'arabic':
-          "اللَّهُمَّ لَا تَحْرِمْنَا أَجْرَهَا وَلَا تَفْتِنَّا بَعْدَهَا وَاغْفِر| لَنَا وَلَهَا",
+          "اللَّهُمَّ لَا تَحْرِمْنَا أَجْرَهَا وَلَا تَفْتِنَّا بَعْدَهَا وَاغْفِرْ لَنَا وَلَهَا",
       'latin':
           "Allahumma laa tahrimnaa ajrahaa wa laa taftinnaa ba'dahaa waghfir lanaa wa lahaa.",
       'arti':
@@ -148,19 +148,56 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
 
   @override
   Widget build(BuildContext context) {
+    // Deteksi Mode Terang atau Mode Gelap
+    final bool isLightMode = Theme.of(context).brightness == Brightness.light;
+
+    // Palet warna adaptif fardhu kifayah
+    final Color bgColor = isLightMode
+        ? const Color(0xfff5f7fa)
+        : const Color(0xff090f16);
+    final Color cardColor = isLightMode
+        ? Colors.white
+        : const Color(0xff111a24);
+    final Color mainTextColor = isLightMode
+        ? const Color(0xff1e293b)
+        : Colors.white;
+    final Color subTextColor = isLightMode
+        ? const Color(0xff475569)
+        : Colors.white70;
+    final Color tagBgColor = isLightMode
+        ? const Color(0xffe2e8f0)
+        : Colors.white10;
+    final Color tagTextColor = isLightMode
+        ? const Color(0xff64748b)
+        : Colors.white70;
+    final Color accentColor = isLightMode
+        ? const Color(0xff0f766e)
+        : Colors.tealAccent;
+    final Color borderColor = isLightMode
+        ? const Color(0xffe2e8f0)
+        : Colors.teal.withOpacity(0.2);
+
+    // Mandat: Ketika light mode warna arab harus HITAM pekat
+    final Color arabicTextColor = isLightMode
+        ? Colors.black
+        : Colors.white.withOpacity(0.9);
+
     return Scaffold(
-      backgroundColor: const Color(0xff090f16),
+      backgroundColor: bgColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xff090f16),
+        backgroundColor: bgColor,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          icon: Icon(
+            Icons.arrow_back,
+            color: isLightMode ? Colors.black87 : Colors.white70,
+          ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           "Niat & Tata Cara Shalat Jenazah Pr",
           style: TextStyle(
-            color: Colors.white,
+            color: mainTextColor,
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
@@ -169,7 +206,6 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: [
-          // Kategori Tag / Label Atas
           Wrap(
             spacing: 8,
             children: [
@@ -179,12 +215,12 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: tagBgColor,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Text(
+                child: Text(
                   "Fardhu Kifayah",
-                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                  style: TextStyle(color: tagTextColor, fontSize: 11),
                 ),
               ),
               Container(
@@ -193,36 +229,36 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: tagBgColor,
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: const Text(
+                child: Text(
                   "Jenazah Perempuan",
-                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                  style: TextStyle(color: tagTextColor, fontSize: 11),
                 ),
               ),
             ],
           ),
           const SizedBox(height: 24),
 
-          // FITUR DROPDOWN (4 Pilihan Menu)
+          // FITUR DROPDOWN
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
             decoration: BoxDecoration(
-              color: const Color(0xff111a24),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.teal.withOpacity(0.3), width: 1),
+              border: Border.all(
+                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.3),
+                width: 1,
+              ),
             ),
             child: DropdownButtonHideUnderline(
               child: DropdownButton<String>(
                 value: _selectedOption,
-                dropdownColor: const Color(0xff111a24),
-                icon: const Icon(
-                  Icons.arrow_drop_down,
-                  color: Colors.tealAccent,
-                ),
-                style: const TextStyle(
-                  color: Colors.white,
+                dropdownColor: cardColor,
+                icon: Icon(Icons.arrow_drop_down, color: accentColor),
+                style: TextStyle(
+                  color: mainTextColor,
                   fontSize: 15,
                   fontWeight: FontWeight.w500,
                 ),
@@ -244,14 +280,13 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
           ),
           const SizedBox(height: 32),
 
-          // Tampilan Berdasarkan Opsi Terpilih
           if (_selectedOption != 'Tata Cara Shalat Jenazah Perempuan') ...[
             // === TAMPILAN NIAT ===
             Center(
               child: Text(
                 _niatData[_selectedOption]!['title']!,
-                style: const TextStyle(
-                  color: Colors.tealAccent,
+                style: TextStyle(
+                  color: accentColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
@@ -262,24 +297,25 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
               width: double.infinity,
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
               decoration: BoxDecoration(
-                color: const Color(0xff111a24),
+                color: cardColor,
                 borderRadius: BorderRadius.circular(12),
+                border: isLightMode ? Border.all(color: borderColor) : null,
               ),
               child: Text(
                 _niatData[_selectedOption]!['arabic']!,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.amiri(
-                  color: Colors.white.withOpacity(0.9),
+                  color: arabicTextColor,
                   fontSize: 24,
                   height: 2.2,
                 ),
               ),
             ),
             const SizedBox(height: 24),
-            const Text(
+            Text(
               "Transliterasi",
               style: TextStyle(
-                color: Colors.tealAccent,
+                color: accentColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
               ),
@@ -289,13 +325,14 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
               width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xff111a24),
+                color: cardColor,
                 borderRadius: BorderRadius.circular(12),
+                border: isLightMode ? Border.all(color: borderColor) : null,
               ),
               child: Text(
                 _niatData[_selectedOption]!['transliteration']!,
-                style: const TextStyle(
-                  color: Colors.white70,
+                style: TextStyle(
+                  color: subTextColor,
                   fontSize: 14,
                   fontStyle: FontStyle.italic,
                   height: 1.4,
@@ -303,10 +340,10 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
               ),
             ),
             const SizedBox(height: 24),
-            const Text(
+            Text(
               "Terjemahan",
               style: TextStyle(
-                color: Colors.tealAccent,
+                color: accentColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
               ),
@@ -316,33 +353,33 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
               width: double.infinity,
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color(0xff111a24),
+                color: cardColor,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.teal.withOpacity(0.2)),
+                border: Border.all(
+                  color: isLightMode
+                      ? borderColor
+                      : Colors.teal.withOpacity(0.2),
+                ),
               ),
               child: Text(
                 _niatData[_selectedOption]!['translation']!,
-                style: const TextStyle(
-                  color: Colors.white70,
+                style: TextStyle(
+                  color: subTextColor,
                   fontSize: 14,
                   height: 1.4,
                 ),
               ),
             ),
           ] else ...[
-            // === TAMPILAN TATA CARA TERURUT DENGAN BACAAN ARAB & LATIN ===
+            // === TAMPILAN TATA CARA LENGKAP ===
             Row(
-              children: const [
-                Icon(
-                  Icons.format_list_numbered,
-                  color: Colors.tealAccent,
-                  size: 18,
-                ),
-                SizedBox(width: 8),
+              children: [
+                Icon(Icons.format_list_numbered, color: accentColor, size: 18),
+                const SizedBox(width: 8),
                 Text(
                   "Urutan Panduan Shalat Jenazah Lengkap",
                   style: TextStyle(
-                    color: Colors.tealAccent,
+                    color: accentColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 15,
                   ),
@@ -355,53 +392,54 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
                 margin: const EdgeInsets.only(bottom: 16),
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: const Color(0xff111a24),
+                  color: cardColor,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.white12),
+                  border: Border.all(
+                    color: isLightMode ? borderColor : Colors.white12,
+                  ),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Penanda Langkah
                     Text(
                       tataCara['header']!,
-                      style: const TextStyle(
-                        color: Colors.tealAccent,
+                      style: TextStyle(
+                        color: accentColor,
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     const SizedBox(height: 4),
-                    // Nama Rukun Gerakan
                     Text(
                       tataCara['title']!,
-                      style: const TextStyle(
-                        color: Colors.white,
+                      style: TextStyle(
+                        color: mainTextColor,
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     const SizedBox(height: 8),
-                    // Deskripsi Panduan Rukun
                     Text(
                       tataCara['desc']!,
-                      style: const TextStyle(
-                        color: Colors.white70,
+                      style: TextStyle(
+                        color: subTextColor,
                         fontSize: 13,
                         height: 1.4,
                       ),
                     ),
-
-                    // Jika rukun ini memiliki teks bacaan doa shalat jenazah
                     if (tataCara['hasRead'] == true) ...[
                       const SizedBox(height: 16),
-                      // Box Bacaan Arab
                       Container(
                         width: double.infinity,
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          color: const Color(0xff090f16),
+                          color: isLightMode
+                              ? const Color(0xfff8fafc)
+                              : const Color(0xff090f16),
                           borderRadius: BorderRadius.circular(8),
+                          border: isLightMode
+                              ? Border.all(color: borderColor)
+                              : null,
                         ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -411,29 +449,33 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
                                 tataCara['arabic']!,
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.amiri(
-                                  color: Colors.tealAccent,
+                                  color:
+                                      arabicTextColor, // Diubah ke Hitam di Mode Terang
                                   fontSize: 20,
                                   height: 2.0,
                                 ),
                               ),
                             ),
                             const SizedBox(height: 12),
-                            // Latin / Transliterasi
                             Text(
                               tataCara['latin']!,
                               style: TextStyle(
-                                color: Colors.white.withOpacity(0.9),
+                                color: subTextColor,
                                 fontSize: 13,
                                 fontStyle: FontStyle.italic,
                                 height: 1.4,
                               ),
                             ),
-                            const Divider(color: Colors.white10, height: 16),
-                            // Arti / Terjemahan
+                            Divider(
+                              color: isLightMode ? borderColor : Colors.white10,
+                              height: 16,
+                            ),
                             Text(
                               tataCara['arti']!,
-                              style: const TextStyle(
-                                color: Colors.white60,
+                              style: TextStyle(
+                                color: isLightMode
+                                    ? const Color(0xff64748b)
+                                    : Colors.white60,
                                 fontSize: 12,
                                 height: 1.4,
                               ),
@@ -449,15 +491,14 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
           ],
 
           const SizedBox(height: 24),
-          // Seksi Keterangan Khusus Posisi Imam Jenazah Perempuan (Statis paling bawah)
           Row(
-            children: const [
-              Icon(Icons.info_outline, color: Colors.tealAccent, size: 18),
-              SizedBox(width: 6),
+            children: [
+              Icon(Icons.info_outline, color: accentColor, size: 18),
+              const SizedBox(width: 6),
               Text(
                 "Keterangan",
                 style: TextStyle(
-                  color: Colors.tealAccent,
+                  color: accentColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
@@ -469,14 +510,16 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xff111a24),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.teal.withOpacity(0.1)),
+              border: Border.all(
+                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
+              ),
             ),
-            child: const Text(
-              "Pada jenazah perempuan, penunjukan menggunakan kata 'haadzihil mayyitati'[cite: 29]. Begitu pula saat takbir ketiga dan keempat, bacaan doa disesuaikan dengan menggunakan akhiran ganti perempuan (-haa)[cite: 29]. Bagi posisi Imam, disunnahkan berdiri lurus sejajar dengan bagian lambung/pinggang jenazah perempuan.",
+            child: Text(
+              "Pada jenazah perempuan, penunjukan menggunakan kata 'haadzihil mayyitati'. Begitu pula saat takbir ketiga dan keempat, bacaan doa disesuaikan dengan menggunakan akhiran ganti perempuan (-haa). Bagi posisi Imam, disunnahkan berdiri lurus sejajar dengan bagian lambung/pinggang jenazah perempuan.",
               style: TextStyle(
-                color: Colors.white60,
+                color: isLightMode ? const Color(0xff475569) : Colors.white60,
                 fontSize: 13,
                 height: 1.5,
               ),

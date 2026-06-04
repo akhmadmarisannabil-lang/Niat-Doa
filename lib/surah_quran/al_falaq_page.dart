@@ -45,19 +45,20 @@ class AlFalaqPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: const Color(0xff090f16),
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: const Color(0xff090f16),
-        elevation: 0,
+        backgroundColor: Colors.white,
+        elevation: 0.5,
+        iconTheme: const IconThemeData(color: Colors.black87),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
           surahData['name'] ?? 'Al-Falaq',
           style: const TextStyle(
-            color: Colors.white,
-            fontSize: 16,
+            color: Colors.black87,
+            fontSize: 18,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -74,12 +75,12 @@ class AlFalaqPage extends StatelessWidget {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: Colors.grey[200],
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
                   surahData['type'] ?? "MAKKIYAH",
-                  style: const TextStyle(color: Colors.white70, fontSize: 11),
+                  style: const TextStyle(color: Colors.black54, fontSize: 11),
                 ),
               ),
               Container(
@@ -88,12 +89,12 @@ class AlFalaqPage extends StatelessWidget {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: Colors.grey[200],
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
                   "${surahData['verses'] ?? 5} Ayat",
-                  style: const TextStyle(color: Colors.white70, fontSize: 11),
+                  style: const TextStyle(color: Colors.black54, fontSize: 11),
                 ),
               ),
               Container(
@@ -102,12 +103,12 @@ class AlFalaqPage extends StatelessWidget {
                   vertical: 4,
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white10,
+                  color: Colors.grey[200],
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Text(
                   "Juz 30",
-                  style: TextStyle(color: Colors.white70, fontSize: 11),
+                  style: TextStyle(color: Colors.black54, fontSize: 11),
                 ),
               ),
             ],
@@ -128,14 +129,14 @@ class AlFalaqPage extends StatelessWidget {
                       children: [
                         const Icon(
                           Icons.menu_book,
-                          color: Colors.tealAccent,
+                          color: Colors.teal,
                           size: 18,
                         ),
                         const SizedBox(width: 6),
                         Text(
                           "Ayat ${ayat['no']}",
                           style: const TextStyle(
-                            color: Colors.tealAccent,
+                            color: Colors.teal,
                             fontWeight: FontWeight.bold,
                             fontSize: 14,
                           ),
@@ -150,14 +151,15 @@ class AlFalaqPage extends StatelessWidget {
                         vertical: 28,
                       ),
                       decoration: BoxDecoration(
-                        color: const Color(0xff111a24),
+                        color: Colors.grey[50],
                         borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: Colors.grey[200]!),
                       ),
                       child: Text(
                         ayat['arabic'],
                         textAlign: TextAlign.center,
                         style: GoogleFonts.amiri(
-                          color: Colors.white.withOpacity(0.9),
+                          color: Colors.black87,
                           fontSize: 24,
                           height: 2.2,
                         ),
@@ -167,7 +169,7 @@ class AlFalaqPage extends StatelessWidget {
                     const Text(
                       "Transliterasi",
                       style: TextStyle(
-                        color: Colors.tealAccent,
+                        color: Colors.teal,
                         fontWeight: FontWeight.bold,
                         fontSize: 13,
                       ),
@@ -177,13 +179,14 @@ class AlFalaqPage extends StatelessWidget {
                       width: double.infinity,
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
-                        color: const Color(0xff111a24),
+                        color: Colors.grey[50],
                         borderRadius: BorderRadius.circular(12),
+                        border: Border.all(color: Colors.grey[200]!),
                       ),
                       child: Text(
                         ayat['transliteration'],
                         style: const TextStyle(
-                          color: Colors.white70,
+                          color: Colors.black87,
                           fontSize: 14,
                           fontStyle: FontStyle.italic,
                           height: 1.4,
@@ -194,7 +197,7 @@ class AlFalaqPage extends StatelessWidget {
                     const Text(
                       "Terjemahan",
                       style: TextStyle(
-                        color: Colors.tealAccent,
+                        color: Colors.teal,
                         fontWeight: FontWeight.bold,
                         fontSize: 13,
                       ),
@@ -204,16 +207,14 @@ class AlFalaqPage extends StatelessWidget {
                       width: double.infinity,
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
-                        color: const Color(0xff111a24),
+                        color: Colors.white,
                         borderRadius: BorderRadius.circular(12),
-                        border: Border.all(
-                          color: Colors.teal.withOpacity(0.15),
-                        ),
+                        border: Border.all(color: Colors.teal.withOpacity(0.2)),
                       ),
                       child: Text(
                         ayat['translation'],
-                        style: const TextStyle(
-                          color: Colors.white70,
+                        style: TextStyle(
+                          color: Colors.black.withOpacity(0.65),
                           fontSize: 14,
                           height: 1.4,
                         ),
