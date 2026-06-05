@@ -6,19 +6,60 @@ class KeluarKamarMandiPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isLightMode = Theme.of(context).brightness == Brightness.light;
+
+    final Color bgColor = isLightMode
+        ? const Color(0xfff5f7fa)
+        : const Color(0xff090f16);
+
+    final Color cardColor = isLightMode
+        ? Colors.white
+        : const Color(0xff111a24);
+
+    final Color mainTextColor = isLightMode
+        ? const Color(0xff1e293b)
+        : Colors.white;
+
+    final Color subTextColor = isLightMode
+        ? const Color(0xff475569)
+        : Colors.white70;
+
+    final Color chipBgColor = isLightMode
+        ? const Color(0xffe2e8f0)
+        : Colors.white10;
+
+    final Color chipTextColor = isLightMode
+        ? const Color(0xff64748b)
+        : Colors.white70;
+
+    final Color accentColor = isLightMode
+        ? const Color(0xff0f766e)
+        : Colors.tealAccent;
+
+    final Color borderColor = isLightMode
+        ? const Color(0xffe2e8f0)
+        : Colors.teal.withOpacity(0.2);
+
+    final Color arabicTextColor = isLightMode
+        ? Colors.black
+        : Colors.white.withOpacity(0.9);
+
     return Scaffold(
-      backgroundColor: const Color(0xff090f16),
+      backgroundColor: bgColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xff090f16),
+        backgroundColor: bgColor,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white70),
+          icon: Icon(
+            Icons.arrow_back,
+            color: isLightMode ? Colors.black87 : Colors.white70,
+          ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           "Doa Keluar Kamar Mandi",
           style: TextStyle(
-            color: Colors.white,
+            color: mainTextColor,
             fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
@@ -30,18 +71,18 @@ class KeluarKamarMandiPage extends StatelessWidget {
           Wrap(
             spacing: 8,
             children: [
-              _buildTag("Doa Harian"),
-              _buildTag("kamar mandi"),
-              _buildTag("syukur"),
+              _buildTag("Doa Harian", chipBgColor, chipTextColor),
+              _buildTag("kamar mandi", chipBgColor, chipTextColor),
+              _buildTag("syukur", chipBgColor, chipTextColor),
             ],
           ),
           const SizedBox(height: 32),
 
-          const Center(
+          Center(
             child: Text(
               "Teks Arab",
               style: TextStyle(
-                color: Colors.tealAccent,
+                color: accentColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
               ),
@@ -52,25 +93,25 @@ class KeluarKamarMandiPage extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
             decoration: BoxDecoration(
-              color: const Color(0xff111a24),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
+              border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
               "غُفْرَانَكَ الْحَمْدُ لِلَّهِ الَّذِي أَذْهَبَ عَنِّي الْأَذَى وَعَافَانِي",
               textAlign: TextAlign.center,
               style: GoogleFonts.amiri(
-                color: Colors.white.withOpacity(0.9),
+                color: arabicTextColor,
                 fontSize: 24,
                 height: 2.2,
               ),
             ),
           ),
           const SizedBox(height: 24),
-
-          const Text(
+          Text(
             "Transliterasi",
             style: TextStyle(
-              color: Colors.tealAccent,
+              color: accentColor,
               fontWeight: FontWeight.bold,
               fontSize: 14,
             ),
@@ -80,13 +121,14 @@ class KeluarKamarMandiPage extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xff111a24),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
+              border: isLightMode ? Border.all(color: borderColor) : null,
             ),
-            child: const Text(
+            child: Text(
               "Ghufraanaka alhamdulillahil ladzi adzhaba 'annil adzaa wa 'aafaanii.",
               style: TextStyle(
-                color: Colors.white70,
+                color: subTextColor,
                 fontSize: 14,
                 fontStyle: FontStyle.italic,
                 height: 1.4,
@@ -94,11 +136,10 @@ class KeluarKamarMandiPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 24),
-
-          const Text(
+          Text(
             "Terjemahan",
             style: TextStyle(
-              color: Colors.tealAccent,
+              color: accentColor,
               fontWeight: FontWeight.bold,
               fontSize: 14,
             ),
@@ -108,29 +149,24 @@ class KeluarKamarMandiPage extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xff111a24),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.teal.withOpacity(0.2)),
+              border: isLightMode ? Border.all(color: borderColor) : null,
             ),
-            child: const Text(
+            child: Text(
               "Aku memohon ampunan-Mu. Segala puji bagi Allah yang telah menghilangkan penyakit dari tubuhku dan menjaga kesehatanku.",
-              style: TextStyle(
-                color: Colors.white70,
-                fontSize: 14,
-                height: 1.4,
-              ),
+              style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
             ),
           ),
           const SizedBox(height: 24),
-
           Row(
-            children: const [
-              Icon(Icons.info_outline, color: Colors.tealAccent, size: 18),
-              SizedBox(width: 6),
+            children: [
+              Icon(Icons.info_outline, color: accentColor, size: 18),
+              const SizedBox(width: 6),
               Text(
                 "Keterangan",
                 style: TextStyle(
-                  color: Colors.tealAccent,
+                  color: accentColor,
                   fontWeight: FontWeight.bold,
                   fontSize: 14,
                 ),
@@ -142,14 +178,16 @@ class KeluarKamarMandiPage extends StatelessWidget {
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: const Color(0xff111a24),
+              color: cardColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.teal.withOpacity(0.1)),
+              border: Border.all(
+                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
+              ),
             ),
-            child: const Text(
+            child: Text(
               "Dibaca setelah melangkah keluar dari kamar mandi, disunnahkan keluar menggunakan kaki kanan terlebih dahulu.",
               style: TextStyle(
-                color: Colors.white60,
+                color: isLightMode ? const Color(0xff475569) : Colors.white60,
                 fontSize: 13,
                 height: 1.5,
               ),
@@ -160,17 +198,14 @@ class KeluarKamarMandiPage extends StatelessWidget {
     );
   }
 
-  Widget _buildTag(String label) {
+  Widget _buildTag(String label, Color bg, Color textCol) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        color: Colors.white10,
+        color: bg,
         borderRadius: BorderRadius.circular(20),
       ),
-      child: Text(
-        label,
-        style: const TextStyle(color: Colors.white70, fontSize: 11),
-      ),
+      child: Text(label, style: TextStyle(color: textCol, fontSize: 11)),
     );
   }
 }

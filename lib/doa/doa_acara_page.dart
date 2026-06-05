@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../theme_provider.dart';
 // IMPORT 5 DOA AWAL (Tetap dipertahankan)
 import '../doa_acara/doa_pembukaan_page.dart';
 import '../doa_acara/doa_penutup_page.dart';
@@ -24,6 +26,7 @@ class DoaAcaraPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isLightTheme = Provider.of<ThemeProvider>(context).isLightTheme;
     final List<Map<String, String>> doaAcaraList = [
       {
         'name': 'Doa Pembukaan Acara',
@@ -107,20 +110,22 @@ class DoaAcaraPage extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0.5,
-        iconTheme: const IconThemeData(color: Colors.black87),
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+        elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: Icon(
+            Icons.arrow_back,
+            color: isLightTheme ? Colors.black87 : Colors.white70,
+          ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           "Doa Acara",
           style: TextStyle(
             fontSize: 18,
-            color: Colors.black87,
+            color: isLightTheme ? Colors.black87 : Colors.white,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -130,12 +135,21 @@ class DoaAcaraPage extends StatelessWidget {
         itemCount: doaAcaraList.length,
         itemBuilder: (context, index) {
           final doa = doaAcaraList[index];
+
           return Container(
             margin: const EdgeInsets.only(bottom: 12),
             decoration: BoxDecoration(
-              color: Colors.grey[50],
+              color: isLightTheme ? Colors.white : const Color(0xff1e1e1e),
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.grey[200]!),
+              boxShadow: isLightTheme
+                  ? [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.05),
+                        blurRadius: 4,
+                        offset: const Offset(0, 2),
+                      ),
+                    ]
+                  : null,
             ),
             child: ListTile(
               contentPadding: const EdgeInsets.symmetric(
@@ -143,13 +157,18 @@ class DoaAcaraPage extends StatelessWidget {
                 vertical: 8,
               ),
               leading: CircleAvatar(
-                backgroundColor: Colors.blue.withOpacity(0.15),
-                child: const Icon(Icons.menu_book, color: Colors.blue),
+                backgroundColor: isLightTheme
+                    ? Colors.blue.withOpacity(0.1)
+                    : Colors.amber.withOpacity(0.15),
+                child: Icon(
+                  Icons.menu_book,
+                  color: isLightTheme ? Colors.blue[800] : Colors.amber,
+                ),
               ),
               title: Text(
                 doa['name']!,
-                style: const TextStyle(
-                  color: Colors.black87,
+                style: TextStyle(
+                  color: isLightTheme ? Colors.black87 : Colors.white,
                   fontWeight: FontWeight.bold,
                   fontSize: 16,
                 ),
@@ -158,14 +177,18 @@ class DoaAcaraPage extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
                   doa['desc']!,
-                  style: const TextStyle(color: Colors.black54, fontSize: 13),
+                  style: TextStyle(
+                    color: isLightTheme ? Colors.black54 : Colors.white60,
+                    fontSize: 13,
+                  ),
                 ),
               ),
-              trailing: const Icon(
+              trailing: Icon(
                 Icons.arrow_forward_ios,
-                color: Colors.black26,
+                color: isLightTheme ? Colors.black26 : Colors.white30,
                 size: 16,
               ),
+
               onTap: () {
                 switch (index) {
                   case 0:

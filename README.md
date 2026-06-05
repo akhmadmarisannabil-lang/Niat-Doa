@@ -19,8 +19,17 @@ fflutter_sholat_doa/
 ├── assets/
 │   └── images/
 │       └── menu/
-│           ├── sholat.jpg
+│           ├── sholat1.jpg
+│           └── sholat2.jpg
+|           ├── sholat3.jpg
+│           └── sholat4.jpg
+|           ├── sholat5.jpg
+│           └── sholat6.jpg
+|           ├── sholat7.jpg
 │           └── berdoa.jpg
+|
+|
+|
 ├── lib/
 │   ├── badiyah/
 │   │   ├── badiyah_dzuhur_page.dart
@@ -214,7 +223,9 @@ fflutter_sholat_doa/
 │   │   ├── idul_adha_page.dart
 │   │   ├── idul_fitri_page.dart
 │   │   └── tarawih_page.dart
-│   ├── home_page.dart
+|    ├── home_page.dart
+|    ├── settings_page.dart
+│   ├── theme_provider.dart
 │   ├── main.dart
 │   └── welcome_page.dart
 ```
@@ -251,7 +262,7 @@ Teknologi yang digunakan dalam pembuatan aplikasi "Bacaan Shalat Lengkap" adalah
 - Dart: Bahasa pemrograman utama bertipe object-oriented untuk membangun seluruh logika fungsionalitas, model data menu, serta pengaturan alur kerja aplikasi.
 - Flutter SDK: Framework UI lintas platform dari Google untuk merancang dan membangun antarmuka berperforma gegas (native-like).
 - Google Fonts (google_fonts): Paket eksternal untuk memuat font khusus religi seperti GoogleFonts.amiri() guna menampilkan teks visual Arab secara indah, rapi, dan mudah dibaca
-- Material Design Widgets: Pustaka komponen bawaan Flutter untuk elemen visual seperti Scaffold, BottomNavigationBar, ListView, ListTile, Wrap, dan Container.
+- Material Design Widgets: Pustaka komponen bawaan Flutter untuk elemen visual seperti Scaffold, BottomNavigationBar, ListView, ListTile, Wrap, Container dan Pustaka komponen yang dioptimalkan untuk mendukung skema Mode Terang..
 - Navigator API: Manajemen navigasi bawaan untuk perpindahan halaman (routing) antar modul menu secara runtut.
 
 ## Cara Menjalankan Aplikasi
