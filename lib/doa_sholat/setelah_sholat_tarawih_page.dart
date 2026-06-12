@@ -70,11 +70,7 @@ class SetelahSholatTarawihPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Ibadah", chipBgColor, chipTextColor),
-              _buildTag("duduk", chipBgColor, chipTextColor),
-              _buildTag("sholat", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Ibadah", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class SetelahSholatTarawihPage extends StatelessWidget {
             child: Text(
               "Yaa Allah, jadikanlah kami orang-orang yang sempurna imannya, yang memenuhi kewajiban-kewajiban, yang memelihara shalat, yang mengeluarkan zakat, yang mencari apa yang ada di sisi-Mu, yang mengharapkan ampunan-Mu, yang berpegang pada petunjuk, yang berpaling dari kebatilan, yang zuhud di dunia, yang menyenangi akhirat, yang ridha dengan qadla-Mu (ketentuan-Mu), yang mensyukuri nikmat, yang sabar atas segala musibah, yang berada di bawah panji-panji junjungan kami, Nabi Muhammad, pada hari kiamat, yang mengunjungi telaga (Nabi Muhammad), yang masuk ke dalam surga, yang selamat dari api neraka, yang duduk di atas ranjang kemuliaan, yang menikah dengan para bidadari, yang mengenakan berbagai sutra ,yang makan makanan surga, yang minum ssu dan madu murni dengan gelas, cangkir, dan cawan bersama orang-orang yang Engkau beri nikmat dari kalangan para nabi, shiddiqin, syuhada dan orang-orang shalih. Mereka itulah teman yang terbaik. Itulah keutamaan (anugerah) dari Allah, dan cukuplah bahwa Allah Maha Mengetahui. Ya Allah, jadikanlah kami pada malam yang mulia dan diberkahi ini termasuk orang-orang yang bahagia dan diterima amalnya, dan janganlah Engkau jadikan kami tergolong orang-orang yang celaka dan ditolak amalnya. Semoga Allah mencurahkan rahmat-Nya atas junjungan kami Muhammad, serta seluruh keluarga dan shahabat beliau. Berkat rahmat-Mu, wahai Yang Paling Penyayang di antara yang penyayang. Segala puji bagi Allah Tuhan semesta alam.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Merupakan Doa Kamilin yang dibaca setelah sholat Tarawih untuk memohon kesempurnaan iman, kelancaran ibadah, kenikmatan surga, serta agar dianugerahi kebahagiaan dan diterimanya amal saleh di malam bulan Ramadhan yang penuh berkah ini.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

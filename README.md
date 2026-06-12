@@ -10,250 +10,90 @@ Aplikasi ini merupakan aplikasi mobile responsif yang dibangun menggunakan Flutt
 
 3. Pengembangan Sub-Menu Secara Mendalam: Memproduksi halaman baru secara modular menggunakan komponen daftar terstruktur (ListView.builder) guna memuat navigasi panduan macam-macam niat shalat, doa, serta deretan surah pendek secara spesifik, runtun, dan tepat sasaran.
 
-4. Pengujian Sistem dan Penyusunan Dokumentasi Akhir: Melakukan uji coba fungsionalitas tombol kembali (back button navigation), memeriksa kestabilan performa aplikasi saat perpindahan halaman, serta memastikan tidak ada teks atau data yang tumpang tindih (redundant) antar sub-menu surah maupun doa.
+4. Integrasi Fitur Audio API Al-Qur'an: Menyambungkan modul surah_quran ke layanan API Al-Qur'an publik untuk mengambil endpoint URL audio murottal (.mp3) berkualitas tinggi secara dinamis berdasarkan nomor surah, serta menyematkan kontrol audio player interaktif (Play, Pause, Stop, Progress Bar).
+
+5. Pengujian Sistem dan Penyusunan Dokumentasi Akhir: Melakukan uji coba fungsionalitas tombol kembali (back button navigation), memeriksa kestabilan performa aplikasi saat perpindahan halaman, serta memastikan tidak ada teks atau data yang tumpang tindih (redundant) antar sub-menu surah maupun doa.
 
 ## Arsitektur File & Struktur Proyek (Directory Structure)
 
 ```
-fflutter_sholat_doa/
+FLUTTER_SHOLAT_DOA/
+├── .dart_tool/
+├── .idea/
+├── android/
 ├── assets/
-│   └── images/
-│       └── menu/
-│           ├── sholat1.jpg
-│           └── sholat2.jpg
-|           ├── sholat3.jpg
-│           └── sholat4.jpg
-|           ├── sholat5.jpg
-│           └── sholat6.jpg
-|           ├── sholat7.jpg
-│           └── berdoa.jpg
-|
-|
-|
+├── build/
+├── ios/
 ├── lib/
 │   ├── badiyah/
-│   │   ├── badiyah_dzuhur_page.dart
-│   │   ├── badiyah_isya_page.dart
-│   │   └── badiyah_maghrib_page.dart
-│   │
 │   ├── doa/
-│   │   ├── doa_acara_page.dart
-│   │   ├── doa_akhirat_page.dart
-│   │   ├── doa_harian_page.dart
-│   │   ├── doa_ibadah_page.dart
-│   │   ├── doa_terhindar_musibah_page.dart
-│   │   └── doa_waktu_tententu_page.dart
 │   ├── doa_acara/
-│   │   ├── aqiqah_page.dart
-│   │   ├── doa_pembukaan_page.dart
-│   │   ├── doa_penutup_page.dart
-│   │   ├── doa_pernikahan_page.dart
-│   │   ├── doa_rumah_baru_page.dart
-│   │   ├── doa_syukuran_page.dart
-│   │   ├── empat_bulan_kandungan_page.dart
-│   │   ├── halal_bihalal_page.dart
-│   │   ├── khitanan_page.dart
-│   │   ├── menyambut_ramadhan_page.dart
-│   │   ├── pelepasan_musafir_page.dart
-│   │   ├── peresmian_usaha_page.dart
-│   │   ├── peringatan_hari_besar_page.dart
-│   │   ├── perpisahan_sekolah_page.dart
-│   │   ├── rapat_kerja_page.dart
-│   │   └── ulang_tahun_page.dart
 │   ├── doa_akhirat/
-│   │   ├── doa_ampunan_dosa_page.dart
-│   │   ├── doa_hisab_page.dart
-│   │   ├── doa_husnul_khotimah_page.dart
-│   │   ├── doa_kemudahan_shirat_page.dart
-│   │   ├── doa_menerima_kitab_page.dart
-│   │   ├── doa_minum_telaga_page.dart
-│   │   ├── doa_naungan_mahsyar_page.dart
-│   │   ├── doa_perlindungan_neraka_page.dart
-│   │   ├── doa_sapu_jagad_page.dart
-│   │   ├── doa_selamat_dajjal_page.dart
-│   │   ├── doa_siksa_kubur_page.dart
-│   │   ├── doa_surga_firdaus_page.dart
-│   │   └── doa_terima_amal_page.dart
+│   ├── doa_diri_oranglain/
 │   ├── doa_harian/
-│   │   ├── bangun_tidur_page.dart
-│   │   ├── bercermin_page.dart
-│   │   ├── hujan_reda_page.dart
-│   │   ├── keluar_kamar_mandi_page.dart
-│   │   ├── keluar_masjid_page.dart
-│   │   ├── keluar_rumah_page.dart
-│   │   ├── masuk_kamar_mandi_page.dart
-│   │   ├── masuk_masjid_page.dart
-│   │   ├── masuk_pasar_page.dart
-│   │   ├── masuk_rumah_page.dart
-│   │   ├── melepas_pakaian_page.dart
-│   │   ├── memakai_pakaian_page.dart
-│   │   ├── sebelum_makan_page.dart
-│   │   ├── sebelum_tidur_page.dart
-│   │   ├── sesudah_makan_page.dart
-│   │   ├── setelah_azan_page.dart
-│   │   └── turun_hujan_page.dart
 │   ├── doa_musibah/
-│   │   ├── doa_bencana_page.dart
-│   │   ├── doa_hujan_khawatir_banjir_page.dart
-│   │   ├── doa_kehilangan_barang_page.dart
-│   │   ├── doa_kerugian_page.dart
-│   │   ├── doa_keselamatan_keturunan_page.dart
-│   │   ├── doa_melihat_pertanda_buruk_page.dart
-│   │   ├── doa_mendengar_musibah_page.dart
-│   │   ├── doa_mendengar_petir_page.dart
-│   │   ├── doa_penyakit_berat_page.dart
-│   │   ├── doa_saat_gempa_bumi_page.dart
-│   │   ├── doa_saat_susah_page.dart
-│   │   ├── doa_terhindar_bahaya_page.dart
-│   │   ├── doa_terhindar_kezaliman_page.dart
-│   │   └── doa_tolak_bala_page.dart
 │   ├── doa_sholat/
-│   │   ├── duduk_antara_dua_sujud_page.dart
-│   │   ├── iftitah_page.dart
-│   │   ├── itidal_page.dart
-│   │   ├── qunut_nazilah_page.dart
-│   │   ├── qunut_page.dart
-│   │   ├── ruku_page.dart
-│   │   ├── setelah_sholat_dhuha_page.dart
-│   │   ├── setelah_sholat_fardhu_page.dart
-│   │   ├── setelah_sholat_hajat_page.dart
-│   │   ├── setelah_sholat_istikharah_page.dart
-│   │   ├── setelah_sholat_tahajjud_page.dart
-│   │   ├── setelah_sholat_tarawih_page.dart
-│   │   ├── setelah_sholat_taubat_page.dart
-│   │   ├── setelah_sholat_witir_page.dart
-│   │   ├── sholat_tasbih_page.dart
-│   │   ├── sujud_page.dart
-│   │   ├── sujud_sahwi_page.dart
-│   │   ├── sujud_tilawah_page.dart
-│   │   ├── tasyahud_akhir_page.dart
-│   │   └── tasyahud_awal_page.dart
 │   ├── doa_tertentu/
-│   │   ├── akhir_tahun_page.dart
-│   │   ├── awal_ramadan_page.dart
-│   │   ├── awal_tahun_page.dart
-│   │   ├── berbuka_puasa_page.dart
-│   │   ├── bulan_rajab_page.dart
-│   │   ├── bulan_safar_page.dart
-│   │   ├── malam_idul_adha_page.dart
-│   │   ├── malam_idul_fitri_page.dart
-│   │   ├── nisfu_syaban_page.dart
-│   │   ├── sepuluh_muharram_page.dart
-│   │   └── waktu_sahur_page.dart
 │   ├── harian/
-│   │   ├── dhuha_page.dart
-│   │   ├── tahajjud_page.dart
-│   │   ├── tahiyyatul_masjid_page.dart
-│   │   ├── tahiyyatul_wudu_page.dart
-│   │   └── witir_page.dart
 │   ├── kebutuhan/
-│   │   ├── hajat_page.dart
-│   │   ├── istikharah_page.dart
-│   │   ├── istisqa_page.dart
-│   │   ├── safar_page.dart
-│   │   └── taubat_page.dart
 │   ├── kifayah/
-│   │   ├── shalat_ghaib_page.dart
-│   │   ├── shalat_jenazah_lk_page.dart
-│   │   └── shalat_jenazah_pr_page.dart
+│   ├── models/
+│   ├── pengantar/
 │   ├── qobliyah/
-│   │   ├── qobliyah_ashar_page.dart
-│   │   ├── qobliyah_dzuhur_page.dart
-│   │   ├── qobliyah_isya_page.dart
-│   │   ├── qobliyah_maghrib_page.dart
-│   │   └── qobliyah_subuh_page.dart
 │   ├── quran/
-│   │   └── quran_page.dart
+│   ├── services/
 │   ├── sholat/
-│   │   ├── shalat_fardhu_kifayah_page.dart
-│   │   ├── shalat_fardhu_page.dart
-│   │   ├── sunnah_badiyah_page.dart
-│   │   ├── sunnah_harian_page.dart
-│   │   ├── sunnah_qobliyah_page.dart
-│   │   ├── sunnah_situasional_page.dart
-│   │   └── sunnah_waktu_tertentu_page.dart
 │   ├── sholat_fardhu/
-│   │   ├── ashar_page.dart
-│   │   ├── dzuhur_page.dart
-│   │   ├── isya_page.dart
-│   │   ├── jumat_page.dart
-│   │   ├── maghrib_page.dart
-│   │   └── subuh_page.dart
 │   ├── surah_quran/
-│   │   ├── abasa_page.dart
-│   │   ├── ad_duha_page.dart
-│   │   ├── al_adiyat_page.dart
-│   │   ├── al_ala_page.dart
-│   │   ├── al_alaq_page.dart
-│   │   ├── al_asr_page.dart
-│   │   ├── al_balad_page.dart
-│   │   ├── al_bayyinah_page.dart
-│   │   ├── al_fajr_page.dart
-│   │   ├── al_falaq_page.dart
-│   │   ├── al_fil_page.dart
-│   │   ├── al_ghasyiyah_page.dart
-│   │   ├── al_humazah_page.dart
-│   │   ├── al_ikhlas_page.dart
-│   │   ├── al_kafirun_page.dart
-│   │   ├── al_kausar_page.dart
-│   │   ├── al_lahab_page.dart
-│   │   ├── al_lail_page.dart
-│   │   ├── al_maun_page.dart
-│   │   ├── al_qadr_page.dart
-│   │   ├── al_qariah_page.dart
-│   │   ├── alburuj_page.dart
-│   │   ├── alfatihah_page.dart
-│   │   ├── alinfitar_page.dart
-│   │   ├── alinsyiqaq_page.dart
-│   │   ├── almutaffifin_page.dart
-│   │   ├── an_nas_page.dart
-│   │   ├── an_nasr_page.dart
-│   │   ├── annaba_page.dart
-│   │   ├── annaziat_page.dart
-│   │   ├── asy_syams_page.dart
-│   │   ├── asy_syarh_page.dart
-│   │   ├── at_takasur_page.dart
-│   │   ├── at_tin_page.dart
-│   │   ├── attakwir_page.dart
-│   │   ├── attariq_page.dart
-│   │   ├── az_zalzalah_page.dart
-│   │   └── quraisyi_page.dart
 │   ├── tertentu/
-│   │   ├── gerhana_page.dart
-│   │   ├── idul_adha_page.dart
-│   │   ├── idul_fitri_page.dart
-│   │   └── tarawih_page.dart
-|    ├── home_page.dart
-|    ├── settings_page.dart
-│   ├── theme_provider.dart
+│   ├── home_page.dart
 │   ├── main.dart
+│   ├── settings_page.dart
+│   ├── theme_provider.dart
 │   └── welcome_page.dart
+├── linux/
+├── macos/
+├── test/
+│   └── widget_test.dart
+├── web/
+├── windows/
+├── .flutter-plugins-dependencies
+├── .gitignore
+├── .metadata
+├── analysis_options.yaml
+├── flutter_sholat_doa.iml
+├── pubspec.lock
+├── pubspec.yaml
+└── README.md
 ```
 
 ## Fitur & Menu
 
 1. Tab Niat Shalat (Menu Utama 1)
    Memuat tuntunan niat shalat yang dikelompokkan secara terstruktur:
+   - Kata Pengantar (sholat/kata_pengantar_page.dart): Halaman transisi pembuka untuk menu penuntun shalat.
    - Shalat Fardhu: Tuntunan niat shalat lima waktu (Subuh, Dzuhur, Ashar, Maghrib, Isya).
    - Sunnah Rawatib: Terbagi atas Sunnah Qobliyah (sebelum fardhu) dan Sunnah Ba'diyah (setelah fardhu).
    - Shalat Fardhu Kifayah: Panduan shalat Jenazah (Laki-laki & Perempuan) serta Shalat Ghaib.
    - Shalat Sunnah Waktu Tertentu: Panduan shalat sunnah tahunan/musiman yang terikat waktu khusus (Shalat Idul Fitri, Idul Adha, Tarawih, dan Gerhana).
    - Sunnah Kebutuhan & Situasional: Panduan shalat sunnah yang didasarkan pada kondisi, hajat, atau kebutuhan spiritual hamba (Istikharah, Hajat, Taubat, Istisqa, dan Safar).
 
-2. pembuka Surah(Al-fatihah) & Juz Amma (Menu Utama 2)
-   Menyediakan fitur daftar surah interaktif lengkap dengan bilah pencarian (Cari Surah...) khusus Juz 30. Menu ini menampilkan detail identitas surah (Nomor Urut, Nama Surah, Tempat Turun/Makkiyah-Madaniyah, Jumlah Ayat, serta Teks Kaligrafi Arab). Modul navigasi di dalamnya telah dipetakan hingga surah penutup Al-Qur'an:
-   - Daftar Utama: Menampilkan indeks komprehensif mulai dari Al-Fatihah, urutan Juz 30, hingga surah terakhir.
-   - Halaman Khusus Surah Penutup: Halaman per ayat modular yang interaktif untuk Surah Al-Ikhlas (112), Al-Falaq (113), dan An-Nas (114) yang memuat struktur tiga elemen: teks asli Al-Qur'an (Arabic text), pedoman bacaan latin (transliteration), serta arti bahasa Indonesia (translation).
+2. Pembuka Surah & Juz Amma + Fitur Audio API (Menu Utama 2)
+   Menyediakan fitur daftar surah interaktif khusus Juz 30 lengkap dengan bilah pencarian. Menu ini menampilkan detail identitas surah (Nomor Urut, Nama Surah, Tempat Turun, Jumlah Ayat, serta Teks Kaligrafi Arab).
+   - Daftar Utama (quran/quran_page.dart): Menampilkan indeks komprehensif mulai dari Al-Fatihah hingga urutan Juz 30.
+   - Halaman Detail Surah Modul (surah_quran/): Halaman per ayat interaktif yang memuat struktur teks asli Al-Qur'an (Arabic text), pedoman bacaan latin (transliteration), serta arti bahasa Indonesia (translation).
+   - Infrastruktur Audio & Layanan API (services/ & models/):
+     1. services/quran_api_service.dart: Menangani permintaan HTTP asinkron ke API Qur'an eksternal untuk mengambil data audio murottal secara streaming.
+     2. models/qori_model.dart: Memetakan data JSON dari API menjadi objek Dart (URL audio, nama qori) untuk dibaca oleh widget pemutar audio di setiap halaman surah.
 
 3. Tab Kifarat & Kumpulan Doa (Menu Utama 3)
    Memuat kumpulan doa yang telah dieliminasi dari unsur duplikasi data, disusun berdasarkan konteks aktivitas pengguna:
-
-- Doa Harian : Doa-doa praktis harian meliputi Bangun Tidur, Keluar Rumah, Masuk Rumah, Sebelum Makan, Sebelum Tidur, dan Sesudah Makan.
-- Doa Shalat / Ibadah : Berfokus pada bacaan inti selama rangkaian shalat berlangsung, meliputi Duduk di Antara Dua Sujud, Iftitah, I'tidal, Qunut, Ruku', Sujud, Tasyahud Awal, dan Tasyahud Akhir.
-- Doa untuk Akhirat : Doa keselamatan jangka panjang meliputi Doa Hisab, Doa Husnul Khotimah, Doa Sapu Jagad, Doa Siksa Kubur, dan Doa Surga Firdaus.
-- Doa Terhindar Musibah : Doa perlindungan dari marabahaya meliputi Doa Bencana, Doa Kerugian, Doa Mendengar Musibah, Doa Penyakit Berat, dan Doa Terhindar Bahaya.
-  Doa Acara : Kumpulan doa untuk kegiatan bersama meliputi Doa Pembukaan, Doa Penutup, Doa Pernikahan, Doa Rumah Baru, dan Doa Syukuran.
-- Doa Waktu Tertentu: Menu transisi dinamis (pengganti Doa Lainnya) yang mendata doa khusus momentum waktu sakral keagamaan, meliputi doa akhir tahun, awal ramadan, awal tahun, berbuka puasa, doa di bulan rajab, bulan safar, malam idul adha, malam idul fitri, nisfu sya'ban, sepuluh muharram, dan doa waktu sahur.
+   - Doa Harian (doa_harian/): Menu yang diperluas secara detail mencakup doa Bangun Tidur, Bercermin, Berpakaian Baru, Bersin, Hujan Reda, Keluar Kamar Mandi/Masjid/Pasar/Rumah, Ketika Takut, Lupa Doa Makan, Masuk Kamar Mandi/Masjid/Pasar/Rumah/Rumah Sepi, Melepas/Memakai Pakaian, Minum Susu, Naik Kendaraan, Sebelum Adzan/Belajar/Makan/Tidur/Wudhu, Sesudah Belajar/Makan/Wudhu, Setelah Azan, Takut Tidur, Terjaga Malam, hingga Turun Hujan.
+   - Doa Shalat / Ibadah : Berfokus pada bacaan inti selama rangkaian shalat berlangsung, meliputi Duduk di Antara Dua Sujud, Iftitah, I'tidal, Qunut, Ruku', Sujud, Tasyahud Awal, dan Tasyahud Akhir.
+   - Doa untuk Akhirat (doa_akhirat/): Doa keselamatan jangka panjang yang kini mencakup Doa Ampunan Dosa, Hisab, Husnul Khotimah, Kemudahan Shirat, Meminta Syafaat, Memohon Cahaya Kiamat, Memohon Ridho Allah, Menerima Kitab, Minum Telaga, Naungan Mahsyar, Perlindungan Neraka, Sapu Jagad, Selamat Dajjal, Siksa Kubur, Surga Firdaus, dan Terima Amal.
+   - Doa Terhindar Musibah (doa_musibah/): Doa perlindungan dari marabahaya meliputi Doa Bencana, Doa Kerugian, Doa Mendengar Musibah, Doa Penyakit Berat, dan Doa Terhindar Bahaya.
+     Doa Acara : Kumpulan doa untuk kegiatan bersama meliputi Doa Pembukaan, Doa Penutup, Doa Pernikahan, Doa Rumah Baru, dan Doa Syukuran.
+   - Doa Waktu Tertentu: Menu transisi dinamis yang mendata doa khusus momentum waktu sakral keagamaan, meliputi doa akhir tahun, awal ramadan, awal tahun, berbuka puasa, doa di bulan rajab, bulan safar, malam idul adha, malam idul fitri, nisfu sya'ban, sepuluh muharram, dan doa waktu sahur.
 
 ## Teknologi yang Digunakan
 
@@ -261,6 +101,8 @@ Teknologi yang digunakan dalam pembuatan aplikasi "Bacaan Shalat Lengkap" adalah
 
 - Dart: Bahasa pemrograman utama bertipe object-oriented untuk membangun seluruh logika fungsionalitas, model data menu, serta pengaturan alur kerja aplikasi.
 - Flutter SDK: Framework UI lintas platform dari Google untuk merancang dan membangun antarmuka berperforma gegas (native-like).
+- http (Package eksternal): Digunakan untuk melakukan request data atau verifikasi tautan ke API Qur'an eksternal secara asinkron (async/await).
+- audioplayers / just_audio (Package eksternal): Pustaka audio player untuk menangani fungsi pemutaran audio mp3 dari URL API, mengatur state audio (Play, Pause, Resume, Stop), serta menampilkan durasi/progres audio.
 - Google Fonts (google_fonts): Paket eksternal untuk memuat font khusus religi seperti GoogleFonts.amiri() guna menampilkan teks visual Arab secara indah, rapi, dan mudah dibaca
 - Material Design Widgets: Pustaka komponen bawaan Flutter untuk elemen visual seperti Scaffold, BottomNavigationBar, ListView, ListTile, Wrap, Container dan Pustaka komponen yang dioptimalkan untuk mendukung skema Mode Terang..
 - Navigator API: Manajemen navigasi bawaan untuk perpindahan halaman (routing) antar modul menu secara runtut.
@@ -272,5 +114,5 @@ Langkah-langkah untuk mengonfigurasi dan menjalankan aplikasi "Niat Sholat & Doa
 1. Pemasangan SDK Flutter: Mengunduh SDK resmi, mengekstraknya, dan mendaftarkan jalur (path) binari ke Environment Variables sistem.
 2. Konfigurasi IDE: Menggunakan VS Code atau Android Studio dengan ekstensi resmi Flutter & Dart terpasang.
 3. Pemasangan Emulator/Perangkat Fisik: Menyiapkan AVD (Android Virtual Device) atau menghubungkan perangkat Android asli via USB Debugging.
-4. Sinkronisasi Dependensi Proyek: Menjalankan perintah flutter pub get di terminal proyek untuk mengunduh package google_fonts serta aset Material.
+4. Sinkronisasi Dependensi Proyek: Pastikan menambahkan package audio player (audioplayers atau just_audio) di file pubspec.yaml, lalu jalankan perintah flutter pub get di terminal proyek untuk mengunduh seluruh dependensi.
 5. Eksekusi: Jalankan flutter run atau tekan F5 pada VS Code untuk melakukan kompilasi.

@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Panduan-Panduan bacaan',
+      title: 'Bacaan Mobile',
 
       // 1. Konfigurasi Mode Terang (Akan aktif saat switch dihidupkan)
       theme: ThemeData(

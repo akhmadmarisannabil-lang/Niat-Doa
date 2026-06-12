@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../theme_provider.dart';
+
 // Import Halaman Doa Eksisting
 import '../doa_harian/sebelum_makan_page.dart';
 import '../doa_harian/sesudah_makan_page.dart';
@@ -9,7 +10,7 @@ import '../doa_harian/bangun_tidur_page.dart';
 import '../doa_harian/masuk_rumah_page.dart';
 import '../doa_harian/keluar_rumah_page.dart';
 
-// Import Halaman Doa Baru Tambahan
+// Import Halaman Doa Baru Tambahan Sebelumnya
 import '../doa_harian/masuk_kamar_mandi_page.dart';
 import '../doa_harian/keluar_kamar_mandi_page.dart';
 import '../doa_harian/masuk_masjid_page.dart';
@@ -22,13 +23,33 @@ import '../doa_harian/hujan_reda_page.dart';
 import '../doa_harian/masuk_pasar_page.dart';
 import '../doa_harian/setelah_azan_page.dart';
 
+// Import 9 Halaman Doa Baru yang Diminta Sebelumnya
+import '../doa_harian/naik_kendaraan_page.dart';
+import '../doa_harian/berpakaian_baru_page.dart';
+import '../doa_harian/masuk_rumah_sepi_page.dart';
+import '../doa_harian/sebelum_wudhu_page.dart';
+import '../doa_harian/sesudah_wudhu_page.dart';
+import '../doa_harian/takut_tidur_page.dart';
+import '../doa_harian/terjaga_malam_page.dart';
+import '../doa_harian/lupa_doa_makan_page.dart';
+import '../doa_harian/minum_susu_page.dart';
+
+// Import 6 Halaman Doa Tambahan Baru Terbaru
+import '../doa_harian/bersin_page.dart';
+import '../doa_harian/ketika_takut_page.dart';
+import '../doa_harian/sebelum_belajar_page.dart';
+import '../doa_harian/sesudah_belajar_page.dart';
+import '../doa_harian/sebelum_adzan_page.dart';
+import '../doa_harian/keluar_pasar_page.dart';
+
 class DoaHarianPage extends StatelessWidget {
   const DoaHarianPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     final isLightTheme = Provider.of<ThemeProvider>(context).isLightTheme;
-    // List Data Doa yang disesuaikan dengan tampilan image_b72eeb.png
+
+    // List Data Doa yang disesuaikan dengan tambahan doa baru
     final List<Map<String, String>> doaHarianList = [
       {
         'name': 'Doa Sebelum Makan',
@@ -100,6 +121,73 @@ class DoaHarianPage extends StatelessWidget {
       {
         'name': 'Doa Setelah Azan',
         'desc': 'Memohon wasilah dan keutamaan bagi Baginda Rasulullah SAW.',
+      },
+      {
+        'name': 'Doa Naik Kendaraan',
+        'desc': 'Memohon keselamatan selama berkendara di perjalanan.',
+      },
+      {
+        'name': 'Doa Berpakaian Baru',
+        'desc': 'Bersyukur atas rezeki pakaian baru dan memohon kebaikannya.',
+      },
+      {
+        'name': 'Doa Masuk Rumah Ketika Tidak Ada Orang',
+        'desc':
+            'Mengucapkan salam kepada diri sendiri dan hamba Allah yang shalih.',
+      },
+      {
+        'name': 'Doa Sebelum Wudhu',
+        'desc': 'Membaca basmalah mengawali bersuci ibadah.',
+      },
+      {
+        'name': 'Doa Sesudah Wudhu',
+        'desc':
+            'Persaksian tauhid dan memohon dijadikan golongan orang yang bertaubat.',
+      },
+      {
+        'name': 'Doa Bila Takut Saat Tidur',
+        'desc': 'Memohon perlindungan dari kemarahan Allah dan gangguan setan.',
+      },
+      {
+        'name': 'Doa Bila Terjaga di Malam Hari',
+        'desc': 'Dzikir ketika terbangun di tengah malam agar doa dikabulkan.',
+      },
+      {
+        'name': 'Doa Bila Lupa Membaca Sebelum Makan',
+        'desc':
+            'Menyebut nama Allah di awal dan di akhir karena sempat terlupa.',
+      },
+      {
+        'name': 'Doa Minum Susu',
+        'desc': 'Memohon keberkahan dan tambahan karunia rezeki air susu.',
+      },
+      {
+        'name': 'Doa Ketika Bersin',
+        'desc': 'Ungkapan pujian kepada Allah setelah bersin.',
+      },
+      {
+        'name': 'Doa Ketika Takut',
+        'desc':
+            'Memohon kecukupan perlindungan dan pertolongan dari Allah SWT.',
+      },
+      {
+        'name': 'Doa Sebelum Belajar',
+        'desc': 'Memohon tambahan ilmu pengetahuan dan pemahaman yang baik.',
+      },
+      {
+        'name': 'Doa Sesudah Belajar',
+        'desc':
+            'Memohon agar ditunjukkan kebenaran serta kekuatan menjauhi kebatilan.',
+      },
+      {
+        'name': 'Doa Sebelum Adzan',
+        'desc':
+            'Dzikir mengagungkan Allah sebelum panggilan shalat dikumandangkan.',
+      },
+      {
+        'name': 'Doa Keluar Pasar',
+        'desc':
+            'Memohon kebaikan dari aktivitas pasar dan perlindungan dari keburukannya.',
       },
     ];
 
@@ -317,6 +405,126 @@ class DoaHarianPage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => const SetelahAzanPage(),
+                      ),
+                    );
+                    break;
+                  case 17:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const NaikKendaraanPage(),
+                      ),
+                    );
+                    break;
+                  case 18:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BerpakaianBaruPage(),
+                      ),
+                    );
+                    break;
+                  case 19:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MasukRumahSepiPage(),
+                      ),
+                    );
+                    break;
+                  case 20:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SebelumWudhuPage(),
+                      ),
+                    );
+                    break;
+                  case 21:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SesudahWudhuPage(),
+                      ),
+                    );
+                    break;
+                  case 22:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const TakutTidurPage(),
+                      ),
+                    );
+                    break;
+                  case 23:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const TerjagaMalamPage(),
+                      ),
+                    );
+                    break;
+                  case 24:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LupaDoaMakanPage(),
+                      ),
+                    );
+                    break;
+                  case 25:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const MinumSusuPage(),
+                      ),
+                    );
+                    break;
+                  case 26:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BersinPage(),
+                      ),
+                    );
+                    break;
+                  case 27:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const KetikaTakutPage(),
+                      ),
+                    );
+                    break;
+                  case 28:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SebelumBelajarPage(),
+                      ),
+                    );
+                    break;
+                  case 29:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SesudahBelajarPage(),
+                      ),
+                    );
+                    break;
+                  case 30:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SebelumAdzanPage(),
+                      ),
+                    );
+                    break;
+                  case 31:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const KeluarPasarPage(),
                       ),
                     );
                     break;

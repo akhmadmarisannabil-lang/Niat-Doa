@@ -9,8 +9,6 @@ import '../doa_sholat/itidal_page.dart';
 import '../doa_sholat/duduk_antara_dua_sujud_page.dart';
 import '../doa_sholat/tasyahud_awal_page.dart';
 import '../doa_sholat/tasyahud_akhir_page.dart';
-
-// IMPORT DOA BARU
 import '../doa_sholat/sujud_sahwi_page.dart';
 import '../doa_sholat/sujud_tilawah_page.dart';
 import '../doa_sholat/setelah_sholat_fardhu_page.dart';
@@ -23,6 +21,11 @@ import '../doa_sholat/setelah_sholat_tarawih_page.dart';
 import '../doa_sholat/setelah_sholat_witir_page.dart';
 import '../doa_sholat/qunut_nazilah_page.dart';
 import '../doa_sholat/sholat_tasbih_page.dart';
+
+// Import 3 Halaman Doa Baru yang Ditambahkan
+import '../doa_sholat/setelah_sholat_jenazah_page.dart';
+import '../doa_sholat/setelah_sholat_idul_fitri_page.dart';
+import '../doa_sholat/setelah_sholat_idul_adha_page.dart';
 
 class DoaIbadahPage extends StatelessWidget {
   const DoaIbadahPage({super.key});
@@ -82,41 +85,42 @@ class DoaIbadahPage extends StatelessWidget {
       {
         'name': 'Doa Setelah Sholat Fardhu',
         'desc':
-            'Amalan doa perlindungan dan rasa syukur setelah sholat lima waktu.',
+            'Doa setelah sholat fardhu atau setelah dzikir setalah Sholat Fardhu.',
       },
       {
         'name': 'Doa Setelah Sholat Dhuha',
         'desc':
-            'Doa permohonan kelancaran rezeki, keberkahan, dan perlindungan pagi hari.',
+            'Doa setelah sholat dhuha atau setelah dzikir setalah Sholat dhuha.',
       },
       {
         'name': 'Doa Setelah Sholat Tahajjud',
         'desc':
-            'Pujian pengakuan keagungan Allah di sepertiga malam yang mustajab.',
+            'Doa setelah sholat tahajjud atau setelah dzikir setalah Sholat tahajjud.',
       },
       {
         'name': 'Doa Setelah Sholat Hajat',
         'desc':
-            'Doa kepasrahan tatkala memohon pemenuhan hajat atau cita-cita khusus.',
+            'Doa setelah sholat hajat atau setelah dzikir setalah Sholat hajat.',
       },
       {
         'name': 'Doa Setelah Sholat Istikharah',
         'desc':
-            'Doa memohon petunjuk pilihan terbaik di antara kebimbangan urusan.',
+            'Doa setelah sholat istikharah atau setelah dzikir setalah Sholat istikharah.',
       },
       {
         'name': 'Doa Setelah Sholat Taubat',
-        'desc': 'Istighfar pengakuan dosa untuk memohon ampunan Allah SWT.',
+        'desc':
+            'Doa setelah sholat taubat atau setelah dzikir setalah Sholat taubat.',
       },
       {
         'name': 'Doa Setelah Sholat Tarawih',
         'desc':
-            'Doa Kamilin memohon kesempurnaan iman di malam bulan Ramadhan.',
+            'Doa setelah sholat tarawih atau setelah dzikir setalah Sholat tarawih.',
       },
       {
         'name': 'Doa Setelah Sholat Witir',
         'desc':
-            'Pujian pensucian kepada Dzat Raja yang Maha Suci sebagai penutup sholat malam.',
+            'Doa setelah sholat witir or setelah dzikir setelah Sholat witir.',
       },
       {
         'name': 'Qunut Nazilah Palestina',
@@ -126,7 +130,23 @@ class DoaIbadahPage extends StatelessWidget {
       {
         'name': 'Doa Sholat Tasbih',
         'desc':
-            'Lafadz tasbih pengetuk pintu langit yang dibaca berulang dalam sholat.',
+            'Doa setelah sholat tasbih atau setelah dzikir setalah Sholat tasbih.',
+      },
+      // Penambahan 3 Doa Baru
+      {
+        'name': 'Doa Setelah Sholat Jenazah',
+        'desc':
+            'Doa memohon ampunan, rahmat, dan kelapangan bagi jenazah setelah selesai dishalatkan.',
+      },
+      {
+        'name': 'Doa Setelah Sholat Idul Fitri',
+        'desc':
+            'Doa ungkapan rasa syukur pada hari kemenangan dan permohonan agar amalan diterima.',
+      },
+      {
+        'name': 'Doa Setelah Sholat Idul Adha',
+        'desc':
+            'Doa keberkahan, rasa syukur hari raya kurban, serta keteguhan iman dan ketakwaan.',
       },
     ];
 
@@ -367,6 +387,31 @@ class DoaIbadahPage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => const SholatTasbihPage(),
+                      ),
+                    );
+                    break;
+                  case 20:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SetelahSholatJenazahPage(),
+                      ),
+                    );
+                    break;
+                  case 21:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            const SetelahSholatIdulFitriPage(),
+                      ),
+                    );
+                    break;
+                  case 22:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SetelahSholatIdulAdhaPage(),
                       ),
                     );
                     break;

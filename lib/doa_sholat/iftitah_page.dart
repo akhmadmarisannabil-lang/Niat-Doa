@@ -70,11 +70,7 @@ class IftitahPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Ibadah", chipBgColor, chipTextColor),
-              _buildTag("duduk", chipBgColor, chipTextColor),
-              _buildTag("sholat", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Ibadah", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,42 +152,6 @@ class IftitahPage extends StatelessWidget {
             child: Text(
               "Allah Maha Besar dengan sebesar-besarnya, segala puji bagi Allah dengan pujian yang banyak, dan Maha Suci Allah pada waktu pagi dan petang. Sesungguhnya aku hadapkan wajahku kepada Allah yang telah menciptakan langit dan bumi dengan segenap kepatuhan dan kepasrahan, dan aku bukanlah dari golongan orang-orang musyrik. Sesungguhnya shalatku, ibadahku, hidupku, dan matiku hanyalah kepunyaan Allah, Tuhan semesta alam. Tiada sekutu bagi-Nya dan demikianlah aku diperintahkan dan aku termasuk dari golongan orang-orang muslim.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Doa Iftitah merupakan doa pembuka shalat yang hukumnya sunnah muakkad. Dibaca pada rakaat pertama setelah gerakan takbiratul ihram dan tepat sebelum melafalkan surat Al-Fatihah.",
-
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

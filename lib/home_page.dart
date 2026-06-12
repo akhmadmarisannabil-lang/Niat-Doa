@@ -4,6 +4,7 @@ import 'theme_provider.dart'; // Import file provider Anda
 import 'settings_page.dart'; // Import file halaman pengaturan Anda
 
 // Niat Sholat
+import 'sholat/kata_pengantar_page.dart';
 import 'sholat/shalat_fardhu_page.dart';
 import 'sholat/sunnah_qobliyah_page.dart';
 import 'sholat/sunnah_badiyah_page.dart';
@@ -18,6 +19,7 @@ import 'doa/doa_terhindar_musibah_page.dart';
 import 'doa/doa_acara_page.dart';
 import 'doa/doa_akhirat_page.dart';
 import 'doa/doa_waktu_tertentu_page.dart';
+import 'doa/doa_diri_orang_lain_page.dart'; // IMPORT MENU DOA BARU DI SINI
 
 // Al-Qur'an
 import 'quran/quran_page.dart';
@@ -113,24 +115,31 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const ShalatFardhuPage(),
+                            builder: (context) => const KataPengantarPage(),
                           ),
                         );
                       } else if (item['number'] == '2') {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const SunnahQobliyahPage(),
+                            builder: (context) => const ShalatFardhuPage(),
                           ),
                         );
                       } else if (item['number'] == '3') {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const SunnahBadiyahPage(),
+                            builder: (context) => const SunnahQobliyahPage(),
                           ),
                         );
                       } else if (item['number'] == '4') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const SunnahBadiyahPage(),
+                          ),
+                        );
+                      } else if (item['number'] == '5') {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -138,14 +147,14 @@ class _HomePageState extends State<HomePage> {
                                 const ShalatFardhuKifayahPage(),
                           ),
                         );
-                      } else if (item['number'] == '5') {
+                      } else if (item['number'] == '6') {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => const SunnahHarianPage(),
                           ),
                         );
-                      } else if (item['number'] == '6') {
+                      } else if (item['number'] == '7') {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -153,7 +162,7 @@ class _HomePageState extends State<HomePage> {
                                 const SunnahWaktuTertentuPage(),
                           ),
                         );
-                      } else if (item['number'] == '7') {
+                      } else if (item['number'] == '8') {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -203,6 +212,14 @@ class _HomePageState extends State<HomePage> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => const DoaWaktuTertentuPage(),
+                          ),
+                        );
+                      } else if (item['number'] == '7') {
+                        // NAVIGASI MENU BARU DI SINI
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const DoaDiriOrangLainPage(),
                           ),
                         );
                       }
@@ -345,42 +362,48 @@ class _HomePageState extends State<HomePage> {
     final List<Map<String, dynamic>> niatMenu = [
       {
         'number': '1',
-        'title': 'Shalat Fardhu',
+        'title': 'Kata Pengantar',
         'color': const Color(0xffd1e4ff),
         'image': 'assets/images/menu/sholat2.jpg',
       },
       {
         'number': '2',
+        'title': 'Shalat Fardhu',
+        'color': const Color(0xffd1e4ff),
+        'image': 'assets/images/menu/sholat5.jpg',
+      },
+      {
+        'number': '3',
         'title': 'Sunnah Qobliyah',
         'color': const Color(0xfffff3cd),
         'image': 'assets/images/menu/sholat1.jpg',
       },
       {
-        'number': '3',
+        'number': '4',
         'title': 'Sunnah Ba\'diyah',
         'color': const Color(0xffd1f2e5),
         'image': 'assets/images/menu/sholat4.jpg',
       },
       {
-        'number': '4',
+        'number': '5',
         'title': 'Shalat Fardhu\nKifayah',
         'color': const Color(0xffe2d1f9),
-        'image': 'assets/images/menu/sholat3.jpg',
-      },
-      {
-        'number': '5',
-        'title': 'Sunnah Harian',
-        'color': const Color(0xffffe5d9),
-        'image': 'assets/images/menu/sholat5.jpg',
-      },
-      {
-        'number': '6',
-        'title': 'Sunnah\n(Waktu Tertentu)',
-        'color': const Color(0xffd8f3dc),
         'image': 'assets/images/menu/sholat6.jpg',
       },
       {
+        'number': '6',
+        'title': 'Sunnah Harian',
+        'color': const Color(0xffffe5d9),
+        'image': 'assets/images/menu/sholat3.jpg',
+      },
+      {
         'number': '7',
+        'title': 'Sunnah\n(Waktu Tertentu)',
+        'color': const Color(0xffd8f3dc),
+        'image': 'assets/images/menu/sholat8.jpg',
+      },
+      {
+        'number': '8',
         'title': 'Sunnah Kebutuhan\n& Situasional',
         'color': const Color(0xffe8e8e4),
         'image': 'assets/images/menu/sholat7.jpg',
@@ -402,7 +425,7 @@ class _HomePageState extends State<HomePage> {
       },
       {
         'number': '3',
-        'title': 'Doa Terhindar\ndari Musibah',
+        'title': 'Doa Terhindar\ndari Musibah & Keburukan',
         'color': const Color(0xffd1f2e5),
         'image': 'assets/images/menu/berdoa.jpg',
       },
@@ -422,6 +445,13 @@ class _HomePageState extends State<HomePage> {
         'number': '6',
         'title': 'Doa Waktu\nTertentu',
         'color': const Color(0xfffcdbdf),
+        'image': 'assets/images/menu/berdoa.jpg',
+      },
+      // MENAMBAHKAN ITEM MENU KE-7 SISI INTERFAS SEPERTI PADA image_796897.png
+      {
+        'number': '7',
+        'title': 'Doa untuk Diri\nSendiri & Orang Lain',
+        'color': const Color(0xffe2d1f9),
         'image': 'assets/images/menu/berdoa.jpg',
       },
     ];
@@ -469,8 +499,8 @@ class _HomePageState extends State<HomePage> {
       ),
       body: _currentIndex == 0
           ? _buildMenuGrid(
-              headerTitle: "Kumpulan Niat Sholat",
-              headerDesc: "Ada bermacam-macam niat sholat",
+              headerTitle: "Kumpulan Sholat",
+              headerDesc: "Ada bermacam-macam sholat",
               menuItems: niatMenu,
               quoteText:
                   "– Tegakkan shalatmu, tenangkan jiwamu. Karena shalat adalah cara hamba berbicara dengan Sang Penciptpa. –",
@@ -499,10 +529,7 @@ class _HomePageState extends State<HomePage> {
         onTap: (int index) => setState(() => _currentIndex = index),
         type: BottomNavigationBarType.fixed,
         items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.mosque),
-            label: 'Niat Sholat',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.mosque), label: 'Sholat'),
           BottomNavigationBarItem(
             icon: Icon(Icons.menu_book),
             label: 'Juz Amma',

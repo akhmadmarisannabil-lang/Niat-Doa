@@ -70,11 +70,7 @@ class TasyahudAkhirPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Ibadah", chipBgColor, chipTextColor),
-              _buildTag("duduk", chipBgColor, chipTextColor),
-              _buildTag("sholat", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Ibadah", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class TasyahudAkhirPage extends StatelessWidget {
             child: Text(
               "Segala penghormatan yang penuh berkah, shalawat dan kebaikan adalah milik Allah. Semoga keselamatan, rahmat Allah dan berkah-Nya tercurah kepadamu, wahai Nabi. Semoga keselamatan tercurah kepada kami dan kepada hamba-hamba Allah yang shaleh. Aku bersaksi bahwa tidak ada Tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah utusan Allah. Ya Allah, limpahkanlah rahmat kepada junjungan kami Nabi Muhammad dan kepada keluarga junjungan kami Nabi Muhammad, sebagaimana Engkau telah melimpahkan rahmat kepada junjungan kami Nabi Ibrahim dan keluarga junjungan kami Nabi Ibrahim. Dan berkahilah junjungan kami Nabi Muhammad dan keluarga junjungan kami Nabi Muhammad, sebagaimana Engkau telah memberkahi junjungan kami Nabi Ibrahim dan keluarga junjungan kami Nabi Ibrahim, di seluruh alam semesta, sesungguhnya Engkau Maha Terpuji lagi Maha Mulia.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Doa tasyahud akhir dibaca pada posisi duduk tawarruk (pantat menempel lantai, kaki kiri dimasukkan di bawah kaki kanan) di rakaat paling terakhir tepat sebelum gerakan memutar salam.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

@@ -70,11 +70,7 @@ class SetelahSholatFardhuPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Ibadah", chipBgColor, chipTextColor),
-              _buildTag("duduk", chipBgColor, chipTextColor),
-              _buildTag("sholat", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Ibadah", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class SetelahSholatFardhuPage extends StatelessWidget {
             child: Text(
               "Dengan nama Allah yang Maha Pengasih lagi Maha Penyayang. Segala puji bagi Allah, Tuhan semesta alam, dengan pujian yang sesuai dengan nikmatnya dan memungkinkan ditambah nikmatnya. Wahai Tuhan kami, hanya bagi-Mu segala puji, sebagaimana yang patut bagi keagungan-Mu dan kebesaran kekuasaan-Mu. Ya Allah, limpahkanlah rahmat kepada junjungan kami Baginda Muhammad, yang dengan shalawat itu Engkau selamatkan kami dari semua keadaan yang menakutkan dan dari semua cobaan, Engkau penuhi semua kebutuhan kami, Engkau bersihkan kami dari segala kejelekan, Engkau angkat kami ke derajat paling tinggi, dan Engkau sampaikan kami kepada tujuan yang paling sempurna dari semua kebaikan, ketika hidup dan setelah mati. Ya Allah, kami memohon kepada-Mu kelembutan setiap kali berlaku takdir-Mu. Ya Allah, kami memohon sesuatu terbaik yang pernah dimohonkan kepada-Mu oleh Baginda Muhammad, hamba dan rasul-Mu, dan kami berlindung dari sesuatu terburuk yang pernah dimohon-jauhkan kepada-Mu oleh Baginda Nabi Muhammad, hamba dan rasul-Mu. Ya Allah sesungguhnya kami memohon hal-hal yang mendatangkan rahmat-Mu, jimat ampunanmu, selamat dari setiap dosa, keuntungan dari setiap kebaikan, kebahagiaan surga, keselamatan dari api neraka, serta pengampunan saat hari perhitungan. Ya Tuhan kami, janganlah Engkau jadikan hati kami condong (kepada kesesatan) sesudah Engkau beri petunjuk kepada kami. Karuniakanlah kepada kami rahmat dari sisi Engkau; karena sesungguhnya Engkau-lah Maha Pemberi (karunia). Ya Tuhan kami, ampunilah kami, dan orang tua kami sebagaimana mereka merawat kami saat masih kecil. Juga ampunilah seluruh kaum mukmin dan muslim, baik yang masih hidup maupun sudah wafat. Wahai Tuhan kami, berilah kami kebaikan hidup di dunia dan kebaikan hidup di akhirat, dan jagalah kami dari siksa api neraka. Semoga Allah melimpahkan rahmat dan keselamatan kepada Baginda Nabi Muhammad, keluarga, dan para sahabatnya. Segala puji bagi Allah, Tuhan seluruh keberadaan.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Rangkaian doa komprehensif setelah sholat lima waktu yang meliputi Shalawat Munjiyat untuk keselamatan dari marabahaya, kelembutan takdir, ampunan bagi kedua orang tua beserta kaum muslimin, serta kebaikan di dunia dan akhirat.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

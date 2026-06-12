@@ -70,11 +70,7 @@ class PeringatanHariBesarPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Acara", chipBgColor, chipTextColor),
-              _buildTag("maulid / isra'", chipBgColor, chipTextColor),
-              _buildTag("umat bersatu", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Acara", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -98,7 +94,7 @@ class PeringatanHariBesarPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "اللَّهُمَّ أَلِّفْ بَيْنَ قُلُوبِنَا وَأَصْلِحْ ذَاتَ بَيْنِنَا وَاهْدِنَا سُبُلَ السَّلَامِ",
+              "اللَّهُمَّ إِنَّا نَسْأَلُكَ فِي هَذَا الْمَجْلِسِ الشَّرِيْفِ وَفِي هَذَا الْيَوْمِ الْعَظِيْمِ أَنْ تُصَلِّيَ عَلَى مُحَمَّدٍ وَآلِ مُحَمَّدٍ وَأَنْ تُجِيْرَنَا مِنَ النَّارِ وَتُدْخِلَنَا الْجَنَّةَ وَتُبَلِّغَنَا بِشَفَاعَتِهِ يَا أَرْحَمَ الرَّاحِمِيْنَ",
               textAlign: TextAlign.center,
               style: GoogleFonts.amiri(
                 color: arabicTextColor,
@@ -126,7 +122,7 @@ class PeringatanHariBesarPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Allahumma allif baina quluubina wa ashlih dzaata bainina wahdina subulas-salaam.",
+              "Allāhumma innā nas'aluka fī hāżal-majlisisy-syarīfi wa fī hāżal-yaumil-'aẓīmi an tuṣalliya 'alā Muḥammadin wa āli Muḥammad, wa an tujīranā minan-nāri wa tudkhilanal-jannata wa tuballighanā bisyafā'atihi yā arḥamar-rāḥimīn.",
               style: TextStyle(
                 color: subTextColor,
                 fontSize: 14,
@@ -154,7 +150,7 @@ class PeringatanHariBesarPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Ya Allah, jinakkanlah (satukanlah) hati-hati kami, perbaikilah hubungan di antara kami, dan tunjukkanlah kami jalan-jalan keselamatan.",
+              "Ya Allah, kami memohon kepada-Mu dalam majelis yang mulia ini, pada hari yang besar ini, limpahkanlah shalawat kepada Muhammad dan keluarganya, lindungilah kami dari neraka, masukkanlah kami ke dalam surga, dan kabulkanlah syafa'atnya. Ya Allah, Maha Penyayang.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
             ),
           ),
@@ -185,7 +181,7 @@ class PeringatanHariBesarPage extends StatelessWidget {
               ),
             ),
             child: Text(
-              "Doa persatuan umat, sangat cocok dipanjatkan sebagai penutup acara Tabligh Akbar, Peringatan Maulid Nabi, Isra Miraj, maupun Tahun Baru Hijriah.",
+              "",
               style: TextStyle(
                 color: isLightMode ? const Color(0xff475569) : Colors.white60,
                 fontSize: 13,

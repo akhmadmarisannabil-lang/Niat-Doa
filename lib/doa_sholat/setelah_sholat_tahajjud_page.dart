@@ -70,11 +70,7 @@ class SetelahSholatTahajjudPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Ibadah", chipBgColor, chipTextColor),
-              _buildTag("duduk", chipBgColor, chipTextColor),
-              _buildTag("sholat", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Ibadah", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class SetelahSholatTahajjudPage extends StatelessWidget {
             child: Text(
               "Ya Allah, Tuhan kami, segala puji bagi-Mu, Engkau penegak langit, bumi, dan makhluk yang ada di dalamnya. Segala puji bagi-Mu, Engkau penguasa langit, bumi, dan makhluk yang ada di dalamnya. Segala puji bagi-Mu, Engkau cahaya langit, bumi, dan makhluk yang ada di dalamnya. Segala puji bagi-Mu, Engkau Maha Benar. Janji-Mu benar. Pertemuan dengan-Mu kelak itu benar. Firman-Mu benar adanya. Surga itu nyata. Neraka pun demikian. Para nabi itu benar. Demikian pula Nabi Muhammad SAW itu benar. Hari Kiamat itu benar. Ya Tuhanku, hanya kepada-Mu aku berserah. Hanya kepada-Mu juga aku beriman. Kepada-Mu aku pasrah. Hanya kepada-Mu aku kembali. Karena-Mu aku rela bertikai. Hanya pada-Mu dasar putusanku. Karenanya ampuni dosaku yang telah lalu dan yang terkemudian, dosa yang kusembunyikan dan yang kunyatakan, dan dosa lain yang lebih Kau ketahui ketimbang aku. Engkau Yang Maha Terdahulu dan Engkau Yang Maha Terkemudian. Tiada Tuhan selain Engkau. Tiada daya upaya dan kekuatan selain pertolongan Allah.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Dibaca sepertiga malam terakhir setelah merampungkan ibadah sholat sunnah malam (Tahajjud), merupakan momentum yang sangat diijabah Allah.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

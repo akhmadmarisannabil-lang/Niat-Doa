@@ -34,7 +34,7 @@ class WelcomePage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Text(
-                    "Panduan-Panduan Bacaan",
+                    "Bacaan Mobile",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize:

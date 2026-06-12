@@ -70,11 +70,7 @@ class AqiqahPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Acara", chipBgColor, chipTextColor),
-              _buildTag("aqiqah", chipBgColor, chipTextColor),
-              _buildTag("anak", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Acara", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -98,7 +94,7 @@ class AqiqahPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "اللَّهُمَّ احْفَظْهُ مِنْ شَرِّ الْجِنِّ وَالْإِنْسِ وَأُمِّ الصِّبْيَانِ بِبَرَكَةِ اسْمِكَ الْمَكْتُوبِ",
+              "اللهم احْفَظْهُ مِنْ شَرِّالْجِنِّ وَالْإِنْسِ وَأُمِّ الصِّبْيَانِ وَمِنْ جَمِيْعِ السَّيِّئَاتِ وَالْعِصْيَانِ وَاحْرِسْهُ بِحَضَانَتِكَ وَكَفَالَتِكَ الْمَحْمُوْدَةِ وَبِدَوَامِ عِنَايَتِكَ وَرِعَايَتِكَ أَلنَّافِذَةِ نُقَدِّمُ بِهَا عَلَى الْقِيَامِ بِمَا كَلَّفْتَنَا مِنْ حُقُوْقِ رُبُوْبِيَّتِكَ الْكَرِيْمَةِ نَدَبْتَنَا إِلَيْهِ فِيْمَا بَيْنَنَا وَبَيْنَ خَلْقِكَ مِنْ مَكَارِمِ الْأَخْلَاقِ وَأَطْيَبُ مَا فَضَّلْتَنَا مِنَ الْأَرْزَاقِ اللهم اجْعَلْنَا وَإِيَّاهُمْ مِنْ أَهْلِ الْعِلْمِ وَأَهْلِ الْخَيْرِ وَأَهْلِ الْقُرْآنِ وَلَا تَجْعَلْنَا وَإِيَّاهُمْ مِنْ أَهْلِ الشَّرِ وَالضَّيْرِ وَ الظُّلْمِ وَالطُّغْيَانِ",
               textAlign: TextAlign.center,
               style: GoogleFonts.amiri(
                 color: arabicTextColor,
@@ -126,7 +122,7 @@ class AqiqahPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Allahummahfadzhu min syarril jinni wal insi wa ummis sibyani bibarakatis mikal maktub.",
+              "Allâhummahfadzhu min syarril jinni wal insi wa ummish shibyâni wa min jamî’is sayyiâti wal ‘ishyâni wahrishu bihadlânatika wa kafâlatika al-mahmûdati wa bidawâmi ‘inâyatika wa ri’âyatika an-nafîdzati nuqaddimu bihâ ‘alal qiyâmi bimâ kalaftanâ min huqûqi rububiyyâtika al-karîmati nadabtanâ ilaihi fîmâ bainanâ wa baina khalqika min makârimil akhlâqi wa athyabu mâ fadldlaltanâ minal arzâqi. Allâhummaj’alnâ wa iyyâhum min ahlil ‘ilmi wa ahlil khairi wa ahlil qur`âni wa lâ taj’alnâ wa iyyâhum min ahlisy syarri wadl dloiri wadz dzolami wath thughyâni.",
               style: TextStyle(
                 color: subTextColor,
                 fontSize: 14,
@@ -154,43 +150,8 @@ class AqiqahPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Ya Allah, jagalah dia dari keburukan jin, manusia, dan penyakit anak-anak, dengan berkah nama-Mu yang tertulis.",
+              "Ya Allah, jagalah dia (bayi) dari kejelekan jin, manusia ummi shibyan, serta segala kejelekan dan maksiat. Jagalah dia dengan penjagaan dan tanggungan-Mu yang terpuji, dengan perawatan dan perlindunganmu yang lestari. Dengan hal tersebut aku mampu melaksanakan apa yang Kau bebankan padaku, dari hak-hak ketuhanan yang mulia. Hiasi dia dengan apa yang ada diantara kami dan makhluk-Mu, yakni akhlak mulia dan anugerah yang paling indah. Ya Allah, jadikan kami dan mereka sebagai ahli ilmu, ahli kebaikan, dan ahli Al-Qur’an. Jangan kau jadikan kami dan mereka sebagai ahli kejelekan, keburukan, aniaya, dan tercela.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Dibaca pada saat walimatul aqiqah memohon perlindungan total bagi bayi yang baru lahir dari segala gangguan kasat mata maupun tidak.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

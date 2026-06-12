@@ -70,11 +70,7 @@ class HalalBiHalalPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Acara", chipBgColor, chipTextColor),
-              _buildTag("syawal", chipBgColor, chipTextColor),
-              _buildTag("saling memaafkan", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Acara", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -98,7 +94,7 @@ class HalalBiHalalPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "تَقَبَّلَ اللَّهُمَّ مِنَّا وَمِنْكُمْ صِيَامَنَا وَصِيَامَكُمْ وَجَعَلَنَا مِنَ الْعَائِدِينَ",
+              "اللَّهُمَّ صَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدٍ سَيِّدِ الْأَوَّلِينَ وَالْآخِرِينَ وَسَلَّمْ وَرَضِيَ اللَّهُ تَبَارَكَ وَتَعَالَى عَنْ سَادَاتِنَا وَعَنْ أَصْحَابِ رَسُوْلِ اللَّهِ أَجْمَعِينَ وَالْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ . اللَّهُمَّ تَقَبَّلْ مِنَّا صَلَاتَنَا وَصِيَامَنَا وَقِيَامَنَا وَقِرَاءَتَنَا وَزَكَاتَنَا وَصَدَقَاتِنَا بِرَحْمَتِكَ يَا أَرْحَمَ الرَّاحِمِينَ . اللَّهُمَّ اغْفِرْ لَنَا ذُنُوبَنَا وَكَفِّرْعَنَّا سَيِّئَاتِنَا وَخَطَايَانَا أَنْتَ وَلِيُّنَا فَاغْفِرْ لَنَا وَارْحَمْنَا وَأَنْتَ خَيْرُ الْغَافِرِينَ. وَاجْعَلْنَا يَا اللَّهُ مِنَ الْعَائِدِينَ وَالْفَائِزِينَ وَالْمَقْبُوْلِينَ وَالْمَغْفُورِينَ وَادْخِلْنَا فِي زُمْرَةِ عِبَادِكَ الصَّالِحِينَ، رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنْتَ السَّمِيعُ الْعَلِيمُ وَتُبْ عَلَيْنَا إِنَّكَ أَنْتَ التَّوَّابُ الرَّحِيمُ وَالْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
               textAlign: TextAlign.center,
               style: GoogleFonts.amiri(
                 color: arabicTextColor,
@@ -126,7 +122,7 @@ class HalalBiHalalPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Taqabbalallahu minna wa minkum shiyaamana wa shiyaamakum wa ja'alana minal 'aidiin.",
+              "Allāhumma ṣalli wa sallim 'alā sayyidinā Muḥammad, sayyidil-awwalīna wal-ākhirīn wa sallim, wa raḍiyallāhu tabāraka wa ta'ālā 'an sādatinā wa 'an aṣḥābir-Rasūlillāhi ajma'īn. Wal-ḥamdu lillāhi rabbil-'ālamīn. Allāhumma taqabbal minnā ṣalātanā wa ṣiyāmanā wa qiyāmanā wa qirā'atanā wa zakātanā wa ṣadaqātanā, biraḥmatika yā arḥamar-rāḥimīn. Allāhumma ighfir lanā dhunūbanā wa kaffir 'annā sayyi'ātinā wa khaṭāyānā, anta waliyyunā faghfir lanā warḥamnā wa anta khayrul-ghāfirīn. Waj'alnā yā Allāhu minal-'āidīn wal-fāizīn wal-maqbūlīn wal-maghfūrīn, wa adkhilnā fī zumrati 'ibādikaṣ-ṣāliḥīn. Rabbana taqabbal minnā innaka antas-samī'ul-'alīm, wa tub 'alainā innaka antat-tawwābur-raḥīm. Wal-ḥamdu lillāhi rabbil-'ālamīn.",
               style: TextStyle(
                 color: subTextColor,
                 fontSize: 14,
@@ -154,43 +150,8 @@ class HalalBiHalalPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Semoga Allah menerima amalan ibadah dari kami dan dari kamu, menerima puasa kami dan puasa kamu, serta menjadikan kami golongan yang kembali suci.",
+              "Dengan nama Allah yang Maha Pengasih lagi Maha Penyayang. Ya Allah, limpahkanlah rahmat dan keselamatan atas junjungan kami Nabi Muhammad, penghulu orang-orang dahulu dan terkemudian, semoga Allah melimpahkan keridhaan, keberkahan dan kesejahteraan junjungan kita dan semua sahabat Rasulullah. Segala puji bagi Allah Tuhan semesta alam. Ya Allah, terimalah salat kami, puasa kami, ibadah kami, bacaan Al-Qur'an kami, zakat kami dan sedekah kami dengan limpahan rahmat-Mu wahai sebaik-baik Penyayang dari para penyayang. Ya Allah ampunilah dosa-dosa kami, hapuskanlah kejelekan serta kesalahan kami, Engkaulah yang memimpin kami, maka ampunilah kami dan berilah kami rahmat dan Engkaulah Pemberi ampun yang sebaik-baiknya. Jadikanlah kami ya Allah, menjadi golongan orang-orang yang kembali pada kesucian, berbahagia diterima (segala amalnya), dan diampuni dosa-dosanya, serta masukkanlah kami dalam golongan para hamba-Mu yang saleh-saleh. Ya Tuhan kami terimalah daripada kami (amalan kami), sesungguhnya Engkaulah yang Maha Mendengar lagi Maha Mengetahui. Dan terimalah tobat kami, sesungguhnya Engkaulah yang Maha Penerima taubat lagi Maha Penyayang. Dan segala puji bagi Allah Tuhan seru sekalian alam.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Lafadz khas pasca perayaan Idul Fitri dalam acara perkumpulan keluarga besar atau instansi kerja guna menyambung kehangatan emosional.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

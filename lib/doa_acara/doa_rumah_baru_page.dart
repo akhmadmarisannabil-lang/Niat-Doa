@@ -70,11 +70,7 @@ class DoaRumahBaruPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Acara", chipBgColor, chipTextColor),
-              _buildTag("rumah baru", chipBgColor, chipTextColor),
-              _buildTag("perlindungan", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Acara", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -98,7 +94,7 @@ class DoaRumahBaruPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",
+              "بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ، حَمْدًا يُوَافِي نِعَمَهُ وَيُكَافِئُ مَزِيدَهُ يَا رَبَّنَا لَكَ الْحَمْدُ كَمَا يَنْبَغِي لِجَلَالِ وَجْهِكَ وَعَظِيمٍ سُلْطَانِكَ. اللَّهُمَّصَلِّ وَسَلَّمْ عَلَى سَيِّدِنَا مُحَمَّدٍ. اَللَّهُمَّ إِنَّا نَسْأَلُكَ خَيْرَ الْمَوْلَ وَخَيْرَ الْمَخْرَجِ بِسْمِ اللَّهِ وَلَجْنَا وَ بِسْمِ اللَّهِ خَرَجْنَا وَعَلَى رَبِّنَا تَوَكَّلْنَا . اللَّهُمَّ اغْفِرْ لَنَا ذُنُوبَنَا وَوَسِعْ لَنَا فِي دَارِنَا هَذَا وَبَارِكْ لَنَا في رِزْقِنَا اللَّهُمَّ سَلَّمْنَا وَسَلَّمْ دِينَنَا وَسَلَّمْ أَجْسَادَنَا وَسَلَّمْ أَمْوَالَنَا مِنْ بَلَاءِ الدُّنْيَا وَعَذَابِ الْآخِرَةِ، رَبَّنَا أَدْخِلْنَا مُدْخَلَ صِدْقٍ وَأَخْرِجْنَا مُخْرَجَ صِدْقٍ وَاجْعَلْ لَنَا مِنْ لَدُنْكَ سُلْطَانًا نَصِيرًا. رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ، وَالْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِيْنَ",
               textAlign: TextAlign.center,
               style: GoogleFonts.amiri(
                 color: arabicTextColor,
@@ -126,7 +122,7 @@ class DoaRumahBaruPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "A'uudzu bikalimaatillaahit-taammaati min syarri maa khalaq.",
+              "Bismillāhir-Raḥmānir-Raḥīm Al-ḥamdu lillāhi Rabbil-'Ālamīn, ḥamdan yuwāfī ni'amahu wa yukāfi'u mazīdah. Yā Rabbana lakal-ḥamdu kamā yanbaghī lijalāli wajhika wa 'aẓīmi sulṭānik. Allāhumma ṣalli wa sallim 'alā sayyidinā Muḥammad. Allāhumma innā nas'aluka khayral-mawla wa khayral-makhraj. Bismillāhi walajnā wa bismillāhi kharajnā wa 'alā Rabbina tawakkalnā. Allāhumma ighfir lanā dhunūbanā wa wasi' lanā fī dārinā hādhā wa bārik lanā fī rizqinā. Allāhumma sallimnā wa sallim dīnanā wa sallim ajsādanā wa sallim amwālanā min balā'id-dunyā wa 'adhābil-ākhirah. Rabbana adkhilnā mudkhala ṣidqin wa akhrijnā mukhraja ṣidqin wa aj'al lanā min ladunka sulṭānan naṣīrā. Rabbana ātinā fid-dunyā ḥasanah wa fil-ākhirati ḥasanah wa qinā 'adhāban-nār. Wal-ḥamdu lillāhi Rabbil-'Ālamīn.",
               style: TextStyle(
                 color: subTextColor,
                 fontSize: 14,
@@ -154,43 +150,8 @@ class DoaRumahBaruPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Aku berlindung dengan kalimat-kalimat Allah yang sempurna dari kejahatan makhluk yang diciptakan-Nya.",
+              "Dengan nama Allah yang Maha Pengasih lagi Maha Penyayang. Segala puji bagi Allah Tuhan semesta alam dengan puji yang menetapi dan menambah nikmat-Nya, ya Tuhan kami, bagi-Mulah segala puji, sebagaimana yang layak bagi keagungan Dzat kerajaan-Mu. Ya Allah, limpahkanlah rahmat dan kesejahteraan atas junjungan kami Nabi Muhammad. Ya Allah, kami mohon kepada-Mu sebaik- baik tempat masuk dan sebaik-baik tempat keluar. Dengan nama Allah kami masuk dan dengan nama Allah kami keluar, dan kepada Tuhan kami berserah diri. Ya Allah, ampunilah kami, dosa-dosa kami, dan lapangkanlah kami dalam rumah ini serta berkahilah rezeki kami. Ya Allah, selamatkanlah kami, agama kami, fisik-fisik kami, dan harta benda kami dari bencana dunia dan siksa akhirat. Ya Tuhan kami, masukkanlah kami dengan cara yang baik dan keluarkanlah kami dengan cara yang baik dan berikanlah kepada kami di sisi Engkau kekuasaan yang menolong. Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat serta peliharalah kami dari siksa api neraka. Dan segala puji bagi Allah Tuhan semesta alam.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Sesuai hadis Muslim, doa ini dianjurkan dibaca saat singgah atau menetap di tempat baru. Keutamaannya adalah perlindungan dari gangguan fisik maupun ghaib di lingkungan sekitar selama berada di rumah tersebut.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

@@ -70,11 +70,7 @@ class UlangTahunPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Acara", chipBgColor, chipTextColor),
-              _buildTag("milad", chipBgColor, chipTextColor),
-              _buildTag("berkah umur", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Acara", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -98,7 +94,7 @@ class UlangTahunPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "اللَّهُمَّ طَوِّلْ عُمُورَنَا وَصَحِّحْ أَجْسَادَنَا وَنَوِّرْ قُلُوبَنَا وَثَبِّتْ إِيمَانَنَا",
+              "َاَللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ هَذَا الْيَوْمَ فَتْحَهُ وَنَصْرَهُ وَنُوْرَهُ وَبَرَكَتَهُ وَهُدَاهُ. اَللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ هَذَا الْيَوْمَ وَخَيْرَ مَا فِيْهِ وَخَيْرَ مَا قَبْلَهُ وَخَيْرَ مَا بَعْدَهُ. وَأَعُوْذُ بِكَ مِنْ شَرِّ هَذَا الْيَوْمِ وَشَرِّ مَا فِيْهِ وَشَرِّ مَا قَبْلَهُ وَشَرِّ مَا بَعْدَهُ",
               textAlign: TextAlign.center,
               style: GoogleFonts.amiri(
                 color: arabicTextColor,
@@ -126,7 +122,7 @@ class UlangTahunPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Allahumma thawwil 'umuurana wa shahhih ajsaadana wa nawwir quluubana wa tsabbit iimaanana.",
+              "Allahumma inni as'aluka khaira hadzal yaum, fathahu wa nashrahu, wa nurahu, wa barakatahu wa hudahu. Allahumma inni as'aluka khaira hadzal yaum wa khaira ma fihi wa khaira ma qablah, wa khaira ma ba'dah. Wa 'a'udzubika min syarri hadzal yaum, wa syarri ma fihi wa syarri ma qablah, wa syarri ma ba'dah.",
               style: TextStyle(
                 color: subTextColor,
                 fontSize: 14,
@@ -154,43 +150,8 @@ class UlangTahunPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Ya Allah, panjangkanlah umur kami, sehatkanlah jasad kami, terangilah hati kami, dan tetapkanlah iman kami.",
+              "Ya Allah, sesungguhnya aku memohon kepada-Mu agar memperoleh kebaikan, pembuka rahmat, pertolongan, cahaya, berkah, dan petunjuk di hari ini. Ya Allah, sesungguhnya aku memohon kepada-Mu kebaikan hari ini, kebaikan apa yang ada di dalamnya, kebaikan hari sebelumnya, dan kebaikan hari setelahnya. Dan Aku berlindung kepada-Mu dari keburukan hari ini, keburukan apa yang ada di dalamnya, keburukan hari sebelumnya, dan keburukan hari sesudahnya.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Dibaca sebagai refleksi syukur atas bertambahnya usia agar senantiasa bernilai ibadah dan dalam limpahan hidayah.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

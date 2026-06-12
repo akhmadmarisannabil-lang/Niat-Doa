@@ -70,11 +70,7 @@ class AkhirTahunPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Tertentu", chipBgColor, chipTextColor),
-              _buildTag("duduk", chipBgColor, chipTextColor),
-              _buildTag("sholat", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Tertentu", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,42 +152,6 @@ class AkhirTahunPage extends StatelessWidget {
             child: Text(
               "Ya Allah, aku telah menerjang larangan-Mu tahun ini—sementara aku belum sempat bertaubat. Dengan karunia-Mu Engkau bersabar atas perbuatan ku itu padahal Engkau mampu menyiksaku. Engkau telah menyeru kepadaku untuk bertaubat setelah aku lancang mendurhakai-Mu. Sungguh, aku memohon ampun maka ampunilah aku. Semoga Engkau menerima perbuatanku yang Engkau ridhai dan perbuatanku yang terjanjikan pahala-Mu. Janganlah Kauputus harapanku, wahai .Tuhan Yang Maha Pemurah",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Dibaca di akhir bulan Dzulhijjah menjelang waktu ashar/sebelum maghrib untuk memohon ampunan atas segala hilaf dan dosa setahun yang lalu.",
-
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

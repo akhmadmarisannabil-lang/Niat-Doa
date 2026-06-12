@@ -70,11 +70,7 @@ class DoaSyukuranPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Acara", chipBgColor, chipTextColor),
-              _buildTag("syukuran", chipBgColor, chipTextColor),
-              _buildTag("walimah", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Acara", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -98,7 +94,7 @@ class DoaSyukuranPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "اللَّهُمَّ أَطْعِمْ مَنْ أَطْعَمَنِي، وَاسْقِ مَنْ سَقَانِي، وَبَارِكْ لَهُمْ فِيمَا رَزَقْتَهُمْ",
+              "اَللّٰهُمَّ صَلِّ عَلَى سَيِّدِنَا مُحَمَّدٍ وَعَلَى آلِ سَيِّدِنَا مُحَمَّدٍ. اَللّٰهُمَّ سَلِّمْنَا وَسَلِّمْ دِيْنَنَا وَسَلِّمْ أَجْسَادَنَا وَسَلِّمْ أَمْوَالَنَا مِنْ بَلَاءِ الدُّنْيَا وَعَذَابِ الْآخِرَةِ. رَبَّنَا أَدْخِلْنَا مُدْخَلَ صِدْقٍ وَأَخْرِجْنَا مُخْرَجَ صِدْقٍ وَاجْعَلْ لَنَا مِنْ لَدُنْكَ سُلْطَانًا نَصِيْرًا. اَللّٰهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ. سُبْحَانَ رَبِّكَ رَبِّ الْعِزَّةِ عَمَّا يَصِفُوْنَ، وَسَلَامٌ عَلَى الْمُرْسَلِيْنَ، وَالْحَمْدُ لِلّٰهِ رَبِّ الْعَالَمِيْنَ",
               textAlign: TextAlign.center,
               style: GoogleFonts.amiri(
                 color: arabicTextColor,
@@ -126,7 +122,7 @@ class DoaSyukuranPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Allahumma ath'im man ath'amani, wasqi man saqani, wa barik lahum fima razaqtahum.",
+              "Allahumma shalli 'ala sayyidina muhammadin wa 'ala aali sayyidina muhammadin. Allahumma sallimna wa sallim diinana wa sallim ajsadana wa sallim amwalana min balaa'id dun-yaa wa 'adzaabil aakhirah. Rabbana adkhilna mudkhala shidqin wa akhrijna mukhraja shidqin waj'al lana min ladunka sulthaanan nashiira. Allahumma baarik lanaa fiimaa razaqtana wa qinaa 'adzaaban naar. Subhaana rabbika rabbil 'izzati 'ammaa yashifuun, wa salaamun 'alal mursaliin, wal-hamdu lillahi rabbil 'alamiin.",
               style: TextStyle(
                 color: subTextColor,
                 fontSize: 14,
@@ -154,43 +150,8 @@ class DoaSyukuranPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Ya Allah, berilah ganti makanan kepada orang yang memberi makan kepadaku, berilah minum kepada orang yang memberi minum kepadaku, dan berkahilah rezeki yang Engkau berikan kepada mereka.",
+              "Ya Allah, limpahkanlah rahmat kepada junjungan kami Nabi Muhammad SAW dan keluarganya. Ya Allah, selamatkanlah kami, agama kami, fisik kami, dan harta kami dari bala bencana dunia dan siksa akhirat. Ya Tuhan kami, masukkanlah kami dengan cara yang benar, keluarkanlah kami dengan cara yang benar, dan berikanlah kepada kami dari sisi-Mu kekuasaan yang menolong. Ya Allah, berkahilah kami pada apa yang Engkau rezekikan kepada kami, dan peliharalah kami dari siksa api neraka. Maha Suci Tuhanmu, Tuhan pemilik kemuliaan, dari apa yang mereka sifatkan. Keselamatan semoga dilimpahkan kepada para rasul, dan segala puji bagi Allah, Tuhan sekalian alam.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Doa bersumber dari hadis riwayat Muslim. Sangat baik dibaca oleh tamu undangan atau hadirin sebagai bentuk apresiasi dan doa balas budi rohani kepada tuan rumah (shohibul bait) yang telah menyajikan hidangan.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

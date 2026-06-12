@@ -70,11 +70,7 @@ class SetelahSholatIstikharahPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Ibadah", chipBgColor, chipTextColor),
-              _buildTag("duduk", chipBgColor, chipTextColor),
-              _buildTag("sholat", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Ibadah", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class SetelahSholatIstikharahPage extends StatelessWidget {
             child: Text(
               "Ya Allah, sungguh aku meminta pilihan yang tepat kepada-Mu dengan ilmu pengetahuan-Mu dan aku mohon kuasa-Mu (atas masalahku) dengan kuasa-Mu. Aku mohon sebagian dari karunia-Mu yang agung karena sungguh Engkau Mahakuasa, sedang aku tidak kuasa, Engkau mengetahui, sedang aku tidak mengetahuinya. Engkau maha mengetahui hal yang gaib. Ya Allah, apabila Engkau mengetahui bahwa urusan ini (sebutkan masalah yang dihadapinya) lebih baik dalam agamaku, kehidupanku, dan akibatnya terhadap diriku, takdirkan ia untukku, mudahkan jalannya, dan berilah berkah. Sebaliknya, jika Engkau mengetahui bahwa persoalan ini lebih berbahaya bagiku dalam agama, dunia, kehidupan, dan akibatnya terhadap diriku baik seketika maupun suatu ketika nanti, maka singkirkan persoalan itu, dan jauhkan aku darinya. Takdirkanlah bagiku kebaikan di mana saja berada, dan berilah ridha-Mu untukku.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Dibaca setelah sholat Istikharah ketika mengalami keraguan atau kebimbangan di antara beberapa pilihan urusan hidup (jodoh, pekerjaan, dll).",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

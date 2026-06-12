@@ -20,6 +20,11 @@ import '../doa_akhirat/doa_minum_telaga_page.dart';
 // IMPORT DOA TERBARU
 import '../doa_akhirat/doa_selamat_dajjal_page.dart';
 
+// IMPORT 3 DOA BARU TAMBAHAN (Syafaat, Ridho, Cahaya Kiamat)
+import '../doa_akhirat/doa_meminta_syafaat_page.dart';
+import '../doa_akhirat/doa_memohon_ridho_allah_page.dart';
+import '../doa_akhirat/doa_memohon_cahaya_kiamat_page.dart';
+
 class DoaAkhiratPage extends StatelessWidget {
   const DoaAkhiratPage({super.key});
 
@@ -91,6 +96,22 @@ class DoaAkhiratPage extends StatelessWidget {
         'name': 'Doa Selamat dari Fitnah Dajjal',
         'desc':
             'Memohon perlindungan dari fitnah Al-Masih Ad-Dajjal yang merusak keimanan menjelang akhir zaman.',
+      },
+      // 3 Entri Doa Baru
+      {
+        'name': 'Doa Meminta Syafaat Nabi Muhammad ﷺ',
+        'desc':
+            'Memohon pertolongan dan syafaat Rasulullah ﷺ pada hari kiamat kelak.',
+      },
+      {
+        'name': 'Doa Memohon Ridho Allah',
+        'desc':
+            'Memohon keridhaan Allah Ta\'ala atas ketetapan iman, Islam, dan takdir-Nya.',
+      },
+      {
+        'name': 'Doa Memohon Cahaya di Hari Kiamat',
+        'desc':
+            'Memohon agar disempurnakan cahaya penuntun saat melewati kegelapan hari kiamat.',
       },
     ];
 
@@ -276,6 +297,32 @@ class DoaAkhiratPage extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => const DoaSelamatDajjalPage(),
+                      ),
+                    );
+                    break;
+                  // Rute Navigasi 3 Doa Baru
+                  case 13:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DoaMemintaSyafaatPage(),
+                      ),
+                    );
+                    break;
+                  case 14:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DoaMemohonRidhoAllahPage(),
+                      ),
+                    );
+                    break;
+                  case 15:
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            const DoaMemohonCahayaKiamatPage(),
                       ),
                     );
                     break;

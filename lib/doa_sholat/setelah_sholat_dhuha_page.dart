@@ -70,11 +70,7 @@ class SetelahSholatDhuhaPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Ibadah", chipBgColor, chipTextColor),
-              _buildTag("duduk", chipBgColor, chipTextColor),
-              _buildTag("sholat", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Ibadah", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class SetelahSholatDhuhaPage extends StatelessWidget {
             child: Text(
               "Wahai Tuhanku, sungguh dhuha ini adalah dhuha-Mu, keagungan ini adalah keagungan-Mu, keindahan ini adalah keindahan-Mu, kekuatan ini adalah kekuatan-Mu, kuasa ini adalah kuasa-Mu, dan penjagaan ini adalah penjagaan-Mu.Wahai Tuhanku, jika rezekiku berada di atas langit maka turunkanlah. Jika berada di dalam bumi maka keluarkanlah. Jika sukar atau dipersulit (kudapat), mudahkanlah. Jika (tercampur tanpa sengaja dengan yang) haram, sucikanlah. Jika jauh, dekatkanlah. Dengan hak dhuha, keelokan, keindahan, kekuatan, dan kekuasaan-Mu, datangkanlah padaku apa yang Engkau datangkan kepada para hamba-Mu yang saleh.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Dianjurkan dibaca setelah sholat Dhuha untuk memohon kelancaran, kemudahan dari urusan yang sukar, kesucian rezeki, serta limpahan anugerah sebagaimana yang diberikan kepada hamba-hamba Allah yang saleh.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

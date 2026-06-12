@@ -57,7 +57,7 @@ class DoaBencanaPage extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          "Doa Terhindar Musibah & Bencana",
+          "Doa Terhindar Dari Berbagai Bencana",
           style: TextStyle(
             color: mainTextColor,
             fontSize: 16,
@@ -70,11 +70,7 @@ class DoaBencanaPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Musibah", chipBgColor, chipTextColor),
-              _buildTag("bencana", chipBgColor, chipTextColor),
-              _buildTag("perlindungan", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Musibah", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -98,7 +94,7 @@ class DoaBencanaPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ جَهْدِ الْبَلَاءِ، وَدَرَكِ الشَّقَاءِ، وَسُوءِ الْقَضَاءِ، وَشَمَاتَةِ الْأَعْدَاءِ",
+              "اَللّٰهُمَّ إِنِّيْ أَعُوْذُ بِكَ مِنَ الْهَدْمِ وَأَعُوْذُ بِكَ مِنَ التَّرَدِّيْ وَأَعُوْذُ بِكَ مِنَ الْغَرَقِ وَالْحَرِيْقِ وَأَعُوْذُ بِكَ أَنْ يَتَخَبَّطَنِي الشَّيْطَانُ عِنْدَ الْمَوْتِ وَأَعُوْذُ بِكَ أَنْ أَمُوْتَ فِيْ سَبِيْلِكَ مُدْبِرًا وَأَعُوْذُ بِكَ أَنْ أَمُوْتَ لَدِيْغًا",
               textAlign: TextAlign.center,
               style: GoogleFonts.amiri(
                 color: arabicTextColor,
@@ -126,7 +122,7 @@ class DoaBencanaPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Allahumma inni a'udzu bika min jahdil-bala', wa darakisy-syaqa', wa su'il-qadha', wa syamatatil-a'da'.",
+              "Allâhumma innî a‘ûdzu bika minal hadmi, wa a‘ûdzu bika minat taraddî, wa a‘ûdzu bika minal gharqi wal ḫarîqi, wa a‘ûdzu bika an yatakhabbathanîsy syaithânu ‘indal mauti, wa a‘ûdzu bika an amûta fî sabîlika mudbiran, wa a‘ûdzu bika an amûta ladîghan.",
               style: TextStyle(
                 color: subTextColor,
                 fontSize: 14,
@@ -154,43 +150,8 @@ class DoaBencanaPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Ya Allah, sesungguhnya aku berlindung kepada-Mu dari susahnya bencana, tersusul kesengsaraan, buruknya takdir, dan kegembiraan musuh atas musibah yang menimpaku.",
+              "Ya Allah, aku berlindung kepada-Mu dari tertimpa reruntuhan. Aku berlindung kepada-Mu dari jatuh dari tempat yang tinggi. Aku berlindung kepada-Mu dari tenggelam dan kebakaran. Aku berlindung kepada-Mu dari bujuk rayu setan ketika (menjelang) kematian (sakaratul maut). Aku berlindung kepada-Mu dari mati di jalan-Mu dalam keadaan melarikan diri. Dan aku berlindung kepada-Mu dari mati karena sengatan binatang.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Doa riwayat Imam Bukhari dan Muslim ini mencakup perlindungan komprehensif dari empat hal buruk: beratnya ujian, kesengsaraan hidup, takdir yang menyakitkan, serta cemoohan musuh saat kita jatuh.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

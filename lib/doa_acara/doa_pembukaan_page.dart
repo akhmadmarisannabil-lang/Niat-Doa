@@ -70,11 +70,7 @@ class DoaPembukaanPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Pembuka", chipBgColor, chipTextColor),
-              _buildTag("pembuka", chipBgColor, chipTextColor),
-              _buildTag("kelancaran", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Acara", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class DoaPembukaanPage extends StatelessWidget {
             child: Text(
               "Segala puji bagi Allah, Tuhan semesta alam. Shalawat dan salam semoga tercurah kepada nabi dan rasul yang paling mulia, junjungan kita Nabi Muhammad, serta keluarga dan sahabatnya semua.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Dibaca sebagai pembuka atau khutbah al-haajah mini di awal sambutan maupun acara formal. Mengawali kegiatan dengan tahmid dan shalawat merupakan sunnah agar acara bernilai ibadah dan berkah.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

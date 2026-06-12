@@ -70,11 +70,7 @@ class EmpatBulanKandunganPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Acara", chipBgColor, chipTextColor),
-              _buildTag("Walimatul Hamli", chipBgColor, chipTextColor),
-              _buildTag("peniupan ruh", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Acara", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class EmpatBulanKandunganPage extends StatelessWidget {
             child: Text(
               "Aku berlindung kepada Allah dari godaan setan yang terkutuk, dengan menyebut asma Allah yang Maha Pengasih lagi Maha penyayang. Dari Allah, kepada Allah, tidak ada yang menang kecuali Allah, tiada yang bisa berlari dari Allah, Dia Maha Hidup dan Maha Berdiri Sendiri. Kami memohon perlindungan bagi janin yang berumur 4 bulan ini pada Allah Yang Maha Lembut, Yang Maha Menjaga, tiada tuhan selain Dia Yang Maha Mengetahui hal-hal gaib dan terlihat. Dia Maha Pengasih lagi Penyayang. Kami memohon perlindungan bagi janin ini pada kalimat-kalimat Allah yang sempurna, asma-asma-Nya yang agung, ayat-ayat-Nya yang mulia, huruf-huruf-Nya yang diberkati dari kejelekan manusia dan jin, dari godaan malam, siang, dan waktu, dan dari segala fitnah, bala dan maksiat, dan dari kejahatan wanita-wanita tukang sihir yang meniup buhul, dan dari kejahatan orang yang dengki saat mereka mendengki. Ya Allah jadikanlah dia (janin) ini sebagai anak yang saleh, mulia, sempurna, berakal, alim, bermanfaat, terberkati, dan bijaksana. Ya Allah, hiasi dia dengan hiasan akhlak yang mulia dan rupa dan indah, memiliki wibawa dan tingkah yang manis, dan ruh yang suci lagi agung. Ya Allah, tulis takdirnya sebagai bagian dari para ulama yang saleh, penghafal dan pengamal Al-Qur’an yang bisa mendekatkannya pada surga beserta para Nabi, wahai Dzat paling mulia diantara mereka yang mulia dan Dzat Pemberi rezeki terbaik. Ya Allah berikan rezeki pada dia dan ibunya untuk taat yang diterima, untuk mengingat Engkau, bersyukur pada-Mu, dan beribadah yang baik pada-Mu. Jaga dia dari keguguran, kekurangan, cacat, malas, dan bentuk yang tercela hingga ibunya melahirkannya dalam kondisi sehat wal afiat, secara mudah, gampang, tanpa sakit, susah, dan penat. Dengan syafaat Nabi Muhammad ﷺ.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Dibaca pada acara syukuran kehamilan (ngupati) saat janin genap berusia 4 bulan, momentum di mana ruh ditiupkan ke dalam kandungan beserta penentuan takdirnya.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

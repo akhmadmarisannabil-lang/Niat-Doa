@@ -44,8 +44,7 @@ class DoaAcaraPage extends StatelessWidget {
       },
       {
         'name': 'Doa Pernikahan',
-        'desc':
-            'Doa restu untuk keberkahan keluarga baru (Barakallahu lakuma...).',
+        'desc': 'Doa restu untuk keberkahan keluarga baru.',
       },
       {
         'name': 'Doa Menempati Rumah Baru',
@@ -70,7 +69,7 @@ class DoaAcaraPage extends StatelessWidget {
       {
         'name': 'Doa Pelepasan Musafir / Safar',
         'desc':
-            'Mendoakan keselamatan dan perlindungan bagi kerabat yang hendak bepergian jauh.',
+            'Mendoakan keselamatan dan perlindungan bagi yang hendak bepergian jauh.',
       },
       {
         'name': 'Doa Pertemuan / Rapat Kerja',

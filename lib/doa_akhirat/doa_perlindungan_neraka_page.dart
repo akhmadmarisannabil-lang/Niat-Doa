@@ -70,11 +70,7 @@ class DoaPerlindunganNerakaPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Akhirat", chipBgColor, chipTextColor),
-              _buildTag("perhitungan", chipBgColor, chipTextColor),
-              _buildTag("hisab", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Akhirat", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -98,7 +94,7 @@ class DoaPerlindunganNerakaPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "رَبَّنَا اصْرِفْ عَنَّا عَذَابَ جَهَنَّمَ إِنَّ عَذَابَهَا كَانَ غَرَامًا",
+              "رَبَّنَا إِنَّنَا آمَنَّا فَاغْفِرْ لَنَا ذُنُوبَنَا وَقِنَا عَذَابَ النَّارِ",
               textAlign: TextAlign.center,
               style: GoogleFonts.amiri(
                 color: arabicTextColor,
@@ -126,7 +122,7 @@ class DoaPerlindunganNerakaPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Rabbanas-rif 'annaa 'adzaaba jahannama inna 'adzaabahaa kaana gharaamaa.",
+              "Robbanaa innanaa aamannaa, fagh-fir lanaa dzunuubanaa, wa qinaa 'adzaaban-naar.",
               style: TextStyle(
                 color: subTextColor,
                 fontSize: 14,
@@ -154,43 +150,8 @@ class DoaPerlindunganNerakaPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Ya Tuhan kami, jauhkanlah azab Jahannam dari kami, rincinya sungguh azabnya itu adalah kebinasaan yang kekal.",
+              "Ya Tuhan kami, sesungguhnya kami telah beriman, maka ampunilah segala dosa kami, dan peliharalah kami dari siksa neraka.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Diambil dari ayat Al-Qur'an (QS. Al-Furqan: 65) yang merupakan karakteristik dari Ibadurrahman (hamba-hamba Allah Yang Maha Pengasih). Kata 'Gharama' bermakna siksaan jahannam itu sangat mengikat, pedih, dan senantiasa mengejar pelakunya.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

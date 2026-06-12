@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:just_audio/just_audio.dart';
+
+import '../services/quran_api_service.dart';
 
 class AlFatihahPage extends StatefulWidget {
   final Map<String, dynamic> surahData;
@@ -11,6 +14,125 @@ class AlFatihahPage extends StatefulWidget {
 }
 
 class _AlFatihahPageState extends State<AlFatihahPage> {
+  final AudioPlayer player = AudioPlayer();
+
+  final ScrollController _scrollController = ScrollController();
+  final List<GlobalKey> ayatKeys = List.generate(7, (_) => GlobalKey());
+
+  Map<String, dynamic>? suratAudio;
+
+  List<dynamic> ayatAudio = [];
+
+  int currentPlayingAyat = -1;
+  bool isPlaying = false;
+  int playSession = 0;
+
+  String selectedQori = "01";
+
+  final Map<String, String> qoriList = {
+    "01": "Abdullah Al-Juhany",
+    "02": "Abdul Muhsin Al-Qasim",
+    "03": "Abdurrahman As-Sudais",
+    "04": "Ibrahim Al-Dossari",
+    "05": "Misyari Rasyid Alafasy",
+  };
+
+  @override
+  void initState() {
+    super.initState();
+    loadAudioData();
+  }
+
+  Future<void> loadAudioData() async {
+    final data = await QuranApiService.getSurat(1);
+
+    setState(() {
+      suratAudio = data;
+      ayatAudio = data['ayat'];
+    });
+  }
+
+  Future<void> stopAudio() async {
+    playSession++;
+
+    isPlaying = false;
+
+    await player.stop();
+    await player.seek(Duration.zero);
+
+    setState(() {
+      currentPlayingAyat = -1;
+    });
+  }
+
+  void scrollToAyat(int index) {
+    final context = ayatKeys[index].currentContext;
+
+    if (context != null) {
+      Scrollable.ensureVisible(
+        context,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+        alignment: 0.3,
+      );
+    }
+  }
+
+  Future<void> playAyat(int startIndex) async {
+    if (ayatAudio.isEmpty) return;
+
+    playSession++;
+
+    final mySession = playSession;
+
+    await player.stop();
+    await player.seek(Duration.zero);
+
+    isPlaying = true;
+
+    for (int i = startIndex; i < ayatAudio.length; i++) {
+      if (mySession != playSession) return;
+
+      if (!isPlaying) break;
+
+      setState(() {
+        currentPlayingAyat = i;
+      });
+
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        scrollToAyat(i);
+      });
+
+      final url = ayatAudio[i]['audio'][selectedQori];
+
+      print("Ayat ${i + 1}");
+      print(url);
+
+      await player.setUrl(url);
+
+      await player.play();
+
+      await player.playerStateStream.firstWhere(
+        (state) =>
+            state.processingState == ProcessingState.completed ||
+            mySession != playSession,
+      );
+
+      if (mySession != playSession) return;
+
+      if (!isPlaying) {
+        break;
+      }
+
+      if (!isPlaying) return; // <-- tambahkan di sini
+    }
+
+    setState(() {
+      currentPlayingAyat = -1;
+      isPlaying = false;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     final bool isLightMode = Theme.of(context).brightness == Brightness.light;
@@ -117,6 +239,7 @@ class _AlFatihahPageState extends State<AlFatihahPage> {
         ),
       ),
       body: ListView(
+        controller: _scrollController,
         padding: const EdgeInsets.all(16.0),
         children: [
           Wrap(
@@ -135,6 +258,52 @@ class _AlFatihahPageState extends State<AlFatihahPage> {
               _buildChip("Pembukaan", chipBgColor, chipTextColor),
             ],
           ),
+
+          const SizedBox(height: 20),
+
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: cardColor,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Audio Murottal",
+                  style: TextStyle(
+                    color: accentColor,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                ),
+
+                const SizedBox(height: 15),
+
+                DropdownButtonFormField<String>(
+                  value: selectedQori,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                  ),
+                  items: qoriList.entries.map((entry) {
+                    return DropdownMenuItem<String>(
+                      value: entry.key,
+                      child: Text(entry.value),
+                    );
+                  }).toList(),
+                  onChanged: (value) async {
+                    await stopAudio(); // hentikan audio yang sedang berjalan
+
+                    setState(() {
+                      selectedQori = value!;
+                    });
+                  },
+                ),
+              ],
+            ),
+          ),
+
           const SizedBox(height: 24),
           ListView.builder(
             shrinkWrap: true,
@@ -151,7 +320,9 @@ class _AlFatihahPageState extends State<AlFatihahPage> {
                     Row(
                       children: [
                         Icon(Icons.menu_book, color: accentColor, size: 18),
+
                         const SizedBox(width: 6),
+
                         Text(
                           "Ayat ${ayat['no']}",
                           style: TextStyle(
@@ -160,21 +331,53 @@ class _AlFatihahPageState extends State<AlFatihahPage> {
                             fontSize: 14,
                           ),
                         ),
+
+                        const Spacer(),
+
+                        IconButton(
+                          icon: Icon(
+                            currentPlayingAyat == index
+                                ? Icons.stop_circle
+                                : Icons.play_circle_fill,
+                            color: accentColor,
+                            size: 30,
+                          ),
+                          onPressed: () async {
+                            // Jika ayat ini sedang diputar → stop
+                            if (currentPlayingAyat == index && isPlaying) {
+                              await stopAudio();
+                              return;
+                            }
+
+                            // Jika ada audio lain yang sedang berjalan
+                            if (isPlaying) {
+                              await stopAudio();
+                            }
+
+                            await playAyat(index);
+                          },
+                        ),
                       ],
                     ),
                     const SizedBox(height: 12),
                     Container(
+                      key: ayatKeys[index],
                       width: double.infinity,
                       padding: const EdgeInsets.symmetric(
                         horizontal: 24,
                         vertical: 28,
                       ),
                       decoration: BoxDecoration(
-                        color: cardColor,
+                        color: currentPlayingAyat == index
+                            ? Colors.amber.withOpacity(0.25)
+                            : cardColor,
                         borderRadius: BorderRadius.circular(12),
-                        border: isLightMode
-                            ? Border.all(color: borderColor)
-                            : null,
+                        border: Border.all(
+                          color: currentPlayingAyat == index
+                              ? Colors.orange
+                              : borderColor,
+                          width: currentPlayingAyat == index ? 3 : 1,
+                        ),
                       ),
                       child: Text(
                         ayat['arabic'],
@@ -256,6 +459,13 @@ class _AlFatihahPageState extends State<AlFatihahPage> {
         ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    player.dispose();
+    _scrollController.dispose();
+    super.dispose();
   }
 
   Widget _buildChip(String label, Color bg, Color textCol) {

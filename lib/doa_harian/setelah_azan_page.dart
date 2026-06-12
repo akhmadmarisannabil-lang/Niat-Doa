@@ -70,11 +70,7 @@ class SetelahAzanPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Harian", chipBgColor, chipTextColor),
-              _buildTag("azan", chipBgColor, chipTextColor),
-              _buildTag("safa'at", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Harian", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class SetelahAzanPage extends StatelessWidget {
             child: Text(
               "Ya Allah, Pemilik seruan yang sempurna ini dan shalat yang akan didirikan, berilah Nabi Muhammad wasilah (tempat tertinggi di surga) dan keutamaan. Serta bangkitkanlah beliau di tempat yang terpuji yang telah Engkau janjikan.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Dibaca sesaat setelah muadzin selesai mengumandangkan adzan. Sesiapa yang istiqomah membaca ini, dijanjikan mendapat syafaat Rasulullah kelak di hari kiamat.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

@@ -70,11 +70,7 @@ class SetelahSholatTaubatPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Ibadah", chipBgColor, chipTextColor),
-              _buildTag("duduk", chipBgColor, chipTextColor),
-              _buildTag("sholat", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Ibadah", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class SetelahSholatTaubatPage extends StatelessWidget {
             child: Text(
               "Aku memohon ampunan kepada Allah Yang Maha Agung, yang tiada Tuhan selain Dia, Yang Maha Hidup lagi senantiasa mengatur makhluk-Nya, dan aku bertaubat kepada-Nya.Tuhanku, ampunilah kekeliruan dan kebodohanku, kelewatanbatasku dalam sebuah hal, dan dosaku yang mana Engkau lebih tahu dariku. Tuhanku, ampunilah dosaku dalam serius dan gurauanku, kekeliruan dan kesengajaanku. Apa pun itu semua berasal dariku. Tuhanku, ampunilah dosaku yang terdahulu dan terkemudian, dosa yang kusembunyikan dan kunyatakan, dan dosa yang mana Kau lebih tahu dariku. Kau maha terdahulu. Kau maha terkemudian. Kau maha kuasa ata segala sesuatu.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Dibaca dengan penuh penyesalan setelah sholat Taubat untuk memohon ampunan Allah atas segala kekeliruan, kebodohan, tindakan melampaui batas, serta dosa yang dilakukan baik secara sengaja, tidak disengaja, dalam keadaan serius, maupun bergurau.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

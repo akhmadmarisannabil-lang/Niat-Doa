@@ -33,6 +33,10 @@ dependencies:
   google_fonts: ^6.1.0
   cupertino_icons: ^1.0.8
   provider: ^6.1.2
+  http: ^1.2.0
+  just_audio: ^0.9.36
+  scrollable_positioned_list: ^0.3.8
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
 
@@ -68,6 +72,7 @@ flutter:
     - assets/images/menu/sholat5.jpg
     - assets/images/menu/sholat6.jpg
     - assets/images/menu/sholat7.jpg
+    - assets/images/menu/sholat8.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

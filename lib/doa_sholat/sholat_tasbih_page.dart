@@ -70,11 +70,7 @@ class SholatTasbihPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Ibadah", chipBgColor, chipTextColor),
-              _buildTag("duduk", chipBgColor, chipTextColor),
-              _buildTag("sholat", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Ibadah", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,42 +152,6 @@ class SholatTasbihPage extends StatelessWidget {
             child: Text(
               "Ya Allah, masukkanlah rasa takut di kalbuku yang dapat menghalangi diri ini untuk mendurhakai-Mu. Dengan demikian aku dapat beramal saleh yang mengantarkanku pada ridha-Mu, dan aku bertobat setulusnya karena takut kepada-Mu. Dengan itu pula aku beribadah secara tulus karena malu kepada-Mu. Dengan rasa takut itu aku menyerahkan segala urusanku kepada-Mu. Karena itu juga aku dapat berbaik sangka selalu kepada-Mu. Mahasuci Engkau Pencipta cahaya.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Dibaca setelah merampungkan sholat Tasbih untuk memohon rasa takut yang membentengi diri dari maksiat, ketulusan dalam bertobat dan beribadah, kepasrahan total atas segala urusan, serta dianugerahi hati yang selalu berbaik sangka kepada Allah.",
-
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

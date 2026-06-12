@@ -136,7 +136,7 @@ class _SubuhPageState extends State<SubuhPage> {
       'header': 'Rakaat 1 - Langkah 9',
       'title': 'Duduk di Antara Dua Sujud',
       'desc':
-          'Bangun dari sujud pertama lalu duduk dengan tenang seraya mengucap "Allahu Akbar" dan membaca doa:',
+          'Bangun dari sujud pertama lalu duduk dengan tenang seraya mengucap "Allahu Akbar" and membaca doa:',
       'hasRead': true,
       'arabic':
           "رَبِّ اغْفِرْ لِيْ وَارْحَمْنِيْ وَاجْبُرْنِيْ وَارْفَعْنِيْ وَارْزُقْنِيْ وَاهْدِنِيْ وَعَافِنِيْ وَاعْفُ عَنِّيْ",
@@ -176,7 +176,7 @@ class _SubuhPageState extends State<SubuhPage> {
           'Pada saat posisi berdiri I\'tidal di rakaat kedua, sebelum turun ke sujud, angkat kedua tangan ke depan dada untuk membaca Doa Qunut Subuh:',
       'hasRead': true,
       'arabic':
-          "اللَّهُمَّ اهْدِنِي فِيْمَنْ هَدَيْتَ، وَعَافِنِي فِيْمَنْ عَافَيْتَ، وَتَوَلَّنِيْ فِيْمَنْ تَوَلَّيْتَ، وَبَارِكْ لِي فِيْمَا أَعْطَيْتَ، وَقِنِي شَرَّمَا قَضَيْتَ، فَإِنَّكَ تَقْضِيَ وَلَا يُقْضَى عَلَيْكَ، وَإِنَّهُ لَا يَذِلُّ مَنْ وَالَيْتَ، تَبَارَكْتَ رَبَّنَا وَتَعَالَيْتَ.",
+          "اللَّهُمَّ اهْدِنِي فِيْمَنْ هَدَيْتَ، وَعَافِنِي فِيْمَنْ عَافَيْتَ، وَتَوَلَّنِيْ فِيْمَنْ تَوَلَّيْتَ، وَبَارِك| لِي فِيْمَا أَعْطَيْتَ، وَقِنِي شَرَّمَا قَضَيْتَ، فَإِنَّكَ تَقْضِيَ وَلَا يُقْضَى عَلَيْكَ، وَإِنَّهُ لَا يَذِلُّ مَنْ وَالَيْتَ، تَبَارَكْتَ رَبَّنَا وَتَعَالَيْتَ.",
       'latin':
           "Allaahuummahndinii fii man hadait, wa 'aafinii fii man 'aafait, wa tawallanii fii man tawallait, wa baarik lii fii maa a'thait, wa qinii syarra maa qadhait, fa innaka taqdhii wa laa yuqdhaa 'alaik, wa innahu laa yadzillu man waalait, wa laa ya'izzu man 'aadait, tabaarakta rabbanaa wa ta'aalait.",
       'arti':
@@ -247,6 +247,8 @@ class _SubuhPageState extends State<SubuhPage> {
     final Color borderTileColor = isLightMode
         ? const Color(0xffe2e8f0)
         : Colors.white12;
+
+    // Perubahan: Menyesuaikan warna teks arab agar berubah menjadi putih bersih pada mode gelap
     final Color arabicTextColor = isLightMode ? Colors.black87 : Colors.white;
 
     return Scaffold(
@@ -537,9 +539,8 @@ class _SubuhPageState extends State<SubuhPage> {
                                 tataCara['arabic']!,
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.amiri(
-                                  color: isLightMode
-                                      ? Colors.black87
-                                      : Colors.tealAccent,
+                                  color:
+                                      arabicTextColor, // Diperbarui menjadi putih pada mode gelap
                                   fontSize: 20,
                                   height: 2.0,
                                 ),
@@ -604,9 +605,8 @@ class _SubuhPageState extends State<SubuhPage> {
                                 tataCara['extraArabic']!,
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.amiri(
-                                  color: isLightMode
-                                      ? Colors.black87
-                                      : Colors.tealAccent,
+                                  color:
+                                      arabicTextColor, // Diperbarui menjadi putih pada mode gelap
                                   fontSize: 20,
                                   height: 2.0,
                                 ),

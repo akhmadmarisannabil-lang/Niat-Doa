@@ -70,11 +70,7 @@ class DoaMendengarMusibahPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Musibah", chipBgColor, chipTextColor),
-              _buildTag("bencana", chipBgColor, chipTextColor),
-              _buildTag("perlindungan", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Musibah", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class DoaMendengarMusibahPage extends StatelessWidget {
             child: Text(
               "Sesungguhnya kami adalah milik Allah, dan sesungguhnya hanya kepada-Nya kami akan kembali. Ya Allah, karuniakanlah pahala kepadaku dalam musibahku ini dan berilah ganti kepadaku dengan yang lebih baik daripadanya.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Berdasarkan hadis riwayat Imam Muslim, barangsiapa yang membaca kalimat istirja ini disertai doa permohonan ganti saat ditimpa musibah, maka Allah pasti akan memberinya pahala dan mengganti kehilangannya dengan sesuatu yang jauh lebih baik.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

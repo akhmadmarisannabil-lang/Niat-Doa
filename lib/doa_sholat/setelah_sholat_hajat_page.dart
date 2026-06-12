@@ -70,11 +70,7 @@ class SetelahSholatHajatPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Ibadah", chipBgColor, chipTextColor),
-              _buildTag("duduk", chipBgColor, chipTextColor),
-              _buildTag("sholat", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Ibadah", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class SetelahSholatHajatPage extends StatelessWidget {
             child: Text(
               "Tiada Tuhan selain Allah yang maha lembut dan maha mulia. Mahasuci Allah, penjaga Arasy yang agung. Segala puji bagi Allah, Tuhan alam semesta. Aku mohon kepada-Mu bimbingan amal sesuai rahmat-Mu, ketetapan ampunan-Mu, kesempatan meraih sebanyak kebaikan, dan perlindungan dari segala dosa. Jangan Kau biarkan satu dosa yang ada padaku kecuali Engkau mengampuninya. Jangan pula Kau biarkan kebimbangan ada padaku, kecuali Engkau membebaskannya. Jangan pula Kau biarkan suatu kebutuhan yang sesuai ridha-Mu kecuali Engkau memenuhinya. Wahai Tuhan yang maha pengasih.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Dibaca selesai sholat Hajat dengan mengagungkan Allah Yang Maha Lembut untuk memohon pengampunan dosa, kelapangan dari segala kebimbangan, serta pemenuhan hajat atau kebutuhan hidup yang diridhai oleh-Mu.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

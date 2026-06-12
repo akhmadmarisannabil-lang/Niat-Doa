@@ -70,11 +70,7 @@ class DoaSelamatDajjalPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Akhirat", chipBgColor, chipTextColor),
-              _buildTag("perhitungan", chipBgColor, chipTextColor),
-              _buildTag("hisab", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Akhirat", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class DoaSelamatDajjalPage extends StatelessWidget {
             child: Text(
               "Ya Allah, sesungguhnya aku berlindung kepada-Mu dari azab neraka Jahannam, dari azab kubur, dari fitnah kehidupan dan kematian, dan dari keburukan fitnah Al-Masih Ad-Dajjal.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Doa shahih yang bersumber dari hadits riwayat Imam Muslim. Rasulullah ﷺ senantiasa membaca doa perlindungan dari 4 perkara besar ini di akhir tasyahud sebelum salam. Fitnah Dajjal merupakan ujian keimanan terbesar dan paling merusak menjelang akhir zaman.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

@@ -70,11 +70,7 @@ class PeresmianUsahaPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Acara", chipBgColor, chipTextColor),
-              _buildTag("usaha baru", chipBgColor, chipTextColor),
-              _buildTag("rezeki halal", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Acara", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -98,7 +94,7 @@ class PeresmianUsahaPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "اللَّهُمَّ إِنِّي أَسْأَلُكَ خَيْرَ هَذَا الْمَوْلِجِ وَخَيْرَ الْمَخْرَجِ بِسْمِ اللَّهِ وَلَجْنَا",
+              "اللَّهُمَّ إِنِّي أَسْأَلُكَ الثَّبَاتَ فِي الْأَمْرِ وَالْعَزِيمَةَ عَلَى الرُّشْدِ وَأَسْأَلُكَ مُوجِبَاتِ رَحْمَتِكَ وَعَزَائِمَ مَغْفِرَتِكَ وَأَسْأَلُكَ شُكْرَ نِعْمَتِكَ وَحُسْنَ عِبَادَتِكَ وَأَسْأَلُكَ قَلْبًا سَلِيمًا وَلِسَانًا صَادِقًا وَأَسْأَلُكَ مِنْ خَيْرِ مَا تَعْلَمُ وَأَعُوذُ بِكَ مِنْ شَرِّ مَا تَعْلَمُ وَأَسْتَغْفِرُكَ لِمَا تَعْلَمُ إِنَّكَ أنْتَ عَلَّامُ الْغُيُوبِ",
               textAlign: TextAlign.center,
               style: GoogleFonts.amiri(
                 color: arabicTextColor,
@@ -126,7 +122,7 @@ class PeresmianUsahaPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Allahumma inni as'aluka khaira hadzal mauliji wa khairal makhraji bismillahi walajna.",
+              "Allaahumma innii as-alukats tsabaata fil amri wal 'aziimata 'alar-rusydi wa as-aluka muujibaati rohmatika wa 'azaa-ima maghfirotika wa as-aluka syukro ni'matika wa husna 'ibaadatika wa as-aluka qolban saliiman wa lisaanan shoodiqon wa as-aluka min khoiri maa ta'lamu wa a-'uudzubika min syar-ri maa ta'lamu wa astaghfiruka limaa ta'lamu innaka anta 'al-laamul-ghuyuub.",
               style: TextStyle(
                 color: subTextColor,
                 fontSize: 14,
@@ -154,43 +150,8 @@ class PeresmianUsahaPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Ya Allah, sesungguhnya aku memohon kepada-Mu kebaikan tempat masuk ini dan kebaikan tempat keluar ini, dengan nama Allah kami masuk.",
+              "Ya Allah, aku mohon kepada-Mu keteguhan dalam semua urusan dan keteguhan hati di atas kebenaran. Aku juga mohon kepada-Mu segala hal yang mendatangkan kasih sayang dan ampunan-Mu. Aku juga mohon kepada-Mu rasa syukur atas semua nikmat yang Engkau berikan dan beribadah dengan baik kepada-Mu. Aku juga mohon kepada-Mu hati yang selamat dan lisan yang jujur. Aku juga mohon kepada-Mu segala kebaikan yang Engkau ketahui, aku berlindung kepada-Mu dari segala keburukan yang Engkau ketahui, dan aku mohon ampunan-Mu atas dosa yang Engkau ketahui. Sesungguhnya Engkau Maha Mengetahui semua perkara yang gaib.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Dilafadzkan saat grand opening kantor, ruko, toko, maupun platform niaga baru agar dijauhkan dari kerugian dan dipenuhi muamalah penuh berkah.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

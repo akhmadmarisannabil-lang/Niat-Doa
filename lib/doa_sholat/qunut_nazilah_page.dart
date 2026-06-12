@@ -70,11 +70,7 @@ class QunutNazilahPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Ibadah", chipBgColor, chipTextColor),
-              _buildTag("duduk", chipBgColor, chipTextColor),
-              _buildTag("sholat", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Ibadah", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class QunutNazilahPage extends StatelessWidget {
             child: Text(
               "Ya Allah, kami memohon pertolongan-Mu, pengampunan-Mu, dan petunjuk-Mu. Kami beriman kepada-Mu, bertawakal kepada-Mu, dan bersyukur atas segala kebaikan-Mu. Kami bersyukur kepada-Mu dan tidak kufur kepada-Mu. Kami menjauhi orang-orang yang mendurhakai-Mu. Ya Allah, kami hanya beribadah kepada-Mu, bersujud dan berdoa kepada-Mu. Kami berusaha dan bergerak dengan harapan rahmat-Mu dan rasa takut akan siksaan-Mu. Kami menyadari bahwa azab-Mu yang berat menimpa orang-orang kafir. Ya Allah, kuatkan saudara-saudara mujahidin kami di Palestina, terutama di Gaza, dan lindungi mereka. Ya Tuhan, hukumlah orang-orang Yahudi Zionis yang berdosa, dan tunjukkan murka-Mu kepada mereka. Ya Tuhan, bantu agama-Mu, kitab-Mu, dan sunnah Nabi-Mu, Muhammad. Semoga Allah melimpahkan rahmat dan kedamaian atas beliau.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Dibaca pada rakaat terakhir sholat fardhu saat posisi I'tidal (bangkit ruku') ketika umat Muslim sedang tertimpa malapetaka besar, perang, atau musibah kemanusiaan. Disunnahkan mengeraskan suara (jahr) bagi imam dan pelan bagi makmum/salat sendiri.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

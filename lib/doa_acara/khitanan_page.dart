@@ -70,11 +70,7 @@ class KhitananPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Acara", chipBgColor, chipTextColor),
-              _buildTag("khitanan", chipBgColor, chipTextColor),
-              _buildTag("keberkahan", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Acara", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -98,7 +94,7 @@ class KhitananPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "اللَّهُمَّ فَقِّهْهُ فِي الدِّينِ وَعَلِّمْهُ التَّأْوِيلَ وَاجْعَلْهُ بَارًّا بِوَالِدَيْهِ",
+              "اللَّهُمَّ وَفِّقْنَا لِاجْتِلَابِ الْفَضَائِلِ وَجَنِّبْنَا عَنِ اقْتِرَاحِ الرَّذَائِلِ. رَبَّنَا تَقَبَّلْ مِنَّا إِعْذَارَنَا وَسَلَّمْ أُمُوْرَنَا وَصَحِحْ مَخْتُوْنَنَا وَاقْضِ دُيُونَنَا وَبَلِّغْ آمَالَنَا وَوَسِعْ أَرْزَاقَنَا بِجُودِكَ يَا جَوَّادُ. اَللَّهُمَّ إِنَّا نَسْأَلُكَ السَّلَامَةَ وَالْعَافِيَةَ عَلَيْنَا وَعَلَى الْحُجَّاجِ وَالْغُزَاةِ وَالْمُسَافِرِيْنَ مِنْ أُمَّةِ سَيِّدِنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ أَجْمَعِينَ فِي بَرِكَ وَبَحْرِكَ إِنَّكَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ يَا نِعْمَ الْمَوْلَى وَنِعْمَ النَّصِيرُ سُبْحَانَ رَبِّكَ رَبِّ الْعِزَّةِ عَمَّا يَصِفُوْنَ. وَسَلَامٌ عَلَى الْمُرْسَلِينَ وَالْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ",
               textAlign: TextAlign.center,
               style: GoogleFonts.amiri(
                 color: arabicTextColor,
@@ -126,7 +122,7 @@ class KhitananPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Allahumma faqqihhu fid-diini wa 'allimhut-ta'wiila waj'alhu baarran biwalidaihi.",
+              "Allaahumma waffiqnaa lijtilaabil fadhaaili wajan- nibna 'aniqtiraahir radzaail. Rabbanaa taqabbal minnaa I'dzaaranaa wa sallim umuuranaa wa shahhih makhtuuna- naa waqdhi duyuunanaa waballigh aamaalanaa wawassi' arzaaqanaa bijuudika yaa jawwaad. Allaahumma innan nas alukas salaamata wal 'aafiyata 'alainaa wa 'alal hujjaaji wal- ghuzaati wal musaafiriina min ummati sayyidinaa Muham- madin Shallallaahu 'alaihi wa sallama ajma'iina fii barrika wabahrika innaka 'alaa kulli syai in qadiir. Yaa ni'mal mau- laa wa ni'man nashiir. Subhaanaka rabbika rabbil 'izzati 'am- maa yashifuun. Wasalaamun 'alal mursaliin walhamdulillahi rabbil 'aalamiin.",
               style: TextStyle(
                 color: subTextColor,
                 fontSize: 14,
@@ -154,43 +150,8 @@ class KhitananPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Ya Allah, pahamkanlah dia dalam urusan agama, ajarkanlah padanya ilmu takwil (tafsir), dan jadikanlah ia anak yang berbakti kepada kedua orang tuanya.",
+              "Ya Allah, berilah kami pertolongan untuk meraih nilai-nilai keutamaan, dan hindarkanlah kami dari melakukan perilaku-perilaku yang hina. Wahai Tuhan kami, terimalah walimah khitan (I'dzar) kami ini, selamatkanlah urusan- urusan kami, capaikanlah harapan-harapan kami, dan lapangkanlah rezeki-rezeki kami, dengan kemurahan-Mu wahai Tuhan Yang Maha Pemurah. Ya Allah, sungguh kami memohon kepadaMu kesejahteraan dan keselamatan untuk kami, untuk para jamaah haji, untuk prajurit di medan perang, dan untuk para musafir dari umat Muhammad pemimpin kami Rasulullah SAW, semuanya, baik yang berada di daratan maupun dilautan. Sungguh Engkau Maha Kuasa atas segala sesuatu. Wahai yang mempunyai keagungan dari sifat yang mereka (orang-orang kafir) tuduhkan. Keselamatan atas para utusan dan segala puji bagi Allah, Tuhan segala alam.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Doa kebaikan bagi anak yang menginjak masa suci (khitan), memohon kematangan beragama dan akhlak mulia.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

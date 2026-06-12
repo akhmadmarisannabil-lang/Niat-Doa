@@ -70,11 +70,7 @@ class DoaPenutupPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa penutup", chipBgColor, chipTextColor),
-              _buildTag("penutup", chipBgColor, chipTextColor),
-              _buildTag("ampunan", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa penutup", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class DoaPenutupPage extends StatelessWidget {
             child: Text(
               "Maha Suci Engkau, ya Allah, dan dengan memuji-Mu, aku bersaksi bahwa tidak ada tuhan selain Engkau, aku memohon ampunan-Mu dan aku bertaubat kepada-Mu.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Doa Kifaratul Majlis ini bersumber dari hadis shahih riwayat Tirmidzi. Dibaca sesaat sebelum membubarkan diri dari suatu majelis/pertemuan guna menghapus noda dosa kecil atau sendau gurau yang tidak bermanfaat selama acara.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

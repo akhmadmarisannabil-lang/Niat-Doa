@@ -70,11 +70,7 @@ class MalamIdulFitriPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Tertentu", chipBgColor, chipTextColor),
-              _buildTag("duduk", chipBgColor, chipTextColor),
-              _buildTag("sholat", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Tertentu", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -98,7 +94,7 @@ class MalamIdulFitriPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "اللَّهُمَّ تَقَبَّلْ مِنَّا صِيَامَنَا وَقِيَامَنَا وَصَالِحَ أَعْمَالِنَا",
+              "اللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ اللَّهُ أَكْبَرُ، لَا إِلَهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ وَلِلَّهِ الْحَمْدُ",
               textAlign: TextAlign.center,
               style: GoogleFonts.amiri(
                 color: arabicTextColor,
@@ -126,22 +122,13 @@ class MalamIdulFitriPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Allahumma taqabbal minna shiyaamana wa qiyaamana wa shaliha a'malina.",
+              "Allāhu akbar, Allāhu akbar, Allāhu akbar, lā ilāha illā Allāh, wallāhu akbar, Allāhu akbar wa lillāhil-ḥamd.",
               style: TextStyle(
                 color: subTextColor,
                 fontSize: 14,
                 fontStyle: FontStyle.italic,
                 height: 1.4,
               ),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Text(
-            "Terjemahan",
-            style: TextStyle(
-              color: accentColor,
-              fontWeight: FontWeight.bold,
-              fontSize: 14,
             ),
           ),
           const SizedBox(height: 12),
@@ -154,43 +141,8 @@ class MalamIdulFitriPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Ya Allah, terimalah ibadah puasa kami, shalat malam kami, dan amal-amal saleh kami.",
+              "Allah Maha Besar, Allah Maha Besar, Allah Maha Besar. Tidak ada Tuhan yang berhak disembah selain Allah. Allah Maha Besar, Allah Maha Besar, dan segala puji hanya bagi Allah.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Menghidupkan malam kemenangan dengan penuh gema takbir, tahmid, sekaligus memanjatkan doa berserah diri agar seluruh rangkaian amalan ibadah selama Ramadan diterima di sisi-Nya.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

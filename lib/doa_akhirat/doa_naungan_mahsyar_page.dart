@@ -70,11 +70,7 @@ class DoaNaunganMahsyarPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Akhirat", chipBgColor, chipTextColor),
-              _buildTag("perhitungan", chipBgColor, chipTextColor),
-              _buildTag("hisab", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Akhirat", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class DoaNaunganMahsyarPage extends StatelessWidget {
             child: Text(
               "Ya Allah, naungilah aku di bawah naungan Arsy-Mu pada hari di mana tidak ada naungan selain naungan-Mu.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Di Padang Mahsyar, matahari didekatkan sedekat satu mil hingga manusia bermandikan keringat sesuai kadar amalnya. Doa ini dipanjatkan agar kita memperoleh perlindungan istimewa di bawah naungan Arsy Allah SWT saat tidak ada tempat bernaung lain yang tersedia.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

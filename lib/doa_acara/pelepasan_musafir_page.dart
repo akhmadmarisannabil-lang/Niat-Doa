@@ -70,11 +70,7 @@ class PelepasanMusafirPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Acara", chipBgColor, chipTextColor),
-              _buildTag("perjalanan", chipBgColor, chipTextColor),
-              _buildTag("titip amananh", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Acara", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -98,7 +94,7 @@ class PelepasanMusafirPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "أَسْتَوْدِعُ اللَّهَ دِينَكَ وَأَمَانَتَكَ وَخَوَاتِيمَ عَمَلِكَ",
+              "بسم الله ، تَوَكَّلْتُ عَلَى الله ، اللهُمَّ أَعُوذُ بكَ أَنْ أَضَلَّ أَوْ أُضَلَّ أَوْ أَزِلَّ أَوْ أَزَلْ أَوْ أَظْلَمَ أَوْ أَظْلَمَ أَوْ أَجْهَلَ أَوْ يُجْهَلَ عَلَيَّ",
               textAlign: TextAlign.center,
               style: GoogleFonts.amiri(
                 color: arabicTextColor,
@@ -126,7 +122,7 @@ class PelepasanMusafirPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Astaudi'ullaha diinaka wa amaanataka wa khawaatiima 'amalik.",
+              "Bismillāh, tawakkaltu 'alallāh. Allāhumma a'ūdzu bika an adhilla aw udhalla, aw azilla aw uzalla, aw azhlima aw uzhlama, aw ajhala aw yujhala 'alayya.",
               style: TextStyle(
                 color: subTextColor,
                 fontSize: 14,
@@ -154,45 +150,123 @@ class PelepasanMusafirPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Aku menitipkan kepada Allah agamamu, amanahmu, dan akhir dari amal perbuatanmu.",
+              "Dengan menyebut nama Allah. Aku serahkan (semua urusan) kepada Allah. Ya Allah, aku berlindung kepada-Mu dari tersesat dan menyesatkan, dari tergelincir dan menggelincirkan, dari berbuat aniaya atau teraniaya dari kebodohan atau pembodohan terhadapku.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
             ),
           ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
+
+          // ===================== DOA KEDUA =====================
+          const SizedBox(height: 32),
+
+          Divider(color: accentColor),
+
+          const SizedBox(height: 20),
+
+          Center(
+            child: Text(
+              "Setelah membaca doa di atas, bisa membaca doa yang dibaca Rasulullah SAW ketika keluar rumah untuk bepergian berikut :",
+              style: TextStyle(
+                color: accentColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
               ),
-            ],
+            ),
           ),
+
+          const SizedBox(height: 20),
+
+          Center(
+            child: Text(
+              "Teks Arab",
+              style: TextStyle(
+                color: accentColor,
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+              ),
+            ),
+          ),
+
           const SizedBox(height: 12),
+
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+            decoration: BoxDecoration(
+              color: cardColor,
+              borderRadius: BorderRadius.circular(12),
+              border: isLightMode ? Border.all(color: borderColor) : null,
+            ),
+            child: Text(
+              "اللَّهُمَّ أَنْتَ الصَّاحِبُ في السَّفَر وَالْخَليفَةُ فى الأهْل اللَّهُمَّ إِنِّي أَعُوْذُ بِكَ مِنَ الضَّيِّئَةِ فِي السفر والكآبة فى الْمُنْقَلَب اللهم اطو لَنَا الْأَرْضَ وَهَوِّنُ عَلَيْنَا السَّفَرَ",
+              textAlign: TextAlign.center,
+              style: GoogleFonts.amiri(
+                color: arabicTextColor,
+                fontSize: 24,
+                height: 2.2,
+              ),
+            ),
+          ),
+
+          const SizedBox(height: 24),
+
+          Text(
+            "Transliterasi",
+            style: TextStyle(
+              color: accentColor,
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
+          ),
+
+          const SizedBox(height: 12),
+
           Container(
             width: double.infinity,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: cardColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
+              border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Sunnah dibaca oleh tuan rumah atau keluarga yang ditinggalkan kepada orang yang hendak melakukan perjalanan jauh (safar) demi perlindungan dunia dan akhirat.",
+              "Allāhumma antaṣ-ṣāḥibu fis-safar, wal-khalīfatu fil-ahli. Allāhumma innī a'ūdzu bika minadh-dhayyiati fis-safar wal-ka'ābati fil-munqalab. Allāhummaṭwi lanal-ardha wa hawwin 'alainas-safar.",
               style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
+                color: subTextColor,
+                fontSize: 14,
+                fontStyle: FontStyle.italic,
+                height: 1.4,
               ),
             ),
           ),
+
+          const SizedBox(height: 24),
+
+          Text(
+            "Terjemahan",
+            style: TextStyle(
+              color: accentColor,
+              fontWeight: FontWeight.bold,
+              fontSize: 14,
+            ),
+          ),
+
+          const SizedBox(height: 12),
+
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: cardColor,
+              borderRadius: BorderRadius.circular(12),
+              border: isLightMode ? Border.all(color: borderColor) : null,
+            ),
+            child: Text(
+              "Ya Allah, Engkaulah yang menemani dalam perjalanan, yang menjadi pengganti dalam keluarga. Ya Allah aku berlindung kepada-Mu dari menjadi kebutuhan yang berlebihan dalam perjalanan dan kesedihan saat kembali. Ya Allah, lipatlah bumi untuk kami dan berilah kemudahan kepada kami dalam perjalanan.",
+              style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
+            ),
+          ),
+
+          const SizedBox(height: 24),
         ],
       ),
     );

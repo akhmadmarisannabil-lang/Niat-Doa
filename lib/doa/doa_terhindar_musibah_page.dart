@@ -16,6 +16,21 @@ import '../doa_musibah/doa_mendengar_petir_page.dart';
 import '../doa_musibah/doa_hujan_khawatir_banjir_page.dart';
 import '../doa_musibah/doa_melihat_pertanda_buruk_page.dart';
 import '../doa_musibah/doa_kehilangan_barang_page.dart';
+import '../doa_musibah/doa_menolak_firasat_buruk_page.dart';
+import '../doa_musibah/doa_berlindung_keburukan_amal_page.dart';
+import '../doa_musibah/doa_diancam_orang_jahat_page.dart';
+
+// Import 10 Halaman Doa Baru Tambahan
+import '../doa_musibah/doa_berlindung_kecelakaan_page.dart';
+import '../doa_musibah/doa_tidak_disesatkan_setan_kematian_page.dart';
+import '../doa_musibah/doa_berlindung_orang_zalim_page.dart';
+import '../doa_musibah/doa_berlindung_keburukan_orang_kafir_page.dart';
+import '../doa_musibah/doa_berlindung_syirik_page.dart';
+import '../doa_musibah/doa_menghilangkan_gangguan_setan_page.dart';
+import '../doa_musibah/doa_berlindung_hilangnya_nikmat_page.dart';
+import '../doa_musibah/doa_berlindung_beratnya_cobaan_page.dart';
+import '../doa_musibah/doa_berlindung_pandangan_mata_jahat_page.dart';
+import '../doa_musibah/doa_takut_kezaliman_penguasa_page.dart';
 
 class DoaTerhindarMusibahPage extends StatelessWidget {
   const DoaTerhindarMusibahPage({super.key});
@@ -25,7 +40,7 @@ class DoaTerhindarMusibahPage extends StatelessWidget {
     final isLightTheme = Provider.of<ThemeProvider>(context).isLightTheme;
     final List<Map<String, String>> doaTerhindarMusibahList = [
       {
-        'name': 'Doa Terhindar dari Musibah & Bencana',
+        'name': 'Doa Terhindar dari berbagai Bencana',
         'desc': 'Memohon perlindungan dari cobaan berat dan takdir yang buruk.',
       },
       {
@@ -92,6 +107,72 @@ class DoaTerhindarMusibahPage extends StatelessWidget {
         'desc':
             'Memohon petunjuk agar barang yang hilang dapat segera dikembalikan.',
       },
+      {
+        'name': 'Doa Menolak Firasat Buruk',
+        'desc':
+            'Memohon ketetapan hati dari prasangka buruk dan menyerahkan segala kebaikan hanya dari Allah.',
+      },
+      {
+        'name': 'Doa Berlindung dari Keburukan Amal',
+        'desc':
+            'Memohon perlindungan dari dampak buruk amalan masa lalu maupun yang belum dikerjakan.',
+      },
+      {
+        'name': 'Doa Ketika Diancam Orang Jahat',
+        'desc':
+            'Doa perlindungan penuh dan permohonan kecukupan pertolongan Allah dari tipu daya musuh.',
+      },
+      // 10 Menu Baru Tambahan
+      {
+        'name': 'Doa Berlindung dari Kecelakaan',
+        'desc':
+            'Memohon perlindungan dari mati tertimbun, jatuh dari ketinggian, tenggelam, dan terbakar.',
+      },
+      {
+        'name': 'Doa Agar Tidak Disesatkan Setan Menjelang Kematian',
+        'desc':
+            'Memohon keteguhan iman agar tidak goyah atau disesatkan setan saat sakaratul maut.',
+      },
+      {
+        'name': 'Doa Berlindung dari Orang Zalim',
+        'desc':
+            'Memohon agar dijauhkan dan diselamatkan dari kekuasaan serta kejahatan kaum zalim.',
+      },
+      {
+        'name': 'Doa Berlindung dari Keburukan Orang Kafir',
+        'desc':
+            'Memohon pertolongan agar tidak dijadikan sasaran fitnah atau dikuasai kaum kafir.',
+      },
+      {
+        'name': 'Doa Berlindung dari Syirik',
+        'desc':
+            'Memohon penjagaan dari perbuatan syirik yang disadari maupun tidak disadari.',
+      },
+      {
+        'name': 'Doa Menghilangkan Gangguan Setan',
+        'desc':
+            'Membaca perlindungan dari bisikan jahat setan yang mengganggu pikiran dan ketenangan.',
+      },
+      {
+        'name': 'Doa Berlindung dari Hilangnya Nikmat',
+        'desc':
+            'Memohon perlindungan dari dicabutnya kesehatan, kesejahteraan, dan nikmat iman.',
+      },
+      {
+        'name': 'Doa Berlindung dari Beratnya Cobaan',
+        'desc':
+            'Memohon keringanan dari takdir buruk, penderitaan berat, dan hinaan musuh.',
+      },
+      {
+        'name': 'Doa Berlindung dari Pandangan Mata Jahat',
+        'desc':
+            'Memohon perlindungan bagi diri dan keluarga dari bahaya penyakit Ain (pandangan dengki).',
+      },
+      {
+        'name': 'Doa Bila Takut Kezaliman Penguasa',
+        'desc':
+            'Memohon keagungan Allah untuk membentengi diri dari kesewenang-wenangan pemimpin.',
+      },
     ];
 
     return Scaffold(
@@ -107,7 +188,7 @@ class DoaTerhindarMusibahPage extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          "Doa Terhindar dari Musibah",
+          "Doa Terhindar dari Musibah & Keburukan",
           style: TextStyle(
             fontSize: 18,
             color: isLightTheme ? Colors.black87 : Colors.white,
@@ -176,7 +257,6 @@ class DoaTerhindarMusibahPage extends StatelessWidget {
               ),
               onTap: () {
                 Widget page;
-
                 switch (index) {
                   case 0:
                     page = const DoaBencanaPage();
@@ -220,10 +300,49 @@ class DoaTerhindarMusibahPage extends StatelessWidget {
                   case 13:
                     page = const DoaKehilanganBarangPage();
                     break;
+                  case 14:
+                    page = const DoaMenolakFirasatBurukPage();
+                    break;
+                  case 15:
+                    page = const DoaBerlindungKeburukanAmalPage();
+                    break;
+                  case 16:
+                    page = const DoaDiancamOrangJahatPage();
+                    break;
+                  // Navigasi 10 Doa Baru
+                  case 17:
+                    page = const DoaBerlindungKecelakaanPage();
+                    break;
+                  case 18:
+                    page = const DoaTidakDisesatkanSetanKematianPage();
+                    break;
+                  case 19:
+                    page = const DoaBerlindungOrangZalimPage();
+                    break;
+                  case 20:
+                    page = const DoaBerlindungKeburukanOrangKafirPage();
+                    break;
+                  case 21:
+                    page = const DoaBerlindungSyirikPage();
+                    break;
+                  case 22:
+                    page = const DoaMenghilangkanGangguanSetanPage();
+                    break;
+                  case 23:
+                    page = const DoaBerlindungHilangnyaNikmatPage();
+                    break;
+                  case 24:
+                    page = const DoaBerlindungBeratnyaCobaanPage();
+                    break;
+                  case 25:
+                    page = const DoaBerlindungPandanganMataJahatPage();
+                    break;
+                  case 26:
+                    page = const DoaTakutKezalimanPenguasaPage();
+                    break;
                   default:
                     return;
                 }
-
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => page),

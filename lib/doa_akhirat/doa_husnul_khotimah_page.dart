@@ -70,11 +70,7 @@ class DoaHusnulKhotimahPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Akhirat", chipBgColor, chipTextColor),
-              _buildTag("perhitungan", chipBgColor, chipTextColor),
-              _buildTag("hisab", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Akhirat", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -156,41 +152,6 @@ class DoaHusnulKhotimahPage extends StatelessWidget {
             child: Text(
               "Ya Allah, jadikanlah sebaik-baik umurku pada ujungnya, sebaik-baik amalku pada akhir kesudahannya, dan jadikanlah sebaik-baik hariku adalah pada saat aku menemui-Mu kelak.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Doa riwayat Imam At-Thabrani. Memohon akhir hidup yang baik (husnul khotimah) sangat krusial bagi seorang muslim, karena nilai dari seluruh rangkaian amal perbuatan manusia sangat ditentukan oleh bagaimana kondisi akhir saat ia wafat.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],

@@ -7,6 +7,7 @@ import '../kebutuhan/hajat_page.dart';
 import '../kebutuhan/taubat_page.dart';
 import '../kebutuhan/istisqa_page.dart';
 import '../kebutuhan/safar_page.dart';
+import '../kebutuhan/tasbih_page.dart'; // Impor halaman Shalat Tasbih baru Anda
 
 class SunnahSituasionalPage extends StatelessWidget {
   const SunnahSituasionalPage({super.key});
@@ -45,6 +46,13 @@ class SunnahSituasionalPage extends StatelessWidget {
         'desc':
             '2 Rakaat - Dilakukan saat hendak bepergian atau baru pulang safar.',
         'targetPage': const SafarPage(),
+      },
+      {
+        'name': 'Shalat Tasbih',
+        'desc':
+            '4 Rakaat - Dilakukan dengan membaca kalimat tasbih sebanyak 300 kali untuk mendekatkan diri kepada Allah.',
+        'targetPage':
+            const TasbihPage(), // Mengarah ke halaman panduan Shalat Tasbih
       },
     ];
 

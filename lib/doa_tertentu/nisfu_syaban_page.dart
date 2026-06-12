@@ -70,11 +70,7 @@ class NisfuSyabanPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Doa Tertentu", chipBgColor, chipTextColor),
-              _buildTag("duduk", chipBgColor, chipTextColor),
-              _buildTag("sholat", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Doa Tertentu", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -98,7 +94,7 @@ class NisfuSyabanPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "اللَّهُمَّ يَا ذَا الْمَنِّ وَلَا يُمَنُّ عَلَيْهِ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ",
+              "اَللّٰهُمَّ يَا ذَا الْمَنِّ وَلَا يُمَنُّ عَلَيْكَ، يَا ذَا الْجَلَالِ وَالْإِكْرَامِ، يَا ذَا الطَّوْلِ وَالْإِنْعَامِ، لَا إِلَهَ إِلَّا أَنْتَ ظَهْرَ اللَّاجِيْنَ وَجَارَ الْمُسْتَجِيْرِينَ وَمَأْمَنَ الْخَائِفِيْنَ.اَللّٰهُمَّ إِنْ كُنْتَ كَتَبْتَنِيْ عِنْدَكَ فِيْ أُمِّ الْكِتَابِ شَقِيًّا أَوْ مَحْرُوْمًا أَوْ مُقَطَّرًا عَلَيَّ فِيْ الرِّزْقِ، فَامْحُ اللّٰهُمَّ بِفَضْلِكَ شَقَاوَتِيْ وَحِرْمَانِيْ وَاقْتِطَارَ رِزْقِيْ، وَأَثْبِتْنِيْ عِنْدَكَ فِيْ أُمِّ الْكِتَابِ سَعِيْدًا مَرْزُوْقًا مُوَفَّقًا لِلْخَيْرَاتِ، فَإِنَّكَ قُلْتَ وَقَوْلُكَ الْحَقُّ فِيْ كِتَابِكَ الْمُنَزَّلِ عَلَى لِسَانِ نَبِيِّكَ الْمُرْسَلِ: يَمْحُو اللّٰهُ مَا يَشَاءُ وَيُثْبِتُ وَعِنْدَهُ أُمُّ الْكِتَابِ.إِلٰهِيْ بِالتَّجَلِّي الْأَعْظَمِ فِيْ لَيْلَةِ النِّصْفِ مِنْ شَهْرِ شَعْبَانَ الْمُكَرَّمِ، الَّتِيْ يُفْرَقُ فِيْهَا كُلُّ أَمْرٍ حَكِيمٍ وَيُبْرَمُ، أَنْ تَكْشِفَ عَنَّا مِنَ الْبَلَاءِ مَا نَعْلَمُ وَمَا لَا نَعْلَمُ وَمَا أَنْتَ بِهِ أَعْلَمُ، إِنَّكَ أَنْتَ الْأَعَزُّ الْأَكْرَمُ، وَصَلَّى اللّٰهُ عَلَى سَيِّدِنَا مُحَمَّدٍ النَّبِيِّ الْأُمِّيِّ وَعَلَى آلِهِ وَصَحْبِهِ وَسَلَّمَ",
               textAlign: TextAlign.center,
               style: GoogleFonts.amiri(
                 color: arabicTextColor,
@@ -126,22 +122,13 @@ class NisfuSyabanPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Allahumma yaa dzal-manni wa laa yumannu 'alaihi yaa dzal-jalaali wal-ikraam...",
+              "Allâhumma yâ dzal manni wa lâ yumannu 'alaik, yâ dzal jalâli wal ikrâm, yâ dzat thawli wal in'âm, lâ ilâha illâ anta zhahral lâjîn wa jâral mustajîrîn wa ma'manal khâ'ifîn.Allâhumma in kunta katabtanî 'indaka fî ummil kitâbi syaqiyyan aw mahrûman aw muqtarran 'alayya fir rizqi, famhullâhumma bi fadhlika syaqâwatî wa ḥirmânî wa iqtithâra rizqî, wa atsbitnî 'indaka fî ummil kitâbi sa'îdan marzûqan muwaffaqan lil khayrâti. Fa innaka qulta wa qawlukal ḥaqqu fî kitâbikal munazzali 'alâ lisâni nabiyyikal mursal: Yamḥullâhu mâ yasyâ'u wa yutsbit, wa 'indahû ummul kitâb.Ilâhî bit-tajallil a'zhami fî laylatin nishfi min syahris sya'bânil mukarram, allatî yufraqu fîhâ kullu amrin ḥakîmin wa yubram, an taksyifa 'annâ minal balâ'i mâ na'lamu wa mâ lâ na'lamu wa mâ anta bihî a'lam, innaka antal a'azzul akram. Wa shallallâhu 'alâ sayyidinâ Muḥammadin nabiyyil ummiyyi wa 'alâ âlihi wa shahbihi wa sallam.",
               style: TextStyle(
                 color: subTextColor,
                 fontSize: 14,
                 fontStyle: FontStyle.italic,
                 height: 1.4,
               ),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Text(
-            "Terjemahan",
-            style: TextStyle(
-              color: accentColor,
-              fontWeight: FontWeight.bold,
-              fontSize: 14,
             ),
           ),
           const SizedBox(height: 12),
@@ -154,43 +141,8 @@ class NisfuSyabanPage extends StatelessWidget {
               border: isLightMode ? Border.all(color: borderColor) : null,
             ),
             child: Text(
-              "Ya Allah, wahai Dzat yang mempunyai anugerah dan Engkau tidak diberi anugerah, wahai Dzat yang memiliki keagungan dan kemuliaan...",
+              "Wahai Allah, Tuhan yang memiliki anugerah dan tidak diberi anugerah atas-Mu. Wahai Tuhan yang memiliki keagungan dan kemuliaan. Wahai Tuhan yang memiliki kekuasaan dan kenikmatan. Tiada Tuhan yang berhak disembah selain Engkau, tempat bernaung para pencari perlindungan, tetangga bagi orang-orang yang meminta perlindungan, dan tempat aman bagi orang-orang yang takut.Ya Allah, jika Engkau telah mencatatku di sisi-Mu pada Ummul Kitab (Lauh Mahfuz) sebagai orang yang celaka, terhalang, atau sempit rezekinya, maka hapuskanlah ya Allah, dengan karunia-Mu, kecelakaan, keterhalangan, dan kesempitan rezekiku. Dan tetapkanlah aku di sisi-Mu dalam Ummul Kitab sebagai orang yang bahagia, mendapat rezeki, dan diberi kemudahan untuk melakukan berbagai kebaikan. Karena sesungguhnya Engkau telah berfirman dan firman-Mu adalah benar di dalam kitab-kitab-Mu yang diturunkan melalui lisan Nabi-Mu yang diutus: 'Allah menghapuskan apa yang Dia kehendaki dan menetapkan (apa yang Dia kehendaki), dan di sisi-Nya terdapat Ummul Kitab.'Wahai Tuhanku, dengan tajalli (penampakan cahaya) yang Maha Agung pada malam pertengahan bulan Sya'ban yang mulia, di mana pada malam itu dirinci dan ditetapkan segala urusan yang bijaksana, mohon singkirkanlah dari kami bala (bencana) baik yang kami ketahui maupun yang tidak kami ketahui, dan yang Engkau lebih mengetahuinya. Sesungguhnya Engkau Maha Perkasa lagi Maha Mulia. Semoga Allah melimpahkan rahmat dan keselamatan kepada junjungan kami Nabi Muhammad, keluarga, dan para sahabatnya.",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.4),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            children: [
-              Icon(Icons.info_outline, color: accentColor, size: 18),
-              const SizedBox(width: 6),
-              Text(
-                "Keterangan",
-                style: TextStyle(
-                  color: accentColor,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 12),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: cardColor,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
-              ),
-            ),
-            child: Text(
-              "Dibaca pada malam pertengahan bulan Sya'ban setelah membaca surah Yasin 3 kali untuk memohon keberkahan panjang umur, keteguhan iman, kecukupan rezeki, serta khusnul khotimah.",
-              style: TextStyle(
-                color: isLightMode ? const Color(0xff475569) : Colors.white60,
-                fontSize: 13,
-                height: 1.5,
-              ),
             ),
           ),
         ],
