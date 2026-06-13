@@ -15,6 +15,7 @@ class AlAlaqPage extends StatefulWidget {
 
 class _AlAlaqPageState extends State<AlAlaqPage> {
   final AudioPlayer player = AudioPlayer();
+  bool isPlayingFullSurah = false;
 
   final ScrollController _scrollController = ScrollController();
   final List<GlobalKey> ayatKeys = List.generate(19, (_) => GlobalKey());
@@ -62,6 +63,7 @@ class _AlAlaqPageState extends State<AlAlaqPage> {
 
     setState(() {
       currentPlayingAyat = -1;
+      isPlayingFullSurah = false;
     });
   }
 
@@ -131,6 +133,36 @@ class _AlAlaqPageState extends State<AlAlaqPage> {
       currentPlayingAyat = -1;
       isPlaying = false;
     });
+  }
+
+  Future<void> playFullSurah() async {
+    if (suratAudio == null) return;
+
+    await stopAudio();
+
+    setState(() {
+      isPlayingFullSurah = true;
+    });
+
+    try {
+      // audio full surah dari API eQuran
+      final audioUrl = suratAudio!['audioFull'][selectedQori];
+
+      await player.setUrl(audioUrl);
+      await player.play();
+
+      await player.playerStateStream.firstWhere(
+        (state) => state.processingState == ProcessingState.completed,
+      );
+    } catch (e) {
+      debugPrint("Error play full surah: $e");
+    }
+
+    if (mounted) {
+      setState(() {
+        isPlayingFullSurah = false;
+      });
+    }
   }
 
   @override
@@ -316,6 +348,22 @@ class _AlAlaqPageState extends State<AlAlaqPage> {
             fontWeight: FontWeight.bold,
           ),
         ),
+        actions: [
+          IconButton(
+            icon: Icon(
+              isPlayingFullSurah ? Icons.stop_circle : Icons.library_music,
+              color: Colors.teal,
+            ),
+            tooltip: "Full Surah",
+            onPressed: () async {
+              if (isPlayingFullSurah) {
+                await stopAudio();
+              } else {
+                await playFullSurah();
+              }
+            },
+          ),
+        ],
       ),
       body: ListView(
         controller: _scrollController,

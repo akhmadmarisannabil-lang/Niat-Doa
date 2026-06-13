@@ -21,8 +21,9 @@ import 'doa/doa_akhirat_page.dart';
 import 'doa/doa_waktu_tertentu_page.dart';
 import 'doa/doa_diri_orang_lain_page.dart'; // IMPORT MENU DOA BARU DI SINI
 
-// Al-Qur'an
+// Al-Qur'an & Hadits
 import 'quran/quran_page.dart';
+import 'hadist/hadits_page.dart'; // IMPORT HALAMAN HADITS BARU DI SINI
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -170,7 +171,8 @@ class _HomePageState extends State<HomePage> {
                           ),
                         );
                       }
-                    } else if (_currentIndex == 2) {
+                    } else if (_currentIndex == 3) {
+                      // Indeks disesuaikan ke posisi 3 karena Hadits disisipkan di posisi 2
                       if (item['number'] == '1') {
                         Navigator.push(
                           context,
@@ -215,7 +217,6 @@ class _HomePageState extends State<HomePage> {
                           ),
                         );
                       } else if (item['number'] == '7') {
-                        // NAVIGASI MENU BARU DI SINI
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -374,13 +375,13 @@ class _HomePageState extends State<HomePage> {
       },
       {
         'number': '3',
-        'title': 'Sunnah Qobliyah',
+        'title': 'Sunnah Rawatib Qobliyah',
         'color': const Color(0xfffff3cd),
         'image': 'assets/images/menu/sholat1.jpg',
       },
       {
         'number': '4',
-        'title': 'Sunnah Ba\'diyah',
+        'title': 'Sunnah Rawatib Ba\'diyah',
         'color': const Color(0xffd1f2e5),
         'image': 'assets/images/menu/sholat4.jpg',
       },
@@ -447,7 +448,6 @@ class _HomePageState extends State<HomePage> {
         'color': const Color(0xfffcdbdf),
         'image': 'assets/images/menu/berdoa.jpg',
       },
-      // MENAMBAHKAN ITEM MENU KE-7 SISI INTERFAS SEPERTI PADA image_796897.png
       {
         'number': '7',
         'title': 'Doa untuk Diri\nSendiri & Orang Lain',
@@ -456,11 +456,53 @@ class _HomePageState extends State<HomePage> {
       },
     ];
 
+    // Logika pemilihan tampilan halaman utama secara dinamis berdasarkan _currentIndex
+    Widget getBodyWidget() {
+      switch (_currentIndex) {
+        case 0:
+          return _buildMenuGrid(
+            headerTitle: "Kumpulan Sholat",
+            headerDesc: "Ada bermacam-macam sholat",
+            menuItems: niatMenu,
+            quoteText:
+                "– Tegakkan shalatmu, tenangkan jiwamu. Karena shalat adalah cara hamba berbicara dengan Sang Penciptpa. –",
+          );
+        case 1:
+          return const QuranPage();
+        case 2:
+          return const HaditsPage(); // TAMPILKAN HADITS PAGE DI INDEKS KE-2
+        case 3:
+          return _buildMenuGrid(
+            headerTitle: "Kumpulan Doa",
+            headerDesc: "Ada bermacam-macam Doa",
+            menuItems: doaMenu,
+            quoteText:
+                "\"Berdoalah kepada-Ku, niscaya akan Kuperkenankan bagimu. Doa adalah senjatanya orang mukmin dan tiang agama.\"",
+          );
+        default:
+          return const SizedBox.shrink();
+      }
+    }
+
+    // Judul AppBar menyesuaikan indeks navigasi aktif
+    String getAppBarTitle() {
+      switch (_currentIndex) {
+        case 0:
+          return "Daftar Sholat";
+        case 1:
+          return "Daftar Surah Pembuka & Juz Amma";
+        case 2:
+          return "Daftar Hadits Shahih Pilihan";
+        case 3:
+          return "Daftar Doa";
+        default:
+          return "";
+      }
+    }
+
     return Scaffold(
-      // Background halaman otomatis berganti mengikuti tema aktif
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        // Background AppBar otomatis berganti mengikuti tema aktif
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         elevation: 0,
         leading: IconButton(
@@ -471,18 +513,13 @@ class _HomePageState extends State<HomePage> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          _currentIndex == 0
-              ? "Daftar Niat Sholat"
-              : _currentIndex == 1
-              ? "Daftar Surah Pembuka & Juz Amma"
-              : "Daftar Doa",
+          getAppBarTitle(),
           style: TextStyle(
             fontSize: 16,
             color: Theme.of(context).appBarTheme.foregroundColor,
           ),
         ),
         actions: [
-          // TOMBOL MENU SETTING DI SINI
           IconButton(
             icon: Icon(
               Icons.settings,
@@ -497,25 +534,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: _currentIndex == 0
-          ? _buildMenuGrid(
-              headerTitle: "Kumpulan Sholat",
-              headerDesc: "Ada bermacam-macam sholat",
-              menuItems: niatMenu,
-              quoteText:
-                  "– Tegakkan shalatmu, tenangkan jiwamu. Karena shalat adalah cara hamba berbicara dengan Sang Penciptpa. –",
-            )
-          : _currentIndex == 1
-          ? const QuranPage()
-          : _buildMenuGrid(
-              headerTitle: "Kumpulan Doa",
-              headerDesc: "Ada bermacam-macam Doa",
-              menuItems: doaMenu,
-              quoteText:
-                  "\"Berdoalah kepada-Ku, niscaya akan Kuperkenankan bagimu. Doa adalah senjatanya orang mukmin dan tiang agama.\"",
-            ),
+      body: getBodyWidget(),
       bottomNavigationBar: BottomNavigationBar(
-        // Setelan Bottom Navigation Bar dinamis
         backgroundColor: themeProvider.isLightTheme
             ? Colors.white
             : const Color(0xff1e1e1e),
@@ -534,6 +554,10 @@ class _HomePageState extends State<HomePage> {
             icon: Icon(Icons.menu_book),
             label: 'Juz Amma',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu_book),
+            label: 'Hadits',
+          ), // TAMBAHKAN ITEM MENU HADITS DI SINI
           BottomNavigationBarItem(
             icon: Icon(Icons.import_contacts),
             label: 'Doa',
