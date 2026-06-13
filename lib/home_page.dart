@@ -555,7 +555,7 @@ class _HomePageState extends State<HomePage> {
             label: 'Juz Amma',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.menu_book),
+            icon: Icon(Icons.history_edu_rounded),
             label: 'Hadits',
           ), // TAMBAHKAN ITEM MENU HADITS DI SINI
           BottomNavigationBarItem(

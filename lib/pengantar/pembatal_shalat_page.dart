@@ -58,10 +58,7 @@ class PembatalShalatPage extends StatelessWidget {
         children: [
           Wrap(
             spacing: 8,
-            children: [
-              _buildTag("Kata Pengantar", chipBgColor, chipTextColor),
-              _buildTag("Hal Membatalkan", chipBgColor, chipTextColor),
-            ],
+            children: [_buildTag("Kata Pengantar", chipBgColor, chipTextColor)],
           ),
           const SizedBox(height: 32),
 
@@ -85,16 +82,16 @@ class PembatalShalatPage extends StatelessWidget {
             ),
             child: Text(
               "Shalat seseorang akan batal dan tidak sah secara hukum syariat apabila terjadi salah satu perkara berikut di tengah-tengah shalat:\n\n"
-              "a. Berhadats besar maupun kecil (misalnya buang angin atau buang air).\n"
-              "b. Terkena najis pada badan, pakaian, atau tempat shalat jika tidak langsung dibuang.\n"
-              "c. Terbukanya aurat dengan sengaja, atau tidak langsung ditutup ketika terbuka tanpa sengaja.\n"
-              "d. Berbicara dengan sengaja mengucapkan kata-kata di luar bacaan shalat.\n"
-              "e. Melakukan gerakan besar sebanyak tiga kali berturut-turut di luar gerakan shalat.\n"
-              "f. Makan atau minum, meskipun hanya sedikit.\n"
-              "g. Berubah niat (misalnya berniat ingin memutus shalat).\n"
-              "h. Membelakangi kiblat.\n"
-              "i. Tertawa terbahak-bahak hingga mengeluarkan suara.\n"
-              "j. Murtad (keluar dari agama Islam).",
+              "1. Berhadats besar maupun kecil (misalnya buang angin atau buang air).\n"
+              "2. Terkena najis pada badan, pakaian, atau tempat shalat jika tidak langsung dibuang.\n"
+              "3. Terbukanya aurat dengan sengaja, atau tidak langsung ditutup ketika terbuka tanpa sengaja.\n"
+              "4. Berbicara dengan sengaja mengucapkan kata-kata di luar bacaan shalat.\n"
+              "5. Melakukan gerakan besar sebanyak tiga kali berturut-turut di luar gerakan shalat.\n"
+              "6. Makan atau minum, meskipun hanya sedikit.\n"
+              "7. Berubah niat (misalnya berniat ingin memutus shalat).\n"
+              "8. Membelakangi kiblat.\n"
+              "9. Tertawa terbahak-bahak hingga mengeluarkan suara.\n"
+              "10. Murtad (keluar dari agama Islam).",
               style: TextStyle(color: subTextColor, fontSize: 14, height: 1.6),
             ),
           ),

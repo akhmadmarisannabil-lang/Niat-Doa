@@ -61,7 +61,7 @@ class _HaditsPageState extends State<HaditsPage> {
   // Data 44 Menu Hadist Shahih berdasarkan urutan dari gambar yang Anda lampirkan
   final List<Map<String, dynamic>> _allHadits = const [
     {'no': '1', 'name': 'Menuntut Ilmu', 'arabic': 'طلب العلم'},
-    {'no': '2', 'name': 'Sabar', 'arabic': 'الصber'},
+    {'no': '2', 'name': 'Sabar', 'arabic': 'صبور'},
     {'no': '3', 'name': 'Munafik', 'arabic': 'النفاق'},
     {'no': '4', 'name': 'Hijrah', 'arabic': 'الهجرة'},
     {'no': '5', 'name': 'Ghibah', 'arabic': 'الغيبة'},
@@ -70,11 +70,11 @@ class _HaditsPageState extends State<HaditsPage> {
     {
       'no': '8',
       'name': 'Hati (Qolbun)',
-      'arabic': 'القلb',
+      'arabic': 'قلب',
     }, // Sesuai file image_07d362.png
     {'no': '9', 'name': 'Larangan Marah', 'arabic': 'الغضب'},
     {'no': '10', 'name': 'Riba\'', 'arabic': 'الربا'},
-    {'no': '11', 'name': 'Hutang Piutang', 'arabic': 'الدin'},
+    {'no': '11', 'name': 'Hutang Piutang', 'arabic': 'دَيْن'},
     {'no': '12', 'name': 'Iman', 'arabic': 'الإيمان'},
     {
       'no': '13',
@@ -89,7 +89,11 @@ class _HaditsPageState extends State<HaditsPage> {
     {'no': '19', 'name': 'Senyum', 'arabic': 'التبسم'},
     {'no': '20', 'name': 'Pemimpin', 'arabic': 'الإمام'},
     {'no': '21', 'name': 'Hari Kiamat', 'arabic': 'القيامة'},
-    {'no': '22', 'name': 'Batasan Pakaian Wanita', 'arabic': 'لبas المرأة'},
+    {
+      'no': '22',
+      'name': 'Batasan Pakaian Wanita',
+      'arabic': 'قيود على ملابس النساء',
+    },
     {'no': '23', 'name': 'Wanita', 'arabic': 'النساء'},
     {'no': '24', 'name': 'Qurban', 'arabic': 'الأضحية'},
     {'no': '25', 'name': 'Silaturahmi', 'arabic': 'صلة الرحم'},
@@ -102,10 +106,10 @@ class _HaditsPageState extends State<HaditsPage> {
     {'no': '28', 'name': 'Niat', 'arabic': 'النية'},
     {'no': '29', 'name': 'Bersyukur', 'arabic': 'الشكر'},
     {'no': '30', 'name': 'Puasa', 'arabic': 'الصيام'},
-    {'no': '31', 'name': 'Zakat', 'arabic': 'الزakat'},
+    {'no': '31', 'name': 'Zakat', 'arabic': 'الزكاة'},
     {'no': '32', 'name': 'Zina', 'arabic': 'الزنا'},
     {'no': '33', 'name': 'Jodoh', 'arabic': 'الزواج'},
-    {'no': '34', 'name': 'Kematian', 'arabic': 'المout'},
+    {'no': '34', 'name': 'Kematian', 'arabic': 'موت'},
     {'no': '35', 'name': 'Pernikahan', 'arabic': 'النكاح'},
     {'no': '36', 'name': 'Sombong', 'arabic': 'الكبر'},
     {'no': '37', 'name': 'Akhlak', 'arabic': 'الأخلاق'},

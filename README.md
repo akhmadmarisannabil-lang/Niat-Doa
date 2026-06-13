@@ -34,9 +34,11 @@ FLUTTER_SHOLAT_DOA/
 │   ├── doa_musibah/
 │   ├── doa_sholat/
 │   ├── doa_tertentu/
+|   ├── hadist
 │   ├── harian/
 │   ├── kebutuhan/
 │   ├── kifayah/
+|   ├── menu_hadist
 │   ├── models/
 │   ├── pengantar/
 │   ├── qobliyah/
@@ -94,6 +96,8 @@ FLUTTER_SHOLAT_DOA/
    - Doa Terhindar Musibah (doa_musibah/): Doa perlindungan dari marabahaya meliputi Doa Bencana, Doa Kerugian, Doa Mendengar Musibah, Doa Penyakit Berat, dan Doa Terhindar Bahaya.
      Doa Acara : Kumpulan doa untuk kegiatan bersama meliputi Doa Pembukaan, Doa Penutup, Doa Pernikahan, Doa Rumah Baru, dan Doa Syukuran.
    - Doa Waktu Tertentu: Menu transisi dinamis yang mendata doa khusus momentum waktu sakral keagamaan, meliputi doa akhir tahun, awal ramadan, awal tahun, berbuka puasa, doa di bulan rajab, bulan safar, malam idul adha, malam idul fitri, nisfu sya'ban, sepuluh muharram, dan doa waktu sahur.
+4. Tab Kumpulan Hadist Pilihan (Menu Utama 4)
+   Memuat inventori teks hadist sahih riwayat Imam-Imam terkemuka (Bukhari, Muslim, At-Tirmidzi, Ahmad, dll.)
 
 ## Teknologi yang Digunakan
 
