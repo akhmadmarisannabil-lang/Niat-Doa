@@ -144,35 +144,33 @@ class MenuntutIlmuPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               // Looping data
-              ...kontenHadits
-                  .map(
-                    (item) => Column(
-                      children: [
-                        Text(
-                          item['arabic']!,
-                          textAlign: TextAlign.center,
-                          style: GoogleFonts.amiri(
-                            color: mainTextColor,
-                            fontSize: 22,
-                            height: 2.2,
-                          ),
-                        ),
-                        const SizedBox(height: 16),
-                        Text(
-                          item['indo']!,
-                          style: TextStyle(
-                            color: subTextColor,
-                            fontSize: 14,
-                            height: 1.5,
-                          ),
-                        ),
-                        const SizedBox(height: 24),
-                        Divider(color: dividerColor),
-                        const SizedBox(height: 24),
-                      ],
+              ...kontenHadits.map(
+                (item) => Column(
+                  children: [
+                    Text(
+                      item['arabic']!,
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.amiri(
+                        color: mainTextColor,
+                        fontSize: 22,
+                        height: 2.2,
+                      ),
                     ),
-                  )
-                  .toList(),
+                    const SizedBox(height: 16),
+                    Text(
+                      item['indo']!,
+                      style: TextStyle(
+                        color: subTextColor,
+                        fontSize: 14,
+                        height: 1.5,
+                      ),
+                    ),
+                    const SizedBox(height: 24),
+                    Divider(color: dividerColor),
+                    const SizedBox(height: 24),
+                  ],
+                ),
+              ),
 
               // Teks penutup
               Text(
@@ -190,8 +188,8 @@ class MenuntutIlmuPage extends StatelessWidget {
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   color: isDarkMode
-                      ? Colors.white.withOpacity(0.05)
-                      : Colors.black.withOpacity(0.03),
+                      ? Colors.white.withValues(alpha: 0.05)
+                      : Colors.black.withValues(alpha: 0.03),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Column(

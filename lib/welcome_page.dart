@@ -45,7 +45,7 @@ class WelcomePage extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   const Text(
-                    "Panduan berbagai Niat sholat, Juz Amma &  Doa untuk anda.",
+                    "Bacaan berbagai sholat, Juz Amma, Hadist  &  Doa untuk anda.",
                     textAlign: TextAlign.center,
                     style: TextStyle(fontSize: 15, color: Colors.white70),
                   ),

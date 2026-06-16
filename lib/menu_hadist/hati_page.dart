@@ -222,7 +222,7 @@ class HatiPage extends StatelessWidget {
                     ],
                   ],
                 );
-              }).toList(),
+              }),
             ],
           ),
         ),

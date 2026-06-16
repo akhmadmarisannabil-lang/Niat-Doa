@@ -1,6 +1,6 @@
 ## Panduan-Panduan
 
-Aplikasi ini merupakan aplikasi mobile responsif yang dibangun menggunakan Flutter dan bahasa pemrograman Dart. Aplikasi ini dirancang sebagai media edukasi interaktif untuk membantu umat Muslim dalam membaca, menghafal, dan mempelajari niat shalat, juz amma serta kumpulan doa secara praktis.
+Aplikasi ini merupakan aplikasi mobile responsif yang dibangun menggunakan Flutter dan bahasa pemrograman Dart. Aplikasi ini dirancang sebagai media edukasi interaktif untuk membantu umat Muslim dalam membaca, menghafal, dan mempelajari niat shalat, juz amma, hadist serta kumpulan doa secara praktis.
 
 ## Fokus pengembangan
 
@@ -53,6 +53,7 @@ FLUTTER_SHOLAT_DOA/
 │   ├── settings_page.dart
 │   ├── theme_provider.dart
 │   └── welcome_page.dart
+|   └── zoom_provider.dart
 ├── linux/
 ├── macos/
 ├── test/
@@ -87,8 +88,10 @@ FLUTTER_SHOLAT_DOA/
    - Infrastruktur Audio & Layanan API (services/ & models/):
      1. services/quran_api_service.dart: Menangani permintaan HTTP asinkron ke API Qur'an eksternal untuk mengambil data audio murottal secara streaming.
      2. models/qori_model.dart: Memetakan data JSON dari API menjadi objek Dart (URL audio, nama qori) untuk dibaca oleh widget pemutar audio di setiap halaman surah.
+3. Tab Kumpulan Hadist Pilihan (Menu Utama 4)
+   Memuat inventori teks hadist sahih riwayat Imam-Imam terkemuka (Bukhari, Muslim, At-Tirmidzi, Ahmad, dll.).
 
-3. Tab Kifarat & Kumpulan Doa (Menu Utama 3)
+4. Tab Kifarat & Kumpulan Doa (Menu Utama 3)
    Memuat kumpulan doa yang telah dieliminasi dari unsur duplikasi data, disusun berdasarkan konteks aktivitas pengguna:
    - Doa Harian (doa_harian/): Menu yang diperluas secara detail mencakup doa Bangun Tidur, Bercermin, Berpakaian Baru, Bersin, Hujan Reda, Keluar Kamar Mandi/Masjid/Pasar/Rumah, Ketika Takut, Lupa Doa Makan, Masuk Kamar Mandi/Masjid/Pasar/Rumah/Rumah Sepi, Melepas/Memakai Pakaian, Minum Susu, Naik Kendaraan, Sebelum Adzan/Belajar/Makan/Tidur/Wudhu, Sesudah Belajar/Makan/Wudhu, Setelah Azan, Takut Tidur, Terjaga Malam, hingga Turun Hujan.
    - Doa Shalat / Ibadah : Berfokus pada bacaan inti selama rangkaian shalat berlangsung, meliputi Duduk di Antara Dua Sujud, Iftitah, I'tidal, Qunut, Ruku', Sujud, Tasyahud Awal, dan Tasyahud Akhir.
@@ -96,8 +99,10 @@ FLUTTER_SHOLAT_DOA/
    - Doa Terhindar Musibah (doa_musibah/): Doa perlindungan dari marabahaya meliputi Doa Bencana, Doa Kerugian, Doa Mendengar Musibah, Doa Penyakit Berat, dan Doa Terhindar Bahaya.
      Doa Acara : Kumpulan doa untuk kegiatan bersama meliputi Doa Pembukaan, Doa Penutup, Doa Pernikahan, Doa Rumah Baru, dan Doa Syukuran.
    - Doa Waktu Tertentu: Menu transisi dinamis yang mendata doa khusus momentum waktu sakral keagamaan, meliputi doa akhir tahun, awal ramadan, awal tahun, berbuka puasa, doa di bulan rajab, bulan safar, malam idul adha, malam idul fitri, nisfu sya'ban, sepuluh muharram, dan doa waktu sahur.
-4. Tab Kumpulan Hadist Pilihan (Menu Utama 4)
-   Memuat inventori teks hadist sahih riwayat Imam-Imam terkemuka (Bukhari, Muslim, At-Tirmidzi, Ahmad, dll.)
+
+5. **Menu Pengaturan (Settings)**: Menu khusus yang berfungsi sebagai pusat kendali visual dan kenyamanan antarmuka pengguna di seluruh folder `lib`, yang berisi:
+   - Manajemen Tema (Light & Dark Mode): Mengubah skema warna dasar aplikasi secara _real-time_ via `ThemeProvider`. Default aplikasi menggunakan Mode Terang (Light Mode) untuk optimalisasi kontras dan kejelasan di siang hari, serta dapat dialihkan ke Mode Gelap (Dark Mode) untuk kenyamanan visual malam hari.
+   - Zoom Tampilan (Skala Ukuran Teks): Fitur aksesibilitas global untuk mengatur perbesaran teks mulai dari 80% sampai 110% menggunakan kontrol slider responsif. Fitur ini menyuntikkan konfigurasi ke tingkat `MaterialApp` sehingga otomatis merubah seluruh isi menu aplikasi tanpa merusak tata letak (layout).
 
 ## Teknologi yang Digunakan
 

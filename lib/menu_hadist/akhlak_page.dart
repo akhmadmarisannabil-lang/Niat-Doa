@@ -96,7 +96,7 @@ class AkhlakPage extends StatelessWidget {
       },
       {
         'arabic':
-            'إِنَّ اللهَ كَرِيْمٌ يُحِبُ\\ّ الْكَرَمَ وَمَعَالِيَ اْلأَخْلاَقِ وَيُبْغِضُ سِفْسَافَهَا',
+            'إِنَّ اللهَ كَرِيْمٌ يُحِبُ الْكَرَمَ وَمَعَالِيَ اْلأَخْلاَقِ وَيُبْغِضُ سِفْسَافَهَا',
         'indo':
             'Sesungguhnya Allah Maha Pemurah menyukai kedermawanan dan akhlak yang mulia serta membenci akhlak yang rendah/hina. [HR. Al-Hakim].',
       },
@@ -104,7 +104,7 @@ class AkhlakPage extends StatelessWidget {
         'arabic':
             'عَنْ أَبِي هُرَيْرَةَ قَالَ قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ الْإِيمَانُ بِضْعٌ وَسَبْعُونَ أَوْ بِضْعٌ وَسِتُّونَ شُعْبَةً فَأَفْضَلُهَا قَوْلُ لَا إِلَهَ إِلَّا اللَّهُ وَأَدْنَاهَا إِمَاطَةُ الْأَذَى عَنْ الطَّرِيقِ وَالْحَيَاءُ شُعْبَةٌ مِنْ الْإِيمَانِ (مسلم',
         'indo':
-            'Iman itu lebih dari 70 atau 60 cabang, cabang iman tertinggi adalah mengucapkan \'La ilaha illallah\’, dan yang terendah adalah membuang gangguan dari jalan, dan rasa malu merupakan sebagian dari iman. (Hadits riwayat Muslim)',
+            'Iman itu lebih dari 70 atau 60 cabang, cabang iman tertinggi adalah mengucapkan \'La ilaha illallah’, dan yang terendah adalah membuang gangguan dari jalan, dan rasa malu merupakan sebagian dari iman. (Hadits riwayat Muslim)',
       },
       {
         'arabic':
@@ -140,7 +140,7 @@ class AkhlakPage extends StatelessWidget {
         'arabic':
             'أَنَّ رَجُلًا قَالَ لِلنَّبِيِّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ أَوْصِنِي قَالَ لَا تَغْضَبْ فَرَدَّدَ مِرَارًا قَالَ لَا تَغْضَبْ',
         'indo':
-            'Seseorang berkata kepada Rasulullah saw, \'Nasihati aku!\’ Beliau bersabda, \'Jangan marah!\’ beliau mengulang beberapa kali, \'Jangan marah! (Bukhari).',
+            'Seseorang berkata kepada Rasulullah saw, \'Nasihati aku!’ Beliau bersabda, \'Jangan marah!’ beliau mengulang beberapa kali, \'Jangan marah! (Bukhari).',
       },
       {
         'arabic':

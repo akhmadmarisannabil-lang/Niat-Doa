@@ -175,12 +175,12 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
         : Colors.tealAccent;
     final Color borderColor = isLightMode
         ? const Color(0xffe2e8f0)
-        : Colors.teal.withOpacity(0.2);
+        : Colors.teal.withValues(alpha: 0.2);
 
     // Mandat: Ketika light mode warna arab harus HITAM pekat
     final Color arabicTextColor = isLightMode
         ? Colors.black
-        : Colors.white.withOpacity(0.9);
+        : Colors.white.withValues(alpha: 0.9);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -248,7 +248,9 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
               color: cardColor,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.3),
+                color: isLightMode
+                    ? borderColor
+                    : Colors.teal.withValues(alpha: 0.2),
                 width: 1,
               ),
             ),
@@ -358,7 +360,7 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
                 border: Border.all(
                   color: isLightMode
                       ? borderColor
-                      : Colors.teal.withOpacity(0.2),
+                      : Colors.teal.withValues(alpha: 0.2),
                 ),
               ),
               child: Text(
@@ -487,7 +489,7 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
                   ],
                 ),
               );
-            }).toList(),
+            }),
           ],
 
           const SizedBox(height: 24),
@@ -513,7 +515,9 @@ class _ShalatJenazahPrPageState extends State<ShalatJenazahPrPage> {
               color: cardColor,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
+                color: isLightMode
+                    ? borderColor
+                    : Colors.teal.withValues(alpha: 0.2),
               ),
             ),
             child: Text(

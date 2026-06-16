@@ -77,17 +77,17 @@ class IkhlasPage extends StatelessWidget {
       {
         'arabic': '',
         'indo':
-            'Seorang sahabat berkata kepada Rasulullah, \"Ya Rasulullah, seseorang melakukan amal (kebaikan) dengan dirahasiakan dan bila diketahui orang dia juga menyukainya (merasa senang).\" Rasulullah Saw berkata, \"Baginya dua pahala yaitu pahala dirahasiakannya dan pahala terang-terangan.\" (HR. Tirmidzi)',
+            'Seorang sahabat berkata kepada Rasulullah, "Ya Rasulullah, seseorang melakukan amal (kebaikan) dengan dirahasiakan dan bila diketahui orang dia juga menyukainya (merasa senang)." Rasulullah Saw berkata, "Baginya dua pahala yaitu pahala dirahasiakannya dan pahala terang-terangan." (HR. Tirmidzi)',
       },
       {
         'arabic': '',
         'indo':
-            'Agama ialah keikhlasan (kesetiaan atau loyalitas). Kami lalu bertanya, \"Loyalitas kepada siapa, ya Rasulullah?\" Rasulullah Saw menjawab, \"Kepada Allah, kepada kitabNya (Al Qur\'an), kepada rasulNya, kepada penguasa muslimin dan kepada rakyat awam.\" (HR. Muslim)',
+            'Agama ialah keikhlasan (kesetiaan atau loyalitas). Kami lalu bertanya, "Loyalitas kepada siapa, ya Rasulullah?" Rasulullah Saw menjawab, "Kepada Allah, kepada kitabNya (Al Qur\'an), kepada rasulNya, kepada penguasa muslimin dan kepada rakyat awam." (HR. Muslim)',
       },
       {
         'arabic': '',
         'indo':
-            'Nabi s.a.w. telah bersabda: \"Yang sangat aku takuti atas kamu adalah syirik kecil\". Sahabat bertanya: \"Ya Rasulullah apakah syirik kecil itu.\" Jawab baginda: \"Riya\'. Pada hari pembalasan kelak Allah berkata kepada mereka; pergi lah kamu kepada orang-orang yang dahulu kamu beramal kerana mereka di dunia, lihatlah disana kalau-kalau kamu mendapat kebaikkan dari mereka.\"',
+            'Nabi s.a.w. telah bersabda: "Yang sangat aku takuti atas kamu adalah syirik kecil". Sahabat bertanya: "Ya Rasulullah apakah syirik kecil itu." Jawab baginda: "Riya\'. Pada hari pembalasan kelak Allah berkata kepada mereka; pergi lah kamu kepada orang-orang yang dahulu kamu beramal kerana mereka di dunia, lihatlah disana kalau-kalau kamu mendapat kebaikkan dari mereka."',
       },
       {
         'arabic': '',
@@ -117,7 +117,7 @@ class IkhlasPage extends StatelessWidget {
       {
         'arabic': '',
         'indo':
-            'Sahabat Sa\'ad bin Abi Waqash ra berkata, bahwa Rasulullah saw telah bersabda: \"Nafkah yang kamu keluarkan semata-mata mencari keridhaan Allah, akan mendatangkan pahala besar bagimu. Dan termasuk mendapat pahala besar pula nafkah yang kamu berikan kepada istrimu.\" (HR. Bukhari).',
+            'Sahabat Sa\'ad bin Abi Waqash ra berkata, bahwa Rasulullah saw telah bersabda: "Nafkah yang kamu keluarkan semata-mata mencari keridhaan Allah, akan mendatangkan pahala besar bagimu. Dan termasuk mendapat pahala besar pula nafkah yang kamu berikan kepada istrimu." (HR. Bukhari).',
       },
       // Tambahkan hadits lain sesuai kebutuhan
     ];

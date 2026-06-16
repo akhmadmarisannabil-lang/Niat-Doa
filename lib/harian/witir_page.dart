@@ -366,7 +366,7 @@ class _WitirPageState extends State<WitirPage> {
               border: Border.all(
                 color: isLightMode
                     ? const Color(0xffcbd5e1)
-                    : Colors.teal.withOpacity(0.3),
+                    : Colors.teal.withValues(alpha: 0.3),
                 width: 1,
               ),
             ),
@@ -481,7 +481,7 @@ class _WitirPageState extends State<WitirPage> {
                 border: Border.all(
                   color: isLightMode
                       ? const Color(0xffe2e8f0)
-                      : Colors.teal.withOpacity(0.2),
+                      : Colors.teal.withValues(alpha: 0.2),
                 ),
               ),
               child: Text(
@@ -579,7 +579,7 @@ class _WitirPageState extends State<WitirPage> {
                 border: Border.all(
                   color: isLightMode
                       ? const Color(0xffe2e8f0)
-                      : Colors.teal.withOpacity(0.2),
+                      : Colors.teal.withValues(alpha: 0.2),
                 ),
               ),
               child: Text(
@@ -667,8 +667,7 @@ class _WitirPageState extends State<WitirPage> {
                       ],
                     ),
                   );
-                })
-                .toList(),
+                }),
           ],
 
           const SizedBox(height: 24),
@@ -697,7 +696,7 @@ class _WitirPageState extends State<WitirPage> {
               border: Border.all(
                 color: isLightMode
                     ? const Color(0xffe2e8f0)
-                    : Colors.teal.withOpacity(0.1),
+                    : Colors.teal.withValues(alpha: 0.1),
               ),
             ),
             child: Text(
@@ -761,7 +760,7 @@ class _WitirPageState extends State<WitirPage> {
           Text(
             lat,
             style: TextStyle(
-              color: mainTxt.withOpacity(0.9),
+              color: mainTxt.withValues(alpha: 0.9),
               fontSize: 13,
               fontStyle: FontStyle.italic,
               height: 1.4,

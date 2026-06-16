@@ -232,10 +232,10 @@ class _GerhanaPageState extends State<GerhanaPage> {
         : Colors.tealAccent;
     final Color borderColor = isLightMode
         ? const Color(0xffe2e8f0)
-        : Colors.teal.withOpacity(0.2);
+        : Colors.teal.withValues(alpha: 0.2);
     final Color arabicTextColor = isLightMode
         ? Colors.black
-        : Colors.white.withOpacity(0.9);
+        : Colors.white.withValues(alpha: 0.9);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -278,7 +278,9 @@ class _GerhanaPageState extends State<GerhanaPage> {
               color: cardColor,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.3),
+                color: isLightMode
+                    ? borderColor
+                    : Colors.teal.withValues(alpha: 0.2),
                 width: 1,
               ),
             ),
@@ -485,7 +487,7 @@ class _GerhanaPageState extends State<GerhanaPage> {
                   ],
                 ),
               );
-            }).toList(),
+            }),
           ],
 
           const SizedBox(height: 24),
@@ -511,7 +513,9 @@ class _GerhanaPageState extends State<GerhanaPage> {
               color: cardColor,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
+                color: isLightMode
+                    ? borderColor
+                    : Colors.teal.withValues(alpha: 0.2),
               ),
             ),
             child: Text(
@@ -570,7 +574,7 @@ class _GerhanaPageState extends State<GerhanaPage> {
           Text(
             lat,
             style: TextStyle(
-              color: mainTxt.withOpacity(0.9),
+              color: mainTxt.withValues(alpha: 0.9),
               fontSize: 13,
               fontStyle: FontStyle.italic,
               height: 1.4,

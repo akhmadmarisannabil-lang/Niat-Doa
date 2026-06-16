@@ -202,7 +202,7 @@ class AqiqahPage extends StatelessWidget {
                     ],
                   ],
                 );
-              }).toList(),
+              }),
             ],
           ),
         ),

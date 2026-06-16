@@ -198,7 +198,7 @@ class _MaghribPageState extends State<MaghribPage> {
       'header': 'Rakaat 3 - Langkah 16',
       'title': 'Duduk Tasyahud Akhir',
       'desc':
-          'Setelah sujud kedua rakaat ketiga, ambil posisi duduk Tasyahud Akhir (Tawurruk). Jari telunjuk tangan kanan diacungkan saat membaca lafal \"Illallaah\", lalu melafalkan bacaan tasyahud akhir lengkap:',
+          'Setelah sujud kedua rakaat ketiga, ambil posisi duduk Tasyahud Akhir (Tawurruk). Jari telunjuk tangan kanan diacungkan saat membaca lafal "Illallaah", lalu melafalkan bacaan tasyahud akhir lengkap:',
       'hasRead': true,
       'arabic':
           "التَّحِيَّاتُ الْمُبَارَكَاتُ الصَّلَوَاتُ الطَّيِّبَاتُ لِلَّهِ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَىٰ عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ اللَّهِ. اللَّهُمَّ صَلِّ عَلَىٰ سَيِّدِنَا مُحَمَّدٍ وَعَلَىٰ آلِ سَيِّدِنَا مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَىٰ سَيِّدِنَا إِبْرَاهِيمَ وَعَلَىٰ آلِ سَيِّدِنَا إِبْرَاهِيمَ وَبَارِكْ عَلَىٰ سَيِّدِنَا مُحَمَّدٍ وَعَلَىٰ آلِ سَيِّدِنَا مُحَمَّدٍ كَمَا بَارَكْتَ عَلَىٰ سَيِّدِنَا إِبْرَاهِيمَ وَعَلَىٰ آلِ سَيِّدِنَا إِبْرَاهِيمَ فِي الْعَالَمِينَ إِنَّكَ حَمِيدٌ مَجِيدٌ",
@@ -335,7 +335,7 @@ class _MaghribPageState extends State<MaghribPage> {
               border: Border.all(
                 color: isLightMode
                     ? const Color(0xffcbd5e1)
-                    : Colors.teal.withOpacity(0.3),
+                    : Colors.teal.withValues(alpha: 0.2),
                 width: 1,
               ),
             ),
@@ -447,7 +447,7 @@ class _MaghribPageState extends State<MaghribPage> {
                 border: Border.all(
                   color: isLightMode
                       ? const Color(0xffe2e8f0)
-                      : Colors.teal.withOpacity(0.2),
+                      : Colors.teal.withValues(alpha: 0.2),
                 ),
               ),
               child: Text(
@@ -541,7 +541,7 @@ class _MaghribPageState extends State<MaghribPage> {
                             Text(
                               tataCara['latin']!,
                               style: TextStyle(
-                                color: mainTextColor.withOpacity(0.9),
+                                color: mainTextColor.withValues(alpha: 0.9),
                                 fontSize: 13,
                                 fontStyle: FontStyle.italic,
                                 height: 1.4,
@@ -604,7 +604,7 @@ class _MaghribPageState extends State<MaghribPage> {
                             Text(
                               tataCara['extraLatin']!,
                               style: TextStyle(
-                                color: mainTextColor.withOpacity(0.9),
+                                color: mainTextColor.withValues(alpha: 0.9),
                                 fontSize: 13,
                                 fontStyle: FontStyle.italic,
                                 height: 1.4,
@@ -633,7 +633,7 @@ class _MaghribPageState extends State<MaghribPage> {
                   ],
                 ),
               );
-            }).toList(),
+            }),
           ],
           const SizedBox(height: 24),
           Row(
@@ -660,7 +660,7 @@ class _MaghribPageState extends State<MaghribPage> {
               border: Border.all(
                 color: isLightMode
                     ? const Color(0xffe2e8f0)
-                    : Colors.teal.withOpacity(0.1),
+                    : Colors.teal.withValues(alpha: 0.2),
               ),
             ),
             child: Text(

@@ -30,7 +30,7 @@ class SunnahShalatPage extends StatelessWidget {
         : Colors.tealAccent;
     final Color borderColor = isLightMode
         ? const Color(0xffe2e8f0)
-        : Colors.teal.withOpacity(0.2);
+        : Colors.teal.withValues(alpha: 0.2);
 
     return Scaffold(
       backgroundColor: bgColor,

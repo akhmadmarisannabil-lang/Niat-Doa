@@ -342,8 +342,8 @@ class _AsharPageState extends State<AsharPage> {
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
                 color: isDarkMode
-                    ? Colors.teal.withOpacity(0.3)
-                    : Colors.teal.withOpacity(0.5),
+                    ? Colors.teal.withValues(alpha: 0.2)
+                    : Colors.teal.withValues(alpha: 0.5),
                 width: 1,
               ),
             ),
@@ -453,7 +453,7 @@ class _AsharPageState extends State<AsharPage> {
               decoration: BoxDecoration(
                 color: cardBgColor,
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.teal.withOpacity(0.2)),
+                border: Border.all(color: Colors.teal.withValues(alpha: 0.2)),
               ),
               child: Text(
                 _niatData[_selectedOption]!['translation']!,
@@ -635,7 +635,7 @@ class _AsharPageState extends State<AsharPage> {
                   ],
                 ),
               );
-            }).toList(),
+            }),
           ],
 
           const SizedBox(height: 24),
@@ -660,7 +660,7 @@ class _AsharPageState extends State<AsharPage> {
             decoration: BoxDecoration(
               color: cardBgColor,
               borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.teal.withOpacity(0.2)),
+              border: Border.all(color: Colors.teal.withValues(alpha: 0.2)),
             ),
             child: Text(
               "Shalat Ashar dilakukan sebanyak 4 rakaat dengan merendahkan suara bacaan (sirr). Waktunya dimulai sejak bayangan suatu benda sama panjang dengan benda aslinya hingga matahari mulai menguning (sebelum terbenam). Shalat ini disebut juga sebagai Sholat Al-Wustha (shalat yang di tengah-tengah).",

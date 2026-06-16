@@ -266,7 +266,7 @@ class SabarPage extends StatelessWidget {
                     ],
                   ],
                 );
-              }).toList(),
+              }),
             ],
           ),
         ),

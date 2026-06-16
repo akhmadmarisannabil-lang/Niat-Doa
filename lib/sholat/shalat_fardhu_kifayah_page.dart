@@ -65,7 +65,7 @@ class ShalatFardhuKifayahPage extends StatelessWidget {
               boxShadow: isLightTheme
                   ? [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
+                        color: Colors.black.withValues(alpha: 0.05),
                         blurRadius: 4,
                         offset: const Offset(0, 2),
                       ),
@@ -79,8 +79,8 @@ class ShalatFardhuKifayahPage extends StatelessWidget {
               ),
               leading: CircleAvatar(
                 backgroundColor: isLightTheme
-                    ? Colors.blue.withOpacity(0.1)
-                    : Colors.amber.withOpacity(0.15),
+                    ? Colors.blue.withValues(alpha: 0.2)
+                    : Colors.amber.withValues(alpha: 0.2),
                 child: Icon(
                   Icons.access_time,
                   color: isLightTheme ? Colors.blue[800] : Colors.amber,

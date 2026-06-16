@@ -59,25 +59,25 @@ class PernikahanPage extends StatelessWidget {
       {
         'arabic': 'لَمْ نَرَ لِلْمُتَحَابَّيْنِ مِثْلُ النِّكَاحِ',
         'indo':
-            '\"Kami tidak melihat (cinta sejati) bagi dua orang yang saling mencintai seperti dalam pernikahan\". (Sunan Ibnu Majah)',
+            '"Kami tidak melihat (cinta sejati) bagi dua orang yang saling mencintai seperti dalam pernikahan". (Sunan Ibnu Majah)',
       },
       {
         'arabic':
             'ثَلَاثَةٌ حَقٌّ عَلَى اللَّهِ عَوْنُهُمْ: المُجَاهِدُ فِي سَبِيلِ اللَّهِ، وَالمُكَاتَبُ الَّذِي يُرِيدُ الأَدَاءَ، وَالنَّاكِحُ الَّذِي يُرِيدُ العَفَافَ  [سنن الترمذي: حسنه الألباني]',
         'indo':
-            '\"Ada tiga golongan yang berhak mendapat pertolongan dari Allah; Mujahid di jalan Allah, Mukaatib yang ingin melunasi utangnya, dan orang yang menikah supaya terjaga dari maksiat\". (Sunan Tirmidzi)',
+            '"Ada tiga golongan yang berhak mendapat pertolongan dari Allah; Mujahid di jalan Allah, Mukaatib yang ingin melunasi utangnya, dan orang yang menikah supaya terjaga dari maksiat". (Sunan Tirmidzi)',
       },
       {
         'arabic':
             'إِنَّ الْمَرْأَةَ تُقْبِلُ فِي صُورَةِ شَيْطَانٍ، وَتُدْبِرُ فِي صُورَةِ شَيْطَانٍ، فَإِذَا أَبْصَرَ أَحَدُكُمُ امْرَأَةً فَلْيَأْتِ أَهْلَهُ، فَإِنَّ ذَلِكَ يَرُدُّ مَا فِي نَفْسِهِ',
         'indo':
-            '\"Sesungguhnya wanita itu menghadap dari depan dalam bentuk setan dan membelakang dalam bentuk setan, maka jika seseorang dari kalian melihat wanita maka hendaklah ia mendatangi istrinya, karena hal itu akan manghilangkan apa yang ada dalam dirinya (dari hawa nafsu).\"',
+            '"Sesungguhnya wanita itu menghadap dari depan dalam bentuk setan dan membelakang dalam bentuk setan, maka jika seseorang dari kalian melihat wanita maka hendaklah ia mendatangi istrinya, karena hal itu akan manghilangkan apa yang ada dalam dirinya (dari hawa nafsu)."',
       },
       {
         'arabic':
             'عَنْ سَهْلِ بْنِ سَعْدٍ السَّاعِدِيِّ قَالَ جَاءَتِ امْرَأَةٌ إِلَى رَسُوْلُ اللَّهِ صَلّى للَّه عَلَيْهِ وَسَلَّمُ فَقَالَتْ يَا رَسُوْلُ اللَّهِ جِئْتُ لِأَ هَبَ لَكَ نَفْسِى قَالَ فَنَظَرَ إِلَيْهَا رَسُوْلُ اللَّهِ صَلّى للَّه عَلَيْهِ وَسَلَّمُ فَصَعَّدَ النَّظَرَ فِيْهَا وَصَوَّبَهُ ثُمَّ طَأْ طَأً رَسُوْلُ اللَّهِ صَلّى للَّه عَلَيْه وَسَلَّمُ رَأْسَهُ فَلَمَّ رَأَتِ الْمَرْأَةُ اَنَّهُ لَمْ يَقْضِ فِيْهَا شَيْأً جَلَسَتْ فَقَامَ رَجُلٌ مِنْ اَصْحَابِهِ فَقَالَ يَا رَسُوْلُ اللَّهِ اِنْ لَمْ يَكُنْ لَكَ بِهَا حَاجَاةٌ فَزَوِّجْنِيْهَا فَقَالَ وَهَلْ عِنْدَكَ مِنْ شَيْئٍ ؟ قَالَ لاَوَاللَّهِ يَارَسُوْلَ اللَّهِ, فَقَالَ اذْهَبْ إِلَى أَهْلِكَ فَانْظُرْ هَلْ تَجِدُ شَيْأً فَذَهَبَ ثُمَّ رَجَعَ فَقَالَ لاَ وَاللَّهِ مَا وَجَدْتُ شَيْأً , فَقَال رَسُوْلَ اللَّه صَلّى للَّه عَلَيْهِ وَسَلَّمُ انْظُرْ وَلَوْ خَاتَمًا مِنْ حَدِيْدٍ فَذَهَبَ ثُمَّ رَجَعَ لاَ وَاللَّهِ يَارَسُوْلَ اللَّهِ وَلاَخَاتَمًا مِنْ حَدِيْدٍ وَلَكِنْ هَذَا إِزَارِى (قَالَ سَهْلٌ مَالَهُ رِدَاءٌ) فَلَهَا نِصْفُهُ. فَقَالَ رَسُوْلُ اللَّهِ صَلّى للَّه عَلَيْهِ وَسَلَّمُ مَاتَصْنَعُ بِإِزَارِكَ ؟ إِنْ لَبِسْتَهُ لَمْ يَكُنْ عَلَيْهَا مِنْهُ شَيْئٌ,وَإِنْ لَبِسْتَهُ لَمْ يَكُنْ عَلَيْكَ شَيْئٌ, فَجَلَسَ الرَّجُلُ حَتَّى اِذَا طَالَ مَجْلِسُهُ. ثُمَّ قَامَ , فَرَاَهُ رَسُوْلُ اللَّهِ صَلّى للَّه عَلَيْهِ وَسَلَّمُ مُوَلِّيًا فَأَمَرَبِهِ فَدُعِىَ فَلَمَّا جَاءَ قَلَ مَاذَا مَعَكَ مِنَ الْقُرْاَنِ قَالَ مَعِىَ سُوْرَةُ كَذَا وَسُوْرَةُ كَذَا عَدَّدَهَا فَقَالَ تَقْرَأُهُنَّ عَنْ ظَهْرِ قَلْبِكَ قَالَ نَعَمْ قَالَ اذْهَبْ فَقَدْ مَلَكْتُكَهَا بِمَا مَعَكَ مِنَ الْقُرْاَنِ . ',
         'indo':
-            'Dari Sahl bin as-Sa\'idi r.a.,katanya : Ada seorang wanita datang kepada Rasulullah saw. dengan berkata \"Ya Rasulullah! Saya datang untuk menyerahkan diri kepada tuan (untuk dijadikan isteri).\" Rasul memandang wanita itu dengan teliti, lalu beliau menekurkan kepala. Ketika wanita itu menyadari bahwa Rasul tidak tertarik kepadanya, maka ia pun duduk. Lalu salah seorang sahabat beliau berdiri dan berkata. \"Ya Rasulullah! seandainya tuan tidak membutuhkannya, kawinkanlah dia dengan saya.\" Rasul bertanya \"Adakah engkau mempunyai sesuatu?\" Jawab orang itu. \"Demi Allah, tidak ada apa-apa, ya Rasulullah.\" Rasul berkata, \"Pergilah kepada sanak keluargamu! Mudah-mudahan engkau memperoleh apa-apa.\" Lalu orang itu pergi. Setelah kembali, ia berkata, \"Demi Allah, tidak apa-apa.\" Rasul berkata, \"Carilah walaupun sebuah cincin besi!\". Orang itu pergi, kemudian kembali pula. Ia berkata, \"Demi Allah, ya Rasulullah, cincin besi pun tidak ada. Tetapi saya ada mempunyai sarung yang saya pakai ini. (Menurut Sa\'d, ia tidak punya kain selain dari yang dipakainya itu). Wanita itu boleh mengambil sebagian dari padanya.\" Rasul berkata, \"Apa yang engkau lakukan dengan sarungmu itu. Kalau engkau pakai, tentu ia tidak berpakaian, dan kalau ia yang memakainya, engaku tidak berpakaian.\" Lalu orang itu pun duduk. Lama ia termenung. Kemudian ia pergi. Ketika Rasul melihatnya pergi, beliau menyuruh agar orang itu kembali. Setelah ia datang, beliau bertanya, \"Adakah engaku menghafal Qur\'an?\". Orang itu menjawab, \"Saya hafal surat ini dan itu.\" Ia lalu menyebutkan nama beberapa surat dalam Al-Qur\'an. Rasul bertanya lagi, \"Kamu dapat membacanya di luar kepala?\" \"Ya,\" jawab orang itu. \"Pergilah, engkau saya kawinkan dengan wanita ini dengan Al-Qur\'an yang engkau hafal itu.\"',
+            'Dari Sahl bin as-Sa\'idi r.a.,katanya : Ada seorang wanita datang kepada Rasulullah saw. dengan berkata "Ya Rasulullah! Saya datang untuk menyerahkan diri kepada tuan (untuk dijadikan isteri)." Rasul memandang wanita itu dengan teliti, lalu beliau menekurkan kepala. Ketika wanita itu menyadari bahwa Rasul tidak tertarik kepadanya, maka ia pun duduk. Lalu salah seorang sahabat beliau berdiri dan berkata. "Ya Rasulullah! seandainya tuan tidak membutuhkannya, kawinkanlah dia dengan saya." Rasul bertanya "Adakah engkau mempunyai sesuatu?" Jawab orang itu. "Demi Allah, tidak ada apa-apa, ya Rasulullah." Rasul berkata, "Pergilah kepada sanak keluargamu! Mudah-mudahan engkau memperoleh apa-apa." Lalu orang itu pergi. Setelah kembali, ia berkata, "Demi Allah, tidak apa-apa." Rasul berkata, "Carilah walaupun sebuah cincin besi!". Orang itu pergi, kemudian kembali pula. Ia berkata, "Demi Allah, ya Rasulullah, cincin besi pun tidak ada. Tetapi saya ada mempunyai sarung yang saya pakai ini. (Menurut Sa\'d, ia tidak punya kain selain dari yang dipakainya itu). Wanita itu boleh mengambil sebagian dari padanya." Rasul berkata, "Apa yang engkau lakukan dengan sarungmu itu. Kalau engkau pakai, tentu ia tidak berpakaian, dan kalau ia yang memakainya, engaku tidak berpakaian." Lalu orang itu pun duduk. Lama ia termenung. Kemudian ia pergi. Ketika Rasul melihatnya pergi, beliau menyuruh agar orang itu kembali. Setelah ia datang, beliau bertanya, "Adakah engaku menghafal Qur\'an?". Orang itu menjawab, "Saya hafal surat ini dan itu." Ia lalu menyebutkan nama beberapa surat dalam Al-Qur\'an. Rasul bertanya lagi, "Kamu dapat membacanya di luar kepala?" "Ya," jawab orang itu. "Pergilah, engkau saya kawinkan dengan wanita ini dengan Al-Qur\'an yang engkau hafal itu."',
       },
       {
         'arabic':
@@ -89,12 +89,12 @@ class PernikahanPage extends StatelessWidget {
         'arabic':
             '" إِنَّ الرَّجُلَ إِذَا سَقَى امْرَأَتَهُ مِنَ الْمَاءِ أُجِرَ " [مسند أحمد: حسن]',
         'indo':
-            '\"Sesungguhnya seorang suami jika memberi menum istrinya seteguk air akan diberi pahala\" \'Irbadh berkata: Maka aku datangi istriku lalu aku beri minum kemudian aku sampaikan padanya apa yang aku dengar dari Rasulullah.dan uang yang dinafkahkan untuk sahabatnya berperang di jalan Allah\". [Sahih Muslim]',
+            '"Sesungguhnya seorang suami jika memberi menum istrinya seteguk air akan diberi pahala" \'Irbadh berkata: Maka aku datangi istriku lalu aku beri minum kemudian aku sampaikan padanya apa yang aku dengar dari Rasulullah.dan uang yang dinafkahkan untuk sahabatnya berperang di jalan Allah". [Sahih Muslim]',
       },
       {
         'arabic': 'خِيَارُكُمْ خِيَارُكُمْ لِنِسَائِهِمْ [سنن ابن ماجه: صحيح]',
         'indo':
-            '\"Yang terbaik dari kalian adalah yang paling baik kepada istrinya\". [Sunan Ibnu Majah: Sahih]',
+            '"Yang terbaik dari kalian adalah yang paling baik kepada istrinya". [Sunan Ibnu Majah: Sahih]',
       },
       {
         'arabic':
@@ -118,19 +118,19 @@ class PernikahanPage extends StatelessWidget {
         'arabic':
             'إِنَّ نَفَقَتَكَ عَلَى عِيَالِكَ صَدَقَةٌ، وَإِنَّ مَا تَأْكُلُ امْرَأَتُكَ مِنْ مَالِكَ صَدَقَةٌ [صحيح البخاري ومسلم]',
         'indo':
-            '\"Sesungguhnya nafkahmu terhadap keluargamu adalah sedekah, dan sesungguhnya apa yang dimakan isterimu dari hartamu adalah sedekah\". [Sahih Bukhari dan Muslim]',
+            '"Sesungguhnya nafkahmu terhadap keluargamu adalah sedekah, dan sesungguhnya apa yang dimakan isterimu dari hartamu adalah sedekah". [Sahih Bukhari dan Muslim]',
       },
       {
         'arabic':
             '«دِينَارٌ أَنْفَقْتَهُ فِي سَبِيلِ اللهِ وَدِينَارٌ أَنْفَقْتَهُ فِي رَقَبَةٍ، وَدِينَارٌ تَصَدَّقْتَ بِهِ عَلَى مِسْكِينٍ، وَدِينَارٌ أَنْفَقْتَهُ عَلَى أَهْلِكَ، أَعْظَمُهَا أَجْرًا الَّذِي أَنْفَقْتَهُ عَلَى أَهْلِكَ» [صحيح مسلم]',
         'indo':
-            '\"Dinar (uang) yang kau infakkan di jalan Allah, dan dinar yang kau infakkan untuk memerdekakan budak, dan dinar yang kau sedekahkan kepada orang miskin, dan dinar yang kau nafkahkan kepada keluargamu, yang paling besar pahalanya adalah yang kau nafkahkan kepada keluargamu\". [Sahih Muslim]',
+            '"Dinar (uang) yang kau infakkan di jalan Allah, dan dinar yang kau infakkan untuk memerdekakan budak, dan dinar yang kau sedekahkan kepada orang miskin, dan dinar yang kau nafkahkan kepada keluargamu, yang paling besar pahalanya adalah yang kau nafkahkan kepada keluargamu". [Sahih Muslim]',
       },
       {
         'arabic':
             '«أَفْضَلُ دِينَارٍ يُنْفِقُهُ الرَّجُلُ، دِينَارٌ يُنْفِقُهُ عَلَى عِيَالِهِ، وَدِينَارٌ يُنْفِقُهُ الرَّجُلُ عَلَى دَابَّتِهِ فِي سَبِيلِ اللهِ، وَدِينَارٌ يُنْفِقُهُ عَلَى أَصْحَابِهِ فِي سَبِيلِ اللهِ» [صحيح مسلم]',
         'indo':
-            '\"Uang terbaik yang dinafkahkan oleh seorang laki-laki adalah uang yang dinafkahkan untuk keluarganya, uang yang dinafkahkan seorang laki-laki untuk kendaraannya berperang di jalan Allah,\"  ',
+            '"Uang terbaik yang dinafkahkan oleh seorang laki-laki adalah uang yang dinafkahkan untuk keluarganya, uang yang dinafkahkan seorang laki-laki untuk kendaraannya berperang di jalan Allah," ',
       },
       {
         'arabic':

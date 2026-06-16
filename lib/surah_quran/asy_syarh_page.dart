@@ -192,10 +192,10 @@ class _AsySyarhPageState extends State<AsySyarhPage> {
         : Colors.tealAccent;
     final Color borderColor = isLightMode
         ? const Color(0xffe2e8f0)
-        : Colors.teal.withOpacity(0.2);
+        : Colors.teal.withValues(alpha: 0.2);
     final Color arabicTextColor = isLightMode
         ? Colors.black
-        : Colors.white.withOpacity(0.9);
+        : Colors.white.withValues(alpha: 0.9);
 
     final List<Map<String, dynamic>> ayatList = [
       {
@@ -418,7 +418,7 @@ class _AsySyarhPageState extends State<AsySyarhPage> {
                       ),
                       decoration: BoxDecoration(
                         color: currentPlayingAyat == index
-                            ? Colors.amber.withOpacity(0.25)
+                            ? Colors.amber.withValues(alpha: 0.25)
                             : cardColor,
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
@@ -489,7 +489,7 @@ class _AsySyarhPageState extends State<AsySyarhPage> {
                         border: Border.all(
                           color: isLightMode
                               ? borderColor
-                              : Colors.teal.withOpacity(0.15),
+                              : Colors.teal.withValues(alpha: 0.15),
                         ),
                       ),
                       child: Text(

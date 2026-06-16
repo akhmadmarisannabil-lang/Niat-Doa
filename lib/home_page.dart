@@ -69,7 +69,7 @@ class _HomePageState extends State<HomePage> {
               decoration: BoxDecoration(
                 // Warna header box menyesuaikan mode terang/gelap
                 color: isLightTheme
-                    ? Colors.blue.withOpacity(0.15)
+                    ? Colors.blue.withValues(alpha: 0.15)
                     : const Color(0xff1a2e40),
                 borderRadius: BorderRadius.circular(15),
               ),
@@ -245,7 +245,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           Positioned.fill(
                             child: Container(
-                              color: Colors.black.withOpacity(0.35),
+                              color: Colors.black.withValues(alpha: 0.35),
                             ),
                           ),
                           Positioned(
@@ -422,37 +422,37 @@ class _HomePageState extends State<HomePage> {
         'number': '2',
         'title': 'Doa Sholat',
         'color': const Color(0xfffff3cd),
-        'image': 'assets/images/menu/berdoa.jpg',
+        'image': 'assets/images/menu/doa1.png',
       },
       {
         'number': '3',
         'title': 'Doa Terhindar\ndari Musibah & Keburukan',
         'color': const Color(0xffd1f2e5),
-        'image': 'assets/images/menu/berdoa.jpg',
+        'image': 'assets/images/menu/doa2.png',
       },
       {
         'number': '4',
         'title': 'Doa Acara',
         'color': const Color(0xffe2d1f9),
-        'image': 'assets/images/menu/berdoa.jpg',
+        'image': 'assets/images/menu/doa3.png',
       },
       {
         'number': '5',
         'title': 'Doa untuk Akhirat',
         'color': const Color(0xffe8e8e4),
-        'image': 'assets/images/menu/berdoa.jpg',
+        'image': 'assets/images/menu/doa4.png',
       },
       {
         'number': '6',
         'title': 'Doa Waktu\nTertentu',
         'color': const Color(0xfffcdbdf),
-        'image': 'assets/images/menu/berdoa.jpg',
+        'image': 'assets/images/menu/doa5.png',
       },
       {
         'number': '7',
         'title': 'Doa untuk Diri\nSendiri & Orang Lain',
         'color': const Color(0xffe2d1f9),
-        'image': 'assets/images/menu/berdoa.jpg',
+        'image': 'assets/images/menu/doa6.png',
       },
     ];
 
@@ -508,7 +508,9 @@ class _HomePageState extends State<HomePage> {
         leading: IconButton(
           icon: Icon(
             Icons.arrow_back,
-            color: themeProvider.isLightTheme ? Colors.white : Colors.white70,
+            color: themeProvider.isLightTheme
+                ? const Color.fromARGB(255, 17, 7, 7)
+                : Colors.white70,
           ),
           onPressed: () => Navigator.pop(context),
         ),

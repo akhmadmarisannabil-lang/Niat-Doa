@@ -186,10 +186,10 @@ class _IstikharahPageState extends State<IstikharahPage> {
         : Colors.tealAccent;
     final Color borderColor = isLightMode
         ? const Color(0xffe2e8f0)
-        : Colors.teal.withOpacity(0.2);
+        : Colors.teal.withValues(alpha: 0.2);
     final Color arabicTextColor = isLightMode
         ? Colors.black
-        : Colors.white.withOpacity(0.9);
+        : Colors.white.withValues(alpha: 0.9);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -230,7 +230,9 @@ class _IstikharahPageState extends State<IstikharahPage> {
               color: cardColor,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.3),
+                color: isLightMode
+                    ? borderColor
+                    : Colors.teal.withValues(alpha: 0.3),
               ),
             ),
             child: DropdownButtonHideUnderline(
@@ -357,65 +359,63 @@ class _IstikharahPageState extends State<IstikharahPage> {
               ],
             ),
             const SizedBox(height: 16),
-            ..._tataCaraData
-                .map(
-                  (step) => Container(
-                    margin: const EdgeInsets.only(bottom: 16),
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: cardColor,
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(
-                        color: isLightMode ? borderColor : Colors.white12,
+            ..._tataCaraData.map(
+              (step) => Container(
+                margin: const EdgeInsets.only(bottom: 16),
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: cardColor,
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: isLightMode ? borderColor : Colors.white12,
+                  ),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      step['header']!,
+                      style: TextStyle(
+                        color: accentColor,
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          step['header']!,
-                          style: TextStyle(
-                            color: accentColor,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(height: 6),
-                        Text(
-                          step['title']!,
-                          style: TextStyle(
-                            color: mainTextColor,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(height: 8),
-                        Text(
-                          step['desc']!,
-                          style: TextStyle(
-                            color: subTextColor,
-                            fontSize: 13,
-                            height: 1.5,
-                          ),
-                        ),
-                        if (step['hasRead'] == true) ...[
-                          const SizedBox(height: 16),
-                          _buildBacaanBox(
-                            step['arabic']!,
-                            step['latin']!,
-                            step['arti']!,
-                            innerCardColor,
-                            mainTextColor,
-                            subTextColor,
-                            isLightMode,
-                            arabicTextColor,
-                          ),
-                        ],
-                      ],
+                    const SizedBox(height: 6),
+                    Text(
+                      step['title']!,
+                      style: TextStyle(
+                        color: mainTextColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                )
-                .toList(),
+                    const SizedBox(height: 8),
+                    Text(
+                      step['desc']!,
+                      style: TextStyle(
+                        color: subTextColor,
+                        fontSize: 13,
+                        height: 1.5,
+                      ),
+                    ),
+                    if (step['hasRead'] == true) ...[
+                      const SizedBox(height: 16),
+                      _buildBacaanBox(
+                        step['arabic']!,
+                        step['latin']!,
+                        step['arti']!,
+                        innerCardColor,
+                        mainTextColor,
+                        subTextColor,
+                        isLightMode,
+                        arabicTextColor,
+                      ),
+                    ],
+                  ],
+                ),
+              ),
+            ),
           ],
           const SizedBox(height: 24),
           Row(
@@ -440,7 +440,9 @@ class _IstikharahPageState extends State<IstikharahPage> {
               color: cardColor,
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                color: isLightMode ? borderColor : Colors.teal.withOpacity(0.1),
+                color: isLightMode
+                    ? borderColor
+                    : Colors.teal.withValues(alpha: 0.1),
               ),
             ),
             child: Text(
@@ -497,7 +499,7 @@ class _IstikharahPageState extends State<IstikharahPage> {
           Text(
             lat,
             style: TextStyle(
-              color: mainTxt.withOpacity(0.9),
+              color: mainTxt.withValues(alpha: 0.9),
               fontSize: 13,
               fontStyle: FontStyle.italic,
               height: 1.4,

@@ -216,7 +216,7 @@ class GhibahPage extends StatelessWidget {
                     ],
                   ],
                 );
-              }).toList(),
+              }),
             ],
           ),
         ),

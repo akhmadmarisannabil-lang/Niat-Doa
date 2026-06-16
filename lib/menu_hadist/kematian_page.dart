@@ -30,18 +30,18 @@ class KematianPage extends StatelessWidget {
         'arabic':
             'عن  أبي هريرة ، عن النبي صلى الله عليه وسلم نحو هذا الحديث ، وفيه : " يا  ملك ، أنت خلق من خلقي ، خلقتك لما رأيت ، فمت ، ثم لا تحيا أبدا "',
         'indo':
-            'Dari Abi hurairoh dari Nabi shollallohu alaihi wasallam sebagaimana hadits tersebut, dan dalam hadisnya Abu Hurairoh terdapat kata : \"wahai malaikat maut, engkau adalah bagian dari makhluk-Ku, Ku-ciptakan kamu ketika Aku melihatmu, maka matilah, kemudian malaikat maut tidak hidup selamanya\". (HR Al Madini )',
+            'Dari Abi hurairoh dari Nabi shollallohu alaihi wasallam sebagaimana hadits tersebut, dan dalam hadisnya Abu Hurairoh terdapat kata : "wahai malaikat maut, engkau adalah bagian dari makhluk-Ku, Ku-ciptakan kamu ketika Aku melihatmu, maka matilah, kemudian malaikat maut tidak hidup selamanya". (HR Al Madini )',
       },
       {
         'arabic':
             'عن محمد بن كعب القرظي قال : بلغني أن آخر من يموت من الخلق ملك الموت ، يقال له : يا ملك الموت ، مت موتا لا تحيا بعده أبدا . قال : فيصرخ عند ذلك صرخة لو سمعها أهل السماوات والأرض لماتوا فزعا ، ثم يموت ، ثم يقول تعالى : لمن الملك اليوم لله الواحد القهار',
         'indo':
-            'Dari Muhammad bin Ka\'b Al Qirodzi berkata : \" telah sampai kepadaku bahwa orang yang meninggal paling akhir dari makhluk adalah malaikat maut, dikatakan kepada malaikat maut : \" wahai malaikat maut, matilah kamu dengan mati yang tidak akan hidup lagi setelahnya selamanya\". Muhammad bin Ka\'b berkata : \"lalu malaikat maut menjerit dengan jeritan yang jika penduduk langit dan bumi mendengarnya maka mereka meninggal dunia sebab kaget, kemudian malaikat maut mati , kemudian Alah ta\'ala berfirman : \"',
+            'Dari Muhammad bin Ka\'b Al Qirodzi berkata : " telah sampai kepadaku bahwa orang yang meninggal paling akhir dari makhluk adalah malaikat maut, dikatakan kepada malaikat maut : " wahai malaikat maut, matilah kamu dengan mati yang tidak akan hidup lagi setelahnya selamanya". Muhammad bin Ka\'b berkata : "lalu malaikat maut menjerit dengan jeritan yang jika penduduk langit dan bumi mendengarnya maka mereka meninggal dunia sebab kaget, kemudian malaikat maut mati , kemudian Alah ta\'ala berfirman : "',
       },
       {
         'arabic': 'لِمَنِ الْمُلْكُ الْيَوْمَ لِلَّهِ الْوَاحِدِ الْقَهَّارِ',
         'indo':
-            '\"Kepunyaan siapakah kerajaan pada hari ini? kepunyaan Allah yang Maha Esa lagi Maha Mengalahkan. \" (QS Al-Mu’min 40: 16). (HR Ibnu Abid Dunya )',
+            '"Kepunyaan siapakah kerajaan pada hari ini? kepunyaan Allah yang Maha Esa lagi Maha Mengalahkan. " (QS Al-Mu’min 40: 16). (HR Ibnu Abid Dunya )',
       },
       {
         'arabic': 'أَكْثِرُوْا ذِكْرَ هَاذمِ اللَّذَّاتِ',
@@ -73,7 +73,7 @@ class KematianPage extends StatelessWidget {
       {
         'arabic': 'تذكر الجنة والنار ولا تبكي وتبكي من هذا؟',
         'indo':
-            'Suatu hari ada seorang yang bertanya: “Tatkala mengingat surga dan neraka engkau tidak menangis, mengapa engkau menangis ketika melihat perkuburan?” Utsman pun menjawab, “Sesungguhnya aku pernah mendengar Rasulullah shallallahu ‘alaihi wa sallam bersabda: \"',
+            'Suatu hari ada seorang yang bertanya: “Tatkala mengingat surga dan neraka engkau tidak menangis, mengapa engkau menangis ketika melihat perkuburan?” Utsman pun menjawab, “Sesungguhnya aku pernah mendengar Rasulullah shallallahu ‘alaihi wa sallam bersabda: "',
       },
       {
         'arabic':

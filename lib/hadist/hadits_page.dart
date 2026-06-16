@@ -207,7 +207,7 @@ class _HaditsPageState extends State<HaditsPage> {
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       color: isLightTheme
-                          ? Colors.blue.withOpacity(0.15)
+                          ? Colors.blue.withValues(alpha: 0.15)
                           : const Color(0xff1a2e40),
                       borderRadius: BorderRadius.circular(15),
                     ),
@@ -582,7 +582,7 @@ class _HaditsPageState extends State<HaditsPage> {
                         boxShadow: isLightTheme
                             ? [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.05),
+                                  color: Colors.black.withValues(alpha: 0.05),
                                   blurRadius: 4,
                                   offset: const Offset(0, 2),
                                 ),
@@ -603,7 +603,7 @@ class _HaditsPageState extends State<HaditsPage> {
                                   decoration: BoxDecoration(
                                     border: Border.all(
                                       color: isLightTheme
-                                          ? Colors.blue.withOpacity(0.3)
+                                          ? Colors.blue.withValues(alpha: 0.3)
                                           : Colors.white24,
                                       width: 1.5,
                                     ),
@@ -617,7 +617,7 @@ class _HaditsPageState extends State<HaditsPage> {
                                 decoration: BoxDecoration(
                                   border: Border.all(
                                     color: isLightTheme
-                                        ? Colors.blue.withOpacity(0.3)
+                                        ? Colors.blue.withValues(alpha: 0.3)
                                         : Colors.white24,
                                     width: 1.5,
                                   ),

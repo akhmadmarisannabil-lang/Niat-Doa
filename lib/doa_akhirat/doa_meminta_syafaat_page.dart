@@ -30,10 +30,10 @@ class DoaMemintaSyafaatPage extends StatelessWidget {
         : Colors.tealAccent;
     final Color borderColor = isLightMode
         ? const Color(0xffe2e8f0)
-        : Colors.teal.withOpacity(0.2);
+        : Colors.teal.withValues(alpha: 0.2);
     final Color arabicTextColor = isLightMode
         ? Colors.black
-        : Colors.white.withOpacity(0.9);
+        : Colors.white.withValues(alpha: 0.9);
 
     return Scaffold(
       backgroundColor: bgColor,
@@ -72,7 +72,7 @@ class DoaMemintaSyafaatPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
-                  "Doa Ibadah",
+                  "Doa Akhirat",
                   style: TextStyle(color: chipTextColor, fontSize: 11),
                 ),
               ),

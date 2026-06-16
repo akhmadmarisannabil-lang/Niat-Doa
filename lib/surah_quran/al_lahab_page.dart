@@ -192,10 +192,10 @@ class _AlLahabPageState extends State<AlLahabPage> {
         : Colors.tealAccent;
     final Color borderColor = isLightMode
         ? const Color(0xffe2e8f0)
-        : Colors.teal.withOpacity(0.2);
+        : Colors.teal.withValues(alpha: 0.2);
     final Color arabicTextColor = isLightMode
         ? Colors.black
-        : Colors.white.withOpacity(0.9);
+        : Colors.white.withValues(alpha: 0.9);
 
     final List<Map<String, dynamic>> ayatList = [
       {
@@ -470,7 +470,7 @@ class _AlLahabPageState extends State<AlLahabPage> {
                         border: Border.all(
                           color: isLightMode
                               ? borderColor
-                              : Colors.teal.withOpacity(0.15),
+                              : Colors.teal.withValues(alpha: 0.15),
                         ),
                       ),
                       child: Text(

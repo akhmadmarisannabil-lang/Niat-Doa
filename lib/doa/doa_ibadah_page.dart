@@ -185,7 +185,7 @@ class DoaIbadahPage extends StatelessWidget {
               boxShadow: isLightTheme
                   ? [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
+                        color: Colors.black.withValues(alpha: 0.05),
                         blurRadius: 4,
                         offset: const Offset(0, 2),
                       ),
@@ -199,8 +199,8 @@ class DoaIbadahPage extends StatelessWidget {
               ),
               leading: CircleAvatar(
                 backgroundColor: isLightTheme
-                    ? Colors.blue.withOpacity(0.1)
-                    : Colors.amber.withOpacity(0.15),
+                    ? Colors.blue.withValues(alpha: 0.1)
+                    : Colors.amber.withValues(alpha: 0.15),
                 child: Icon(
                   Icons.menu_book,
                   color: isLightTheme ? Colors.blue[800] : Colors.amber,

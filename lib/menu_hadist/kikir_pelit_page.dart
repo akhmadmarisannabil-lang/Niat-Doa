@@ -30,33 +30,33 @@ class KikirPelitPage extends StatelessWidget {
         'arabic':
             'قَالَ رَسُولُ اللهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ: البَخِيلُ الَّذِي مَنْ ذُكِرْتُ عِنْدَهُ فَلَمْ يُصَلِّ عَلَيَّ. رواه الترمذي.',
         'indo':
-            'Rasulullah saw. bersabda, \"Orang yang sangat pelit adalah orang yang ketika namaku disebut di sampingnya, ia tidak mau membaca shalawat kepadaku.\" (H.R. At-Tirmidzi).',
+            'Rasulullah saw. bersabda, "Orang yang sangat pelit adalah orang yang ketika namaku disebut di sampingnya, ia tidak mau membaca shalawat kepadaku." (H.R. At-Tirmidzi).',
       },
       {
         'arabic':
             'عَنْ عَبْدِ اللَّهِ بْنِ عَمْرِو بْنِ الْعَاصِ أَنَّهُ سَمِعَ النَّبِىَّ -صلى الله عليه وسلم- يَقُولُ إِذَا سَمِعْتُمُ الْمُؤَذِّنَ فَقُولُوا مِثْلَ مَا يَقُولُ ثُمَّ صَلُّوا عَلَىَّ فَإِنَّهُ مَنْ صَلَّى عَلَىَّ صَلاَةً صَلَّى اللَّهُ عَلَيْهِ بِهَا عَشْرًا ثُمَّ سَلُوا اللَّهَ لِىَ الْوَسِيلَةَ فَإِنَّهَا مَنْزِلَةٌ فِى الْجَنَّةِ لاَ تَنْبَغِى إِلاَّ لِعَبْدٍ مِنْ عِبَادِ اللَّهِ وَأَرْجُو أَنْ أَكُونَ أَنَا هُوَ فَمَنْ سَأَلَ لِىَ الْوَسِيلَةَ حَلَّتْ لَهُ الشَّفَاعَةُ . رواه مسلم.',
         'indo':
-            'Dari Abdullah bin Amru bin Ash, bahwasannya ia pernah mendengar Nabi saw. bersabda, \"Jika kalian mendengarkan seorang muadzin (adzan), maka ucapkanlah seperti apa yang ia ucapkan, kemudian bershalawatlah kepadaku, karena sungguh siapa yang membaca shalawat untukku satu kali shalawat, maka Allah akan bershalawat untuknya (merahmatinya) sepuluh kali. Kemudian, mintalah kalian kepada Allah untukku sebuah wasilah (perantara), maka sungguh hal itu adalah tempat di surga yang tidak diperkenankan (menempatinya) kecuali untuk seorang hamba dari hamba-hamba Allah. Dan aku berharap aku lah yang mendapatkannya. Maka siapa yang memintakan wasilah untukku, ia halal mendapatkan syafaat.\" (HR. Muslim).',
+            'Dari Abdullah bin Amru bin Ash, bahwasannya ia pernah mendengar Nabi saw. bersabda, "Jika kalian mendengarkan seorang muadzin (adzan), maka ucapkanlah seperti apa yang ia ucapkan, kemudian bershalawatlah kepadaku, karena sungguh siapa yang membaca shalawat untukku satu kali shalawat, maka Allah akan bershalawat untuknya (merahmatinya) sepuluh kali. Kemudian, mintalah kalian kepada Allah untukku sebuah wasilah (perantara), maka sungguh hal itu adalah tempat di surga yang tidak diperkenankan (menempatinya) kecuali untuk seorang hamba dari hamba-hamba Allah. Dan aku berharap aku lah yang mendapatkannya. Maka siapa yang memintakan wasilah untukku, ia halal mendapatkan syafaat." (HR. Muslim).',
       },
       {
         'arabic': '',
         'indo':
-            'Rasulullah SAW bersabda: \"Hati-hatilah dari sifat kikir karena sesungguhnya ia telah menghancurkan umat-umat sebelum kalian.\" (H.R. Muslim)',
+            'Rasulullah SAW bersabda: "Hati-hatilah dari sifat kikir karena sesungguhnya ia telah menghancurkan umat-umat sebelum kalian." (H.R. Muslim)',
       },
       {
         'arabic': '',
         'indo':
-            '\"Tidak akan masuk surga orang-orang yang menipu, bakhil (kikir) dan orang-orang yang buruk mengurus miliknya.\" (H.R. At-Tirmidzi)',
+            '"Tidak akan masuk surga orang-orang yang menipu, bakhil (kikir) dan orang-orang yang buruk mengurus miliknya." (H.R. At-Tirmidzi)',
       },
       {
         'arabic': '',
         'indo':
-            '\"Dan orang-orang yang bakhil (kikir) itu jauh dari Allah, jauh dari manusia, jauh dari surga dan dekat pada neraka.\" (H.R. At-Tirmidzi)',
+            '"Dan orang-orang yang bakhil (kikir) itu jauh dari Allah, jauh dari manusia, jauh dari surga dan dekat pada neraka." (H.R. At-Tirmidzi)',
       },
       {
         'arabic': '',
         'indo':
-            'Rasulullah SAW bersabda: \"Tidak ada penyakit (hati) yang lebih berbahaya dari sifat kikir.\"',
+            'Rasulullah SAW bersabda: "Tidak ada penyakit (hati) yang lebih berbahaya dari sifat kikir."',
       },
       // Tambahkan hadits lain sesuai kebutuhan
     ];

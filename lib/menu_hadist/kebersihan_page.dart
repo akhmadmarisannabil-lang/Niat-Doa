@@ -129,12 +129,12 @@ class KebersihanPage extends StatelessWidget {
       {
         'arabic': '',
         'indo':
-            'Dari Abi Huraerah, Rasul bersabda: \"Apabila salah seorang di antaramu bangun dari tidur, maka janganlah ia memasukkan tangannya kepada wadah (yang ada makanannya) before ia mencucinya tiga kali. Maka sesungguhnya ia tidak tahu ke mana tangannya itu pada waktu ia tidur.\" (Muttafaqun ‘alaihi)',
+            'Dari Abi Huraerah, Rasul bersabda: "Apabila salah seorang di antaramu bangun dari tidur, maka janganlah ia memasukkan tangannya kepada wadah (yang ada makanannya) before ia mencucinya tiga kali. Maka sesungguhnya ia tidak tahu ke mana tangannya itu pada waktu ia tidur." (Muttafaqun ‘alaihi)',
       },
       {
         'arabic': '',
         'indo':
-            'Dari Anas RA berkata, telah bersabda Rasulullah SAW: \"Bersihkanlah (sesuatu) dari air kencing. Karena umumnya azab kubur karena urusan buang air.\" (HR Daruquthni)',
+            'Dari Anas RA berkata, telah bersabda Rasulullah SAW: "Bersihkanlah (sesuatu) dari air kencing. Karena umumnya azab kubur karena urusan buang air." (HR Daruquthni)',
       },
       {
         'arabic': '',

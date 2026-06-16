@@ -122,7 +122,7 @@ class ShalatPage extends StatelessWidget {
       {
         'arabic': '',
         'indo':
-            'Abdullah ibnu Mas\'ud Ra berkata, \"Aku bertanya kepada Rasulullah, \"Ya Rasulullah, amal perbuatan apa yang paling afdol?\" Beliau menjawab, \"Shalat tepat pada waktunya.\" Aku bertanya lagi, \"Lalu apa lagi?\" Beliau menjawab, \"Berbakti kepada kedua orang tua.\" Aku bertanya lagi, \"Kemudian apa lagi, ya Rasulullah?\" Beliau menjawab, \"Berjihad di jalan Allah.\" (HR. Bukhari)',
+            'Abdullah ibnu Mas\'ud Ra berkata, "Aku bertanya kepada Rasulullah, "Ya Rasulullah, amal perbuatan apa yang paling afdol?" Beliau menjawab, "Shalat tepat pada waktunya." Aku bertanya lagi, "Lalu apa lagi?" Beliau menjawab, "Berbakti kepada kedua orang tua." Aku bertanya lagi, "Kemudian apa lagi, ya Rasulullah?" Beliau menjawab, "Berjihad di jalan Allah." (HR. Bukhari)',
       },
       {
         'arabic': '',
@@ -172,7 +172,7 @@ class ShalatPage extends StatelessWidget {
       {
         'arabic': '',
         'indo':
-            'Nabi Saw ditanya tentang shalat, \"Bagaimana shalat yang paling afdol?\" Beliau menjawab, \"Berdiri yang lama.\" (HR. Muslim)',
+            'Nabi Saw ditanya tentang shalat, "Bagaimana shalat yang paling afdol?" Beliau menjawab, "Berdiri yang lama." (HR. Muslim)',
       },
       {
         'arabic': '',
@@ -182,7 +182,7 @@ class ShalatPage extends StatelessWidget {
       {
         'arabic': '',
         'indo':
-            'Maukah aku beritahu apa yang dapat menghapus dosa-dosa dan mengangkat derajat?\" Para sahabat menjawab: \"Baik ya Rasulullah.\" Beliau berkata, \"Berwudhu dengan baik, menghilangkan kotoran-kotoran, banyak langkah diayunkan menuju mesjid, dan menunggu shalat (Isya) sesudah shalat (Maghrib). Itulah kewaspadaan (kesiagaan).\" (HR. Muslim)',
+            'Maukah aku beritahu apa yang dapat menghapus dosa-dosa dan mengangkat derajat?" Para sahabat menjawab: "Baik ya Rasulullah." Beliau berkata, "Berwudhu dengan baik, menghilangkan kotoran-kotoran, banyak langkah diayunkan menuju mesjid, dan menunggu shalat (Isya) sesudah shalat (Maghrib). Itulah kewaspadaan (kesiagaan)." (HR. Muslim)',
       },
       {
         'arabic': '',

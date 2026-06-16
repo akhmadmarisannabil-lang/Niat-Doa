@@ -226,7 +226,7 @@ class HijrahPage extends StatelessWidget {
                     ],
                   ],
                 );
-              }).toList(),
+              }),
             ],
           ),
         ),
