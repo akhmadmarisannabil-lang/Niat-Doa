@@ -47,7 +47,7 @@ class SombongPage extends StatelessWidget {
         'arabic':
             'عَنِ ابْنِ عُمَرَ رض قَالَ: سَمِعْتُ رَسُوْلَ اللهِ ص يَقُوْلُ: مَنْ تَعَظَّمَ فِى نَفْسِهِ اَوِ اخْتَالَ فِى مِشْيَتِهِ لَقِيَ اللهَ تَبَارَكَ وَ تَعَالَى وَ هُوَ عَلَيْهِ غَضْبَانُ. الطبرانى فى الكبير فى الترغيب و الترهيب 3: 569',
         'indo':
-            'Dari Ibnu Umar RA ia berkata : Saya mendengar Rasulullah SAW bersabda, \"Barangsiapa merasa besar pada dirinya atau sombong dalam berjalannya, pasti akan bertemu Allah tabaaroka wa ta\'aalaa murka kepadanya\". [HR. Thabarani di dalam Al-Kabir, dalam Targhib wat Tarhib juz 3, hal. 569]',
+            'Dari Ibnu Umar RA ia berkata : Saya mendengar Rasulullah SAW bersabda, "Barangsiapa merasa besar pada dirinya atau sombong dalam berjalannya, pasti akan bertemu Allah tabaaroka wa ta\'aalaa murka kepadanya". [HR. Thabarani di dalam Al-Kabir, dalam Targhib wat Tarhib juz 3, hal. 569]',
       },
       {
         'arabic':
@@ -71,7 +71,7 @@ class SombongPage extends StatelessWidget {
         'arabic':
             'عَنْ عُقْبَةَ بْنِ عَامِرٍ رض اَنَّهُ سَمِعَ رَسُوْلَ اللهِ ص يَقُوْلُ: مَا مِنْ رَجُلٍ يَمُوْتُ حِيْنَ يَمُوْتُ وَ فِى قَلْبِهِ مِثْقَالَ حَبَّةٍ مِنْ خَرْدَلٍ مِنْ كِبْرٍ تَحِلُّ لَهُ اْلجَنَّةُ اَنْ يَرِيْحَ رِيْحَهَا وَ لاَ يَرَاهَا. احمد فى الترغيب و الترهيب 3: 566',
         'indo':
-            'Dari Uqbah bin \'Amir RA, sesungguhnya ia mendengar Rasulullah SAW, bersabda, \"Orang yang meninggal dunia, dan ketika ia meninggal itu di dalam hatinya masih ada sebesar biji sawi dari sombong, maka tidaklah halal baginya surga, tidak mencium baunya dan tidak pula melihatnya\". [HR. Ahmad, dalam Targhib wat Tarhib juz 3, hal. 566]',
+            'Dari Uqbah bin \'Amir RA, sesungguhnya ia mendengar Rasulullah SAW, bersabda, "Orang yang meninggal dunia, dan ketika ia meninggal itu di dalam hatinya masih ada sebesar biji sawi dari sombong, maka tidaklah halal baginya surga, tidak mencium baunya dan tidak pula melihatnya". [HR. Ahmad, dalam Targhib wat Tarhib juz 3, hal. 566]',
       },
       {
         'arabic':
@@ -89,7 +89,7 @@ class SombongPage extends StatelessWidget {
         'arabic':
             'عَنْ فَضَالَةَ بْن عُبَيْدٍ رض اَنَّ رَسُوْلَ اللهِ ص قَالَ: ثَلاَثَةٌ لاَ يُسْأَلُ عَنْهُمْ: رَجُلٌ نَازَعَ اللهَ رِدَاءَهُ، فَاِنَّ رِدَاءَهُ اْلكِبْرُ، وَ اِزَارَهُ اْلعِزُّ، وَ رَجُلٌ فِى شَكّ مِنْ اَمْرِ اللهِ، وَ اْلقُنُوْطُ مِنْ رَحْمَتِهِ. الطبرانى فى الترغيب و الترهيب 3: 562',
         'indo':
-            'Dari Fadlalah bin \'Ubaid RA ia berkata : Sesungguhnya Rasulullah SAW bersabda, \"Ada tiga golongan yang tidak perlu ditanya tentang mereka itu (dan langsung dimasukkan neraka) yaitu : 1. Orang yang mencabut selendang Allah, sesungguhnya selendang Allah itu adalah sombong dan pakaian-Nya adalah kebesaran, 2. Orang yang ragu-ragu terhadap perintah Allah dan, 3. Orang yang putus asa dari rahmat Allah\". [HR. Thabarani, dalam Tarhib wat Targhib juz 3, hal. 562]',
+            'Dari Fadlalah bin \'Ubaid RA ia berkata : Sesungguhnya Rasulullah SAW bersabda, "Ada tiga golongan yang tidak perlu ditanya tentang mereka itu (dan langsung dimasukkan neraka) yaitu : 1. Orang yang mencabut selendang Allah, sesungguhnya selendang Allah itu adalah sombong dan pakaian-Nya adalah kebesaran, 2. Orang yang ragu-ragu terhadap perintah Allah dan, 3. Orang yang putus asa dari rahmat Allah". [HR. Thabarani, dalam Tarhib wat Targhib juz 3, hal. 562]',
       },
       {
         'arabic':
@@ -107,7 +107,7 @@ class SombongPage extends StatelessWidget {
         'arabic':
             'عَنْ عِيَاضِ بْنِ حَمَّادٍ رض قَالَ: قَالَ رَسُوْلُ اللهِ ص: اِنَّ اللهَ اَوْحَى اِلَيَّ اَنْ تَوَاضَعُوْا حَتَّى لاَ يَفْخَرَ اَحَدٌ عَلَى اَحَدٍ وَلاَ يَبْغِيَ اَحَدٌ عَلَى اَحَدٍ. مسلم و ابو داود و ابن ماجه فى الترغيب و الترهيب 3: 557',
         'indo':
-            'Dari \'Iyadl bin Hammad RA, ia berkata : Rasulullah SAW bersabda, \"Sesungguhnya Allah telah mewahyukan kepada saya agar supaya kamu sekalian bertawadlu\', sehingga seseorang tidak merasa sombong terhadap yang lain dan seseorang tidak pula berbuat dhalim terhadap yang lain\". [HR. Muslim, Abu Dawud dan Ibnu Majah, dalam Targhib wat Tarhib juz 3, hal. 557]',
+            'Dari \'Iyadl bin Hammad RA, ia berkata : Rasulullah SAW bersabda, "Sesungguhnya Allah telah mewahyukan kepada saya agar supaya kamu sekalian bertawadlu\', sehingga seseorang tidak merasa sombong terhadap yang lain dan seseorang tidak pula berbuat dhalim terhadap yang lain". [HR. Muslim, Abu Dawud dan Ibnu Majah, dalam Targhib wat Tarhib juz 3, hal. 557]',
       },
       {
         'arabic':

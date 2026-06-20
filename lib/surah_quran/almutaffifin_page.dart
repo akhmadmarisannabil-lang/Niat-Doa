@@ -107,8 +107,8 @@ class _AlMutaffifinPageState extends State<AlMutaffifinPage> {
 
       final url = ayatAudio[i]['audio'][selectedQori];
 
-      print("Ayat ${i + 1}");
-      print(url);
+      debugPrint("Ayat ${i + 1}");
+      debugPrint(url);
 
       await player.setUrl(url);
 
@@ -539,7 +539,7 @@ class _AlMutaffifinPageState extends State<AlMutaffifinPage> {
                 const SizedBox(height: 15),
 
                 DropdownButtonFormField<String>(
-                  value: selectedQori,
+                  initialValue: selectedQori,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                   ),

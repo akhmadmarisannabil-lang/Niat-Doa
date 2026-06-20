@@ -107,8 +107,8 @@ class _AlLahabPageState extends State<AlLahabPage> {
 
       final url = ayatAudio[i]['audio'][selectedQori];
 
-      print("Ayat ${i + 1}");
-      print(url);
+      debugPrint("Ayat ${i + 1}");
+      debugPrint(url);
 
       await player.setUrl(url);
 
@@ -312,7 +312,7 @@ class _AlLahabPageState extends State<AlLahabPage> {
                 const SizedBox(height: 15),
 
                 DropdownButtonFormField<String>(
-                  value: selectedQori,
+                  initialValue: selectedQori,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                   ),
@@ -399,7 +399,7 @@ class _AlLahabPageState extends State<AlLahabPage> {
                       ),
                       decoration: BoxDecoration(
                         color: currentPlayingAyat == index
-                            ? Colors.amber.withOpacity(0.25)
+                            ? Colors.amber.withValues(alpha: 0.25)
                             : cardColor,
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(

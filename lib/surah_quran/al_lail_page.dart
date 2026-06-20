@@ -107,8 +107,8 @@ class _AlLailPageState extends State<AlLailPage> {
 
       final url = ayatAudio[i]['audio'][selectedQori];
 
-      print("Ayat ${i + 1}");
-      print(url);
+      debugPrint("Ayat ${i + 1}");
+      debugPrint(url);
 
       await player.setUrl(url);
 
@@ -419,7 +419,7 @@ class _AlLailPageState extends State<AlLailPage> {
                 const SizedBox(height: 15),
 
                 DropdownButtonFormField<String>(
-                  value: selectedQori,
+                  initialValue: selectedQori,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                   ),

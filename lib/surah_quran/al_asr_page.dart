@@ -107,8 +107,8 @@ class _AlAsrPageState extends State<AlAsrPage> {
 
       final url = ayatAudio[i]['audio'][selectedQori];
 
-      print("Ayat ${i + 1}");
-      print(url);
+      debugPrint("Ayat ${i + 1}");
+      debugPrint(url);
 
       await player.setUrl(url);
 
@@ -302,7 +302,7 @@ class _AlAsrPageState extends State<AlAsrPage> {
                 const SizedBox(height: 15),
 
                 DropdownButtonFormField<String>(
-                  value: selectedQori,
+                  initialValue: selectedQori,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                   ),
