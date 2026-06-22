@@ -236,7 +236,7 @@ class _HomePageState extends State<HomePage> {
                       child: Stack(
                         children: [
                           Positioned.fill(
-                            child: Image.network(
+                            child: Image.asset(
                               item['image'],
                               fit: BoxFit.cover,
                               errorBuilder: (context, error, stackTrace) =>
