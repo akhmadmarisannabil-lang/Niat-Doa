@@ -25,7 +25,7 @@ class _SubuhPageState extends State<SubuhPage> {
     'Shalat Subuh Sebagai Imam': {
       'title': 'Niat (Imam)',
       'arabic':
-          "أُصَلِّى فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ مَأْمُوْمًا لِلَّهِ تَعَالَى",
+          "أُصَلِّى فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ إِمَامًا لِلَّهِ تَعَالَى",
       'transliteration':
           "Ushallii fardhas-subhi rak'ataini mustqbilal qiblati imaaman lillaahi ta'aalaa.",
       'translation':
@@ -34,7 +34,7 @@ class _SubuhPageState extends State<SubuhPage> {
     'Shalat Subuh Sebagai Makmum': {
       'title': 'Niat (Makmum)',
       'arabic':
-          "أُصَلِّى فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً إِمَامًا لِلهِ تَعَالَى",
+          "أُصَلِّى فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ مَأْمُوْمًا لِلهِ تَعَالَى",
       'transliteration':
           "Ushallii fardhas-subhi rak'ataini mustqbilal qiblati ma'mūman lillaahi ta'aalaa.",
       'translation':
