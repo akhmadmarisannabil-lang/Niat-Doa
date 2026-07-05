@@ -43,3 +43,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Keystore - jangan diupload ke GitHub
+android/key.properties
+android/upload-keystore.jks
